@@ -1,0 +1,41 @@
+// CONTAINERS
+.big-container {
+    width: 100vw;
+    padding: $paddingSmall;
+    margin: $marginMedium auto;
+}
+
+.medium-container{
+    width: 80vw;
+    padding: $paddingSmall;
+    margin: $marginBig auto;
+}
+
+.small-container{
+    width: 50vw;
+    padding: $paddingSmall;
+    margin: $marginMedium auto;
+}
+
+// HEADERS
+.header{
+    font-weight: $bold;
+    font-size: 2rem;
+    text-align: center;
+    margin: $marginSmall auto;
+}
+
+.sub-header{
+    font-weight: $bold;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: $marginSmall auto;
+}
+
+// pictures
+.photos{
+    width: 10rem;
+    height: 10rem;
+    background-color: $darkColor;
+    margin: $marginSmall;
+}

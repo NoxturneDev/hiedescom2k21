@@ -1,0 +1,16 @@
+// CSS DEFAULT RESET
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    :focus{
+        outline: none;
+    }
+}
+
+body {
+    overflow-x: hidden;
+}

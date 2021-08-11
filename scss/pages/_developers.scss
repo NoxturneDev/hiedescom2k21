@@ -1,0 +1,7 @@
+// DEVELOPER PAGE 
+.developers-container{
+    .cards-container{
+        @include leftAlignElement();
+    }
+
+}

@@ -1,0 +1,28 @@
+.main-feature-wrapper{
+    height: 100vh;
+    margin-top: $marginSuperLarge;
+
+    .features-container{
+        @include leftAlignElement();
+
+        .belajarBareng{
+            background-color: $firstColor;
+            .btn-belajar{
+                color: $lighterColor;
+                background-color: $secondColor;
+                font-weight: $bold;
+                width: 8rem;
+            }
+        }
+
+        .quizBahasa{
+            background-color: $lighColor;
+            .btn-quiz{
+                color: $darkColor;
+                background-color: $semiDarkColor;
+                font-weight: $bold;
+                width: 8rem;
+            }
+        }
+    }
+}

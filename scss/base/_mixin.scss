@@ -1,0 +1,19 @@
+// ALL MIXIN
+// POSITION MIXIN
+@mixin centerElement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin leftAlignElement {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@mixin rightAlignElement {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}

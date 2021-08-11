@@ -1,0 +1,25 @@
+.about-wrapper{
+    margin: $marginLarge auto $marginLarge;
+    .about-header{
+        width: 50%;
+        background-color: $darkColor;
+        color: $semiDarkColor;
+        font-size: 2.4rem;
+        text-align: center;
+        margin: $marginSmall auto;
+    }
+
+    .about-content{
+        .about {
+            @include leftAlignElement();
+            height: 36vh;
+
+            .about-img{
+                width: 20%;
+                height: 95%;
+                background-color: $darkColor;
+                margin: 0 $marginSmall;
+            }
+        }
+    }
+}

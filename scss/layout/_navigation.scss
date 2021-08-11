@@ -1,0 +1,29 @@
+// NAVITAGTION BAR
+// TOP NAVIGATION
+.navbar-top{
+    width: 100vw;
+    height: 3rem;
+    background-color: $darkColor;
+
+    @include rightAlignElement();
+
+    ul{
+        @include centerElement();
+        
+        .nav-list{
+            font-size: 0.9rem;
+            font-weight: $regular;
+            letter-spacing: 1px;
+            margin-right: 3em;
+            cursor: pointer;
+
+            a{
+                color: $white;
+            }
+        }
+    }
+
+    #btn-chat{
+        background-color: $semiDarkColor;
+    }
+}

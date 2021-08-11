@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// COLOR VARIABLE
+$darkColor : #383574;
+$semiDarkColor : #5B518F;
+$firstColor : #8E709E;
+$secondColor : #F5A9AF;
+$lighColor : #F5CAC3;
+$lighterColor : #FFD3D3;
+$white : #F5F5F5;
+
+// CSS BREAKPOINT 
+$phoneBreakpoint : 600px;
+$tabletBreakpoint :  768px;
+$laptop : 992px;
+$desktop : 1200px;
+
+// FONT STYLE
+$poppins : 'Poppins', sans-serif;
+$montserrat : 'Montserrat', sans-serif;
+
+// FONT WEIGHT
+$bold : 700;
+$semibold : 500;
+$regular : 400;
+$light : 300;
+$lightest : 200;
+
+// MARGIN
+$marginMedium : 2em;
+$marginSmall : 1em;
+$marginBig : 3.5em;
+$marginLarge : 6em;
+$marginSuperLarge : 12em;
+
+// PADDING
+$paddingMedium : 1.5em;
+$paddingSmall : 0.5em;
+$paddingBig : 3.5em;
+$paddingLarge : 5em;
+
+// SMOOTH SHADOW
+$lightSmoothShadow :  0px -2px 41px rgba(64, 61, 119, 0.18), 0px -0.250431px 5.13384px rgba(56, 53, 116, 0.085);

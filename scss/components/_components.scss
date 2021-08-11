@@ -1,0 +1,26 @@
+// BUTTON
+.button {
+    padding: 0.7em 0.7em;
+    text-align: center;
+    cursor: pointer;
+    margin: auto;
+}
+
+// CARDS
+.long-card{
+    width: 82%;
+    height: 25vh;
+    margin: $marginMedium auto;
+    box-shadow: $lightSmoothShadow;
+    padding: $paddingMedium;
+    border-radius: 9px;
+}
+
+.big-cards{
+    width: 30%;
+    height: 50vh;
+    margin: $marginMedium auto;
+    box-shadow: $lightSmoothShadow;
+    padding: $paddingMedium;
+    border-radius: 9px;
+}

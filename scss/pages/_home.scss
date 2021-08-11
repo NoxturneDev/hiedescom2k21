@@ -1,0 +1,37 @@
+// HERO ON LANDING PAGE
+.landing-page-wrapper{
+    @include centerElement();
+
+    width: 80vw;
+    height: 100vh;
+    margin: 0 auto $marginSmall;
+
+    // LANDING PAGE CONTENT WRAPPER
+    .landing-page-content{
+        @include leftAlignElement();
+
+        // LANDING PAGE PARAGRAHPH
+        .landing-page-text{
+            width: 75%;
+            margin-right: $marginSmall;
+            text-align: center;
+
+            p {
+                line-height: 120%;
+                margin-bottom: $marginSmall;
+            }
+
+            // LANDING PAGE BUTTON
+            #btn-go{
+                background-color: $semiDarkColor;
+                width: 10rem;
+                margin: auto;
+
+                a{
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
