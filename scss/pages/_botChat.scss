@@ -1,0 +1,191 @@
+.bots-container{
+    @include centerElement();
+
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: $darkColor;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    visibility: hidden;
+    .header{
+        color: $white;
+    }
+}
+
+.choose-bot-wrapper{
+    @include centerElement();
+    // @include overlay();
+
+    width: 100%;
+    padding: $paddingMedium;
+
+    #minang{
+        background-color: $firstColor;
+    }
+
+    #jawa{
+        background-color: $secondColor;
+    }
+
+    #sunda{
+        background-color: $lighColor;
+    }
+    
+    #batak{
+        background-color: $lighterColor;
+    }
+}
+
+
+.chatbox-window{
+    width: 50vw;
+    height: 70vh;
+    background-color: #2f323b;
+    display: none;
+    flex-direction: column;
+    // SCROLLBAR ON CHAT
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #4c4c6a;
+        border-radius: 2px;
+    }
+
+    .chat-header{
+        background-color: #455277;
+        display: flex;
+        padding: 0.5em;
+        align-items: center;
+
+        .chat-img{
+            width: 10%;
+            border: 2px solid  #1d2231;
+            margin-right: 0.5em;
+            border-radius: 100%;
+        }
+
+        .chat-name h2{
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+    }
+
+    
+
+.chat-innercontainer{
+        flex: 2;
+        flex-basis: 70%;
+        width: 100%;
+        padding: 0.4em 0;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .msg-container{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .msg-bubble{
+            max-width: 76%;
+            display: flex;
+            flex-direction: column;
+        }
+        .msg-text{
+            width: 100%;
+            background-color: #4e72d6;
+            margin-bottom: 0.2em;
+            font-size: 0.9rem;
+            padding: 0.4em 0.5em;
+            transition: all 0.15s ease-in-out;
+        }
+
+        .timestamp {
+            color: white;
+            font-size: 6pt;
+            letter-spacing: 1px;
+            margin:0 1em 0.2em 1em;
+        }
+    }
+
+    
+    .user-input-window {
+
+        background: #40434e;
+        border-top: 1px solid #2671ff;
+        box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+
+        .input-form{
+            display: flex;
+        }
+        .user-input{
+            flex: 1;
+            line-height: 3rem;
+            outline: 0 none;
+            border: none;
+            width: 100%;
+            color: white;
+            text-indent: 10px;
+            font-size: 12pt;
+            padding: 0;
+            background: #40434e;
+        }
+        .btn-send {
+            outline: 0 none;
+            border: none;
+            background: rgba(255,255,255,.25);
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin: 0.4em;
+            transition: all 0.15s ease-in-out;
+        }
+
+        .btn-send {
+            box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+            background: #2671ff;
+            cursor: pointer;
+        }
+    }
+}
+
+#msg-bot{
+    align-items: flex-start;
+}
+   
+#msg-bot .msg-text{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+   
+#msg-user{
+    align-items: flex-end;
+}
+   
+#msg-user .msg-text{
+    text-align: right;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+// TODO : Refactor this shit
+
+
+
+
+
+
+
+
+
+
+
+
+
+

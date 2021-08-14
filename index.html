@@ -126,6 +126,49 @@
                 </aside>
             </section>
         </div>
+
+        <!-- SUDO BOTS CHOICE CONTAINER -->
+        <aside class="bots-container big-container">
+            <div class="header">
+                PILIH BAHASA DAERAH
+            </div>
+            <div class="close-btn"></div>
+            <div class="choose-bot-wrapper">
+                <div class="bots small-cards" id="minang" data-language="BHS_MINANG">
+                    Bahasa Minang
+                </div>
+                <div class="bots small-cards" id="jawa" data-language="BHS_JAWA">
+                    Bahasa Jawa
+                </div>
+                <div class="bots small-cards" id="sunda" data-language="BHS_SUNDA">
+                    Bahasa Sunda
+                </div> 
+                <div class="bots small-cards" id="batak" data-language="BHS_BATAK">
+                    Bahasa Batak
+                </div>
+            </div>
+                <div class="chatbox-window" data-isActive="false">
+                    <!-- CHAT HEADER  -->
+                    <section class="chat-header">
+                        <div class="chat-img">
+                            <img src="#" alt="">
+                        </div>
+                        <div class="chat-name">
+                            <h2>AISYAH JAMET</h2>
+                        </div>
+                    </section>
+                    <!-- CHAT WINDOW CONTAINING MESSAGES -->
+                    <section class="chat-innercontainer">
+                        <!-- MESSAGES HERE -->
+                    </section>
+                    <section class="user-input-window">
+                        <form action="submit" class="input-form">
+                            <input type="text" class="user-input" placeholder="Type a message">
+                            <button class="btn-send"></button>
+                        </form>
+                    </section>
+                </div>
+        </aside>
         <!-- DEVELOPERS -->
         <div class="developers-container big-container">
             <div class="header">OUR DEVELOPERS</div>
@@ -141,9 +184,9 @@
 
             </footer>
         </div>
-    </body>
-
-    </html>
+        <script src="app/language-data.js"></script>
+        <script src="app/botChat.js"></script>
+        <script src="app/app.js"></script>
 </body>
 
 </html>
