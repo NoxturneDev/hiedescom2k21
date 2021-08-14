@@ -1,28 +1,3 @@
-// ALL VARIABLES
-const submitForm = document.querySelector("form")
-const userInputText = document.querySelector(".user-input")
-const botsChoice = document.querySelectorAll(".bots")
-const chatBox = document.querySelector(".chatbox-window")
-const chatHeader = document.querySelector(".chat-name h2")
-
-botsChoice.forEach(bot => {
-    bot.addEventListener("click", () => {
-        bot.parentElement.style.display = "none";
-        chatBox.dataset.isActive = "true";
-        chatBox.style.display = "flex"
-
-        console.log(bot.dataset.language)
-        if (bot.dataset.language == "BHS_JAWA") {
-            botBahasaJawa()
-            console.log("paijo")
-        } else if (bot.dataset.language == "BHS_SUNDA") {
-            botBahasaSunda()
-            console.log("sukijan")
-        }
-    })
-})
-
-
 // OBJECTS
 // !what is this for lol
 let user = {
@@ -149,15 +124,16 @@ function botResponds(value, lang) {
     // TODO : Pindahkan ini nanti ke object tersendiri yang menamping reg pattern
     const namaRegPattern = /^[Nn]ama/g
     const regExpNama = new RegExp(namaRegPattern);
-    const userNamePattern = /^[Nn]ama\w*[A-Za-z]*/g
-    const userNamePattern2 = /\w*/g
+    const userNamePattern = /[A-Za-z]*/g
     const hiPattern = /^[Hh]/g
 
     if (value.match(hiPattern)) {
         respondGreetings(value, lang)
-    } else if (value.match(userNamePattern2 || userNamePattern)) {
+    } else if (value.match(userNamePattern)) {
         respondPerkenalan(value, lang)
-    } else {
+    } else if(value.match(/\d+/g)) {
+        respondUmur(value.parseInt())
+    }else {
         renderChatBubble(value, "user")
         botAutomationChat("Maaf aku tidak tau apa maksudmu", bot)
     }
@@ -190,13 +166,36 @@ function respondGreetings(value, lang) {
     }
     userInputText.setAttribute("placeholder", "Sebutkan Namamu")
 }
-function respondPerkenalan(value, lang) {
+
+function respondPerkenalan(value) {
     user.name = value;
 
-    let respond = [`Halo ${user.name}`, "Senang berkenalan dengan mu :D"]
+    let respond = [`Halo ${user.name}`, "Senang berkenalan dengan mu :D", "Kalo boleh tau umur kamu berapa ya?"]
     renderChatBubble(value, "user")
     botAutomationChat(respond, "bot")
+    userInputText.setAttribute("placeholder", "Sebutkan Umur kamu")
 }
+
+
+function respondUmur(value) {
+    user.age = value;
+
+    if(user.age <= 14){
+        let respond = [`wah kalo gitu kamu baru smp ya`]
+        renderChatBubble(value, "user")
+        botAutomationChat(respond, "bot")
+    } else if (user.age <= 17){
+        let respond = [`wah kalo gitu kamu udah SMA ya`]
+        renderChatBubble(value, "user")
+        botAutomationChat(respond, "bot")
+    } else {
+        let respond = [`wah kalo gitu kamu udah SMA ya`]
+        renderChatBubble(value, "user")
+        botAutomationChat(respond, "bot")
+    }
+    userInputText.setAttribute("placeholder", "Sebutkan Umur kamu")
+}
+
 
 
 

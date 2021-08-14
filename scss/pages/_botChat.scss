@@ -6,11 +6,7 @@
     height: 100vh;
     background-color: $darkColor;
     position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    margin: 0;
-    visibility: hidden;
+    
     .header{
         color: $white;
     }
@@ -42,7 +38,7 @@
 
 
 .chatbox-window{
-    width: 50vw;
+    width: 30vw;
     height: 70vh;
     background-color: #2f323b;
     display: none;
@@ -148,6 +144,7 @@
         }
 
         .btn-send {
+            // !it;s not gonna be like this when the icon is already created
             box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
             background: #2671ff;
             cursor: pointer;
