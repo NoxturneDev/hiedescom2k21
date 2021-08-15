@@ -31,7 +31,70 @@ body {
 }
 
 html {
-  font-size: 16px;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(14px + 10 * ((100vw - 320px) / 980));
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+h1 {
+  font-size: 1.728rem !important;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 320px) {
+  h1 {
+    font-size: calc(14px + 10 * ((100vw - 320px) / 980));
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  h1 {
+    font-size: 24px;
+  }
+}
+
+h2 {
+  font-size: 1.44rem !important;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 320px) {
+  h2 {
+    font-size: calc(14px + 10 * ((100vw - 320px) / 980));
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  h2 {
+    font-size: 24px;
+  }
+}
+
+h3 {
+  font-size: 1.44rem !important;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 320px) {
+  h3 {
+    font-size: calc(14px + 10 * ((100vw - 320px) / 980));
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  h3 {
+    font-size: 24px;
+  }
 }
 
 .button {
@@ -124,8 +187,12 @@ html {
   margin: 1em;
 }
 
-.hidden {
+data[hidden="true"] {
   visibility: hidden;
+}
+
+data[hidden="false"] {
+  visibility: visible;
 }
 
 .overlay {
@@ -164,7 +231,6 @@ html {
 }
 
 .navbar-top ul .nav-list {
-  font-size: 0.9rem;
   font-weight: 400;
   letter-spacing: 1px;
   margin-right: 3em;
@@ -241,7 +307,6 @@ html {
   width: 50%;
   background-color: #383574;
   color: #5B518F;
-  font-size: 2.4rem;
   text-align: center;
   margin: 1em auto;
 }
@@ -393,7 +458,6 @@ html {
   width: 30vw;
   height: 70vh;
   background-color: #2f323b;
-  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -410,14 +474,17 @@ html {
 }
 
 .chatbox-window .chat-header {
-  background-color: #455277;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0.5em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #455277;
+  padding: 0.5em;
 }
 
 .chatbox-window .chat-header .chat-img {
@@ -428,7 +495,6 @@ html {
 }
 
 .chatbox-window .chat-header .chat-name h2 {
-  font-size: 1.2rem;
   letter-spacing: 1px;
 }
 
@@ -439,7 +505,7 @@ html {
   -ms-flex-preferred-size: 70%;
       flex-basis: 70%;
   width: 100%;
-  padding: 0.4em 0;
+  padding: 0.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -476,7 +542,6 @@ html {
   width: 100%;
   background-color: #4e72d6;
   margin-bottom: 0.2em;
-  font-size: 0.9rem;
   padding: 0.4em 0.5em;
   -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
@@ -484,7 +549,6 @@ html {
 
 .chatbox-window .msg-container .timestamp {
   color: white;
-  font-size: 6pt;
   letter-spacing: 1px;
   margin: 0 1em 0.2em 1em;
 }
@@ -512,7 +576,6 @@ html {
   width: 100%;
   color: white;
   text-indent: 10px;
-  font-size: 12pt;
   padding: 0;
   background: #40434e;
 }

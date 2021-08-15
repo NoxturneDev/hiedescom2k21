@@ -41,8 +41,12 @@
 }
 
 // hidden
-.hidden {
+data[hidden="true"] {
     visibility: hidden;
+}
+
+data[hidden="false"]{
+    visibility: visible;
 }
 
 
