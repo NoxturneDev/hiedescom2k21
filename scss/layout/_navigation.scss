@@ -1,11 +1,12 @@
 // NAVITAGTION BAR
 // TOP NAVIGATION
 .navbar-top{
+    @include rightAlignElement();
+    @include smallerfont();
+
     width: 100vw;
     height: 3rem;
     background-color: $darkColor;
-
-    @include rightAlignElement();
 
     ul{
         @include centerElement();

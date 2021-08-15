@@ -19,13 +19,13 @@
       font-size: $max-font-size;
     }
 }
- 
 
-$min-vw : 320px;
-$max-vw : 1300px;
-$min-font : 14px;
-$max-font : 24px;
-$headerScale : 1.2;
+
+$min-vw : 300px;
+$max-vw : 1400px;
+$min-font : 12px;
+$max-font : 18px;
+$headerScale : 1.4;
 
 
 html{
@@ -43,6 +43,10 @@ h2{
 }
 
 h3{
-    font-size: $headerScale*$headerScale*1rem!important;
+    font-size: $headerScale*1rem!important;
     @include fluidFont($min-vw, $max-vw, $min-font, $max-font)
+}
+
+@mixin smallerfont(){
+    @include fluidFont($min-vw, $max-vw, $min-font, 15px)
 }
