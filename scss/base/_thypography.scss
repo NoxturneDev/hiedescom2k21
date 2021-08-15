@@ -2,6 +2,61 @@
     font-family: $poppins;
 }
 
+
+// FLUID FONTS FUNCTIONS 
+
+// @mixin fluid-type($min-viewport, $max-viewport, $min-font-size, $max-font-size) {
+//     $u1: unit($min-viewport);
+//     $u2: unit($max-viewport);
+//     $u3: unit($min-font-size);
+//     $u4: unit($max-font-size);
+  
+//     @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+//       & {
+//         font-size: $min-font-size;
+//         @media screen and (min-width: $min-viewport) {
+//           font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-viewport}) / #{strip-unit($max-viewport - $min-viewport)}));
+//         }
+//         @media screen and (min-width: $max-viewport) {
+//           font-size: $max-font-size;
+//         }
+//       }
+//     }
+//   }
+
+
+$min-vw : 320px;
+$max-vw : 1300px;
+$min-font : 14px;
+$max-font : 24px;
+$headerScale : 1.2;
+
+@mixin fluidFont($min-viewport, $max-viewport, $min-font-size, $max-font-size){
+
+    font-size : $min-font-size;
+    @media screen and (min-width: $min-viewport){
+        font-size: calc($min-font-size + ($max-font-size - $min-font-size) * ((100vw - $min-viewport) / ($max-viewport - $min-viewport)));
+    }
+    @media screen and (min-width: $max-viewport){
+        font-size: $max-font-size;
+    }
+}
+
 html {
-    font-size: 16px;
+    @include fluidFont($min-vw, $max-vw, $min-font, $max-font)
+}
+
+h1{
+    font-size: $headerScale*$headerScale*$headerScale*1rem;
+    @include fluidFont($min-vw, $max-vw, $min-font, $max-font)
+}
+
+h2{
+    font-size: $headerScale*$headerScale*1rem;
+    @include fluidFont($min-vw, $max-vw, $min-font, $max-font)
+}
+
+h3{
+    font-size: $headerScale*1rem;
+    @include fluidFont($min-vw, $max-vw, $min-font, $max-font)
 }
