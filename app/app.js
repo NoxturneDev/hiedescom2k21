@@ -2,25 +2,22 @@
 const submitForm = document.querySelector("form")
 const userInputText = document.querySelector(".user-input")
 const botsChoice = document.querySelectorAll(".bots")
-const chatBox = document.querySelector(".chatbox-window")
+const chatWindow = document.querySelector(".chatbox-window")
 const chatHeader = document.querySelector(".chat-name h2")
 const botWrapper = document.querySelector(".choose-bot-wrapper")
 const botsContainer = document.querySelector(".bots-container")
 const yukSinauBtn = document.querySelector(".btn-belajar")
 const closeBtn = document.querySelector(".close-btn")
 const closeChatBtn = document.querySelector(".close-chat")
-
+const botChoiceContainerHeader = document.querySelector(".bots-container .header")
 
 
 botsChoice.forEach(bot => {
     bot.addEventListener("click", () => {
-        // !REFACTOR THIS
-        if(chatBox.dataset.isActive == "false"){
-            botWrapper.classList.add("hidden")
-            chatBox.dataset.isActive = "true";
-            // chatBox.style.display = "flex";
+        if(chatWindow.dataset.hidden == "true"){
+            chatWindow.dataset.hidden = "false"
         }
-        
+          
         if (bot.dataset.language == "BHS_JAWA") {
             botBahasaJawa()
         } else if (bot.dataset.language == "BHS_SUNDA") {
@@ -31,16 +28,17 @@ botsChoice.forEach(bot => {
 
 
 yukSinauBtn.addEventListener("click", () => {
-    botsContainer.style.visibility = "visible";
+    botsContainer.removeAttribute("data-hidden")
+
+    if(chatWindow.dataset.isActive == "true"){
+        window.scroll
+    }
 })
 
 closeBtn.addEventListener("click", () => {
-    botsContainer.style.visibility = "hidden";
+    botsContainer.dataset.hidden = "true";
 })
 
 closeChatBtn.addEventListener("click", () => {
-    chatBox.classList.add("hidden")
-    botWrapper.classList.remove("hidden")
-    // botWrapper.style.display = "";
-    console.log("test")
+    chatWindow.dataset.hidden = "true"
 })

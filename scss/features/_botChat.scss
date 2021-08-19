@@ -1,6 +1,7 @@
 .bots-container{
     @include centerElement();
     @include fullscreen();
+    @include overlay();
 
     flex-direction: column;
     background-color: $darkColor;
@@ -40,7 +41,8 @@
     width: 30vw;
     height: 70vh;
     background-color: #2f323b;
-    flex-direction: column;
+    position: absolute;
+    z-index: 9;
 
     // SCROLLBAR ON CHAT
     &::-webkit-scrollbar {
@@ -72,12 +74,9 @@
     
 
 .chat-innercontainer{
-        flex: 2;
-        flex-basis: 70%;
         width: 100%;
+        height: 70%;
         padding: $paddingSmall;
-        display: flex;
-        flex-direction: column;
         overflow-y: auto;
     }
 

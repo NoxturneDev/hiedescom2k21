@@ -41,19 +41,17 @@
 }
 
 // hidden
-data[hidden="true"] {
-    visibility: hidden;
+.bots-container[data-hidden="true"] {
+    display: none;
 }
 
-data[hidden="false"]{
-    visibility: visible;
+[data-hidden="true"] {
+    display: none;
 }
-
 
 .overlay{
     top: 0;
     bottom: 0;
     left: 0;
     margin: 0;
-    visibility: hidden;
 }
