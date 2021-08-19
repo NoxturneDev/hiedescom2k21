@@ -150,6 +150,7 @@ h3 {
 
 .big-container {
   width: 100vw;
+  height: 100vh;
   padding: 0.5rem;
   margin: 2rem auto;
 }
@@ -261,6 +262,25 @@ h3 {
   background-color: #383574;
   width: 100vw;
   padding: 3.5rem;
+}
+
+.loader-container {
+  background-color: #383574;
+  margin: 0;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loader-container .loader-gif {
+  width: 30rem;
 }
 
 .landing-page-wrapper {
@@ -630,5 +650,36 @@ h3 {
 
 html {
   scroll-behavior: smooth;
+}
+
+.wipe-left {
+  -webkit-animation: wipeLeft 2s ease-in-out;
+          animation: wipeLeft 2s ease-in-out;
+  -webkit-transform: translateX(-150%);
+          transform: translateX(-150%);
+  -webkit-transition-delay: 2s;
+          transition-delay: 2s;
+}
+
+@-webkit-keyframes wipeLeft {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-150%);
+            transform: translateX(-150%);
+  }
+}
+
+@keyframes wipeLeft {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-150%);
+            transform: translateX(-150%);
+  }
 }
 /*# sourceMappingURL=main.css.map */

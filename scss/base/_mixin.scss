@@ -32,3 +32,23 @@
     width: 100vw;
     height: 100vh;
 }
+
+
+// ANIMATION
+@mixin wipeLeft(){
+    animation: wipeLeft 2s ease-in-out;
+    transform: translateX(-150%);
+    transition-delay: 2s;
+
+    @keyframes wipeLeft {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-150%);
+            
+        }
+        
+    }
+}

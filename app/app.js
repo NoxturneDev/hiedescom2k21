@@ -10,6 +10,15 @@ const yukSinauBtn = document.querySelector(".btn-belajar")
 const closeBtn = document.querySelector(".close-btn")
 const closeChatBtn = document.querySelector(".close-chat")
 const botChoiceContainerHeader = document.querySelector(".bots-container .header")
+const loader = document.querySelector(".loader-container")
+
+window.addEventListener("load", () => {
+    setTimeout(()=> {
+        loader.classList.add("wipe-left")
+        loader.classList.add("hidden")
+        console.log("anjay")
+    },4000)
+})
 
 
 botsChoice.forEach(bot => {
@@ -25,6 +34,7 @@ botsChoice.forEach(bot => {
         }
     })
 })
+
 
 
 yukSinauBtn.addEventListener("click", () => {
