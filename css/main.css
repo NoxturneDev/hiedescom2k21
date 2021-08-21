@@ -512,7 +512,7 @@ html {
 }
 
 .main-feature-page {
-  background: url("../../assets/image/feature-background.svg");
+  background: url("../assets/image/feature-background.svg");
   background-size: cover;
   background-position: center;
   max-width: 100%;
