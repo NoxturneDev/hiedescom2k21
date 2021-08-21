@@ -34,14 +34,26 @@
 }
 
 @media screen and (max-width: $phoneBreakpoint) {
-    .feature-wrapper{
-        flex-direction: column;
-        border: $debug;
-
-        .features{
+    .main-feature-page{
+        @include centerElement();
+        height: 120vh;
+        
+        .feature-wrapper{
             flex-direction: column;
-            width: 60%;
             border: $debug;
+            max-height: 50%;
+            width: 100%;
+
+            .features{
+                flex-direction: column;
+                width: 80%;
+
+                .feature-redirect-img{
+                    width: 100%;
+                    height: calc(100% + 2rem);
+                }
+            }
         }
     }
+
 }

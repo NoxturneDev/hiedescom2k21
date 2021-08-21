@@ -312,6 +312,7 @@ html {
     position: absolute;
     top: 4rem;
     border: 1px solid red;
+    z-index: 1;
   }
   .nav-list-container ul {
     -webkit-transform: translateX(-150%);
@@ -386,6 +387,7 @@ html {
   background-size: cover;
   background-position: center;
   color: #F5F5F5;
+  border: 1px solid red;
 }
 
 .landing-page .landing-page-content {
@@ -441,17 +443,29 @@ html {
 
 @media screen and (max-width: 450px) {
   .landing-page {
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-size: cover;
     background-position: bottom;
     height: 90vh;
   }
 }
 
 .about-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   max-width: 100%;
   height: calc(100% + 2rem);
   margin-top: -1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .about-page .about {
@@ -509,6 +523,16 @@ html {
 
 .card-img {
   width: calc(100% - 1rem);
+}
+
+@media screen and (max-width: 450px) {
+  .about {
+    margin: 1rem;
+    padding: 0;
+  }
+  .about .card-img {
+    width: calc(120% + 1rem);
+  }
 }
 
 .main-feature-page {
@@ -571,20 +595,37 @@ html {
 }
 
 @media screen and (max-width: 450px) {
-  .feature-wrapper {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    border: 1px solid red;
+  .main-feature-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 120vh;
   }
-  .feature-wrapper .features {
+  .main-feature-page .feature-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 60%;
     border: 1px solid red;
+    max-height: 50%;
+    width: 100%;
+  }
+  .main-feature-page .feature-wrapper .features {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 80%;
+  }
+  .main-feature-page .feature-wrapper .features .feature-redirect-img {
+    width: 100%;
+    height: calc(100% + 2rem);
   }
 }
 
@@ -599,6 +640,7 @@ html {
       -ms-flex-align: center;
           align-items: center;
   background-color: white;
+  max-width: 100%;
 }
 
 .developer-page .cards-wrapper {
@@ -611,6 +653,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
 .developer-page .cards-wrapper .dev-card {
@@ -644,5 +687,14 @@ html {
 
 .developer-page .cards-wrapper .dev-card .dev-desc {
   text-align: justify;
+}
+
+@media screen and (max-width: 450px) {
+  .cards-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=main.css.map */

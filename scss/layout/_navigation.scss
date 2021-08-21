@@ -8,7 +8,6 @@
     position: relative;
     padding: $paddingMedium;
     background-color: $firstColor;
-    
     .logo-web{
         flex: 2;
     }
@@ -59,6 +58,7 @@
         position: absolute;
         top: 4rem;
         border: $debug;
+        z-index: 1;
         ul{
             transform: translateX(-150%);
             width: 100vw;

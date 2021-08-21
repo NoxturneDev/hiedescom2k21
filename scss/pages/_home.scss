@@ -5,6 +5,7 @@
     background-size: cover;
     background-position: center;
     color: $white;
+    border: $debug;
 
     .landing-page-content{
         @include centerElement();
@@ -42,8 +43,7 @@
 
 @media screen and (max-width: $phoneBreakpoint) {
     .landing-page {
-        background-size: contain;
-        background-repeat: no-repeat;
+        background-size: cover;
         background-position: bottom;
         height: 90vh;
     }

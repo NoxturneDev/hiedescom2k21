@@ -1,8 +1,9 @@
 .about-page{
+    @include centerElement();
     max-width: 100%;
     height: calc(100% + 2rem);
     margin-top: -$marginSmall;
-    
+    flex-direction: column;
     .about{
         @include leftAlignElement();
         
@@ -49,3 +50,12 @@
     // text-align: center;
 }
 
+@media screen and (max-width : $phoneBreakpoint){
+    .about{
+        margin: $marginSmall;
+        padding: 0;
+        .card-img {
+            width: calc(120% + 1rem);
+        }
+    }
+}
