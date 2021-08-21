@@ -15,25 +15,25 @@
         }
 
         .about1{
-            @include backgroundContain("../assets/image\ and\ background/about1.svg");
+            @include backgroundContain("../assets/image/about1.svg");
         
             height: 100%;
         }
 
         .about2{
-            @include backgroundContain("../assets/image\ and\ background/about2.svg");
+            @include backgroundContain("../assets/image/about2.svg");
         
             height: 100%;
         }
 
         .about3{
-            @include backgroundContain("../assets/image\ and\ background/about3.svg");
+            @include backgroundContain("../assets/image/about3.svg");
         
             height: 100%;
         }
 
         .about4{
-            @include backgroundContain("../assets/image\ and\ background/about4.svg");
+            @include backgroundContain("../assets/image/about4.svg");
         
             height: 100%;
         }

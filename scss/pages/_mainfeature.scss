@@ -1,5 +1,5 @@
 .main-feature-page{
-    @include backgroundCover("../../assets/image\ and\ background/feature-background.svg");
+    @include backgroundCover("../../assets/image/feature-background.svg");
 
     max-width: 100%;
     height: 150vh;
@@ -25,10 +25,10 @@
         }
 
         #chatRedirect{
-            @include backgroundContain("../assets/image\ and\ background/click-me-chat.png");
+            @include backgroundContain("../assets/image/click-me-chat.png");
         }
         #quizRedirect{
-            @include backgroundContain("../assets/image\ and\ background/click-me-quiz.png");
+            @include backgroundContain("../assets/image/click-me-quiz.png");
         }
     }
 }
