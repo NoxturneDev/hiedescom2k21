@@ -242,7 +242,7 @@ html {
       -ms-flex-align: center;
           align-items: center;
   max-width: 100%;
-  height: 4rem;
+  height: 3.4rem;
   position: relative;
   padding: 1.5rem;
   background-color: #9BA9FF;
@@ -278,6 +278,12 @@ html {
   margin-right: 3.5rem;
 }
 
+.navbar-top .nav-list-container ul .nav-list .btn-redirect-feature {
+  background-color: #FAF1FF;
+  font-weight: bold;
+  color: #383574;
+}
+
 .navbar-top .nav-list-container ul .nav-list .nav-link {
   font-size: 12px;
   font-weight: 500;
@@ -295,6 +301,29 @@ html {
   .navbar-top .nav-list-container ul .nav-list .nav-link {
     font-size: 14px;
   }
+}
+
+.navbar-top-scrolled {
+  -webkit-filter: drop-shadow(0px 27px 46px rgba(91, 81, 143, 0.09)) drop-shadow(0px 6.0308px 10.2747px rgba(91, 81, 143, 0.0536497)) drop-shadow(0px 1.79553px 3.05905px rgba(91, 81, 143, 0.0363503));
+          filter: drop-shadow(0px 27px 46px rgba(91, 81, 143, 0.09)) drop-shadow(0px 6.0308px 10.2747px rgba(91, 81, 143, 0.0536497)) drop-shadow(0px 1.79553px 3.05905px rgba(91, 81, 143, 0.0363503));
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  -webkit-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+  background-color: #FFF;
+  width: 100%;
+}
+
+.navbar-top-scrolled .nav-list-container ul .nav-list .nav-link {
+  font-weight: 500;
+  color: #383574;
+}
+
+.navbar-top-scrolled .nav-list-container ul .nav-list .button {
+  background-color: #D8C2FF;
+  font-weight: 500;
+  color: #F5F5F5;
 }
 
 @media screen and (max-width: 450px) {

@@ -4,7 +4,7 @@
     @include centerElement();
 
     max-width: 100%;
-    height: 4rem;
+    height: 3.4rem;
     position: relative;
     padding: $paddingMedium;
     background-color: $firstColor;
@@ -26,6 +26,11 @@
             .nav-list{
                 margin-right: $marginBig;
 
+                .btn-redirect-feature{
+                    background-color: $lighterColor;
+                    font-weight: bold;
+                    color: $darkColor;
+                }
                 .nav-link{
                     @include smallerfont();
                     
@@ -37,6 +42,36 @@
         }
     }
 }
+
+// IF NAVBAR IS LEAVING LANDING PAGE IT WILL POP UP AND STICK TO THE TOP
+.navbar-top-scrolled{
+    @include dropShadow();
+
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    transition: background 0.5s ease-in-out;
+    background-color: #FFF;
+    width: 100%;
+
+    .nav-list-container{
+        ul{
+            .nav-list {
+                .nav-link{
+                    font-weight: $semibold;
+                    color: $darkColor;
+                }
+    
+                .button{
+                    background-color: $secondColor;
+                    font-weight: $semibold;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
 
 
 @media screen and (max-width: $phoneBreakpoint){
@@ -77,28 +112,4 @@
 }
 
 
-// IF NAVBAR IS LEAVING LANDING PAGE IT WILL POP UP AND STICK TO THE TOP
-// .navbar-top-scrolled{
-//     @include dropShadow();
-
-//     position: fixed;
-//     z-index: 1;
-//     top: 0px;
-//     transition: background 0.5s ease-in-out;
-//     background-color: #FFF;
-
-//     ul{
-//         .nav-list {
-//             a {
-//                 color: $darkColor;
-//                 font-weight: $semibold;
-//             }
-
-//             .button{
-//                 font-weight: $semibold;
-//                 color: $white;
-//             }
-//         }
-//     }
-// }
 

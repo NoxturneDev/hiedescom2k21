@@ -71,18 +71,18 @@ let navbarObserverOption = {
     rootMargin : "200px",
 }
 
-// const observer = new IntersectionObserver( entries => {
-//     entries.forEach(entry => {
-//         if(!entry.isIntersecting){
-//             navbar.classList.add("navbar-top-scrolled")
-//             logoNavbar.src = "../assets/icon/logo-in-navbar-2.svg"
-//         } else {
-//             navbar.classList.remove("navbar-top-scrolled")
-//             logoNavbar.src = "../assets/icon/logo in navbar v2.svg"
-//         }
-//     })
-// }, navbarObserverOption)
+const observer = new IntersectionObserver( entries => {
+    entries.forEach(entry => {
+        if(!entry.isIntersecting){
+            navbar.classList.add("navbar-top-scrolled")
+            logoNavbar.src = "../assets/icon/logo in navbar v1.svg"
+        } else {
+            navbar.classList.remove("navbar-top-scrolled")
+            logoNavbar.src = "../assets/icon/logo in navbar v2.svg"
+        }
+    })
+}, navbarObserverOption)
 
-// observer.observe(navbarIntersectTarget)
+observer.observe(navbarIntersectTarget)
 
 
