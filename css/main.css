@@ -311,7 +311,6 @@ html {
   .nav-list-container {
     position: absolute;
     top: 4rem;
-    border: 1px solid red;
     z-index: 1;
   }
   .nav-list-container ul {
@@ -387,7 +386,6 @@ html {
   background-size: cover;
   background-position: center;
   color: #F5F5F5;
-  border: 1px solid red;
 }
 
 .landing-page .landing-page-content {
@@ -612,7 +610,6 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    border: 1px solid red;
     max-height: 50%;
     width: 100%;
   }
