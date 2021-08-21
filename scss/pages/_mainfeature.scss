@@ -25,10 +25,10 @@
         }
 
         #chatRedirect{
-            @include backgroundContain("././assets/image\ and\ background/click-me-chat.PNG");
+            @include backgroundContain("../assets/image\ and\ background/click-me-chat.png");
         }
         #quizRedirect{
-            @include backgroundContain("../../assets/image\ and\ background/click-me-quiz.png");
+            @include backgroundContain("../assets/image\ and\ background/click-me-quiz.png");
         }
     }
 }
