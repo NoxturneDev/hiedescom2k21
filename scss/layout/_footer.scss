@@ -1,5 +1,10 @@
-.footer-container{
+.footer{
+    @include centerElement();
+
+    margin-top: $marginSuperLarge;
     background-color: $darkColor;
-    width: 100vw;
-    padding: $paddingBig;
+    max-width: 100vw;
+    height: 20vh;
+    color: $white;
+    text-align: center;
 }

@@ -3,6 +3,9 @@
 @import "base/mixin";
 @import "base/thypography";
 
+@import "animation/animation";
+
+
 @import "components/components";
 
 @import "layout/layout";
@@ -16,9 +19,8 @@
 @import "pages/developers";
 @import "pages/infopage";
 
-@import "features/botChat";
+// @import "features/botChat";
 
 
-@import "animation/animation";
 
 

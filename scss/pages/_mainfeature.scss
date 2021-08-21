@@ -1,28 +1,47 @@
-.main-feature-wrapper{
-    height: 100vh;
-    margin-top: $marginSuperLarge;
+.main-feature-page{
+    @include backgroundCover("../../assets/image\ and\ background/feature-background.svg");
 
-    .features-container{
-        @include leftAlignElement();
+    max-width: 100%;
+    height: 150vh;
+    color: $white;
+    padding-top: 25%;
+    background-position: top;
 
-        .belajarBareng{
-            background-color: $firstColor;
-            .btn-belajar{
-                color: $lighterColor;
-                background-color: $secondColor;
-                font-weight: $bold;
-                width: 8rem;
+    .feature-wrapper{
+        @include centerElement();
+
+        height: 80%;
+        
+        .features{
+            @include centerElement();
+            flex-basis: 50%;
+            height: 60%;
+            padding: $paddingMedium;
+            .feature-redirect-img{
+                width: 100%;
+                height: 100%
             }
+                
         }
 
-        .quizBahasa{
-            background-color: $lighColor;
-            .btn-quiz{
-                color: $darkColor;
-                background-color: $semiDarkColor;
-                font-weight: $bold;
-                width: 8rem;
-            }
+        #chatRedirect{
+            @include backgroundContain("../../assets/image\ and\ background/click-me-chat.png");
+        }
+        #quizRedirect{
+            @include backgroundContain("../../assets/image\ and\ background/click-me-quiz.png");
+        }
+    }
+}
+
+@media screen and (max-width: $phoneBreakpoint) {
+    .feature-wrapper{
+        flex-direction: column;
+        border: $debug;
+
+        .features{
+            flex-direction: column;
+            width: 60%;
+            border: $debug;
         }
     }
 }

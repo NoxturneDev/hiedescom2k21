@@ -1,37 +1,50 @@
-// HERO ON LANDING PAGE
-.landing-page-wrapper{
-    @include centerElement();
+.landing-page{
+    max-width: 100%;
+    height: 120vh;
+    background: url("../../assets/image\ and\ background/landing-page-background.svg");
+    background-size: cover;
+    background-position: center;
+    color: $white;
 
-    width: 80vw;
-    height: 100vh;
-    margin: 0 auto $marginSmall;
-
-    // LANDING PAGE CONTENT WRAPPER
     .landing-page-content{
-        @include leftAlignElement();
-
-        // LANDING PAGE PARAGRAHPH
+        @include centerElement();
+        
+        height: 70%;
+        margin-top: -$marginBig;
+        margin-left: $marginMedium;
         .landing-page-text{
-            width: 75%;
-            margin-right: $marginSmall;
-            text-align: center;
+            @include leftAlignElement();
 
-            p {
-                line-height: 120%;
+            flex-direction: column;
+            margin: $marginMedium $marginMedium;
+            padding: $paddingSmall $paddingMedium;
+
+            .landing-page-header{
                 margin-bottom: $marginSmall;
+                width: 100%;
             }
 
-            // LANDING PAGE BUTTON
-            #btn-go{
-                background-color: $semiDarkColor;
-                width: 10rem;
-                margin: auto;
+            .arrow-down-redirect-about{
+                margin-top: $marginSmall;
+                width: 100%;
 
-                a{
-                    color: $white;
+                img{
+                    width: 4rem;
                 }
             }
         }
     }
 }
 
+#nau{
+    width: 10rem;
+}
+
+@media screen and (max-width: $phoneBreakpoint) {
+    .landing-page {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        height: 90vh;
+    }
+}

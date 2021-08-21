@@ -3,14 +3,14 @@
 // COLOR VARIABLE
 $darkColor : #383574;
 $semiDarkColor : #5B518F;
-$firstColor : #8E709E;
-$secondColor : #F5A9AF;
+$firstColor : #9BA9FF;
+$secondColor : #D8C2FF;
 $lighColor : #F5CAC3;
 $lighterColor : #FFD3D3;
 $white : #F5F5F5;
 
 // CSS BREAKPOINT 
-$phoneBreakpoint : 600px;
+$phoneBreakpoint : 450px;
 $tabletBreakpoint :  768px;
 $laptop : 992px;
 $desktop : 1200px;
@@ -41,3 +41,6 @@ $paddingLarge : 5rem;
 
 // SMOOTH SHADOW
 $lightSmoothShadow :  0px -2px 41px rgba(64, 61, 119, 0.18), 0px -0.250431px 5.13384px rgba(56, 53, 116, 0.085);
+
+// OTHERS
+$debug : 1px solid red;

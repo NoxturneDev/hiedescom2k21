@@ -1,9 +1,11 @@
 // BUTTON
 .button {
-    padding: 0.7em 0.7em;
+    padding: 0.8em 0.8em;
     text-align: center;
     cursor: pointer;
     margin: auto;
+    border: none;
+    border-radius: 5px;
 }
 
 .close-btn{
@@ -21,9 +23,8 @@
 // CARDS
 .long-card{
     width: 80vw;
-    height: 25vh;
+    height: 30vh;
     margin: $marginMedium auto;
-    box-shadow: $lightSmoothShadow;
     padding: $paddingMedium;
     border-radius: 9px;
 }
@@ -48,3 +49,8 @@
 }
 
 // ICON
+
+.small-logo{
+    width: 7rem;
+    margin: $marginSmall;
+}

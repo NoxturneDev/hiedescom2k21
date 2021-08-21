@@ -1,24 +1,51 @@
-.about-wrapper{
-    margin: $marginLarge auto $marginLarge;
-    .about-header{
-        width: 50%;
-        background-color: $darkColor;
-        color: $semiDarkColor;
-        text-align: center;
-        margin: $marginSmall auto;
-    }
+.about-page{
+    max-width: 100%;
+    height: calc(100% + 2rem);
+    margin-top: -$marginSmall;
+    
+    .about{
+        @include leftAlignElement();
+        
+        height: 40vh;
 
-    .about-content{
-        .about {
-            @include leftAlignElement();
-            height: 36vh;
-
-            .about-img{
-                width: 20%;
-                height: 95%;
-                background-color: $darkColor;
-                margin: 0 $marginSmall;
+        .cards-text{
+            p{
+                width: 80%;
             }
+        }
+
+        .about1{
+            @include backgroundContain("../../assets/image\ and\ background/about1.svg");
+        
+            height: 100%;
+        }
+
+        .about2{
+            @include backgroundContain("../../assets/image\ and\ background/about2.svg");
+        
+            height: 100%;
+        }
+
+        .about3{
+            @include backgroundContain("../../assets/image\ and\ background/about3.svg");
+        
+            height: 100%;
+        }
+
+        .about4{
+            @include backgroundContain("../../assets/image\ and\ background/about4.svg");
+        
+            height: 100%;
         }
     }
 }
+
+.cards-text > *{
+    margin: $marginSmall;
+}
+
+.card-img{
+    width: calc(100% - 1rem);
+    // text-align: center;
+}
+

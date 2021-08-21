@@ -1,7 +1,30 @@
 // DEVELOPER PAGE 
-.developers-container{
-    .cards-container{
-        @include leftAlignElement();
-    }
+.developer-page{
+    @include centerElement();
+    background-color: white;
 
+    .cards-wrapper{
+        @include centerElement();
+
+        .dev-card{
+            @include centerElement();
+
+            flex-direction: column;
+            margin: $marginMedium;
+            height: 60vh;
+
+            & *{
+                margin: $marginSmall;
+            }
+            .dev-img{
+                width: 50%;
+                height: 50%;
+                border-radius: 100%;
+                background-color: $firstColor;
+            }
+            .dev-desc{
+                text-align: justify;
+            }
+        }      
+    }
 }

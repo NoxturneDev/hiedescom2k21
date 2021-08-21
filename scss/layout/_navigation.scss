@@ -1,29 +1,105 @@
 // NAVITAGTION BAR
 // TOP NAVIGATION
 .navbar-top{
-    @include rightAlignElement();
-    @include smallerfont();
+    @include centerElement();
 
-    width: 100vw;
-    height: 3rem;
-    background-color: $darkColor;
+    max-width: 100%;
+    height: 4rem;
+    position: relative;
+    padding: $paddingMedium;
+    background-color: $firstColor;
+    
+    .logo-web{
+        flex: 2;
+    }
 
-    ul{
-        @include centerElement();
-        
-        .nav-list{
-            font-weight: $regular;
-            letter-spacing: 1px;
-            margin-right: 3em;
-            cursor: pointer;
+    .hamburger-icon{
+        display: none;
+        #toggle-nav{
+            width: 3rem;
+        }
+    }
 
-            a{
-                color: $white;
+    .nav-list-container{
+        ul{
+            @include centerElement();
+
+            .nav-list{
+                margin-right: $marginBig;
+
+                .nav-link{
+                    @include smallerfont();
+                    
+                    font-weight: $semibold;
+                    color: $white;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: $phoneBreakpoint){
+
+    .navbar-top{
+        .hamburger-icon{
+            text-align: left;
+            display: block;
+            flex: 1;
+            #toggle-nav{
+                width: 3rem;
             }
         }
     }
 
-    #btn-chat{
-        background-color: $semiDarkColor;
+    
+
+    .nav-list-container{
+        position: absolute;
+        top: 4rem;
+        border: $debug;
+        ul{
+            transform: translateX(-150%);
+            width: 100vw;
+            height: 100vh;
+            flex-direction: column;
+
+            .nav-list{
+                @include centerElement();
+                flex: 1;
+
+                .btn-redirect-feature{
+                    display: none;
+                }
+            }
+        }
     }
 }
+
+
+// IF NAVBAR IS LEAVING LANDING PAGE IT WILL POP UP AND STICK TO THE TOP
+// .navbar-top-scrolled{
+//     @include dropShadow();
+
+//     position: fixed;
+//     z-index: 1;
+//     top: 0px;
+//     transition: background 0.5s ease-in-out;
+//     background-color: #FFF;
+
+//     ul{
+//         .nav-list {
+//             a {
+//                 color: $darkColor;
+//                 font-weight: $semibold;
+//             }
+
+//             .button{
+//                 font-weight: $semibold;
+//                 color: $white;
+//             }
+//         }
+//     }
+// }
+

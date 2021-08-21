@@ -1,9 +1,0 @@
-.gallery-page{
-    width: 60vw;
-
-    .picture-wrapper{
-        @include centerElement();
-
-        flex-wrap: wrap;
-    }
-}

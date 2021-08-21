@@ -48,5 +48,5 @@ h3{
 }
 
 @mixin smallerfont(){
-    @include fluidFont($min-vw, $max-vw, 10px, 14px)
+    @include fluidFont($min-vw, $max-vw, 12px, 14px)
 }

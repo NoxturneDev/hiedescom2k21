@@ -28,27 +28,21 @@
     right: 0;
 }
 
-@mixin fullscreen(){
-    width: 100vw;
-    height: 100vh;
+// BACKGROUND IMAGE
+@mixin backgroundContain($url){
+    background: url($url);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin backgroundCover($url){
+    background: url($url);
+    background-size: cover;
+    background-position: center;
 }
 
 
-// ANIMATION
-@mixin wipeLeft(){
-    animation: wipeLeft 2s ease-in-out;
-    transform: translateX(-150%);
-    transition-delay: 2s;
-
-    @keyframes wipeLeft {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(-150%);
-            
-        }
-        
-    }
+@mixin dropShadow(){
+    filter: drop-shadow(0px 27px 46px rgba(91, 81, 143, 0.09)) drop-shadow(0px 6.0308px 10.2747px rgba(91, 81, 143, 0.0536497)) drop-shadow(0px 1.79553px 3.05905px rgba(91, 81, 143, 0.0363503));
 }

@@ -7,191 +7,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
-
 </head>
 
 <body>
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-
-    <body>
-        <!-- LOADER -->
-        <div class="loader-container big-container">
+    <!-- LOADER -->
+    <!-- <div class="loader-container big-container overlay">
             <img src="assets/animation/loader_00000.gif" alt="lodaer" class="loader-gif">
-        </div>
-        <!-- NAVITGATION BAR -->
-        <nav class="navbar-top">
+        </div> -->
+    <!-- NAVITGATION BAR -->
+    <nav class="navbar-top">
+        <section class="hamburger-icon">
+            <img src="assets/icon/hamburger-icon-pink.svg" alt="" id="toggle-nav">
+        </section>
+        <section class="logo-web">
+            <img src="assets/icon/logo in navbar v2.svg" alt="" class="small-logo logo-navbar">
+        </section>
+        <section class="nav-list-container">
             <ul>
-                <li class="nav-list" id="home">
-                    <a href="#landingPage">Home</a>
+                <li class="nav-list">
+                    <a href="" class="nav-link">Home</a>
                 </li>
-                <li class="nav-list" id="about">
-                    <a href="#aboutPage">About</a>
+                <li class="nav-list">
+                    <a href="" class="nav-link">About</a>
                 </li>
-                <li class="nav-list" id="info">
-                    <a href="#infoPage">Informative</a>
+                <li class="nav-list">
+                    <a href="" class="nav-link">FYI Facts</a>
                 </li>
-                <li class="nav-list button" id="btn-chat">
-                    <a href="#mainPage">Yuk Chat!</a>
+                <li class="nav-list">
+                    <button class="button btn-redirect-feature" class="nav-link">
+                        Kuy Chat!
+                    </button>
                 </li>
             </ul>
-        </nav>
+        </section>
+    </nav>
 
-        <!-- HOME AND LANDING PAGE SECTION -->
-        <div class="landing-page-wrapper big-container" id="landingPage">
-            <section class="landing-page-content">
-                <article class="landing-page-text">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut explicabo delectus iste est
-                        inventore, consequatur beatae asperiores, non ullam voluptates reprehenderit sequi sint
-                        temporibus illo minima? Adipisci laudantium vitae molestiae.
-                    </p>
-                    <div class="button" id="btn-go"><a href="#mainPage">Yuk Chat!</a></div>
-                </article>
-                <aside class="mascot-container container">
-                    <div class="mascot">
-                        <img src="#" alt="mascot">
-                    </div>
-                </aside>
-            </section>
-        </div>
-
-        <!-- ABOUT PAGE SECTION -->
-        <div class="about-wrapper big-container" id="aboutPage">
-            <div class="header">
-                <h2>ABOUT</h2>
-            </div>
-            <!-- CARDS -->
-            <section class="about-content">
-                <aside class="about long-card">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum esse repellendus nisi atque
-                        assumenda. Quaerat!llendus nisi atque assumenda. Quaerat!</p>
-                    <div class="about-img">
-                        <img src="#" alt="">
-                    </div>
-                </aside>
-                <aside class="about long-card">
-                    <div class="about-img">
-                        <img src="#" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ad maiores dolorum, facere
-                        reprehenderit nemo impedit sit delectus illo fuga!</p>
-                </aside>
-                <aside class="about long-card">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis nihil fugiat, velit eos
-                        quam explicabo dicta soluta labore.</p>
-                    <div class="about-img">
-                        <img src="#" alt="">
-                    </div>
-                </aside>
-            </section>
-        </div>
-
-
-        <!-- GO TO INFORMATIVE PAGES -->
-        <div class="informative-pages-direct" id="infoPage">
-            <div class="info-page-preview medium-container">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit a animi eius voluptatem unde dolorem numquam, odio omnis earum. Ratione est voluptas ipsa maiores quas eum quod excepturi sapiente nulla.
-                </p>
-            </div>
-            <div class="button btn-goto-info">
-                <a href="infopage.html">Mau tau lebih lanjut? yuk kita cari tau budaya kita</a>
-            </div>
-        </div>
-
-        <!-- MAIN FEATURE SECTION -->
-        <div class="main-feature-wrapper big-container" id="mainPage">
-            <div class="header">
-                <h2>YUK COBA FITUR KAMI</h2>
-            </div>
-            <section class="features-container medium-container">
-                <aside class="feature belajarBareng big-cards">
-                    <div class="sub-header">
-                        <h3>YUK BELAJAR BAHASA DAERAH</h3>
-                    </div>
-                    <div class="button btn-belajar">
-                        Yuk Chat!
-                    </div>
-                </aside>
-                <aside class="feature quizBahasa big-cards">
-                    <div class="sub-header">
-                        <h3>YUK QUIZ BAHASA DAERAH</h3>
-                    </div>
-                    <div class="button btn-quiz">
-                        Yuk Quiz
-                    </div>
-                </aside>
-            </section>
-        </div>
-
-        <!-- SUDO BOTS CHOICE CONTAINER -->
-        <aside class="bots-container big-container" data-hidden="true">
-            <div class="header">
-                PILIH BAHASA DAERAH
-            </div>
-            <div class="close-btn"></div>
-            <div class="choose-bot-wrapper">
-                <div class="bots small-cards" id="minang" data-language="BHS_MINANG">
-                    Bahasa Minang
+    <!-- LANDING PAGE -->
+    <section class="landing-page big-container">
+        <section class="landing-page-content">
+            <aside class="mascot-container">
+                <div class="nau-wrapper">
+                    <img src="assets/nau/nau-stay-still.png" alt="" id="nau">
                 </div>
-                <div class="bots small-cards" id="jawa" data-language="BHS_JAWA">
-                    Bahasa Jawa
+            </aside>
+            <aside class="landing-page-text">
+                <h2 class="landing-page-header">Lorem Ipsum Dolor</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, doloribus?</p>
+                <div class="arrow-down-redirect-about">
+                    <img src="assets/icon/Arrow down icon.svg" alt="" class="button">
                 </div>
-                <div class="bots small-cards" id="sunda" data-language="BHS_SUNDA">
-                    Bahasa Sunda
-                </div> 
-                <div class="bots small-cards" id="batak" data-language="BHS_BATAK">
-                    Bahasa Batak
+            </aside>
+        </section>
+    </section>
+
+    <section class="about-page big-container">
+        <aside class="long-card about">
+            <div class="cards-text">
+                <div class="cards-header">
+                    <h3>Apa itu Nau</h3>
                 </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, laborum.</p>
             </div>
-                <div class="chatbox-window" data-is-active="false" data-hidden="true">
-                    <!-- CHAT HEADER  -->
-                    <section class="chat-header">
-                        <div class="chat-img">
-                            <img src="#" alt="">
-                        </div>
-                        <div class="chat-name">
-                            <h2>AISYAH JAMET</h2>
-                        </div>
-                        <div class="close-btn close-chat"></div>
-                    </section>
-                    <!-- CHAT WINDOW CONTAINING MESSAGES -->
-                    <section class="chat-innercontainer">
-                        <!-- MESSAGES HERE -->
-                    </section>
-                    <section class="user-input-window">
-                        <form action="submit" class="input-form">
-                            <input type="text" class="user-input" placeholder="Type a message">
-                            <button class="btn-send"></button>
-                        </form>
-                    </section>
-                </div>
+            <div class="card-img about1"></div>
         </aside>
-        <!-- DEVELOPERS -->
-        <div class="developers-container big-container">
-            <div class="header">OUR DEVELOPERS</div>
-            <div class="cards-container medium-container">
-                <div class="big-cards"></div>
-                <div class="big-cards"></div>
+        <aside class="long-card about">
+            <div class="card-img about2"></div>
+            <div class="cards-text">
+                <div class="cards-header">
+                    <h3>Chat</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, laborum.</p>
             </div>
-        </div>
+        </aside>
+        <aside class="long-card about">
+            <div class="cards-text">
+                <div class="cards-header">
+                    <h3>Kuis</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, laborum.</p>
+            </div>
+            <div class="card-img about3"></div>
+        </aside>
+        <aside class="long-card about">
+            <div class="card-img about4"></div>
+            <div class="cards-text">
+                <div class="cards-header">
+                    <h3>Lainya</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, laborum.</p>
+            </div>
+            
+        </aside>
+    </section>
 
-        <!-- FOOTERS -->
-        <div class="footer-container">
-            <footer>
+    <section class="main-feature-page big-container">
+        <article class="feature-wrapper">
+            <aside class="chat-feature-container features">
+                <div class="feature-redirect-img" id="chatRedirect"></div>
+            </aside>
+            <aside class="quiz-feature-container features">
+                <div class="feature-redirect-img" id="quizRedirect"></div>
+            </aside>
+        </article>
+    </section>
 
-            </footer>
+    <section class="developer-page">
+        <aside class="cards-wrapper">
+            <div class="big-cards dev-card">
+                <div class="dev-img">
+
+                </div>
+                <div class="dev-desc">
+                    <h4 class="dev-name">Galih "ClayZz" Kusuma</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                </div>
+            </div>
+             <div class="big-cards dev-card">
+                <div class="dev-img">
+
+                </div>
+                <div class="dev-desc">
+                    <h4 class="dev-name">Ayu "Macaron" Nabiilah</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                </div>
+            </div>
+        </aside>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>
+                Copyright claim TYP.O
+            </p>
         </div>
-        <script src="app/language-data.js"></script>
-        <script src="app/app.js"></script>
-        <script src="app/botChat.js"></script>
+    </footer>
+
+
+    <!-- <script src="app/language-data.js"></script>
+    <script src="app/botChat.js"></script> -->
+    <script src="app/app.js"></script>
 </body>
 
 </html>
