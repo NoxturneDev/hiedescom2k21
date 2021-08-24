@@ -2,8 +2,12 @@
     @include centerElement();
     max-width: 100%;
     height: calc(100% + 2rem);
-    margin-top: -$marginSmall;
     flex-direction: column;
+
+    .about-one .cards-text, .about-three .cards-text{
+        text-align: right;
+    }
+
     .about{
         @include leftAlignElement();
         
@@ -11,38 +15,43 @@
 
         .cards-text{
             p{
-                width: 80%;
+                width: 85%;
             }
         }
 
-        .about1{
+
+        .about-img1{
             @include backgroundContain("../assets/image/about1.svg");
         
-            height: 100%;
+            height: calc(100% + 1rem);
         }
 
-        .about2{
+        .about-img2{
             @include backgroundContain("../assets/image/about2.svg");
         
-            height: 100%;
+            height: 80%;
         }
 
-        .about3{
+        .about-img3{
             @include backgroundContain("../assets/image/about3.svg");
         
-            height: 100%;
+            height: 80%;
         }
 
-        .about4{
+        .about-img4{
             @include backgroundContain("../assets/image/about4.svg");
         
-            height: 100%;
+            height: 80%;
         }
+
+        
     }
 }
 
+
 .cards-text > *{
     margin: $marginSmall;
+    color: $darkColor;
 }
 
 .card-img{
@@ -50,12 +59,13 @@
     // text-align: center;
 }
 
-@media screen and (max-width : $phoneBreakpoint){
+@media screen and (max-width : $tabletBreakpoint){
     .about{
         margin: $marginSmall;
         padding: 0;
         .card-img {
-            width: calc(120% + 1rem);
+            width: calc(120% + 2rem);
+            border: $debug;
         }
     }
 }
