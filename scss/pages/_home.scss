@@ -5,6 +5,7 @@
     background-size: cover;
     background-position: center;
     color: $white;
+    margin-top: -0.5em;
 
     .landing-page-content{
         @include centerElement();

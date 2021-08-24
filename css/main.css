@@ -415,6 +415,7 @@ html {
   background-size: cover;
   background-position: center;
   color: #F5F5F5;
+  margin-top: -0.5em;
 }
 
 .landing-page .landing-page-content {
@@ -603,25 +604,15 @@ html {
 }
 
 .main-feature-page .feature-wrapper .features .feature-redirect-img {
-  width: 100%;
+  width: 70%;
   height: 100%;
 }
 
-.main-feature-page .feature-wrapper #chatRedirect {
-  background: url("../assets/image/click-me-chat.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+.main-feature-page .feature-wrapper .features .feature-redirect-img img {
+  width: 100%;
 }
 
-.main-feature-page .feature-wrapper #quizRedirect {
-  background: url("../assets/image/click-me-quiz.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
   .main-feature-page {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -650,8 +641,11 @@ html {
     width: 80%;
   }
   .main-feature-page .feature-wrapper .features .feature-redirect-img {
-    width: 100%;
+    width: 70%;
     height: calc(100% + 2rem);
+  }
+  .main-feature-page .feature-wrapper .features .feature-redirect-img img {
+    width: 100%;
   }
 }
 

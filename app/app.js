@@ -86,3 +86,19 @@ const observer = new IntersectionObserver( entries => {
 observer.observe(navbarIntersectTarget)
 
 
+
+const chatRedirectImg = document.querySelector("#chatRedirect img")
+
+chatRedirectImg.addEventListener("mouseenter", () => {
+    // chatRedirectImg.setAttribute.src = "../assets/animation/Nau-jump-on-hover.gif"
+    setTimeout(()=> {
+        chatRedirectImg.setAttribute("src", "../assets/animation/Nau-jump-on-hover.gif")
+    }, 250)
+})
+
+chatRedirectImg.addEventListener("mouseleave", () => {
+    setTimeout(()=> {
+        chatRedirectImg.setAttribute("src", "../assets/animation/Nau-jump-on-hover-reverse.gif")
+    }, 250)
+})
+
