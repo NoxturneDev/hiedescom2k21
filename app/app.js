@@ -75,10 +75,10 @@ const observer = new IntersectionObserver( entries => {
     entries.forEach(entry => {
         if(!entry.isIntersecting){
             navbar.classList.add("navbar-top-scrolled")
-            logoNavbar.src = "../assets/icon/logo in navbar v1.svg"
+            logoNavbar.src = "./assets/icon/logo in navbar v1.svg"
         } else {
             navbar.classList.remove("navbar-top-scrolled")
-            logoNavbar.src = "../assets/icon/logo in navbar v2.svg"
+            logoNavbar.src = "./assets/icon/logo in navbar v2.svg"
         }
     })
 }, navbarObserverOption)
@@ -92,13 +92,14 @@ const chatRedirectImg = document.querySelector("#chatRedirect img")
 chatRedirectImg.addEventListener("mouseenter", () => {
     // chatRedirectImg.setAttribute.src = "../assets/animation/Nau-jump-on-hover.gif"
     setTimeout(()=> {
-        chatRedirectImg.setAttribute("src", "../assets/animation/Nau-jump-on-hover.gif")
+        chatRedirectImg.setAttribute("src", "./assets/animation/Nau-jump-on-hover.gif")
     }, 250)
 })
 
 chatRedirectImg.addEventListener("mouseleave", () => {
     setTimeout(()=> {
-        chatRedirectImg.setAttribute("src", "../assets/animation/Nau-jump-on-hover-reverse.gif")
+        chatRedirectImg.setAttribute("src", "./assets/animation/Nau-jump-on-hover-reverse.gif")
     }, 250)
 })
 
+// TODO : FIX IMAGE WON'T LOAD FROM JAVASCRIPT IN GITHUB
