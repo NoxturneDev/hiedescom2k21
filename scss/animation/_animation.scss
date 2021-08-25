@@ -6,7 +6,6 @@ html {
 // ANIMATION
 @mixin wipeLeft(){
     animation: wipeLeft 2s ease-in-out;
-    transform: translateX(-150%);
 
     @keyframes wipeLeft {
         0% {
@@ -22,12 +21,28 @@ html {
 
 @mixin wipeRight(){
     animation: wipeRight 2s ease-in-out;
-    transform: translateX(200%);
     
     @keyframes wipeRight {
         0% {
             opacity: 0;
             transform: translateX(200%);
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+    }
+}
+
+@mixin wipeUp(){
+    animation: wipeUp 0.6s ease-in-out;
+    
+    @keyframes wipeUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50%);
         }
 
         100% {
@@ -47,6 +62,5 @@ html {
 }
 
 .wipe-up{
-    animation: wipeUp 2s ease-in-out;
-    transform: translateY(-50%);
+    @include wipeUp()
 }
