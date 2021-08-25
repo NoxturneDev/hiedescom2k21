@@ -6,6 +6,7 @@
     color: $white;
     padding-top: 25%;
     background-position: top;
+    position: relative;
 
     .feature-wrapper{
         @include centerElement();
@@ -18,16 +19,36 @@
             height: 60%;
             padding: $paddingMedium;
             .feature-redirect-img{
+                @include centerElement();
                 width: 80%;
-                height: 100%;
+                height: calc(110% + 1rem);
+                cursor: pointer;
             }
 
             #chatRedirect{
                 @include backgroundContain("../../assets/animation/Nau-jump-on-hover.gif")
             }
+            #quizRedirect {
+                @include backgroundContain("../../assets/animation/Nau-jump-on-hover.gif")
+            }
         }
     }
 }
+
+.button-overlay {
+    color: $secondColor;
+    width: 40%;
+    padding: $paddingSmall $paddingMedium;
+    height: 40%;
+    position: relative;
+    bottom: -20%;
+
+    .button-redirect {
+        background-color: $darkColor;
+        opacity: 0;
+    }
+}
+
 
 @media screen and (max-width: $tabletBreakpoint) {
     .main-feature-page{

@@ -104,8 +104,6 @@ html {
 .wipe-left {
   -webkit-animation: wipeLeft 2s ease-in-out;
           animation: wipeLeft 2s ease-in-out;
-  -webkit-transform: translateX(-150%);
-          transform: translateX(-150%);
 }
 
 @-webkit-keyframes wipeLeft {
@@ -133,8 +131,6 @@ html {
 .wipe-right {
   -webkit-animation: wipeRight 2s ease-in-out;
           animation: wipeRight 2s ease-in-out;
-  -webkit-transform: translateX(200%);
-          transform: translateX(200%);
 }
 
 @-webkit-keyframes wipeRight {
@@ -163,11 +159,89 @@ html {
   }
 }
 
+#wipe-up-and-stop {
+  -webkit-animation: wipeUp 0.6s ease-in-out;
+          animation: wipeUp 0.6s ease-in-out;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+@-webkit-keyframes wipeUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes wipeUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .wipe-up {
-  -webkit-animation: wipeUp 2s ease-in-out;
-          animation: wipeUp 2s ease-in-out;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-animation: wipeUp 0.6s ease-in-out;
+          animation: wipeUp 0.6s ease-in-out;
+}
+
+@keyframes wipeUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.wipe-up-reverse {
+  -webkit-animation: wipeUpReverse 0.6s ease-in-out;
+          animation: wipeUpReverse 0.6s ease-in-out;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+@-webkit-keyframes wipeUpReverse {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes wipeUpReverse {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
 }
 
 .button {
@@ -531,6 +605,7 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow-x: hidden;
 }
 
 .about-page .about-one .cards-text, .about-page .about-three .cards-text {
@@ -607,7 +682,6 @@ html {
   }
   .about .card-img {
     width: calc(120% + 2rem);
-    border: 1px solid red;
   }
 }
 
@@ -620,6 +694,7 @@ html {
   color: #F5F5F5;
   padding-top: 25%;
   background-position: top;
+  position: relative;
 }
 
 .main-feature-page .feature-wrapper {
@@ -652,8 +727,18 @@ html {
 }
 
 .main-feature-page .feature-wrapper .features .feature-redirect-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 80%;
-  height: 100%;
+  height: calc(110% + 1rem);
+  cursor: pointer;
 }
 
 .main-feature-page .feature-wrapper .features #chatRedirect {
@@ -661,6 +746,27 @@ html {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.main-feature-page .feature-wrapper .features #quizRedirect {
+  background: url("../../assets/animation/Nau-jump-on-hover.gif");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.button-overlay {
+  color: #D8C2FF;
+  width: 40%;
+  padding: 0.5rem 1.5rem;
+  height: 40%;
+  position: relative;
+  bottom: -20%;
+}
+
+.button-overlay .button-redirect {
+  background-color: #383574;
+  opacity: 0;
 }
 
 @media screen and (max-width: 768px) {

@@ -3,7 +3,8 @@
     max-width: 100%;
     height: calc(100% + 2rem);
     flex-direction: column;
-
+    overflow-x: hidden;
+    
     .about-one .cards-text, .about-three .cards-text{
         text-align: right;
     }
@@ -69,7 +70,6 @@
         padding: 0;
         .card-img {
             width: calc(120% + 2rem);
-            border: $debug;
         }
     }
 }

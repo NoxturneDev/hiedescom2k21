@@ -62,71 +62,9 @@
 //     chatWindow.dataset.hidden = "true"
 // })
 
-// INTERSECT OBSERVER TARGET 
-const navbar = document.querySelector(".navbar-top")
-const navbarIntersectTarget = document.querySelector(".landing-page-content")
-const logoNavbar = document.querySelector(".logo-navbar")
-const about = document.querySelectorAll(".about")
-
-// INTERSECT OBSERVER OPTIONS FOR EACH TARGET
-let navbarObserverOption = {
-    root: document.querySelector("navbar"),
-    rootMargin: "200px",
-}
-
-let aboutObserverOption = {
-    root: document.querySelector("navbar"),
-    rootMargin: "200px",
-    threshold : 0.6
-}
-
-// ANIMATE ON SCROLL EVENT
-const observerNav = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            navbar.classList.add("navbar-top-scrolled")
-            logoNavbar.src = "./assets/icon/logo in navbar v1.svg"
-        } else {
-            navbar.classList.remove("navbar-top-scrolled")
-            logoNavbar.src = "./assets/icon/logo in navbar v2.svg"
-        }
-    })
-}, navbarObserverOption)
-
-const observerAbout = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return
-        } else {
-            if (entry.target.dataset.animation == "fade-left") {
-                entry.target.classList.add("wipe-left");
-                console.log("invoked")
-
-                entry.target.addEventListener("animationend", () => {
-                    entry.target.classList.remove("wipe-left");
-                })
-            }
-            else if (entry.target.dataset.animation == "fade-right") {
-                entry.target.classList.add("wipe-right");
-                console.log("invoked right")
-                entry.target.addEventListener("animationend", () => {
-                    entry.target.classList.remove("wipe-right");
-                })
-            }
-
-            observerAbout.unobserve(entry.target)
-        }
-    })
-}, aboutObserverOption)
-
-about.forEach(abouts => {
-    observerAbout.observe(abouts)
-})
-
-observerNav.observe(navbarIntersectTarget)
 
 
-const chatRedirectImg = document.querySelector("#chatRedirect img")
+
 
 
 // chatRedirectImg.addEventListener("mouseenter", () => {
@@ -145,3 +83,28 @@ const chatRedirectImg = document.querySelector("#chatRedirect img")
 
 // })
 
+
+const btnOverlay = document.querySelectorAll(".button-overlay")
+
+
+btnOverlay.forEach(btn => {
+    const redirectBtn = btn.childNodes[1]
+    const parentElement = btn.parentElement;
+
+    btn.addEventListener("mouseenter", e => {
+        redirectBtn.id = "wipe-up-and-stop"
+    })
+
+    btn.addEventListener("mouseleave", e => {
+        const redirectBtn = e.target.childNodes[1]
+
+        redirectBtn.removeAttribute("id")
+        redirectBtn.classList.add("wipe-up-reverse")
+    })
+
+    redirectBtn.addEventListener("animationend", () => {
+        if(redirectBtn.classList.contains("wipe-up-reverse")){
+            redirectBtn.classList.remove("wipe-up-reverse")
+        }
+    })
+})
