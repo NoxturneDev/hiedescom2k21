@@ -742,7 +742,7 @@ html {
 }
 
 .main-feature-page .feature-wrapper .features #chatRedirect {
-  background: url("../assets/image/Nau-jump-on-hover.gif");
+  background: url("../assets/image/feature-background.svg");
   background-size: cover;
   background-position: center;
 }
