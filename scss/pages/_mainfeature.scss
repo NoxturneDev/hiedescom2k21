@@ -26,10 +26,10 @@
             }
 
             #chatRedirect{
-                @include backgroundCover("../assets/animation/Nau-jump-on-hover.gif");
+                @include backgroundContain("../assets/animation/Nau-jump-on-hover.gif");
             }
             #quizRedirect {
-                @include backgroundCover("../assets/animation/Nau-jump-on-hover.gif")
+                @include backgroundContain("../assets/animation/Nau-jump-on-hover.gif");
             }
         }
     }
