@@ -106,30 +106,68 @@ html {
           animation: wipeLeft 2s ease-in-out;
   -webkit-transform: translateX(-150%);
           transform: translateX(-150%);
-  -webkit-transition-delay: 2s;
-          transition-delay: 2s;
 }
 
 @-webkit-keyframes wipeLeft {
   0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  100% {
     -webkit-transform: translateX(-150%);
             transform: translateX(-150%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
 @keyframes wipeLeft {
   0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  100% {
     -webkit-transform: translateX(-150%);
             transform: translateX(-150%);
   }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.wipe-right {
+  -webkit-animation: wipeRight 2s ease-in-out;
+          animation: wipeRight 2s ease-in-out;
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+}
+
+@-webkit-keyframes wipeRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes wipeRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.wipe-up {
+  -webkit-animation: wipeUp 2s ease-in-out;
+          animation: wipeUp 2s ease-in-out;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .button {
@@ -512,6 +550,10 @@ html {
   height: 40vh;
 }
 
+.about-page .about .cards-text .cards-header {
+  width: 80%;
+}
+
 .about-page .about .cards-text p {
   width: 85%;
 }
@@ -551,6 +593,7 @@ html {
 .cards-text > * {
   margin: 1rem;
   color: #383574;
+  line-height: 110%;
 }
 
 .card-img {
@@ -609,12 +652,15 @@ html {
 }
 
 .main-feature-page .feature-wrapper .features .feature-redirect-img {
-  width: 70%;
+  width: 80%;
   height: 100%;
 }
 
-.main-feature-page .feature-wrapper .features .feature-redirect-img img {
-  width: 100%;
+.main-feature-page .feature-wrapper .features #chatRedirect {
+  background: url("../../assets/animation/Nau-jump-on-hover.gif");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 768px) {

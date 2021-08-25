@@ -18,12 +18,12 @@
             height: 60%;
             padding: $paddingMedium;
             .feature-redirect-img{
-                width: 70%;
+                width: 80%;
                 height: 100%;
+            }
 
-                img{
-                    width: 100%;
-                }
+            #chatRedirect{
+                @include backgroundContain("../../assets/animation/Nau-jump-on-hover.gif")
             }
         }
     }

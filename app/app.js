@@ -62,18 +62,28 @@
 //     chatWindow.dataset.hidden = "true"
 // })
 
+// INTERSECT OBSERVER TARGET 
 const navbar = document.querySelector(".navbar-top")
 const navbarIntersectTarget = document.querySelector(".landing-page-content")
 const logoNavbar = document.querySelector(".logo-navbar")
+const about = document.querySelectorAll(".about")
 
+// INTERSECT OBSERVER OPTIONS FOR EACH TARGET
 let navbarObserverOption = {
-    root : document.querySelector("navbar"),
-    rootMargin : "200px",
+    root: document.querySelector("navbar"),
+    rootMargin: "200px",
 }
 
-const observer = new IntersectionObserver( entries => {
+let aboutObserverOption = {
+    root: document.querySelector("navbar"),
+    rootMargin: "200px",
+    threshold : 0.6
+}
+
+// ANIMATE ON SCROLL EVENT
+const observerNav = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        if(!entry.isIntersecting){
+        if (!entry.isIntersecting) {
             navbar.classList.add("navbar-top-scrolled")
             logoNavbar.src = "./assets/icon/logo in navbar v1.svg"
         } else {
@@ -83,23 +93,55 @@ const observer = new IntersectionObserver( entries => {
     })
 }, navbarObserverOption)
 
-observer.observe(navbarIntersectTarget)
+const observerAbout = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return
+        } else {
+            if (entry.target.dataset.animation == "fade-left") {
+                entry.target.classList.add("wipe-left");
+                console.log("invoked")
 
+                entry.target.addEventListener("animationend", () => {
+                    entry.target.classList.remove("wipe-left");
+                })
+            }
+            else if (entry.target.dataset.animation == "fade-right") {
+                entry.target.classList.add("wipe-right");
+                console.log("invoked right")
+                entry.target.addEventListener("animationend", () => {
+                    entry.target.classList.remove("wipe-right");
+                })
+            }
+
+            observerAbout.unobserve(entry.target)
+        }
+    })
+}, aboutObserverOption)
+
+about.forEach(abouts => {
+    observerAbout.observe(abouts)
+})
+
+observerNav.observe(navbarIntersectTarget)
 
 
 const chatRedirectImg = document.querySelector("#chatRedirect img")
 
-chatRedirectImg.addEventListener("mouseenter", () => {
-    // chatRedirectImg.setAttribute.src = "../assets/animation/Nau-jump-on-hover.gif"
-    setTimeout(()=> {
-        chatRedirectImg.setAttribute("src", "./assets/animation/Nau-jump-on-hover.gif")
-    }, 250)
-})
 
-chatRedirectImg.addEventListener("mouseleave", () => {
-    setTimeout(()=> {
-        chatRedirectImg.setAttribute("src", "./assets/animation/Nau-jump-on-hover-reverse.gif")
-    }, 250)
-})
+// chatRedirectImg.addEventListener("mouseenter", () => {
+//     // chatRedirectImg.setAttribute.src = "../assets/animation/Nau-jump-on-hover.gif"
+//     setTimeout(()=> {
+//         chatRedirectImg.setAttribute("src", "./assets/animation/Nau-jump-on-hover.gif")
+//     }, 250)
+//     console.log("mouse enter")
+// })
 
-// TODO : FIX IMAGE WON'T LOAD FROM JAVASCRIPT IN GITHUB
+// chatRedirectImg.addEventListener("mouseleave", () => {
+//     setTimeout(()=> {
+//         chatRedirectImg.setAttribute("src", "./assets/animation/Nau-jump-on-hover-reverse.gif")
+//     }, 250)
+//     console.log("mouse leave")
+
+// })
+

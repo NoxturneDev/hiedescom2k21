@@ -14,6 +14,9 @@
         height: 40vh;
 
         .cards-text{
+            .cards-header{
+                width: 80%;
+            }
             p{
                 width: 85%;
             }
@@ -52,6 +55,7 @@
 .cards-text > *{
     margin: $marginSmall;
     color: $darkColor;
+    line-height: 110%;
 }
 
 .card-img{
