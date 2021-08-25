@@ -743,16 +743,14 @@ html {
 
 .main-feature-page .feature-wrapper .features #chatRedirect {
   background: url("../assets/image/nau-jump-on-hover.gif");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 }
 
 .main-feature-page .feature-wrapper .features #quizRedirect {
   background: url("../assets/image/nau-jump-on-hover.gif");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 }
 
 .button-overlay {
