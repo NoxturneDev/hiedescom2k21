@@ -71,6 +71,10 @@ html {
     }
 }
 
+@mixin sliding(){
+    transition : transform 1s ease-in-out;
+}
+
 .wipe-left{
     @include wipeLeft();
 }

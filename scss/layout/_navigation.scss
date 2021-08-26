@@ -71,6 +71,9 @@
     }
 }
 
+.nav-static{
+    position: static; 
+}
 
 
 @media screen and (max-width: $phoneBreakpoint){

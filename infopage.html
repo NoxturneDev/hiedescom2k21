@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,43 +8,147 @@
     <title>Informative</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-    <div class="goback-btn">
-        <div class="button"><a href="index.html">
-            go back
-        </a></div>
-    </div>
 
-     <!-- INFORMATIVE PAGE -->
-     <div class="about-wrapper big-container" id="aboutPage">
-        <div class="header">
-            <h2>ABOUT</h2>
-        </div>
-        <!-- INFORMATIVE CARDS -->
-        <section class="about-content">
-            <aside class="about long-card">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum esse repellendus nisi atque
-                    assumenda. Quaerat!llendus nisi atque assumenda. Quaerat!</p>
-                <div class="about-img">
-                    <img src="#" alt="">
-                </div>
-            </aside>
-            <aside class="about long-card">
-                <div class="about-img">
-                    <img src="#" alt="">
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ad maiores dolorum, facere
-                    reprehenderit nemo impedit sit delectus illo fuga!</p>
-            </aside>
-            <aside class="about long-card">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis nihil fugiat, velit eos
-                    quam explicabo dicta soluta labore.</p>
-                <div class="about-img">
-                    <img src="#" alt="">
-                </div>
-            </aside>
+<body>
+    <nav class="navbar-top navbar-top-scrolled nav-static">
+        <section class="hamburger-icon">
+            <img src="assets/icon/hamburger-icon-pink.svg" alt="" id="toggle-nav">
         </section>
-    </div>
+        <section class="logo-web">
+            <img src="assets/icon/logo in navbar v2.svg" alt="" class="small-logo logo-navbar">
+        </section>
+        <section class="nav-list-container">
+            <ul>
+                <li class="nav-list">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-list">
+                    <a href="" class="nav-link">About</a>
+                </li>
+                <li class="nav-list">
+                    <a href="" class="nav-link">FYI Facts</a>
+                </li>
+                <li class="nav-list">
+                    <button class="button btn-redirect-feature" class="nav-link">
+                        Kuy Chat!
+                    </button>
+                </li>
+            </ul>
+        </section>
+    </nav>
+
+    <!-- INFORMATIVE PAGE -->
+    <section class="slide-show-container">
+        <aside class="carousel">
+            <!-- <div class="slide-active-viewport">
+                <div class="slide-padding">
+                    <div class="slides" data-slide-index="1" data-slide-active="false">
+                        <div class="slide-header">
+                            <h3>Lorem, ipsum dolor 1</h3>
+                        </div>
+                        <div class="slide-img"></div>
+                        <div class="slide-text">
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod cumque consequuntur
+                                architecto aspernatur asperiores corrupti nesciunt sequi distinctio laborum quaerat!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-padding">
+                    <div class="slides" data-slide-index="2"
+                    data-slide-active="true">
+                        <div class="slide-header">
+                            <h3>Lorem, ipsum dolor 2</h3>
+                        </div>
+                        <div class="slide-img"></div>
+                        <div class="slide-text">
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod cumque consequuntur
+                                architecto aspernatur asperiores corrupti nesciunt sequi distinctio laborum quaerat!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-padding">
+                    <div class="slides" data-slide-index="3"  data-slide-active="false">
+                        <div class="slide-header">
+                            <h3>Lorem, ipsum dolor 3</h3>
+                        </div>
+                        <div class="slide-img"></div>
+                        <div class="slide-text">
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod cumque consequuntur
+                                architecto aspernatur asperiores corrupti nesciunt sequi distinctio laborum quaerat!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-padding">
+                    <div class="slides" data-slide-index="4"  data-slide-active="false">
+                        <div class="slide-header">
+                            <h3>Lorem, ipsum dolor 4</h3>
+                        </div>
+                        <div class="slide-img"></div>
+                        <div class="slide-text">
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod cumque consequuntur
+                                architecto aspernatur asperiores corrupti nesciunt sequi distinctio laborum quaerat!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-padding">
+                    <div class="slides" data-slide-index="5"  data-slide-active="false">
+                        <div class="slide-header">
+                            <h3>Lorem, ipsum dolor 5</h3>
+                        </div>
+                        <div class="slide-img"></div>
+                        <div class="slide-text">
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod cumque consequuntur
+                                architecto aspernatur asperiores corrupti nesciunt sequi distinctio laborum quaerat!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <section class="slides-wrapper">
+                <div class="slides slide1">
+                    <div class="slide-content">
+                        <div class="slide-header">
+                            <h3>Lorem, ipsum. 1</h3>
+                        </div>
+                        <div class="slide-img"></div>
+                        <div class="slide-text"></div>
+                    </div>
+                </div>
+                <div class="slides slide2 active">
+                    <div class="slide-content" >
+                        <div class="slide-header">
+                            <h3>Lorem, ipsum. 2</h3>
+                        </div>
+                        <div class="slide-img"></div>
+                        <div class="slide-text"></div>
+                    </div>
+                </div>
+                <div class="slides slide3">
+                    <div class="slide-content" >
+                        <div class="slide-header">
+                            <h3>Lorem, ipsum. 3</h3>
+                        </div>
+                        <div class="slide-img"></div>
+                        <div class="slide-text"></div>
+                    </div>
+                </div>
+            </section>
+        </aside>
+        <div class="slides-arrow">
+            <div class="left-arrow icon-arrow" id="prevSlide"></div>
+            <div class="right-arrow icon-arrow" id="nextSlide"></div>
+        </div>
+    </section>
     <div class="gallery-page big-container">
         <div class="header">GALLERY OF FAME</div>
         <div class="picture-wrapper">
@@ -56,8 +161,10 @@
             <div class="photos"></div>
             <div class="photos"></div>
             <div class="photos"></div>
-        </div> 
+        </div>
     </div>
     <script src="app/app.js"></script>
+    <script src="app/carousel.js"></script>
 </body>
+
 </html>
