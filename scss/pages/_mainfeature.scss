@@ -49,6 +49,15 @@
     }
 }
 
+.button[data-btn-id="redirectBtnQuiz"]{
+    background-color: $semiDarkColor;
+}
+
+.button[data-btn-id="redirectBtnChat"]{
+    background-color: $secondColor;
+    color: $semiDarkColor;
+}
+
 
 @media screen and (max-width: $tabletBreakpoint) {
     .main-feature-page{

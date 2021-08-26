@@ -114,7 +114,7 @@
                 <div class="feature-redirect-img" id="chatRedirect" data-animation="fade-up">
 
                     <div class="button-overlay">
-                        <div class="button-redirect button">
+                        <div class="button-redirect button"  data-btn-id="redirectBtnChat">
                             KUY!
                         </div>
                     </div>
@@ -123,13 +123,92 @@
                 <div class="feature-redirect-img" data-animation="fade-up" id="quizRedirect">
                     <!-- !on  phone view ganti ke slide show aja -->
                     <div class="button-overlay">
-                        <div class="button-redirect button">
-                            KUY!
+                        <div class="button-redirect button" data-btn-id="redirectBtnQuiz">
+                            GASKEUN
                         </div>
+                        <!-- !fix id placement -->
                     </div>
                 </div>
             </aside>
         </article>
+
+        <section class="chat-overlay big-container">
+            <div class="chat-overlay-wrapper">
+                <div class="button" id="quitBtn"></div>
+                <div class="mascot"></div>
+                <div class="chat-window">
+                    <div class="chat-header">
+                    <div class="chat-name">
+                        <h3>Paijo</h3>
+                    </div>
+                    <div class="button" id="closeChat"></div>
+                </div>
+                    <div class="chat-text-container">
+                        <div class="msg-container" id="botChat">
+                            <div class="msg-bubble">
+                                <div class="msg-text">Lorem ipsum dolor sit amet.</div>
+                            </div>
+                            <div class="timestamp">12.30</div>
+                        </div>
+                        <div class="msg-container" id="botChat">
+                            <div class="msg-bubble">
+                                <div class="msg-text">Lorem ipsum dolor sit amet.</div>
+                            </div>
+                            <div class="timestamp">12.30</div>
+                        </div>
+                        <div class="msg-container" id="userChat">
+                            <div class="msg-bubble">
+                                <div class="msg-text">Lorem ipsum dolor sit amet.</div>
+                            </div>
+                            <div class="timestamp">12.30</div>
+                        </div>
+                    </div>
+                    <form action="submit" class="input-form">
+                        <input type="text" class="user-input">
+                        <div class="button" id="btnSend"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="chat-overlay big-container quiz-overlay">
+            <div class="chat-overlay-wrapper">
+                <div class="button" id="quitBtn"></div>
+                <div class="mascot"></div>
+                <div class="chat-window">
+                    <div class="chat-header">
+                    <div class="chat-name">
+                        <h3>Paijo</h3>
+                    </div>
+                    <div class="button" id="closeChat"></div>
+                </div>
+                    <div class="chat-text-container">
+                        <div class="msg-container" id="botChat">
+                            <div class="msg-bubble">
+                                <div class="msg-text">Lorem ipsum dolor sit amet.</div>
+                            </div>
+                            <div class="timestamp">12.30</div>
+                        </div>
+                        <div class="msg-container" id="botChat">
+                            <div class="msg-bubble">
+                                <div class="msg-text">Lorem ipsum dolor sit amet.</div>
+                            </div>
+                            <div class="timestamp">12.30</div>
+                        </div>
+                        <div class="msg-container" id="userChat">
+                            <div class="msg-bubble">
+                                <div class="msg-text">Lorem ipsum dolor sit amet.</div>
+                            </div>
+                            <div class="timestamp">12.30</div>
+                        </div>
+                    </div>
+                    <form action="submit" class="input-form">
+                        <input type="text" class="user-input">
+                        <div class="button" id="btnSend"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
     </section>
 
     <section class="developer-page">

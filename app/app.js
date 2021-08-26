@@ -85,7 +85,10 @@
 
 
 const btnOverlay = document.querySelectorAll(".button-overlay")
-
+const buttonRedirect = document.querySelectorAll(".button-redirect")
+const chatWindowOverlay = document.querySelector(".chat-overlay")
+const quizWindowOverlay = document.querySelector(".quiz-overlay")
+const quitOverlayBtn = document.querySelector("#quitBtn")
 
 btnOverlay.forEach(btn => {
     const redirectBtn = btn.childNodes[1]
@@ -93,6 +96,7 @@ btnOverlay.forEach(btn => {
 
     btn.addEventListener("mouseenter", e => {
         redirectBtn.id = "wipe-up-and-stop"
+        
     })
 
     btn.addEventListener("mouseleave", e => {
@@ -107,4 +111,30 @@ btnOverlay.forEach(btn => {
             redirectBtn.classList.remove("wipe-up-reverse")
         }
     })
+
+    // !REFACTOR DON'T USE ID
 })
+
+buttonRedirect.forEach(btn => {
+    btn.addEventListener("click", (e)=> {
+        if(btn.dataset.btnId = "redirectBtnChat"){
+            quizWindowOverlay.style.transform = "translateX(0)"
+            document.body.style.overflow = "hidden";
+            console.log(btn.dataset.btnId)
+        } else if(btn.dataset.btnId = "redirectBtnQuiz"){
+            document.body.style.overflow = "hidden";
+            quizWindowOverlay.style.transform = "translateX(0)"
+            console.log(btn.dataset.btnId)
+        }
+    })
+})
+
+quitOverlayBtn.addEventListener("click", ()=> {
+    quizWindowOverlay.style.transform = "translateX(100%)"
+    chatWindowOverlay.style.transform = "translateX(-100%)"
+    document.body.style.overflow = "";
+    console.log("test")
+})
+
+// !FIX QUIT BUTTON
+// !FIX ID PLACEMENT

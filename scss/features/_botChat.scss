@@ -1,132 +1,104 @@
-.bots-container{
+.chat-overlay{
     @include centerElement();
-    @include fullscreen();
-    @include overlay();
 
-    flex-direction: column;
-    background-color: $darkColor;
     position: fixed;
-    
-    .header{
-        color: $white;
-    }
-}
+    z-index: 1;
+    background-color: $secondColor;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    @include backgroundCover("../assets/image/feature-background.svg");
+    transform: translateX(-100%);
+    transition: transform 1s ease-in-out;
 
-.choose-bot-wrapper{
-    @include centerElement();
-    // @include overlay();
-
-    width: 100%;
-    padding: $paddingMedium;
-
-    #minang{
-        background-color: $firstColor;
-    }
-
-    #jawa{
-        background-color: $secondColor;
-    }
-
-    #sunda{
-        background-color: $lighColor;
-    }
-    
-    #batak{
-        background-color: $lighterColor;
-    }
-}
-
-
-.chatbox-window{
-    width: 30vw;
-    height: 70vh;
-    background-color: #2f323b;
-    position: absolute;
-    z-index: 9;
-
-    // SCROLLBAR ON CHAT
-    &::-webkit-scrollbar {
-        width: 4px;
-    }
-    &::-webkit-scrollbar-thumb {
-        background-color: #4c4c6a;
-        border-radius: 2px;
-    }
-
-    .chat-header{
+    .chat-overlay-wrapper{
         @include centerElement();
 
-        background-color: #455277;
-        padding: 0.5em;
+        height: 90%;
+        width: 90%;
+        padding: $paddingMedium;
 
-        .chat-img{
-            width: 10%;
-            border: 2px solid  #1d2231;
-            margin-right: 0.5em;
+        .chat-name{
+            @include centerElement();
+            padding: $paddingSmall;
+            margin-bottom: $marginSmall;
+        }
+
+        .mascot {
+            width: 60%;
+            height: 60%;
+            flex: 1;
+    
+            @include backgroundContain("../assets/nau/nau-stay-still.png")
+        }
+    }
+   
+}
+
+#quitBtn{
+    width: 3rem;
+    height: 3rem;
+    background-color: $darkColor;
+    border-radius: 100%;
+    position: absolute;
+    top: 2%;
+    left: 5%;
+}
+
+
+.chat-window{
+    @include centerElement();
+
+    flex: 2;
+    max-width: 35%;
+    min-height: 80%;
+    background-color:$white;
+    flex-direction: column;
+
+    .chat-header{
+        @include leftAlignElement();
+        width: 100%;
+        background-color: $semiDarkColor;
+        margin-bottom: $marginSmall;
+
+        .chat-name{
+            width: 100%;
+            height: 3rem;
+        }
+    
+        #closeChat{
+            width: 3rem;
+            height: 3rem;
+            background-color: $white;
             border-radius: 100%;
         }
-
-        .chat-name h2{
-            letter-spacing: 1px;
-        }
     }
-
-    
-
-.chat-innercontainer{
+    .chat-text-container{
+        flex: 2;
         width: 100%;
-        height: 70%;
-        padding: $paddingSmall;
-        overflow-y: auto;
     }
 
-    .msg-container{
-        max-width: 100%;
+    .input-form{
         display: flex;
-        flex-direction: column;
+        width: 100%;
+        background-color: $secondColor;
+        padding: $paddingSmall;
 
-        .msg-bubble{
-            max-width: 76%;
-            display: flex;
-            flex-direction: column;
-        }
-        .msg-text{
-            width: 100%;
-            background-color: #4e72d6;
-            margin-bottom: 0.2em;
-            padding: 0.4em 0.5em;
-            transition: all 0.15s ease-in-out;
-        }
-
-        .timestamp {
-            color: white;
-            letter-spacing: 1px;
-            margin:0 1em 0.2em 1em;
-        }
-    }
-
-    
-    .user-input-window {
-
-        background: #40434e;
-        border-top: 1px solid #2671ff;
-        box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
-
-        .input-form{
-            display: flex;
-        }
         .user-input{
-            flex: 1;
-            line-height: 3rem;
+            color: $darkColor;
+            flex: 2;
+            line-height: 2rem;
             outline: 0 none;
             border: none;
             width: 100%;
-            color: white;
             text-indent: 10px;
             padding: 0;
-            background: #40434e;
+            background: $white;
+            font-size: 1rem;
         }
-        .btn-send {
+
+        #btnSend {
             outline: 0 none;
             border: none;
             background: rgba(255,255,255,.25);
@@ -136,47 +108,59 @@
             margin: 0.4em;
             transition: all 0.15s ease-in-out;
         }
-
-        .btn-send {
-            // !it;s not gonna be like this when the icon is already created
-            box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
-            background: #2671ff;
-            cursor: pointer;
-        }
     }
 }
 
-#msg-bot{
+.msg-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    .msg-bubble{
+        max-width: 76%;
+        display: flex;
+        flex-direction: column;
+    }
+    .msg-text{
+        width: 100%;
+        background-color: $secondColor;
+        color: $darkColor;
+        margin-bottom: 0.2em;
+        font-weight: $semibold;
+        padding: 1em $paddingSmall;
+    }
+    
+    .timestamp {
+        color: $darkColor;
+        letter-spacing: 1px;
+        margin:0 1em 0.2em 1em;
+        font-size: 12pt;
+    }
+}
+
+
+
+#botChat.msg-container{
+    text-align: left;
     align-items: flex-start;
+    .msg-text{
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        padding-right: $paddingMedium;
+
+    }
 }
-   
-#msg-bot .msg-text{
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-   
-#msg-user{
-    align-items: flex-end;
-}
-   
-#msg-user .msg-text{
+
+#userChat.msg-container{
     text-align: right;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    align-items: flex-end;
+
+    .msg-text{
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        padding-left: $paddingMedium;
+    }
 }
 
-// TODO : Refactor this shit
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// !CREATE CHAT COMPONENT SO U DON'T STYLE TO MUCH HERE
