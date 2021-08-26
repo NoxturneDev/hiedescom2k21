@@ -102,8 +102,8 @@ html {
 }
 
 .wipe-left {
-  -webkit-animation: wipeLeft 2s ease-in-out;
-          animation: wipeLeft 2s ease-in-out;
+  -webkit-animation: wipeLeft 1.45s ease-in-out;
+          animation: wipeLeft 1.45s ease-in-out;
 }
 
 @-webkit-keyframes wipeLeft {
@@ -129,8 +129,8 @@ html {
 }
 
 .wipe-right {
-  -webkit-animation: wipeRight 2s ease-in-out;
-          animation: wipeRight 2s ease-in-out;
+  -webkit-animation: wipeRight 1.45s ease-in-out;
+          animation: wipeRight 1.45s ease-in-out;
 }
 
 @-webkit-keyframes wipeRight {

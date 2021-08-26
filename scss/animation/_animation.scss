@@ -5,7 +5,7 @@ html {
 
 // ANIMATION
 @mixin wipeLeft(){
-    animation: wipeLeft 2s ease-in-out;
+    animation: wipeLeft 1.45s ease-in-out;
 
     @keyframes wipeLeft {
         0% {
@@ -20,7 +20,7 @@ html {
 }
 
 @mixin wipeRight(){
-    animation: wipeRight 2s ease-in-out;
+    animation: wipeRight 1.45s ease-in-out;
     
     @keyframes wipeRight {
         0% {
