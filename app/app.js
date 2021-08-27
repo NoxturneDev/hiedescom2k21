@@ -63,25 +63,49 @@
 // })
 
 
+const loader = document.querySelector(".loader-container")
+
+window.addEventListener("load", ()=> {
+    // disable scroll
+    document.body.style.overflow = "hidden";
+    setTimeout(()=> {
+        loader.classList.add("sliding")
+        loader.style.transform = "translateX(-100%)"
+        document.body.style.overflow = "";
+    }, 2000)
+  
+    // loader.addEventListener("animationend", ()=> {
+    //     loader.classList.remove("wipe-right")
+    // })
+})
 
 
+const featuresImg = document.querySelectorAll(".feature-redirect-img")
 
-
-// chatRedirectImg.addEventListener("mouseenter", () => {
-//     // chatRedirectImg.setAttribute.src = "../assets/animation/Nau-jump-on-hover.gif"
-//     setTimeout(()=> {
-//         chatRedirectImg.setAttribute("src", "./assets/animation/Nau-jump-on-hover.gif")
-//     }, 250)
-//     console.log("mouse enter")
+// featuresImg.forEach(img => {
+//     if(img.classList.contains("chat-redirect")){
+//         img.addEventListener("mouseenter", () => {
+//             // chatRedirectImg.setAttribute.src = "../assets/animation/Nau-jump-on-hover.gif"
+//             // img.style.background = "url("../assets/animation/Nau-jump-on-hover.gif")
+//             // setTimeout(()=> {
+                
+//             // }, 250)
+//             console.log("mouse enter")
+//             console.log(img)
+//         })
+//     } else {
+//         img.addEventListener("mouseleave", () => {
+//             img.setAttribute("src", "../assets/animation/Nau-jump-on-hover-reverse.gif")
+//             // setTimeout(()=> {
+                
+//             // }, 250)
+//             console.log("mouse leave")
+//         })
+//     }
 // })
 
-// chatRedirectImg.addEventListener("mouseleave", () => {
-//     setTimeout(()=> {
-//         chatRedirectImg.setAttribute("src", "./assets/animation/Nau-jump-on-hover-reverse.gif")
-//     }, 250)
-//     console.log("mouse leave")
+// !FIX ABOVE
 
-// })
 
 //////////////////////////////////////////////////////////////
 // OVERLAY PAGES EVENT

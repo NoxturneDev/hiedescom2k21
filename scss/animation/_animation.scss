@@ -108,6 +108,10 @@ html {
     transition : transform 1s ease-in-out;
 }
 
+.sliding{
+    @include sliding();
+}
+
 .fade-0{
     @include fade0();
     opacity: 0;

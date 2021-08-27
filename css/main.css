@@ -101,6 +101,13 @@ html {
   scroll-behavior: smooth;
 }
 
+.sliding {
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+
 .fade-0 {
   -webkit-animation: fade0 1s ease-in-out;
           animation: fade0 1s ease-in-out;
@@ -544,6 +551,10 @@ html {
   background-color: #383574;
   margin: 0;
   position: absolute;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  top: 0;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
