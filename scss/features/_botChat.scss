@@ -1,13 +1,9 @@
 // FULL SCREEN CHAT OVERLAY
 .chat-overlay{
     @include centerElement();
+    @include overlay(fixed);
 
-    position: fixed;
     z-index: 1;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    top: 0;
     transform: translateX(-100%);
     transition: transform 1s ease-in-out;
 
@@ -25,16 +21,20 @@
     
             @include backgroundContain("../assets/nau/nau-stay-still.png")
         }
-
-        #closeOverlayBtn{
-            width: 2.5rem;
-            height: 2.5rem;
-            position: absolute;
-            top: 5%;
-            left: 5%;
-        }
     }
    
+}
+
+.close-overlay {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.quiz-overlay{
+    transform: translateX(100%);
 }
 
 

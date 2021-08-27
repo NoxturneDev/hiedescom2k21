@@ -10,8 +10,12 @@
 
     .feature-wrapper{
         @include centerElement();
+        @include sliding();
 
-        height: 80%;
+        height: 100%;
+        transform: translateX(0);
+        opacity: 1;
+        margin-top: -$marginLarge;
         
         .features{
             @include centerElement();
@@ -25,10 +29,10 @@
                 cursor: pointer;
             }
 
-            #chatRedirect{
+            .chat-redirect{
                 @include backgroundContain("../assets/animation/Nau-jump-on-hover.gif");
             }
-            #quizRedirect {
+            .quiz-redirect {
                 @include backgroundContain("../assets/animation/Nau-jump-on-hover.gif");
             }
         }
@@ -36,24 +40,27 @@
 }
 
 .button-overlay {
+    @include centerElement();
+    
     color: $secondColor;
-    width: 40%;
+    width: 80%;
     padding: $paddingSmall $paddingMedium;
-    height: 40%;
+    height: 100%;
     position: relative;
     bottom: -20%;
+    transform: translateY(0);
+    opacity: 0;
 
     .button-redirect {
-        background-color: $darkColor;
-        opacity: 0;
+        min-width: 50%;
     }
 }
 
-.button[data-btn-id="redirectBtnQuiz"]{
+#redirectBtnQuiz{
     background-color: $semiDarkColor;
 }
 
-.button[data-btn-id="redirectBtnChat"]{
+#redirectBtnChat{
     background-color: $secondColor;
     color: $semiDarkColor;
 }

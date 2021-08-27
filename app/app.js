@@ -92,55 +92,92 @@ const btnOverlay = document.querySelectorAll(".button-overlay")
 const buttonRedirect = document.querySelectorAll(".button-redirect")
 const chatWindowOverlay = document.querySelector(".chat-overlay")
 const quizWindowOverlay = document.querySelector(".quiz-overlay")
-const quitOverlayBtn = document.querySelector("#quitBtn")
+const closeOverlayBtn = document.querySelectorAll(".close-overlay")
+const mascotWrapper = document.querySelector(".feature-wrapper")
+const navbarTop = document.querySelector(".navbar-top")
 
 btnOverlay.forEach(btn => {
-    const redirectBtn = btn.childNodes[1]
-    const parentElement = btn.parentElement;
-
-    btn.addEventListener("mouseenter", e => {
-        redirectBtn.id = "wipe-up-and-stop"
-        
-    })
-
-    btn.addEventListener("mouseleave", e => {
-        const redirectBtn = e.target.childNodes[1]
-
-        redirectBtn.removeAttribute("id")
-        redirectBtn.classList.add("wipe-up-reverse")
-    })
-
-    redirectBtn.addEventListener("animationend", () => {
-        if(redirectBtn.classList.contains("wipe-up-reverse")){
-            redirectBtn.classList.remove("wipe-up-reverse")
-        }
-    })
-
-    // !REFACTOR DON'T USE ID
+        btn.addEventListener("mouseenter", e => {
+            btn.classList.add("wipe-up")
+        })
+    
+        btn.addEventListener("mouseleave", e => {
+            btn.classList.remove("wipe-up")
+            btn.classList.add("wipe-up-reverse")
+        })
+    
+        btn.addEventListener("animationend", () => {
+            if(btn.classList.contains("wipe-up-reverse")){
+                btn.classList.remove("wipe-up-reverse")
+            }
+        })
 })
+
 
 buttonRedirect.forEach(btn => {
     btn.addEventListener("click", (e)=> {
-        if(btn.dataset.btnId = "redirectBtnChat"){
+        console.log(btn)
+        if(btn.id == "redirectBtnChat"){
             chatWindowOverlay.style.transform = "translateX(0)"
-            document.body.style.overflow = "hidden";
-            console.log(btn.dataset.btnId)
+            mascotWrapper.style.transform = "translateX(100%)"
+            chatWindowOverlay.classList.add("fade-1")
+        } else if (btn.id == "redirectBtnQuiz") {
+            quizWindowOverlay.style.transform = "translateX(0)"
+            mascotWrapper.style.transform = "translateX(-100%)"
+            quizWindowOverlay.classList.add("fade-1")
         }
 
-        // } else if(btn.dataset.btnId = "redirectBtnQuiz"){
-        //     document.body.style.overflow = "hidden";
-        //     quizWindowOverlay.style.transform = "translateX(0)"
-        //     console.log(btn.dataset.btnId)
-        // }
+      
+        chatWindowOverlay.addEventListener("animationend", ()=>{
+            chatWindowOverlay.classList.remove("fade-1")
+        })
+        quizWindowOverlay.addEventListener("animationend", ()=>{
+            quizWindowOverlay.classList.remove("fade-1")
+        })
+
+
+        navbar.style.display = "none";
+        mascotWrapper.classList.add("fade-0")
+
+
+        mascotWrapper.addEventListener("animationend", ()=> {
+            mascotWrapper.classList.remove("fade-0")
+        })
+        document.body.style.overflow = "hidden";
     })
 })
 
-quitOverlayBtn.addEventListener("click", ()=> {
-    // quizWindowOverlay.style.transform = "translateX(100%)"
-    chatWindowOverlay.style.transform = "translateX(-100%)"
-    document.body.style.overflow = "";
-    console.log("test")
+closeOverlayBtn.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        if(e.target.id == "closeChatOverlay"){
+            chatWindowOverlay.style.transform = "translateX(-100%)"
+            chatWindowOverlay.classList.add("fade-0")
+        } else {
+            quizWindowOverlay.style.transform = "translateX(100%)"
+            quizWindowOverlay.classList.add("fade-0")
+        }
+
+     
+
+        chatWindowOverlay.addEventListener("animationend", ()=>{
+            chatWindowOverlay.classList.remove("fade-0")
+        })
+        quizWindowOverlay.addEventListener("animationend", ()=>{
+            quizWindowOverlay.classList.remove("fade-0")
+        })
+
+        mascotWrapper.classList.add("fade-1")
+        mascotWrapper.addEventListener("animationend", ()=> {
+            mascotWrapper.classList.remove("fade-1")
+        })
+
+        navbar.style.display = "";
+
+        navbar.removeAttribute("data-hidden")
+        mascotWrapper.style.transform = "translateX(0)"
+        document.body.style.overflow = "";
+    })
 })
 
-// !FIX QUIT BUTTON
-// !FIX ID PLACEMENT
+
+// TODO : fix animation, make it better

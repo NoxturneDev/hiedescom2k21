@@ -101,6 +101,56 @@ html {
   scroll-behavior: smooth;
 }
 
+.fade-0 {
+  -webkit-animation: fade0 1s ease-in-out;
+          animation: fade0 1s ease-in-out;
+  opacity: 0;
+  opacity: 0;
+}
+
+@-webkit-keyframes fade0 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade0 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-1 {
+  -webkit-animation: fade1 1s ease-in-out;
+          animation: fade1 1s ease-in-out;
+  opacity: 1;
+  opacity: 1;
+}
+
+@-webkit-keyframes fade1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .wipe-left {
   -webkit-animation: wipeLeft 1.45s ease-in-out;
           animation: wipeLeft 1.45s ease-in-out;
@@ -159,12 +209,12 @@ html {
   }
 }
 
-#wipe-up-and-stop {
+.wipe-up {
   -webkit-animation: wipeUp 0.6s ease-in-out;
           animation: wipeUp 0.6s ease-in-out;
-  opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  opacity: 1 !important;
+  -webkit-transform: translateY(0) !important;
+          transform: translateY(0) !important;
 }
 
 @-webkit-keyframes wipeUp {
@@ -178,24 +228,6 @@ html {
             transform: translateY(0);
     opacity: 1;
   }
-}
-
-@keyframes wipeUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(50%);
-            transform: translateY(50%);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.wipe-up {
-  -webkit-animation: wipeUp 0.6s ease-in-out;
-          animation: wipeUp 0.6s ease-in-out;
 }
 
 @keyframes wipeUp {
@@ -333,10 +365,6 @@ html {
   font-weight: 700;
   font-size: 1.2rem;
   text-align: center;
-}
-
-[data-hidden="true"] {
-  display: none;
 }
 
 .no-scroll {
@@ -718,7 +746,15 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 80%;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+  height: 100%;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+  margin-top: -6rem;
 }
 
 .main-feature-page .feature-wrapper .features {
@@ -752,14 +788,14 @@ html {
   cursor: pointer;
 }
 
-.main-feature-page .feature-wrapper .features #chatRedirect {
+.main-feature-page .feature-wrapper .features .chat-redirect {
   background: url("../assets/animation/Nau-jump-on-hover.gif");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.main-feature-page .feature-wrapper .features #quizRedirect {
+.main-feature-page .feature-wrapper .features .quiz-redirect {
   background: url("../assets/animation/Nau-jump-on-hover.gif");
   background-size: contain;
   background-position: center;
@@ -767,24 +803,35 @@ html {
 }
 
 .button-overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #D8C2FF;
-  width: 40%;
+  width: 80%;
   padding: 0.5rem 1.5rem;
-  height: 40%;
+  height: 100%;
   position: relative;
   bottom: -20%;
-}
-
-.button-overlay .button-redirect {
-  background-color: #383574;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
   opacity: 0;
 }
 
-.button[data-btn-id="redirectBtnQuiz"] {
+.button-overlay .button-redirect {
+  min-width: 50%;
+}
+
+#redirectBtnQuiz {
   background-color: #5B518F;
 }
 
-.button[data-btn-id="redirectBtnChat"] {
+#redirectBtnChat {
   background-color: #D8C2FF;
   color: #5B518F;
 }
@@ -823,75 +870,6 @@ html {
   }
   .main-feature-page .feature-wrapper .features .feature-redirect-img img {
     width: 100%;
-  }
-}
-
-.developer-page {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: white;
-  max-width: 100%;
-}
-
-.developer-page .cards-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-}
-
-.developer-page .cards-wrapper .dev-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 2rem;
-  height: 60vh;
-}
-
-.developer-page .cards-wrapper .dev-card * {
-  margin: 1rem;
-}
-
-.developer-page .cards-wrapper .dev-card .dev-img {
-  width: 50%;
-  height: 50%;
-  border-radius: 100%;
-  background-color: #9BA9FF;
-}
-
-.developer-page .cards-wrapper .dev-card .dev-desc {
-  text-align: justify;
-}
-
-@media screen and (max-width: 450px) {
-  .cards-wrapper {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
   }
 }
 
@@ -1005,11 +983,13 @@ html {
       -ms-flex-align: center;
           align-items: center;
   position: fixed;
+  overflow: hidden;
   z-index: 1;
   top: 0;
-  left: 0;
   bottom: 0;
-  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   -webkit-transition: -webkit-transform 1s ease-in-out;
@@ -1045,12 +1025,17 @@ html {
   background-repeat: no-repeat;
 }
 
-.chat-overlay .chat-overlay-wrapper #closeOverlayBtn {
+.close-overlay {
   width: 2.5rem;
   height: 2.5rem;
   position: absolute;
   top: 5%;
   left: 5%;
+}
+
+.quiz-overlay {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 .chat-window {

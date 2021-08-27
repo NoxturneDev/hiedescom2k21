@@ -18,8 +18,8 @@
     align-items: center;
 }
 
-@mixin overlay(){
-    position: absolute;
+@mixin overlay($position){
+    position: $position;
     overflow: hidden;
     z-index: 1;
     top: 0;

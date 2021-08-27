@@ -71,8 +71,51 @@ html {
     }
 }
 
+@mixin fade0(){
+    animation: fade0 1s ease-in-out;
+    opacity: 0;
+    
+    @keyframes fade0 {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+        
+    }
+}
+
+@mixin fade1(){
+    animation: fade1 1s ease-in-out;
+    opacity: 1;
+    
+    @keyframes fade1 {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+        
+    }
+}
+
+
 @mixin sliding(){
     transition : transform 1s ease-in-out;
+}
+
+.fade-0{
+    @include fade0();
+    opacity: 0;
+}
+
+.fade-1{
+    @include fade1();
+    opacity: 1;
 }
 
 .wipe-left{
@@ -83,19 +126,12 @@ html {
     @include wipeRight();
 }
 
-#wipe-up-and-stop{
-    @include wipeUp();
-
-    opacity: 1;
-    transform: translateY(0);
-
-    // !overlay still won't stick, masih turun lagi 
-}
-
 .wipe-up {
     @include wipeUp();
-}
 
+    opacity: 1!important;
+    transform: translateY(0)!important;
+}
 
 
 .wipe-up-reverse{
