@@ -873,6 +873,78 @@ html {
   }
 }
 
+.developer-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  max-width: 100%;
+  max-height: 120vh;
+  margin: 6rem;
+  padding: 1.5rem;
+}
+
+.developer-page .cards-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.developer-page .cards-wrapper .dev-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2rem;
+  height: 60vh;
+}
+
+.developer-page .cards-wrapper .dev-card * {
+  margin: 1rem;
+}
+
+.developer-page .cards-wrapper .dev-card .dev-img {
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+  background-color: #9BA9FF;
+}
+
+.developer-page .cards-wrapper .dev-card .dev-desc {
+  text-align: justify;
+}
+
+@media screen and (max-width: 450px) {
+  .cards-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .carousel {
   display: -webkit-box;
   display: -ms-flexbox;

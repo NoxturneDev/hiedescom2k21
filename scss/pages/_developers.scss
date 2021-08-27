@@ -1,44 +1,41 @@
-// // DEVELOPER PAGE 
-// .developer-page{
-//     @include centerElement();
+// DEVELOPER PAGE 
+.developer-page{
+    @include centerElement();
 
-//     background-color: white;
-//     max-width: 100%;
-//     max-height: 120vh;
-//     margin: $marginLarge;
-//     padding: $paddingMedium;
-//     background-color: red;
+    background-color: white;
+    max-width: 100%;
+    max-height: 120vh;
+    margin: $marginLarge;
+    padding: $paddingMedium;
 
-//     border: $debug;
-//     .cards-wrapper{
-//         @include centerElement();
-//         width: 100%;
-//         background-color: blue;
-//         .dev-card{
-//             @include centerElement();
+    .cards-wrapper{
+        @include centerElement();
+        width: 100%;
+        .dev-card{
+            @include centerElement();
 
-//             flex-direction: column;
-//             margin: $marginMedium;
-//             height: 60vh;
+            flex-direction: column;
+            margin: $marginMedium;
+            height: 60vh;
 
-//             & *{
-//                 margin: $marginSmall;
-//             }
-//             .dev-img{
-//                 width: 50%;
-//                 height: 50%;
-//                 border-radius: 100%;
-//                 background-color: $firstColor;
-//             }
-//             .dev-desc{
-//                 text-align: justify;
-//             }
-//         }      
-//     }
-// }
+            & *{
+                margin: $marginSmall;
+            }
+            .dev-img{
+                width: 50%;
+                height: 50%;
+                border-radius: 100%;
+                background-color: $firstColor;
+            }
+            .dev-desc{
+                text-align: justify;
+            }
+        }      
+    }
+}
 
-// @media screen and (max-width : $phoneBreakpoint) {
-//     .cards-wrapper{
-//         flex-direction: column;
-//     }
-// }
+@media screen and (max-width : $phoneBreakpoint) {
+    .cards-wrapper{
+        flex-direction: column;
+    }
+}

@@ -136,7 +136,7 @@ buttonRedirect.forEach(btn => {
         })
 
 
-        navbar.style.display = "none";
+        navbar.style.display = "none"; //!animate this
         mascotWrapper.classList.add("fade-0")
 
 
@@ -171,7 +171,7 @@ closeOverlayBtn.forEach(btn => {
             mascotWrapper.classList.remove("fade-1")
         })
 
-        navbar.style.display = "";
+        navbar.style.display = ""; //!animate this
 
         navbar.removeAttribute("data-hidden")
         mascotWrapper.style.transform = "translateX(0)"
@@ -181,3 +181,4 @@ closeOverlayBtn.forEach(btn => {
 
 
 // TODO : fix animation, make it better
+// TODO : create an efective function for handling animation end or so on
