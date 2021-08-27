@@ -9,16 +9,27 @@
 }
 
 .close-btn{
+    @include backgroundCover("../../assets/icon/close-btn-line.svg");
+}
+
+.close-btn--fill{
+    @include backgroundContain("../../assets/icon/close-btn-fill.svg");
+}
+
+.send-btn{
+    @include backgroundContain("../../assets/icon/send-icon.svg");
+}
+
+@mixin iconSmallBtn(){
     outline: 0 none;
     border: none;
-    background: rgba(255,255,255,.25);
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    margin: 0.4em;
-    transition: all 0.15s ease-in-out;
     cursor: pointer;
 }
+
+
 
 // CARDS
 .long-card{
@@ -49,10 +60,35 @@
 }
 
 // ICON
-
 .small-logo{
     width: 7rem;
     margin: $marginSmall;
 }
 
+
+// SPESIFIC COMPONENT FOR THIS WEBSITE
+@mixin chatWindow(){
+    @include centerElement();
+
+    min-width: 340px;
+    min-height: 440px;
+    background-color:$white;
+    flex-direction: column;
+}
+
+@mixin inputForm(){
+    display: flex;
+    width: 100%;
+    padding: $paddingSmall;
+}
+
+@mixin inputTextArea(){
+    line-height: 2rem;
+    outline: 0 none;
+    border: none;
+    width: 100%;
+    text-indent: 10px;
+    padding: 0;
+    font-size: 1rem;
+}
 

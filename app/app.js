@@ -83,6 +83,10 @@
 
 // })
 
+//////////////////////////////////////////////////////////////
+// OVERLAY PAGES EVENT
+//////////////////////////////////////////////////////////////
+
 
 const btnOverlay = document.querySelectorAll(".button-overlay")
 const buttonRedirect = document.querySelectorAll(".button-redirect")
@@ -118,19 +122,21 @@ btnOverlay.forEach(btn => {
 buttonRedirect.forEach(btn => {
     btn.addEventListener("click", (e)=> {
         if(btn.dataset.btnId = "redirectBtnChat"){
-            quizWindowOverlay.style.transform = "translateX(0)"
+            chatWindowOverlay.style.transform = "translateX(0)"
             document.body.style.overflow = "hidden";
-            console.log(btn.dataset.btnId)
-        } else if(btn.dataset.btnId = "redirectBtnQuiz"){
-            document.body.style.overflow = "hidden";
-            quizWindowOverlay.style.transform = "translateX(0)"
             console.log(btn.dataset.btnId)
         }
+
+        // } else if(btn.dataset.btnId = "redirectBtnQuiz"){
+        //     document.body.style.overflow = "hidden";
+        //     quizWindowOverlay.style.transform = "translateX(0)"
+        //     console.log(btn.dataset.btnId)
+        // }
     })
 })
 
 quitOverlayBtn.addEventListener("click", ()=> {
-    quizWindowOverlay.style.transform = "translateX(100%)"
+    // quizWindowOverlay.style.transform = "translateX(100%)"
     chatWindowOverlay.style.transform = "translateX(-100%)"
     document.body.style.overflow = "";
     console.log("test")
