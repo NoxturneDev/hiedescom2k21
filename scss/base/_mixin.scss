@@ -46,3 +46,8 @@
 @mixin dropShadow(){
     filter: drop-shadow(0px 27px 46px rgba(91, 81, 143, 0.09)) drop-shadow(0px 6.0308px 10.2747px rgba(91, 81, 143, 0.0536497)) drop-shadow(0px 1.79553px 3.05905px rgba(91, 81, 143, 0.0363503));
 }
+
+@mixin dropShadow2(){
+    filter: drop-shadow(0px -22px 58px rgba(91, 81, 143, 0.27)) drop-shadow(0px -2.75474px 22.778px rgba(91, 81, 143, 0.150826));
+
+}
