@@ -61,22 +61,71 @@
 // closeChatBtn.addEventListener("click", () => {
 //     chatWindow.dataset.hidden = "true"
 // })
+const navbarTop = document.querySelector(".navbar-top")
+const navbarLink = document.querySelectorAll(".nav-link")
+const aboutPage = document.querySelector(".about-page")
+const landingPage = document.querySelector(".landing-page")
+const mainFeaturePage = document.querySelector(".main-feature-page")
+const fyiPageRedirect = document.querySelector(".about-four")
+// let aboutPageCoord = aboutPage.getBoundingClientRect();
+const aboutPageCoord =  getElementCoords(aboutPage);
 
+
+const elemTargetCoord = {
+    landingPage : getElementCoords(landingPage).top - 50,
+    aboutPage : getElementCoords(aboutPage).top - 25,
+    fyiPage : getElementCoords(fyiPageRedirect).top - 50,
+    featurePage : getElementCoords(mainFeaturePage).top - 50
+}
+
+navbarLink.forEach(link => {
+    link.addEventListener("click", (e)=> {
+        if(link.innerText == "Home"){
+            window.scrollTo(0, elemTargetCoord.landingPage)
+        } else if(link.innerText == "About"){
+            window.scrollTo(0, elemTargetCoord.landingPage)
+            console.log(elemTargetCoord.aboutPage)
+        } else if(link.innerText == "FYI FACTS"){
+            window.scrollTo(0, elemTargetCoord.aboutPage)
+            console.log(elemTargetCoord.fyiPage)
+        }else if(link.classList.contains("btn-redirect-feature")){
+            window.scrollTo(0, elemTargetCoord.featurePage)
+            console.log(elemTargetCoord.featurePage)
+
+        }
+    })
+})
+
+function getElementCoords(element){
+    const elementBounding = element.getBoundingClientRect();
+    const elementCoord = {
+        top : elementBounding.height,
+        left : elementBounding.left,
+        right : elementBounding.right,
+        bottom : elementBounding.bottom
+    }
+
+    console.log(elementBounding.height)
+    return elementCoord;
+    // !FIX, THE TOP IS ACTUALLY RELATIVE, jadi kalo user abis klik about sebelumnya, topnya akan 0 dari about. make it alwasy relative to window.top
+}
 
 const loader = document.querySelector(".loader-container")
 
 window.addEventListener("load", ()=> {
     // disable scroll
     document.body.style.overflow = "hidden";
+
     setTimeout(()=> {
         loader.classList.add("sliding")
         loader.style.transform = "translateX(-100%)"
         document.body.style.overflow = "";
-    }, 2000)
+    }, 3000)
   
     // loader.addEventListener("animationend", ()=> {
     //     loader.classList.remove("wipe-right")
     // })
+    // DEFAULT SCROLL SO USER ALWAYS ON TOP
 })
 
 
@@ -118,7 +167,6 @@ const chatWindowOverlay = document.querySelector(".chat-overlay")
 const quizWindowOverlay = document.querySelector(".quiz-overlay")
 const closeOverlayBtn = document.querySelectorAll(".close-overlay")
 const mascotWrapper = document.querySelector(".feature-wrapper")
-const navbarTop = document.querySelector(".navbar-top")
 
 btnOverlay.forEach(btn => {
         btn.addEventListener("mouseenter", e => {
@@ -205,4 +253,4 @@ closeOverlayBtn.forEach(btn => {
 
 
 // TODO : fix animation, make it better
-// TODO : create an efective function for handling animation end or so on
+// TODO : create an efective function for handling animation end or so 

@@ -24,6 +24,8 @@
             @include centerElement();
 
             .nav-list{
+                cursor: pointer;
+
                 margin-right: $marginBig;
 
                 .btn-redirect-feature{
@@ -53,9 +55,12 @@
     transition: background 0.5s ease-in-out;
     background-color: #FFF;
     width: 100%;
+    
     .nav-list-container{
         ul{
             .nav-list {
+                cursor: pointer;
+
                 .nav-link{
                     font-weight: $semibold;
                     color: $darkColor;

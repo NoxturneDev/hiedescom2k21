@@ -202,7 +202,7 @@ function respondUmur(value) {
 // TODO export to real project
 // TODO add more language
 
-
+// ?what about using session storage for temporare chat bot information
 // !BUG
 // whenever user type a word that longer than the witdh of the bubble, it goes straigt horizontally. but if its multiple word, it wont go like that
 // User chat bubble have different width with the bot bubble, idk why

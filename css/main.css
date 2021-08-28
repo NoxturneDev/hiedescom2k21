@@ -101,6 +101,13 @@ html {
   scroll-behavior: smooth;
 }
 
+[data-animation="sliding"] {
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+
 .sliding {
   -webkit-transition: -webkit-transform 1s ease-in-out;
   transition: -webkit-transform 1s ease-in-out;
@@ -429,6 +436,7 @@ html {
 }
 
 .navbar-top .nav-list-container ul .nav-list {
+  cursor: pointer;
   margin-right: 3.5rem;
 }
 
@@ -467,6 +475,10 @@ html {
   transition: background 0.5s ease-in-out;
   background-color: #FFF;
   width: 100%;
+}
+
+.navbar-top-scrolled .nav-list-container ul .nav-list {
+  cursor: pointer;
 }
 
 .navbar-top-scrolled .nav-list-container ul .nav-list .nav-link {
@@ -550,7 +562,7 @@ html {
 .loader-container {
   background-color: #383574;
   margin: 0;
-  position: absolute;
+  position: fixed;
   -webkit-transform: translateX(0);
           transform: translateX(0);
   top: 0;
@@ -1017,13 +1029,6 @@ html {
   width: 90%;
   height: 90%;
   background-color: #D8C2FF;
-}
-
-[data-animation="sliding"] {
-  -webkit-transition: -webkit-transform 1s ease-in-out;
-  transition: -webkit-transform 1s ease-in-out;
-  transition: transform 1s ease-in-out;
-  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
 }
 
 .slides-arrow {

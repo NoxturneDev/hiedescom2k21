@@ -108,6 +108,10 @@ html {
     transition : transform 1s ease-in-out;
 }
 
+[data-animation="sliding"]{
+    @include sliding();
+}
+
 .sliding{
     @include sliding();
 }
