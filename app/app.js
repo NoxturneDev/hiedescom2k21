@@ -61,72 +61,104 @@
 // closeChatBtn.addEventListener("click", () => {
 //     chatWindow.dataset.hidden = "true"
 // })
-const navbarTop = document.querySelector(".navbar-top")
-const navbarLink = document.querySelectorAll(".nav-link")
-const aboutPage = document.querySelector(".about-page")
-const landingPage = document.querySelector(".landing-page")
-const mainFeaturePage = document.querySelector(".main-feature-page")
-const fyiPageRedirect = document.querySelector(".about-four")
-// let aboutPageCoord = aboutPage.getBoundingClientRect();
-const aboutPageCoord =  getElementCoords(aboutPage);
 
+//////////////////////////////////////////////////////////////
+// SMOOTH SCROLL EFFECT
+//////////////////////////////////////////////////////////////
+const navbarLink = document.querySelectorAll(".nav-link a")
 
-const elemTargetCoord = {
-    landingPage : getElementCoords(landingPage).top - 50,
-    aboutPage : getElementCoords(aboutPage).top - 25,
-    fyiPage : getElementCoords(fyiPageRedirect).top - 50,
-    featurePage : getElementCoords(mainFeaturePage).top - 50
+function smoothScroll(e){  
+    e.preventDefault()
+    const targetID = e.currentTarget.getAttribute("href")
+    const margin = 100;
+
+    if(targetID === "#mainFeaturePage") {
+        window.scrollTo({
+           top: document.querySelector(targetID).offsetTop + (2* margin),
+           behavior: "smooth"
+        })
+    } else {
+        window.scrollTo({
+            top: document.querySelector(targetID).offsetTop - margin,
+            behavior: "smooth"
+         })
+    }
 }
 
+//////////////////////////////////////////////////////////////
+// ON PHONE NAVBAR
+//////////////////////////////////////////////////////////////
+const navToggleIcon = document.querySelectorAll(".hamburger-icon img")
+const navbarContainer = document.querySelector(".nav-list-container")
+const closeNavIcon = document.querySelector("#close-nav")
 navbarLink.forEach(link => {
-    link.addEventListener("click", (e)=> {
-        if(link.innerText == "Home"){
-            window.scrollTo(0, elemTargetCoord.landingPage)
-        } else if(link.innerText == "About"){
-            window.scrollTo(0, elemTargetCoord.landingPage)
-            console.log(elemTargetCoord.aboutPage)
-        } else if(link.innerText == "FYI FACTS"){
-            window.scrollTo(0, elemTargetCoord.aboutPage)
-            console.log(elemTargetCoord.fyiPage)
-        }else if(link.classList.contains("btn-redirect-feature")){
-            window.scrollTo(0, elemTargetCoord.featurePage)
-            console.log(elemTargetCoord.featurePage)
+    link.addEventListener("click", smoothScroll)
 
-        }
+   
+    link.addEventListener("click", ()=> {
+        const mediaQuery = window.matchMedia("(max-width: 768px)")
+// ! refactor above so u don't repeat the same funtcion at animateONscrollJS
+        mediaQuery.addListener(navViewport)
+        navViewport(mediaQuery, link)
+    })
+    
+})
+
+function navViewport(e, link){
+    if(e.matches){
+        navToggle(link)
+        console.log("navphone")
+        console.log(link)
+    } else {
+        navbar.style.transform = "translateX(0)"
+    }
+}
+
+
+navToggleIcon.forEach(icon => {
+    icon.addEventListener("click", () => {
+        navToggle(icon)
     })
 })
 
-function getElementCoords(element){
-    const elementBounding = element.getBoundingClientRect();
-    const elementCoord = {
-        top : elementBounding.height,
-        left : elementBounding.left,
-        right : elementBounding.right,
-        bottom : elementBounding.bottom
+
+function navToggle(icon){
+    if(icon.getAttribute("id") === "toggle-nav"){
+        navbarContainer.style.transform = "translateX(0)"
+        closeNavIcon.style.display = "block"
+    } else if (icon.getAttribute("id") === "close-nav") {
+        navbarContainer.style.transform = "translateX(-150%)"
+    } else {
+        navbarContainer.style.transform = "translateX(-150%)"
     }
 
-    console.log(elementBounding.height)
-    return elementCoord;
-    // !FIX, THE TOP IS ACTUALLY RELATIVE, jadi kalo user abis klik about sebelumnya, topnya akan 0 dari about. make it alwasy relative to window.top
+    icon.addEventListener("transitionend", () => {
+        closeNavIcon.style.display = ""
+    })
 }
 
-const loader = document.querySelector(".loader-container")
 
-window.addEventListener("load", ()=> {
-    // disable scroll
-    document.body.style.overflow = "hidden";
+//////////////////////////////////////////////////////////////
+// LOADER 
+//////////////////////////////////////////////////////////////
 
-    setTimeout(()=> {
-        loader.classList.add("sliding")
-        loader.style.transform = "translateX(-100%)"
-        document.body.style.overflow = "";
-    }, 3000)
+// const loader = document.querySelector(".loader-container")
+
+// window.addEventListener("load", ()=> {
+//     // disable scroll
+//     document.body.style.overflow = "hidden";
+
+//     setTimeout(()=> {
+//         loader.classList.add("sliding")
+//         loader.style.transform = "translateX(-100%)"
+//         document.body.style.overflow = "";
+//     }, 3000)
   
-    // loader.addEventListener("animationend", ()=> {
-    //     loader.classList.remove("wipe-right")
-    // })
-    // DEFAULT SCROLL SO USER ALWAYS ON TOP
-})
+//     // loader.addEventListener("animationend", ()=> {
+//     //     loader.classList.remove("wipe-right")
+//     // })
+//     // DEFAULT SCROLL SO USER ALWAYS ON TOP
+// })
 
 
 const featuresImg = document.querySelectorAll(".feature-redirect-img")

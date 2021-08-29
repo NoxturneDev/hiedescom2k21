@@ -4,7 +4,7 @@
     height: calc(100% + 2rem);
     flex-direction: column;
     overflow-x: hidden;
-    
+    margin-top: $marginMedium;
     .about-one .cards-text, .about-three .cards-text{
         text-align: right;
     }

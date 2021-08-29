@@ -14,6 +14,7 @@ let navbarObserverOption = {
 
 let aboutObserverOption = {
     rootMargin: "200px",
+    treshold: 0.5
 }
 
 let mascotOberserverOption = {
@@ -24,6 +25,21 @@ let mascotOberserverOption = {
 
 
 // ANIMATE ON SCROLL EVENT
+
+// CHANGE NAV ON SCROLL ONLY ON DESKTOP VIEW
+const mediaQuery = window.matchMedia("(min-width: 768px)")
+
+// check for viewport matches
+function changeNavOnScroll(e){
+    if(e.matches){
+        observerNav.observe(navbarIntersectTarget)
+        console.log("matches")
+    } else {
+        observerNav.unobserve(navbarIntersectTarget)
+        console.log("no matches")
+    }
+}
+
 const observerNav = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
@@ -36,6 +52,9 @@ const observerNav = new IntersectionObserver(entries => {
     })
 }, navbarObserverOption)
 
+// listen for viewport changes
+mediaQuery.addListener(changeNavOnScroll)
+changeNavOnScroll(mediaQuery)
 
 const observerAbout = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -103,4 +122,3 @@ mainFeatureMascotImg.forEach(images => {
     observerMascot.observe(images)
 })
 
-observerNav.observe(navbarIntersectTarget)
