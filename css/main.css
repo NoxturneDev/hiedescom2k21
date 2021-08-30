@@ -721,7 +721,6 @@ html {
       -ms-flex-align: center;
           align-items: center;
   height: 60%;
-  margin-top: -6rem;
 }
 
 .landing-page .landing-page-content .landing-page-text {
@@ -783,6 +782,7 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-top: -6rem;
   }
   .nau-wrapper #nau {
     min-width: 8rem;

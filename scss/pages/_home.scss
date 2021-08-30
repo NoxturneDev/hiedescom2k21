@@ -10,7 +10,6 @@
         @include centerElement();
         
         height: 60%;
-        margin-top: -$marginLarge;
         .landing-page-text{
             @include leftAlignElement();
 
@@ -43,6 +42,8 @@
 
         .landing-page-content{
             flex-direction: column;
+        margin-top: -$marginLarge;
+
         }
     }
 
