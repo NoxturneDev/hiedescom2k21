@@ -7,10 +7,11 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 * :focus {
-  outline: none;
+  outline: 0 !important;
 }
 
 body {
@@ -31,12 +32,12 @@ body {
 }
 
 html {
-  font-size: 12px;
+  font-size: 13px;
 }
 
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 400px) {
   html {
-    font-size: calc(12px + 4 * ((100vw - 300px) / 1100));
+    font-size: calc(13px + 3 * ((100vw - 400px) / 1000));
   }
 }
 
@@ -48,12 +49,12 @@ html {
 
 h1 {
   font-size: 2.744rem !important;
-  font-size: 12px;
+  font-size: 13px;
 }
 
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 400px) {
   h1 {
-    font-size: calc(12px + 4 * ((100vw - 300px) / 1100));
+    font-size: calc(13px + 3 * ((100vw - 400px) / 1000));
   }
 }
 
@@ -65,12 +66,12 @@ h1 {
 
 h2 {
   font-size: 1.96rem !important;
-  font-size: 12px;
+  font-size: 13px;
 }
 
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 400px) {
   h2 {
-    font-size: calc(12px + 4 * ((100vw - 300px) / 1100));
+    font-size: calc(13px + 3 * ((100vw - 400px) / 1000));
   }
 }
 
@@ -82,12 +83,12 @@ h2 {
 
 h3 {
   font-size: 1.4rem !important;
-  font-size: 12px;
+  font-size: 13px;
 }
 
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 400px) {
   h3 {
-    font-size: calc(12px + 4 * ((100vw - 300px) / 1100));
+    font-size: calc(13px + 3 * ((100vw - 400px) / 1000));
   }
 }
 
@@ -640,9 +641,9 @@ html {
   }
 }
 
-@media screen and (max-width: 768px) and (min-width: 300px) {
+@media screen and (max-width: 768px) and (min-width: 400px) {
   .nav-list .nav-link a {
-    font-size: calc(14px + 4 * ((100vw - 300px) / 1100));
+    font-size: calc(14px + 4 * ((100vw - 400px) / 1000));
   }
 }
 
@@ -700,11 +701,11 @@ html {
 }
 
 .landing-page {
-  max-width: 100%;
-  height: 130vh;
   background: url("../assets/icon/landing-page-background.svg");
   background-size: cover;
   background-position: center;
+  max-width: 100%;
+  height: 130vh;
   color: #F5F5F5;
   margin-top: -0.5em;
 }
@@ -719,9 +720,8 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 70%;
-  margin-top: -3.5rem;
-  margin-left: 2rem;
+  height: 60%;
+  margin-top: -6rem;
 }
 
 .landing-page .landing-page-content .landing-page-text {
@@ -738,8 +738,8 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 2rem 2rem;
   padding: 0.5rem 1.5rem;
+  max-width: 67%;
 }
 
 .landing-page .landing-page-content .landing-page-text .landing-page-header {
@@ -747,24 +747,45 @@ html {
   width: 100%;
 }
 
-.landing-page .landing-page-content .landing-page-text .arrow-down-redirect-about {
-  margin-top: 1rem;
-  width: 100%;
+.nau-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.landing-page .landing-page-content .landing-page-text .arrow-down-redirect-about img {
-  width: 4rem;
+.nau-wrapper #nau {
+  min-width: 14.5rem;
+  width: 30%;
 }
 
-#nau {
-  width: 10rem;
-}
-
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
   .landing-page {
-    background-size: cover;
-    background-position: bottom;
-    height: 90vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  .landing-page .landing-page-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .nau-wrapper #nau {
+    min-width: 8rem;
   }
 }
 
