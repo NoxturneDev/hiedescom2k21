@@ -49,3 +49,17 @@ $lightSmoothShadow :  0px -2px 41px rgba(64, 61, 119, 0.18), 0px -0.250431px 5.1
 
 // OTHERS
 $debug : 1px solid red;
+
+// IMAGE SIZE 
+// ON DESKTOP
+$deskImgMax : 14.5rem;
+$deskImgMin : 10rem;
+
+// ON PHONE
+
+// minimun
+$phoneImgMin : 4rem;
+// maximum
+$phoneImgMax : 8rem;
+
+// TODO : add fluid image
