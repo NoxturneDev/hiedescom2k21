@@ -415,6 +415,10 @@ html {
   height: 100%;
 }
 
+.navbar-top .nav-list-container .logo-sidebar {
+  display: none;
+}
+
 .nav-list-container ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -430,7 +434,7 @@ html {
   max-height: 3rem;
 }
 
-.nav-list-container ul .nav-list {
+.nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -442,6 +446,20 @@ html {
           align-items: center;
   width: 50%;
   height: 100%;
+}
+
+.nav-list .icon-link {
+  display: none;
+}
+
+.nav-list .nav-link a {
+  font-weight: 500;
+  color: white;
+  background-color: none;
+}
+
+.nav-list .nav-link a:visited {
+  color: white;
 }
 
 .logo-web {
@@ -465,7 +483,7 @@ html {
 }
 
 .nav-toggle-icon #toggle-nav {
-  background: url("../../assets/icon/hamburger-icon-pink.svg");
+  background: url("../assets/icon/hamburger-icon-pink.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -475,15 +493,6 @@ html {
   position: absolute;
   top: 0;
   z-index: 1;
-}
-
-.nav-link a {
-  font-weight: 500;
-  color: white;
-}
-
-.nav-link a:visited {
-  color: white;
 }
 
 .btn-redirect-feature {
@@ -539,10 +548,6 @@ html {
   color: #F5F5F5;
 }
 
-.nav-static {
-  position: static;
-}
-
 @media screen and (max-width: 768px) {
   .navbar-top {
     position: fixed;
@@ -555,11 +560,12 @@ html {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #D8C2FF;
+    background-color: white;
     min-height: 100vh;
     width: 80vw;
     -webkit-transform: translateX(-150%);
             transform: translateX(-150%);
+    border-left: 3px solid #D8C2FF;
   }
   .navbar-top .nav-list-container ul {
     -webkit-box-orient: vertical;
@@ -568,8 +574,14 @@ html {
             flex-direction: column;
     min-height: 70%;
   }
-  .nav-list {
-    min-width: 80%;
+  .navbar-top .nav-list-container .logo-sidebar {
+    margin: 2rem 1rem;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .navbar-top .nav-list-container .logo-sidebar img {
+    max-width: 10rem;
   }
   .logo-web {
     -webkit-box-flex: 2;
@@ -584,10 +596,64 @@ html {
   .nav-toggle-icon #toggle-nav {
     display: block;
   }
-  .nav-link a {
-    color: #383574;
+  .btn-list {
+    background-color: white !important;
+    border: none !important;
   }
-  .nav-link a:visited {
+  .nav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-width: 80%;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border-left: 1px solid #D8C2FF;
+    background-color: #d8c2ff8c;
+  }
+  .nav-list .icon-link {
+    background: url("../assets/icon/home-fill.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 2rem;
+    min-height: 2rem;
+    display: block;
+  }
+  .nav-list .nav-link {
+    width: 70%;
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    padding-left: 0.5rem;
+  }
+  .nav-list .nav-link a {
+    font-size: 14px;
+    color: #383574;
+    display: block;
+    padding: 1.5rem 0;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 300px) {
+  .nav-list .nav-link a {
+    font-size: calc(14px + 4 * ((100vw - 300px) / 1100));
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 1400px) {
+  .nav-list .nav-link a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-list .nav-link a:visited {
     color: #383574;
   }
 }
