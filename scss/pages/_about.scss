@@ -68,8 +68,28 @@
     .about{
         margin: $marginSmall;
         padding: 0;
+        flex-direction: column;
         .card-img {
-            width: calc(120% + 2rem);
+            width: 150%;
         }
     }
+
+    .about-img1, .about-img3{
+        margin-top: -$marginMedium;
+        opacity: 0.8;
+        margin-right: $marginMedium;
+    }
+
+    .about-img2, .about-img4{
+        margin-bottom: -$marginMedium;
+        opacity: 0.8;
+        margin-left: $marginMedium;
+
+    }
+
+    .cards-text{
+        @include smallerfont();
+    }
+
+    // refactor code above, the margin
 }

@@ -880,9 +880,38 @@ html {
   .about {
     margin: 1rem;
     padding: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .about .card-img {
-    width: calc(120% + 2rem);
+    width: 150%;
+  }
+  .about-img1, .about-img3 {
+    margin-top: -2rem;
+    opacity: 0.8;
+    margin-right: 2rem;
+  }
+  .about-img2, .about-img4 {
+    margin-bottom: -2rem;
+    opacity: 0.8;
+    margin-left: 2rem;
+  }
+  .cards-text {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 400px) {
+  .cards-text {
+    font-size: calc(12px + 2 * ((100vw - 400px) / 1000));
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 1400px) {
+  .cards-text {
+    font-size: 14px;
   }
 }
 
