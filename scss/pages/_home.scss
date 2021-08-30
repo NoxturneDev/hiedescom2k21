@@ -1,5 +1,5 @@
 .landing-page{
-    @include backgroundCover("../assets/icon/landing-page-background.svg");
+    @include backgroundCover("../assets/animation/background-landing-page.gif");
 
     max-width: 100%;
     height: 130vh;
@@ -42,7 +42,7 @@
 
         .landing-page-content{
             flex-direction: column;
-        margin-top: -$marginLarge;
+            margin-top: -$marginLarge;
 
         }
     }

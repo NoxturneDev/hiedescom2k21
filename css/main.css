@@ -701,7 +701,7 @@ html {
 }
 
 .landing-page {
-  background: url("../assets/icon/landing-page-background.svg");
+  background: url("../assets/animation/background-landing-page.gif");
   background-size: cover;
   background-position: center;
   max-width: 100%;
