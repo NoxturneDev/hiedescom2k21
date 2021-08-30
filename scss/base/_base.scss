@@ -7,8 +7,10 @@
     box-sizing: border-box;
     text-decoration: none;
     :focus{
-        outline: none;
+        outline: 0!important;
     }
+
+    -webkit-tap-highlight-color: transparent!important;
 }
 
 body {
