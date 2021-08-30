@@ -88,7 +88,7 @@ function smoothScroll(e){
 //////////////////////////////////////////////////////////////
 // ON PHONE NAVBAR
 //////////////////////////////////////////////////////////////
-const navToggleIcon = document.querySelectorAll(".hamburger-icon img")
+const navToggleIcon = document.querySelectorAll(".nav-toggle-icon span")
 const navbarContainer = document.querySelector(".nav-list-container")
 const closeNavIcon = document.querySelector("#close-nav")
 navbarLink.forEach(link => {
@@ -117,24 +117,26 @@ function navViewport(e, link){
 
 navToggleIcon.forEach(icon => {
     icon.addEventListener("click", () => {
-        navToggle(icon)
+        navToggle()
+
+        console.log("test")
     })
 })
 
 
-function navToggle(icon){
-    if(icon.getAttribute("id") === "toggle-nav"){
+function navToggle(){
+    let toggleStatus = navbarContainer.dataset.toggle
+
+    // add smooth transition
+    navbarContainer.style.transition = "transform 1s ease-in-out"
+
+    if(toggleStatus == "false"){
         navbarContainer.style.transform = "translateX(0)"
-        closeNavIcon.style.display = "block"
-    } else if (icon.getAttribute("id") === "close-nav") {
-        navbarContainer.style.transform = "translateX(-150%)"
+        navbarContainer.dataset.toggle = "true"
     } else {
+        navbarContainer.dataset.toggle = "false"
         navbarContainer.style.transform = "translateX(-150%)"
     }
-
-    icon.addEventListener("transitionend", () => {
-        closeNavIcon.style.display = ""
-    })
 }
 
 
@@ -184,7 +186,7 @@ const featuresImg = document.querySelectorAll(".feature-redirect-img")
 //         })
 //     }
 // })
-
+// !browser alwasy chache the image so it's okay to use src changing
 // !FIX ABOVE
 
 
@@ -282,7 +284,7 @@ closeOverlayBtn.forEach(btn => {
         document.body.style.overflow = "";
     })
 })
-
+// !REFACTOR THOSE SHIT
 
 // TODO : fix animation, make it better
 // TODO : create an efective function for handling animation end or so 

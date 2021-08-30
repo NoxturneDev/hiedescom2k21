@@ -30,10 +30,10 @@
             }
 
             .chat-redirect{
-                @include backgroundContain("../assets/animation/Nau-jump-on-hover.gif");
+                @include backgroundContain("../assets/animation/nau-on-jump-gifmaker.gif");
             }
             .quiz-redirect {
-                @include backgroundContain("../assets/animation/Nau-jump-on-hover.gif");
+                @include backgroundContain("../assets/animation/nau-on-jump-gifmaker.gif");
             }
         }
     }

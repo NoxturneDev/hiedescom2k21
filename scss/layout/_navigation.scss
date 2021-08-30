@@ -1,106 +1,119 @@
 // NAVITAGTION BAR
 // TOP NAVIGATION
-.navbar-top{
+.navbar-top {
     @include centerElement();
-
-    max-width: 100%;
-    height: 3.4rem;
+    width: 100%;
+    max-height: 3.5rem;
+    height: 3rem;
     position: relative;
-    padding: $paddingMedium;
+    top: 0;
     background-color: $firstColor;
-    .logo-web{
-        flex: 2;
+
+    .nav-list-container {
+        min-width: 60%;
+        height: 100%;
+    }
+}
+
+// navbar list container
+.nav-list-container ul {
+    @include centerElement();
+    width: 100%;
+    height: 100%;
+    max-height: 3rem;
+    
+    .nav-list {
+        @include centerElement();
+        width: 50%;
+        height: 100%;
+    }
+}
+
+.logo-web {
+    flex-basis: 25%;
+    flex: 2;
+}
+
+// toggle icon in phone
+.nav-toggle-icon {
+    width: 3rem;
+    height: 3rem;
+    flex-basis: 5%;
+    position: relative;
+
+    & > * {
+        cursor: pointer;
     }
 
-    .hamburger-icon{
+    #toggle-nav {
+        @include backgroundContain("../../assets/icon/hamburger-icon-pink.svg");
+
+        width: 3rem;
+        height: 3rem;
         display: none;
-        #toggle-nav{
-            width: 3rem;
-        }
+        position: absolute;
+        top: 0;
+        z-index: 1;
     }
+}
 
-    .nav-list-container{
-        ul{
-            @include centerElement();
-            .nav-list{
-                cursor: pointer;
+.nav-link{
+    a{
+        font-weight: $semibold;
+        color: white;
 
-                margin-right: $marginBig;
-
-                .btn-redirect-feature{
-                    background-color: $lighterColor;
-                    font-weight: bold;
-                    color: $darkColor;
-
-                    a {
-                        color: $darkColor;
-
-                        &:visited{
-                            color: $darkColor;
-                        }
-                    }
-                }
-                .nav-link{
-                    @include smallerfont();
-                    
-                    font-weight: $semibold;
-                    color: $white;
-                    letter-spacing: 1px;
-                }
-            }
+        &:visited{
+            color: white;
         }
     }
 }
 
-.nav-link a {
-    color: $white;
-
-    &:visited{
-        color: $white;
+.btn-redirect-feature {
+    background-color: $secondColor;
+    a {
+        color: $darkColor;
     }
 }
-
 
 // IF NAVBAR IS LEAVING LANDING PAGE IT WILL POP UP AND STICK TO THE TOP
-.navbar-top-scrolled{
+.navbar-top-scrolled {
     @include dropShadow();
 
     position: fixed;
     z-index: 1;
     top: 0px;
     transition: background 0.5s ease-in-out;
-    background-color: #FFF;
+    background-color: #fff;
     width: 100%;
-    
-    .nav-list-container{
-        ul{
+
+    .nav-list-container {
+        ul {
             height: 100%;
             .nav-list {
                 cursor: pointer;
 
-                .nav-link{
+                .nav-link {
                     font-weight: $semibold;
 
                     a {
-                    color: $darkColor;
-                        &:visited{
-                         color: $darkColor;
+                        color: $darkColor;
+                        &:visited {
+                            color: $darkColor;
                         }
                     }
                 }
-    
-                .button{
+
+                .button {
                     background-color: $secondColor;
                     font-weight: $semibold;
                 }
 
-                .btn-redirect-feature{
+                .btn-redirect-feature {
                     a {
                         color: $white;
 
                         &:visited {
                             color: $white;
-                        
                         }
                     }
                 }
@@ -109,10 +122,9 @@
     }
 }
 
-.nav-static{
-    position: static; 
+.nav-static {
+    position: static;
 }
-
 
 // ON PAGE ACTIVE
 // .nav-link-on-view{
@@ -120,90 +132,136 @@
 //     height: 100%;
 // }
 
-
-@media screen and (max-width: $tabletBreakpoint){
-    .navbar-top{
-        background-color: $firstColor;
+@media screen and (max-width: $tabletBreakpoint) {
+    .navbar-top {
         position: fixed;
         width: 100vw;
-        
-        .logo-web{
-            margin-left: $marginMedium;
-        }
-        .hamburger-icon{
-            left: 1rem;
-            position: absolute;
-            text-align: left;
-            display: block;
-            flex: 1;
-            #toggle-nav{
-                width: 3rem;
-            }
+        top: 0;
+        padding: 0 $paddingMedium;
+        z-index: 9;
 
-            #close-nav{
-                margin-top: $marginSmall;
+     
+        .nav-list-container{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: $secondColor;
+            min-height: 100vh;
+            width: 80vw;
+            transform: translateX(-150%);
+            ul {
+                flex-direction: column;
+                min-height: 70%;
+                
             }
         }
     }
 
+    .nav-list {
+        min-width: 80%;
+    }
 
-    .nav-list-container{
-        position: fixed;
-        top: 4rem;
-        z-index: 9;
-        top: 0;
-        left: 0;
-        background-color: white;
-        transform: translateX(-150%);
-        transition: transform 1s ease-in-out;
+    .logo-web{
+        flex: 2;
+    }
 
-        #close-nav{
-            width: 3rem;
+    .nav-toggle-icon{
+        flex: 1;
+        #toggle-nav {
+            display: block;
         }
+    }
 
-        ul{
-            width: 90vw;
-            height: 100vh;
-            flex-direction: column;
-
-            .nav-list{
-                @include centerElement();
-                flex: 1;
-                width: 100%;
-                height: 60%;
-              
-                .nav-link {
-                    @include centerElement();
-
-                    color: $darkColor;
-                
-                    width: 100%;
-                    height: 100%;
-
-                    a {
-                        @include biggerfont();
-                        width: 100%;
-                        height: 100%;
-                        color: $darkColor;
-                        text-align: center;
-
-                        &:visited{
-                        color: $darkColor;
-                        }
-                    }
-                }
-
-                .btn-redirect-feature{
-                    display: none;
-
-                    a{
-                        color: $darkColor;
-                    }
-                }
+    .nav-link{
+        a{
+            color: $darkColor;
+              &:visited{
+                color: $darkColor;
             }
         }
     }
 }
+// @media screen and (max-width: $tabletBreakpoint) {
+//     .navbar-top {
+//         background-color: $firstColor;
+//         position: fixed;
+//         width: 100vw;
+//         flex-direction: column;
 
+//         .logo-web {
+//             margin-left: $marginMedium;
+//         }
+//         .hamburger-icon {
+//             left: 1rem;
+//             position: absolute;
+//             text-align: left;
+//             display: block;
+//             flex: 1;
+//             #toggle-nav {
+//                 width: 3rem;
+//             }
 
+//             #close-nav {
+//                 margin-top: $marginSmall;
+//             }
+//         }
+//     }
+//     // !REWORK ON NAVBAR
 
+//     .nav-list-container {
+//         position: fixed;
+//         top: 4rem;
+//         z-index: 9;
+//         top: 0;
+//         left: 0;
+//         background-color: white;
+//         transform: translateX(-150%);
+//         transition: transform 1s ease-in-out;
+
+//         #close-nav {
+//             width: 3rem;
+//         }
+
+//         ul {
+//             width: 90vw;
+//             height: 100vh;
+//             flex-direction: column;
+
+//             .nav-list {
+//                 @include centerElement();
+//                 flex: 1;
+//                 width: 100%;
+//                 height: 60%;
+
+//                 .nav-link {
+//                     @include centerElement();
+
+//                     color: $darkColor;
+
+//                     width: 100%;
+//                     height: 100%;
+
+//                     a {
+//                         @include biggerfont();
+//                         width: 100%;
+//                         height: 100%;
+//                         color: $darkColor;
+//                         text-align: center;
+
+//                         &:visited {
+//                             color: $darkColor;
+//                         }
+//                     }
+//                 }
+
+//                 .btn-redirect-feature {
+//                     display: none;
+
+//                     a {
+//                         color: $darkColor;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
