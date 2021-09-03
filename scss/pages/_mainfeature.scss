@@ -30,10 +30,10 @@
             }
 
             .chat-redirect {
-                @include backgroundContain("../assets/animation/nau-on-jump-gifmaker.gif");
+                @include backgroundContain("../assets/nau/nau-stay-still.png");
             }
             .quiz-redirect {
-                @include backgroundContain("../assets/animation/nau-on-jump-gifmaker.gif");
+                @include backgroundContain("../assets/nau/nau-stay-still.png");
             }
         }
     }

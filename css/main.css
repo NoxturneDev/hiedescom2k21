@@ -408,7 +408,7 @@ html {
   height: 3rem;
   position: relative;
   top: 0;
-  background-color: #9BA9FF;
+  background-color: #3DCEFF;
 }
 
 .navbar-top .nav-list-container {
@@ -455,12 +455,12 @@ html {
 
 .nav-list .nav-link a {
   font-weight: 500;
-  color: white;
+  color: #02559E;
   background-color: none;
 }
 
 .nav-list .nav-link a:visited {
-  color: white;
+  color: #02559E;
 }
 
 .logo-web {
@@ -497,11 +497,12 @@ html {
 }
 
 .btn-redirect-feature {
-  background-color: #D8C2FF;
+  background-color: #FCDB00;
+  border: 2px solid #02559E;
 }
 
 .btn-redirect-feature a {
-  color: #383574;
+  color: #02559E;
 }
 
 .navbar-top-scrolled {
@@ -529,24 +530,24 @@ html {
 }
 
 .navbar-top-scrolled .nav-list-container ul .nav-list .nav-link a {
-  color: #383574;
+  color: #02559E;
 }
 
 .navbar-top-scrolled .nav-list-container ul .nav-list .nav-link a:visited {
-  color: #383574;
+  color: #02559E;
 }
 
 .navbar-top-scrolled .nav-list-container ul .nav-list .button {
-  background-color: #D8C2FF;
+  background-color: #FCDB00;
   font-weight: 500;
 }
 
 .navbar-top-scrolled .nav-list-container ul .nav-list .btn-redirect-feature a {
-  color: #F5F5F5;
+  color: #FFF;
 }
 
 .navbar-top-scrolled .nav-list-container ul .nav-list .btn-redirect-feature a:visited {
-  color: #F5F5F5;
+  color: #FFF;
 }
 
 @media screen and (max-width: 768px) {
@@ -566,7 +567,7 @@ html {
     width: 80vw;
     -webkit-transform: translateX(-150%);
             transform: translateX(-150%);
-    border-left: 3px solid #D8C2FF;
+    border-left: 3px solid #FCDB00;
   }
   .navbar-top .nav-list-container ul {
     -webkit-box-orient: vertical;
@@ -614,8 +615,8 @@ html {
     min-width: 80%;
     margin: 1rem 0;
     padding: 0.5rem;
-    border-left: 1px solid #D8C2FF;
-    background-color: #d8c2ff8c;
+    border-left: 1px solid #FCDB00;
+    background-color: #3DCEFF;
   }
   .nav-list .icon-link {
     background: url("../assets/icon/home-fill.svg");
@@ -635,7 +636,7 @@ html {
   }
   .nav-list .nav-link a {
     font-size: 14px;
-    color: #383574;
+    color: #02559E;
     display: block;
     padding: 1.5rem 0;
   }
@@ -655,7 +656,7 @@ html {
 
 @media screen and (max-width: 768px) {
   .nav-list .nav-link a:visited {
-    color: #383574;
+    color: #02559E;
   }
 }
 
@@ -670,15 +671,15 @@ html {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 12rem;
-  background-color: #383574;
+  background-color: #02559E;
   max-width: 100vw;
   height: 20vh;
-  color: #F5F5F5;
+  color: #FFF;
   text-align: center;
 }
 
 .loader-container {
-  background-color: #383574;
+  background-color: #02559E;
   margin: 0;
   position: fixed;
   -webkit-transform: translateX(-100%);
@@ -701,12 +702,12 @@ html {
 }
 
 .landing-page {
-  background: url("../assets/animation/background-landing-page.gif");
+  background: url("../assets/image/landing-page-background.png");
   background-size: cover;
   background-position: center;
   max-width: 100%;
   height: 130vh;
-  color: #F5F5F5;
+  color: #FFF;
   margin-top: -0.5em;
 }
 
@@ -868,7 +869,7 @@ html {
 
 .cards-text > * {
   margin: 1rem;
-  color: #383574;
+  color: #02559E;
   line-height: 110%;
 }
 
@@ -921,7 +922,7 @@ html {
   background-position: center;
   max-width: 100%;
   height: 150vh;
-  color: #F5F5F5;
+  color: #FFF;
   padding-top: 25%;
   background-position: top;
   position: relative;
@@ -980,14 +981,14 @@ html {
 }
 
 .main-feature-page .feature-wrapper .features .chat-redirect {
-  background: url("../assets/animation/nau-on-jump-gifmaker.gif");
+  background: url("../assets/nau/nau-stay-still.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .main-feature-page .feature-wrapper .features .quiz-redirect {
-  background: url("../assets/animation/nau-on-jump-gifmaker.gif");
+  background: url("../assets/nau/nau-stay-still.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -1003,7 +1004,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #D8C2FF;
+  color: #FCDB00;
   width: 80%;
   padding: 0.5rem 1.5rem;
   height: 100%;
@@ -1019,12 +1020,12 @@ html {
 }
 
 #redirectBtnQuiz {
-  background-color: #5B518F;
+  background-color: #006ece;
 }
 
 #redirectBtnChat {
-  background-color: #D8C2FF;
-  color: #5B518F;
+  background-color: #FCDB00;
+  color: #006ece;
 }
 
 @media screen and (max-width: 768px) {
@@ -1110,7 +1111,7 @@ html {
   width: 50%;
   height: 50%;
   border-radius: 100%;
-  background-color: #9BA9FF;
+  background-color: #3DCEFF;
 }
 
 .developer-page .cards-wrapper .dev-card .dev-desc {
@@ -1138,7 +1139,7 @@ html {
           align-items: center;
   height: 95vh;
   max-width: 100vw;
-  background-color: #9BA9FF;
+  background-color: #3DCEFF;
   position: relative;
   overflow-x: hidden;
 }
@@ -1186,7 +1187,7 @@ html {
           align-items: center;
   width: 90%;
   height: 90%;
-  background-color: #D8C2FF;
+  background-color: #FCDB00;
 }
 
 .slides-arrow {
@@ -1296,7 +1297,7 @@ html {
           align-items: center;
   min-width: 340px;
   min-height: 440px;
-  background-color: #F5F5F5;
+  background-color: #FFF;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1319,7 +1320,7 @@ html {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  background-color: #5B518F;
+  background-color: #006ece;
   margin-bottom: 1rem;
   padding: 0.5rem 1.5rem;
   border-top-left-radius: 12px;
@@ -1365,7 +1366,7 @@ html {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  background-color: #D8C2FF;
+  background-color: #FCDB00;
   padding: 0.5rem;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
@@ -1379,11 +1380,11 @@ html {
   text-indent: 10px;
   padding: 0;
   font-size: 1rem;
-  color: #383574;
+  color: #02559E;
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
-  background: #F5F5F5;
+  background: #FFF;
   border-radius: 8px;
 }
 
@@ -1421,15 +1422,15 @@ html {
 
 .msg-container .msg-text {
   width: 100%;
-  background-color: #D8C2FF;
-  color: #383574;
+  background-color: #FCDB00;
+  color: #02559E;
   margin-bottom: 0.2em;
   font-weight: 500;
   padding: 1em 0.5rem;
 }
 
 .msg-container .timestamp {
-  color: #383574;
+  color: #02559E;
   letter-spacing: 1px;
   margin: 0 1em 0.2em 1em;
   font-size: 8pt;
@@ -1446,8 +1447,8 @@ html {
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
   padding-right: 1.5rem;
-  background-color: #5B518F;
-  color: #D8C2FF;
+  background-color: #006ece;
+  color: #FCDB00;
 }
 
 #userChat.msg-container {

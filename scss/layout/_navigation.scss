@@ -7,7 +7,7 @@
     height: 3rem;
     position: relative;
     top: 0;
-    background-color: $firstColor;
+    background-color: $mainColor;
 
     .nav-list-container {
         min-width: 60%;
@@ -39,12 +39,13 @@
     .nav-link {
         a {
             font-weight: $semibold;
-            color: white;
+            color: $darkColor;
             background-color: none;
 
-            &:visited {
-                color: white;
-            }
+    
+                &:visited {
+                    color: $darkColor;
+                }
         }
     }
 }
@@ -80,6 +81,7 @@
 // MAIN BUTTON ON NAVBAR
 .btn-redirect-feature {
     background-color: $secondColor;
+    border: 2px solid $darkColor;
     a {
         color: $darkColor;
     }
@@ -195,7 +197,7 @@
         margin: $marginSmall 0;
         padding: $paddingSmall;
         border-left: 1px solid $secondColor;
-        background-color: #d8c2ff8c;
+        background-color: $mainColor;
         .icon-link {
             @include backgroundContain("../assets/icon/home-fill.svg");
 

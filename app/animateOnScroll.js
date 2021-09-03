@@ -47,7 +47,7 @@ const observerNav = new IntersectionObserver(entries => {
             logoNavbar.src = "./assets/icon/logo in navbar v1.svg"
         } else {
             navbar.classList.remove("navbar-top-scrolled")
-            logoNavbar.src = "./assets/icon/logo in navbar v2.svg"
+            logoNavbar.src = "./assets/icon/logo in navbar v1.svg"
         }
     })
 }, navbarObserverOption)
