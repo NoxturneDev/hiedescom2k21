@@ -1,4 +1,4 @@
-.main-feature-page{
+.main-feature-page {
     @include backgroundCover("../assets/image/feature-background.svg");
 
     max-width: 100%;
@@ -8,7 +8,7 @@
     background-position: top;
     position: relative;
 
-    .feature-wrapper{
+    .feature-wrapper {
         @include centerElement();
         @include sliding();
 
@@ -16,20 +16,20 @@
         transform: translateX(0);
         opacity: 1;
         margin-top: -$marginLarge;
-        
-        .features{
+
+        .features {
             @include centerElement();
             flex-basis: 50%;
             height: 60%;
             padding: $paddingMedium;
-            .feature-redirect-img{
+            .feature-redirect-img {
                 @include centerElement();
                 width: 80%;
-                height: calc(110% + 1rem);
+                height: $deskImgMax;
                 cursor: pointer;
             }
 
-            .chat-redirect{
+            .chat-redirect {
                 @include backgroundContain("../assets/animation/nau-on-jump-gifmaker.gif");
             }
             .quiz-redirect {
@@ -41,7 +41,7 @@
 
 .button-overlay {
     @include centerElement();
-    
+
     color: $secondColor;
     width: 80%;
     padding: $paddingSmall $paddingMedium;
@@ -56,40 +56,40 @@
     }
 }
 
-#redirectBtnQuiz{
+#redirectBtnQuiz {
     background-color: $semiDarkColor;
 }
 
-#redirectBtnChat{
+#redirectBtnChat {
     background-color: $secondColor;
     color: $semiDarkColor;
 }
 
-
 @media screen and (max-width: $tabletBreakpoint) {
-    .main-feature-page{
+    .main-feature-page {
         @include centerElement();
-        height: 120vh;
-        
-        .feature-wrapper{
-            flex-direction: column;
-            max-height: 50%;
+        overflow-x: hidden;
+        border: $debug;
+        width: 100%;
+        height: 100vh;
+
+        .feature-wrapper {
             width: 100%;
-
-            .features{
-                flex-direction: column;
-                width: 80%;
-
-                .feature-redirect-img{
-                    width: 70%;
-                    height: calc(100% + 2rem);
-
-                    img{
-                        width: 100%;
-                    }
-                }
-            }
+            border: $debug;
+            height: 70%;
         }
     }
 
+    .feature-redirect-img {
+        min-width: 20rem;
+
+        border: $debug;
+    }
+
+    .chat-redirect {
+        //    transform: translateX(0);
+    }
+    .quiz-redirect {
+        // transform: translateX(100%);
+    }
 }
