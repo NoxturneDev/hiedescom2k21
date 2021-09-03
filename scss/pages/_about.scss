@@ -66,23 +66,28 @@
 
 @media screen and (max-width : $tabletBreakpoint){
     .about{
-        margin: $marginSmall;
+        margin: $marginMedium 0.2em;
         padding: 0;
         flex-direction: column;
+        width: 90%;
+
         .card-img {
-            width: 150%;
+            @include centerElement();
+            width: 90%;
+            flex-direction: column;
         }
     }
 
+    .about-one, .about-three{
+        flex-direction: column-reverse;
+    }
+
     .about-img1, .about-img3{
-        margin-top: -$marginMedium;
-        opacity: 0.8;
         margin-right: $marginMedium;
+        text-align: left;
     }
 
     .about-img2, .about-img4{
-        margin-bottom: -$marginMedium;
-        opacity: 0.8;
         margin-left: $marginMedium;
 
     }

@@ -905,24 +905,41 @@ html {
 
 @media screen and (max-width: 768px) {
   .about {
-    margin: 1rem;
+    margin: 2rem 0.2em;
     padding: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 90%;
   }
   .about .card-img {
-    width: 150%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 90%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about-one, .about-three {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
   .about-img1, .about-img3 {
-    margin-top: -2rem;
-    opacity: 0.8;
     margin-right: 2rem;
+    text-align: left;
   }
   .about-img2, .about-img4 {
-    margin-bottom: -2rem;
-    opacity: 0.8;
     margin-left: 2rem;
   }
   .cards-text {
