@@ -46,15 +46,17 @@
     background-color: white;
     max-width: 30vw;
     border-radius: $borderRadiusSmall;
+    border: 2px solid $darkColor;
     .chat-header{
         @include leftAlignElement();
 
         width: 100%;
-        background-color: $semiDarkColor;
+        background-color: $mainColor;
         margin-bottom: $marginSmall;
         padding: $paddingSmall $paddingMedium;
         border-top-left-radius: $borderRadiusSmall;
         border-top-right-radius:  $borderRadiusSmall;
+        border-bottom: 2px solid $darkColor;
 
         .chat-name{
             @include centerElement();
@@ -66,6 +68,7 @@
             h3{
                 letter-spacing: 1px;
                 font-weight: $semibold;
+                color: $darkColor;
             }
         }
     
@@ -96,6 +99,7 @@
         flex: 2;
         background: $white;
         border-radius: 8px;
+        margin-right: $marginSmall;
     }
 
     #btnSend {
@@ -140,8 +144,9 @@
         border-top-right-radius: 12px;
         border-bottom-right-radius: 12px;
         padding-right: $paddingMedium;
-        background-color: $semiDarkColor;
-        color: $secondColor;
+        background-color: $secondColor;
+        color: $darkColor;
+        border: 1px solid $darkColor;
     }
 }
 
@@ -153,6 +158,8 @@
         border-top-left-radius: 12px;
         border-bottom-left-radius: 12px;
         padding-left: $paddingMedium;
+        background-color: $mainColor;
+        border: 1px solid $darkColor;
     }
 }
 

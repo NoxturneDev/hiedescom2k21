@@ -1040,18 +1040,15 @@ html {
         -ms-flex-align: center;
             align-items: center;
     overflow-x: hidden;
-    border: 1px solid red;
     width: 100%;
     height: 100vh;
   }
   .main-feature-page .feature-wrapper {
     width: 100%;
-    border: 1px solid red;
     height: 70%;
   }
   .feature-redirect-img {
     min-width: 20rem;
-    border: 1px solid red;
   }
 }
 
@@ -1307,6 +1304,7 @@ html {
   background-color: white;
   max-width: 30vw;
   border-radius: 12px;
+  border: 2px solid #02559E;
 }
 
 .chat-window .chat-header {
@@ -1320,11 +1318,12 @@ html {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  background-color: #006ece;
+  background-color: #3DCEFF;
   margin-bottom: 1rem;
   padding: 0.5rem 1.5rem;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  border-bottom: 2px solid #02559E;
 }
 
 .chat-window .chat-header .chat-name {
@@ -1347,6 +1346,7 @@ html {
 .chat-window .chat-header .chat-name h3 {
   letter-spacing: 1px;
   font-weight: 500;
+  color: #02559E;
 }
 
 .chat-window .chat-header #closeChat {
@@ -1386,6 +1386,7 @@ html {
           flex: 2;
   background: #FFF;
   border-radius: 8px;
+  margin-right: 1rem;
 }
 
 .input-form #btnSend {
@@ -1447,8 +1448,9 @@ html {
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
   padding-right: 1.5rem;
-  background-color: #006ece;
-  color: #FCDB00;
+  background-color: #FCDB00;
+  color: #02559E;
+  border: 1px solid #02559E;
 }
 
 #userChat.msg-container {
@@ -1462,5 +1464,7 @@ html {
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
   padding-left: 1.5rem;
+  background-color: #3DCEFF;
+  border: 1px solid #02559E;
 }
 /*# sourceMappingURL=main.css.map */

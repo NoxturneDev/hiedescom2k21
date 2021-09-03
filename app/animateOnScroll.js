@@ -33,10 +33,8 @@ const mediaQuery = window.matchMedia("(min-width: 768px)")
 function changeNavOnScroll(e){
     if(e.matches){
         observerNav.observe(navbarIntersectTarget)
-        console.log("matches")
     } else {
         observerNav.unobserve(navbarIntersectTarget)
-        console.log("no matches")
     }
 }
 
@@ -64,25 +62,25 @@ const observerAbout = new IntersectionObserver(entries => {
             return
         } else {
 
-            // FADE IN LEFT
-            if (entry.target.dataset.animation == "fade-left") {
-                entry.target.classList.add("wipe-left");
+            // // FADE IN LEFT
+            // if (entry.target.dataset.animation == "fade-left") {
+            //     // entry.target.classList.add("wipe-left");
 
-                // REMOVING ANIMATION CLASS AFTER THE ANIMATION END
-                entry.target.addEventListener("animationend", () => {
-                    entry.target.classList.remove("wipe-left");
-                })
-            }
+            //     // REMOVING ANIMATION CLASS AFTER THE ANIMATION END
+            //     entry.target.addEventListener("animationend", () => {
+            //         entry.target.classList.remove("wipe-left");
+            //     })
+            // }
 
-            // FADE IN RIGHT
-            else if (entry.target.dataset.animation == "fade-right") {
-                entry.target.classList.add("wipe-right");
+            // // FADE IN RIGHT
+            // else if (entry.target.dataset.animation == "fade-right") {
+            //     // entry.target.classList.add("wipe-right");
 
-                // REMOVING ANIMATION CLASS AFTER THE ANIMATION END
-                entry.target.addEventListener("animationend", () => {
-                    entry.target.classList.remove("wipe-right");
-                })
-            }
+            //     // REMOVING ANIMATION CLASS AFTER THE ANIMATION END
+            //     entry.target.addEventListener("animationend", () => {
+            //         entry.target.classList.remove("wipe-right");
+            //     })
+            // }
 
             // STOP OBSERVING
             observerAbout.unobserve(entry.target)
