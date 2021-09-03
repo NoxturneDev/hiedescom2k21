@@ -5,7 +5,6 @@
 
     z-index: 1;
     transform: translateX(-100%);
-    transition: transform 1s ease-in-out;
 
     .chat-overlay-wrapper{
         @include centerElement();
@@ -44,8 +43,10 @@
     @include chatWindow();
     @include dropShadow2();
     background-color: white;
-    max-width: 30vw;
+    width: 30vw;
+    max-width: 300px;
     border-radius: $borderRadiusSmall;
+    overflow: hidden;
     border: 2px solid $darkColor;
     .chat-header{
         @include leftAlignElement();
@@ -54,8 +55,6 @@
         background-color: $mainColor;
         margin-bottom: $marginSmall;
         padding: $paddingSmall $paddingMedium;
-        border-top-left-radius: $borderRadiusSmall;
-        border-top-right-radius:  $borderRadiusSmall;
         border-bottom: 2px solid $darkColor;
 
         .chat-name{
@@ -113,20 +112,32 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 0 $paddingSmall;
     
+    // .msg-bubble{
+    //     max-width: 76%;
+    //     display: flex;
+    //     flex-direction: column;
+    //     border: $debug;
+    // }
     .msg-bubble{
-        max-width: 76%;
-        display: flex;
-        flex-direction: column;
-    }
-    .msg-text{
-        width: 100%;
-        background-color: $secondColor;
-        color: $darkColor;
+        max-width: 72%;
+        background-color: $mainColor;
+        padding: 0.8em 1em 1em 0.5em;
+        border-radius: 23px;
         margin-bottom: 0.2em;
-        font-weight: $semibold;
-        padding: 1em $paddingSmall;
+        .msg-text{
+            @include smallerfont();
+        }
     }
+    // .msg-text{
+    //     width: 100%;
+    //     background-color: $secondColor;
+    //     color: $darkColor;
+    //     margin-bottom: 0.2em;
+    //     font-weight: $semibold;
+    //     padding: 1em $paddingSmall;
+    // }
     
     .timestamp {
         color: $darkColor;
@@ -138,28 +149,31 @@
 
 
 #botChat.msg-container{
-    text-align: left;
+    text-align: right;
     align-items: flex-start;
-    .msg-text{
-        border-top-right-radius: 12px;
-        border-bottom-right-radius: 12px;
-        padding-right: $paddingMedium;
-        background-color: $secondColor;
-        color: $darkColor;
+    
+    .msg-bubble{
         border: 1px solid $darkColor;
+        background-color: $secondColor;
+        .msg-text{
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            color: $darkColor;
+        }
     }
 }
 
 #userChat.msg-container{
-    text-align: right;
+    text-align: left;
     align-items: flex-end;
-    
-    .msg-text{
-        border-top-left-radius: 12px;
-        border-bottom-left-radius: 12px;
-        padding-left: $paddingMedium;
-        background-color: $mainColor;
+
+    .msg-bubble{
         border: 1px solid $darkColor;
+        .msg-text{
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+        }
     }
+
 }
 

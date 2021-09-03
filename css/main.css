@@ -404,14 +404,23 @@ html {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  max-height: 3.5rem;
-  height: 3rem;
+  max-height: 4rem;
+  height: 12vh;
   position: relative;
   top: 0;
   background-color: #3DCEFF;
 }
 
 .navbar-top .nav-list-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-width: 60%;
   height: 100%;
 }
@@ -445,7 +454,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 50%;
+  width: 20%;
   height: 100%;
 }
 
@@ -457,6 +466,19 @@ html {
   font-weight: 500;
   color: #02559E;
   background-color: none;
+  font-size: 12px;
+}
+
+@media screen and (min-width: 400px) {
+  .nav-list .nav-link a {
+    font-size: calc(12px + 2 * ((100vw - 400px) / 1000));
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .nav-list .nav-link a {
+    font-size: 14px;
+  }
 }
 
 .nav-list .nav-link a:visited {
@@ -469,6 +491,10 @@ html {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
+}
+
+.logo-web img.logo-navbar {
+  width: 25%;
 }
 
 .nav-toggle-icon {
@@ -1236,10 +1262,6 @@ html {
   z-index: 1;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-  -webkit-transition: -webkit-transform 1s ease-in-out;
-  transition: -webkit-transform 1s ease-in-out;
-  transition: transform 1s ease-in-out;
-  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
 }
 
 .chat-overlay .chat-overlay-wrapper {
@@ -1302,8 +1324,10 @@ html {
   -webkit-filter: drop-shadow(0px -22px 58px rgba(91, 81, 143, 0.27)) drop-shadow(0px -2.75474px 22.778px rgba(91, 81, 143, 0.150826));
           filter: drop-shadow(0px -22px 58px rgba(91, 81, 143, 0.27)) drop-shadow(0px -2.75474px 22.778px rgba(91, 81, 143, 0.150826));
   background-color: white;
-  max-width: 30vw;
+  width: 30vw;
+  max-width: 300px;
   border-radius: 12px;
+  overflow: hidden;
   border: 2px solid #02559E;
 }
 
@@ -1321,8 +1345,6 @@ html {
   background-color: #3DCEFF;
   margin-bottom: 1rem;
   padding: 0.5rem 1.5rem;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
   border-bottom: 2px solid #02559E;
 }
 
@@ -1408,26 +1430,31 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 0 0.5rem;
 }
 
 .msg-container .msg-bubble {
-  max-width: 76%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  max-width: 72%;
+  background-color: #3DCEFF;
+  padding: 0.8em 1em 1em 0.5em;
+  border-radius: 23px;
+  margin-bottom: 0.2em;
 }
 
-.msg-container .msg-text {
-  width: 100%;
-  background-color: #FCDB00;
-  color: #02559E;
-  margin-bottom: 0.2em;
-  font-weight: 500;
-  padding: 1em 0.5rem;
+.msg-container .msg-bubble .msg-text {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 400px) {
+  .msg-container .msg-bubble .msg-text {
+    font-size: calc(12px + 2 * ((100vw - 400px) / 1000));
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .msg-container .msg-bubble .msg-text {
+    font-size: 14px;
+  }
 }
 
 .msg-container .timestamp {
@@ -1438,33 +1465,36 @@ html {
 }
 
 #botChat.msg-container {
-  text-align: left;
+  text-align: right;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
 }
 
-#botChat.msg-container .msg-text {
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
-  padding-right: 1.5rem;
-  background-color: #FCDB00;
-  color: #02559E;
+#botChat.msg-container .msg-bubble {
   border: 1px solid #02559E;
+  background-color: #FCDB00;
+}
+
+#botChat.msg-container .msg-bubble .msg-text {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  color: #02559E;
 }
 
 #userChat.msg-container {
-  text-align: right;
+  text-align: left;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
 }
 
-#userChat.msg-container .msg-text {
+#userChat.msg-container .msg-bubble {
+  border: 1px solid #02559E;
+}
+
+#userChat.msg-container .msg-bubble .msg-text {
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
-  padding-left: 1.5rem;
-  background-color: #3DCEFF;
-  border: 1px solid #02559E;
 }
 /*# sourceMappingURL=main.css.map */
