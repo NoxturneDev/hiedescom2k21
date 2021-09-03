@@ -10,28 +10,40 @@
 </head>
 
 <body>
-    <nav class="navbar-top navbar-top-scrolled nav-static">
-        <section class="hamburger-icon">
-            <img src="assets/icon/hamburger-icon-pink.svg" alt="" id="toggle-nav">
+   <nav class="navbar-top">
+        <section class="nav-toggle-icon">
+            <span id="toggle-nav"></span>
         </section>
         <section class="logo-web">
-            <img src="assets/icon/logo in navbar v2.svg" alt="" class="small-logo logo-navbar">
+            <img src="assets/icon/logo in navbar v1.svg" alt="" class="small-logo logo-navbar">
         </section>
-        <section class="nav-list-container">
+        <section class="nav-list-container" data-toggle="false">
+            <div class="logo-sidebar">
+                <img src="assets/icon/logo in navbar v1.svg" alt="">
+            </div>
             <ul>
                 <li class="nav-list">
-                    <a href="index.html" class="nav-link">Home</a>
+                    <div class="icon-link"></div>
+                    <span class="nav-link">
+                        <a href="index.html">Home</a>
+                    </span>
                 </li>
                 <li class="nav-list">
-                    <a href="" class="nav-link">About</a>
+                    <div class="icon-link"></div>
+                    <span class="nav-link">
+                        <a href="index.html">About</a>
+                    </span>
                 </li>
                 <li class="nav-list">
-                    <a href="" class="nav-link">FYI Facts</a>
+                    <div class="icon-link"></div>
+                    <span class="nav-link">
+                        <a href="index.html">FYI FACTS</a>
+                    </span>
                 </li>
-                <li class="nav-list">
-                    <button class="button btn-redirect-feature" class="nav-link">
-                        Kuy Chat!
-                    </button>
+                <li class="nav-list btn-list">
+                    <span class="button btn-redirect-feature nav-link">
+                        <a href="index.html">Kuy Chat!</a>
+                    </span>
                 </li>
             </ul>
         </section>
@@ -40,130 +52,157 @@
     <!-- INFORMATIVE PAGE -->
     <section class="slide-show-container">
         <aside class="carousel">
-            <!-- <div class="slide-active-viewport">
-                <div class="slide-padding">
-                    <div class="slides" data-slide-index="1" data-slide-active="false">
-                        <div class="slide-header">
-                            <h3>Lorem, ipsum dolor 1</h3>
-                        </div>
-                        <div class="slide-img"></div>
-                        <div class="slide-text">
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod cumque consequuntur
-                                architecto aspernatur asperiores corrupti nesciunt sequi distinctio laborum quaerat!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-padding">
-                    <div class="slides" data-slide-index="2"
-                    data-slide-active="true">
-                        <div class="slide-header">
-                            <h3>Lorem, ipsum dolor 2</h3>
-                        </div>
-                        <div class="slide-img"></div>
-                        <div class="slide-text">
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod cumque consequuntur
-                                architecto aspernatur asperiores corrupti nesciunt sequi distinctio laborum quaerat!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-padding">
-                    <div class="slides" data-slide-index="3"  data-slide-active="false">
-                        <div class="slide-header">
-                            <h3>Lorem, ipsum dolor 3</h3>
-                        </div>
-                        <div class="slide-img"></div>
-                        <div class="slide-text">
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod cumque consequuntur
-                                architecto aspernatur asperiores corrupti nesciunt sequi distinctio laborum quaerat!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-padding">
-                    <div class="slides" data-slide-index="4"  data-slide-active="false">
-                        <div class="slide-header">
-                            <h3>Lorem, ipsum dolor 4</h3>
-                        </div>
-                        <div class="slide-img"></div>
-                        <div class="slide-text">
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod cumque consequuntur
-                                architecto aspernatur asperiores corrupti nesciunt sequi distinctio laborum quaerat!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-padding">
-                    <div class="slides" data-slide-index="5"  data-slide-active="false">
-                        <div class="slide-header">
-                            <h3>Lorem, ipsum dolor 5</h3>
-                        </div>
-                        <div class="slide-img"></div>
-                        <div class="slide-text">
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod cumque consequuntur
-                                architecto aspernatur asperiores corrupti nesciunt sequi distinctio laborum quaerat!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
             <section class="slides-wrapper">
-                <div class="slides slide1">
+                <div class="slides slide1 active">
                     <div class="slide-content">
-                        <div class="slide-header">
-                            <h3>Lorem, ipsum. 1</h3>
+                        <div class="slide-img">
+                            <img src="assets/nau/nau-stay-still.png" alt="">
                         </div>
-                        <div class="slide-img"></div>
-                        <div class="slide-text"></div>
+                        <article>
+                            <div class="slide-header">
+                                <h3>LOREM IPSUM DOLOR 1</h3>
+                            </div>
+                           
+                            <div class="slide-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, est deleniti. Repellendus dolores, excepturi earum temporibus nostrum voluptas ratione aut.</div>
+                        </article>
                     </div>
                 </div>
-                <div class="slides slide2 active">
+                <div class="slides slide2">
                     <div class="slide-content" >
-                        <div class="slide-header">
-                            <h3>Lorem, ipsum. 2</h3>
+                        <div class="slide-img">
+                            <img src="assets/nau/nau-stay-still.png" alt="">
                         </div>
-                        <div class="slide-img"></div>
-                        <div class="slide-text"></div>
+                        <article>
+                            <div class="slide-header">
+                                <h3>LOREM IPSUM DOLOR 2</h3>
+                            </div>
+                           
+                            <div class="slide-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, est deleniti. Repellendus dolores, excepturi earum temporibus nostrum voluptas ratione aut.</div>
+                        </article>
                     </div>
                 </div>
                 <div class="slides slide3">
                     <div class="slide-content" >
-                        <div class="slide-header">
-                            <h3>Lorem, ipsum. 3</h3>
+                        <div class="slide-img">
+                            <img src="assets/nau/nau-stay-still.png" alt="">
                         </div>
-                        <div class="slide-img"></div>
-                        <div class="slide-text"></div>
+                        <article>
+                            <div class="slide-header">
+                                <h3>LOREM IPSUM DOLOR 3</h3>
+                            </div>
+                           
+                            <div class="slide-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, est deleniti. Repellendus dolores, excepturi earum temporibus nostrum voluptas ratione aut.</div>
+                        </article>
+                    </div>
+                </div>
+                <div class="slides slide4">
+                    <div class="slide-content" >
+                        <div class="slide-img">
+                            <img src="assets/nau/nau-stay-still.png" alt="">
+                        </div>
+                        <article>
+                            <div class="slide-header">
+                                <h3>LOREM IPSUM DOLOR 4</h3>
+                            </div>
+                           
+                            <div class="slide-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, est deleniti. Repellendus dolores, excepturi earum temporibus nostrum voluptas ratione aut.</div>
+                        </article>
                     </div>
                 </div>
             </section>
         </aside>
         <div class="slides-arrow">
-            <div class="left-arrow icon-arrow" id="prevSlide"></div>
-            <div class="right-arrow icon-arrow" id="nextSlide"></div>
+            <button class="left-arrow icon-arrow" id="prevSlide"></button>
+            <button class="right-arrow icon-arrow" id="nextSlide"></button>
         </div>
     </section>
     <div class="gallery-page big-container">
         <div class="header">GALLERY OF FAME</div>
         <div class="picture-wrapper">
-            <div class="photos"></div>
-            <div class="photos"></div>
-            <div class="photos"></div>
-            <div class="photos"></div>
-            <div class="photos"></div>
-            <div class="photos"></div>
-            <div class="photos"></div>
-            <div class="photos"></div>
-            <div class="photos"></div>
+            <div class="image-container" style="--i:1">
+                <div class="image-header">
+                    <h3>LOREM</h3>
+                    <div class="share-btn">
+                    </div>
+                </div>
+                <div class="image-caption">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                </div>
+            </div>
+            <div class="image-container" style="--i:2">
+                <div class="image-header">
+                    <h3>LOREM</h3>
+                    <div class="share-btn">
+                    </div>
+                </div>
+                <div class="image-caption">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                </div>
+            </div>
+            <div class="image-container" style="--i:3">
+                <div class="image-header">
+                    <h3>LOREM</h3>
+                    <div class="share-btn">
+                    </div>
+                </div>
+                <div class="image-caption">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                </div>
+            </div>
+            <div class="image-container" style="--i:4">
+                <div class="image-header">
+                    <h3>LOREM</h3>
+                    <div class="share-btn">
+                    </div>
+                </div>
+                <div class="image-caption">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                </div>
+            </div>
+            <div class="image-container" style="--i:5">
+                <div class="image-header">
+                    <h3>LOREM</h3>
+                    <div class="share-btn">
+                    </div>
+                </div>
+                <div class="image-caption">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                </div>
+            </div>
+            <div class="image-container" style="--i:6">
+                <div class="image-header">
+                    <h3>LOREM</h3>
+                    <div class="share-btn">
+                    </div>
+                </div>
+                <div class="image-caption">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                </div>
+            </div>
+            <div class="image-container" style="--i:7">
+                <div class="image-header">
+                    <h3>LOREM</h3>
+                    <div class="share-btn">
+                        
+                    </div>
+                </div>
+                <div class="image-caption" >
+                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div> <div class="image-container" style="--i:8">
+                <div class="image-header">
+                    <h3>LOREM</h3>
+                    <div class="share-btn">
+                      
+                    </div>
+                </div>
+                <div class="image-caption">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                </div>
+            </div>
         </div>
     </div>
-    <script src="app/app.js"></script>
+    <!-- !CREATE IT'S OWN NAV -->
     <script src="app/carousel.js"></script>
 </body>
 

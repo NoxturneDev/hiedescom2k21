@@ -48,6 +48,7 @@
     border-radius: $borderRadiusSmall;
     overflow: hidden;
     border: 2px solid $darkColor;
+
     .chat-header{
         @include leftAlignElement();
 

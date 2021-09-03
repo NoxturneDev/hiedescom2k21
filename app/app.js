@@ -107,8 +107,6 @@ navbarLink.forEach(link => {
 function navViewport(e, link){
     if(e.matches){
         navToggle(link)
-        console.log("navphone")
-        console.log(link)
     } else {
         navbar.style.transform = "translateX(0)"
     }

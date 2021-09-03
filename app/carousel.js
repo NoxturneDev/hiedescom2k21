@@ -5,27 +5,28 @@ const nextBtn = document.querySelector("#nextSlide")
 const prevBtn = document.querySelector("#prevSlide")
 
 
-nextBtn.addEventListener("click", ()=> {
-    const activeSlide = document.querySelector("[data-slide-active='true']")
-    const indexOfActiveSlide = slides.indexOf(activeSlide)
-
-    
+window.addEventListener("load", () => {
+    console.log(slides.length)
+    nextPrevSlide()
+    getSlidePosition()
 })
 
-function nextPrevSlide(){
+// DEFINE NEXT AND PREVIOUS SLIDE
+function nextPrevSlide() {
     const activeSlide = document.querySelector('.slides.active')
     const activeSlideIndex = slides.indexOf(activeSlide)
     let nextSlide, prevSlide
 
-    if(activeSlideIndex === slides.length - 1){
-        nextSlide = slides[0];
+    // if the slides is in the last index
+    if (activeSlideIndex === slides.length - 1) {
+        nextSlide = slides[0]; //next slide equal to the first slide
     } else {
         nextSlide = slides[activeSlideIndex + 1];
     }
 
-
-    if(activeSlideIndex === 0){
-        prevSlide = slides[slides.length - 1]
+    // if the slides is in the first index
+    if (activeSlideIndex === 0) {
+        prevSlide = slides[slides.length - 1] //previous slide queal to the last slide
     } else {
         prevSlide = slides[activeSlideIndex - 1]
     }
@@ -33,112 +34,173 @@ function nextPrevSlide(){
     return [nextSlide, prevSlide]
 }
 
-function getSlidePosition(){
+function getSlidePosition() {
     const activeSlide = document.querySelector('.slides.active')
     // const activeSlideIndex = slides.indexOf(activeSlide)
 
     let [next, prev] = nextPrevSlide()
 
     slides.forEach((slide) => {
-        if(slide === activeSlide){
+        if (slide === activeSlide) {
             slide.style.transform = "translateX(0)"
-        } else if(slide === next){
+        } else if (slide === next) {
             slide.style.transform = "translateX(150%)"
-            console.log(2)
-        } else if(slide === prev){
+        } else if (slide === prev) {
             slide.style.transform = "translateX(-150%)"
-            console.log(3)
         } else {
             slide.style.transform = "translateX(150%)"
         }
 
-        slide.addEventListener("transitionend", ()=> {
-            if(slide.dataset.animation == "sliding"){
-                slide.dataset.animation = "none";
-            }
-        })
     })
 }
 
-nextBtn.addEventListener("click", ()=> {
+nextBtn.addEventListener("click", () => {
     const activeSlide = document.querySelector('.slides.active')
     const activeSlideIndex = slides.indexOf(activeSlide)
+    const delayBtn = 1500;
 
-    let [next, prev] = nextPrevSlide();
 
-    // if(activeSlideIndex === slides.length - 1){
-    //     slides[slides.length - 1].dataset.animation = "none";
-    // } else {
-        
-    
-    // }
+    let [next, prev] = nextPrevSlide()
 
     slides[activeSlideIndex].classList.remove("active")
-        slides[activeSlideIndex].dataset.animation = "sliding";
-        next.dataset.animation = "sliding";
-        next.classList.add("active")
-        console.log("transiton")
-    
+    next.classList.add("active")
+
+    nextBtn.disabled = true;
+
+    setTimeout(() => {
+        nextBtn.disabled = false;
+        console.log("enabled")
+    }, delayBtn)
+
+    animateTransition("next")
     getSlidePosition()
 })
 
-prevBtn.addEventListener("click", ()=> {
+prevBtn.addEventListener("click", () => {
     const activeSlide = document.querySelector('.slides.active')
     const activeSlideIndex = slides.indexOf(activeSlide)
+    const delayBtn = 1500;
 
-    let [next, prev] = nextPrevSlide();
+    let [next, prev] = nextPrevSlide()
 
-    if(activeSlideIndex == 0){
-        slides[activeSlideIndex].dataset.animation = "none"; 
-        prev.dataset.animation = "none";
-        next.dataset.animation = "sliding"
-    } else {
-        slides[activeSlideIndex].classList.remove("active")
-        slides[activeSlideIndex].dataset.animation = "sliding";
-        prev.dataset.animation = "sliding";
-        prev.classList.add("active")
-    }
-   
+
+    slides[activeSlideIndex].classList.remove("active")
+    prev.classList.add("active")
+
+    prevBtn.disabled = true;
+
+    setTimeout(() => {
+        prevBtn.disabled = false;
+        console.log("enabled")
+    }, delayBtn)
+
+    animateTransition("prev")
     getSlidePosition()
 })
-// nextBtn.addEventListener("click", () => {
-//     if(slideIndex >= 0){
-//         sliderWrapper.style.transform = `translateX(${slideIndex * 100 * -1}%)`
 
-//         prevBtn.style.visibility = "visible";
-//         nextBtn.style.visibility = "visible";
+function animateTransition(btn) {
+    const currentSlide = document.querySelector(".slides.active")
+
+    let [next, prev] = nextPrevSlide()
 
 
-//         if (slideIndex === slides.length) {
-//             slideIndex = 0;
-//             sliderWrapper.style.transform = `translateX(0px)`
-//             nextBtn.style.visibility = "hidden";
-//         }
-        
-//     }
-//        let cek = slideIndex * 100;
-  
-//     slideIndex++
-//     console.log(slideIndex)
-//     console.log(slides.length)
-//     console.log(cek + "next")
+    if (btn == "next") {
+        currentSlide.style.transition = "transform 1s ease-in-out"
+        prev.style.transition = "transform 1s ease-in-out"
+        currentSlide.addEventListener("transitionend", () => {
+            prev.style.transition = "none"
+        })
+    } else if (btn == "prev") {
+        currentSlide.style.transition = "transform 1s ease-in-out"
+        next.style.transition = "transform 1s ease-in-out"
+        currentSlide.addEventListener("transitionend", () => {
+            next.style.transition = "none"
+        })
+    }
+
+    console.log(currentSlide)
+}
+
+// SNAPPING CAROUSEL
+const container = document.querySelector(".slides-wrapper")
+// states
+let isDragging = false,
+    startPos = 0,
+    currentTranslate = 0,
+    prevTranslate = 0,
+    animationID,
+    currentIndex = 0
+
+// add our event listeners
+
+// slides.forEach((slide, index) => {
+//     // touch events
+//     slide.addEventListener('touchstart', touchStart(index))
+//     slide.addEventListener('touchend', touchEnd)
+//     slide.addEventListener('touchmove', touchMove)
 
 // })
 
 
-// prevBtn.addEventListener("click", () => {
-//     sliderWrapper.style.transform = `translateX(${slideIndex * 100 * -1}%)`
+// prevent popup on long press
+// window.oncontextmenu = function (event) {
+//     event.preventDefault()
+//     event.stopPropagation()
+//     return false
+// }
 
-//     if (slideIndex == 0) {
-//         slideIndex = slides.length;
-//         prevBtn.style.visibility = "hidden";
+// // when the touch is start
+// function touchStart(index) {
+//     return function (event) {
+//         currentIndex = index
+//         startPos = getPositionXAxis(event)
+//         isDragging = true
+//         animationID = requestAnimationFrame(animation)
+//     }
+// }
+
+// function touchEnd() {
+//     isDragging = false
+//     cancelAnimationFrame(animationID)
+//     const move = currentTranslate - prevTranslate
+
+//     if(move < -100 && currentIndex < slides.length - 1){
+//         currentIndex += 1
 //     }
 
-//     let cek = slideIndex * 100;
+//     if(move > 100 && currentIndex > 0){
+//         currentIndex -= 1
+//     }
 
-//     slideIndex--
-//     console.log(slideIndex)
-//     console.log(slides.length)
-//     console.log(cek + "prev")
-// })
+//     setPosition()
+// }
 
+// function touchMove(event) {
+//     if (isDragging) {
+//         const currentTargetPosition = getPositionXAxis(event)
+//         currentTranslate = prevTranslate + currentTargetPosition - startPos
+//     }
+// }
+
+// function getPositionXAxis(event){
+//     // getting client x position
+//     return event.touches[0].clientX
+// }
+
+// function animation(){
+//     setSliderPosition()
+//     if(isDragging){
+//         requestAnimationFrame(animation)
+//     }
+// }
+
+// function setSliderPosition(){
+//     container.style.transform = `translateX(${currentTranslate}px)`
+// }
+
+// function setPosition(){
+//     currentTranslate = currentIndex * -window.innerWidth
+//     prevTranslate = currentTranslate
+
+//     setSliderPosition()
+// }
