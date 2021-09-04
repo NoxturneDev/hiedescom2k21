@@ -91,6 +91,7 @@ function smoothScroll(e){
 const navToggleIcon = document.querySelectorAll(".nav-toggle-icon span")
 const navbarContainer = document.querySelector(".nav-list-container")
 const closeNavIcon = document.querySelector("#close-nav")
+
 navbarLink.forEach(link => {
     link.addEventListener("click", smoothScroll)
 
@@ -108,7 +109,11 @@ function navViewport(e, link){
     if(e.matches){
         navToggle(link)
     } else {
-        navbar.style.transform = "translateX(0)"
+
+        // if window is in dekstop, reset to default desktop style
+        navbarContainer.style.transform = "translateX(0)"
+        navbarContainer.style.transition = "none"
+
     }
 }
 
@@ -116,8 +121,6 @@ function navViewport(e, link){
 navToggleIcon.forEach(icon => {
     icon.addEventListener("click", () => {
         navToggle()
-
-        console.log("test")
     })
 })
 

@@ -9,10 +9,12 @@ html {
 
     @keyframes wipeLeft {
         0% {
+            opacity: 0;
             transform: translateX(-150%);
         }
 
         100% {
+            opacity: 1;
             transform: translateX(0);
         }
         
@@ -110,10 +112,10 @@ html {
 
 @keyframes rotateDekstop {
     from {
-        transform:  rotateY(0deg);
+        transform: rotateY(0deg) rotateZ(0deg);
     }
     to {
-        transform:  rotateY(360deg);
+        transform: rotateY(360deg)  rotateZ(360deg);
       }
 }
 

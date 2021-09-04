@@ -104,23 +104,23 @@ html {
 
 @-webkit-keyframes rotateDekstop {
   from {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg) rotateZ(0deg);
+            transform: rotateY(0deg) rotateZ(0deg);
   }
   to {
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg) rotateZ(360deg);
+            transform: rotateY(360deg) rotateZ(360deg);
   }
 }
 
 @keyframes rotateDekstop {
   from {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg) rotateZ(0deg);
+            transform: rotateY(0deg) rotateZ(0deg);
   }
   to {
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg) rotateZ(360deg);
+            transform: rotateY(360deg) rotateZ(360deg);
   }
 }
 
@@ -210,10 +210,12 @@ html {
 
 @-webkit-keyframes wipeLeft {
   0% {
+    opacity: 0;
     -webkit-transform: translateX(-150%);
             transform: translateX(-150%);
   }
   100% {
+    opacity: 1;
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
@@ -221,10 +223,12 @@ html {
 
 @keyframes wipeLeft {
   0% {
+    opacity: 0;
     -webkit-transform: translateX(-150%);
             transform: translateX(-150%);
   }
   100% {
+    opacity: 1;
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
@@ -531,7 +535,7 @@ html {
 }
 
 .logo-web img.logo-navbar {
-  width: 25%;
+  min-width: 4rem;
 }
 
 .nav-toggle-icon {
@@ -551,8 +555,8 @@ html {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   display: none;
   position: absolute;
   top: 0;
@@ -630,7 +634,10 @@ html {
     width: 80vw;
     -webkit-transform: translateX(-150%);
             transform: translateX(-150%);
-    border-left: 3px solid #FCDB00;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .navbar-top .nav-list-container ul {
     -webkit-box-orient: vertical;
@@ -638,6 +645,9 @@ html {
         -ms-flex-direction: column;
             flex-direction: column;
     min-height: 70%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
   .navbar-top .nav-list-container .logo-sidebar {
     margin: 2rem 1rem;
@@ -665,6 +675,9 @@ html {
     background-color: white !important;
     border: none !important;
   }
+  .btn-list .btn-redirect-feature {
+    background-color: white;
+  }
   .nav-list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -678,8 +691,12 @@ html {
     min-width: 80%;
     margin: 1rem 0;
     padding: 0.5rem;
-    border-left: 1px solid #FCDB00;
-    background-color: #3DCEFF;
+    height: 4rem;
+    border-radius: 12px;
+  }
+  .nav-list:hover {
+    background-color: #FCDB00;
+    border: 2px solid #02559E;
   }
   .nav-list .icon-link {
     background: url("../assets/icon/home-fill.svg");
@@ -824,7 +841,7 @@ html {
 
 .nau-wrapper #nau {
   min-width: 14.5rem;
-  width: 30%;
+  width: 25%;
 }
 
 @media screen and (max-width: 768px) {
@@ -843,13 +860,20 @@ html {
   }
   .landing-page .landing-page-content {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin-top: -6rem;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    top: -15%;
+    position: relative;
+  }
+  .landing-page .landing-page-content .mascot-container {
+    margin-top: 2rem;
+  }
+  .landing-page .landing-page-content .landing-page-text .landing-page-header {
+    margin-bottom: 2rem;
   }
   .nau-wrapper #nau {
-    min-width: 8rem;
+    min-width: 4rem;
   }
 }
 

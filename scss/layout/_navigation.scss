@@ -56,7 +56,7 @@
     flex-basis: 25%;
     flex: 2;
     img.logo-navbar {
-        width: 25%;
+        min-width: 4rem;
     }
 }
 
@@ -74,8 +74,8 @@
     #toggle-nav {
         @include backgroundContain("../assets/icon/hamburger-icon-pink.svg");
 
-        width: 3rem;
-        height: 3rem;
+        width: 2rem;
+        height: 2rem;
         display: none;
         position: absolute;
         top: 0;
@@ -157,12 +157,13 @@
             min-height: 100vh;
             width: 80vw;
             transform: translateX(-150%);
-            border-left: 3px solid $secondColor;
+            flex-direction: column;
 
             ul {
                 // change the flex so it is upside down
                 flex-direction: column;
                 min-height: 70%;
+                justify-content: flex-start;
             }
 
             // sidebar logo
@@ -193,6 +194,10 @@
     .btn-list {
         background-color: white!important;
         border: none!important;
+
+        .btn-redirect-feature{
+            background-color: white;
+        }
     }
 
     // LIST OF NAVBAR OPTION (LI)
@@ -201,8 +206,14 @@
         min-width: 80%;
         margin: $marginSmall 0;
         padding: $paddingSmall;
-        border-left: 1px solid $secondColor;
-        background-color: $mainColor;
+        height: 4rem;
+        border-radius: $borderRadiusSmall;
+        
+        &:hover{
+            background-color: $secondColor;
+            border: 2px solid $darkColor;
+        }
+
         .icon-link {
             @include backgroundContain("../assets/icon/home-fill.svg");
 

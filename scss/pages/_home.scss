@@ -29,7 +29,7 @@
 
     #nau{
         min-width: $deskImgMax;
-        width: 30%;
+        width: 25%;
     }
 } 
 
@@ -41,15 +41,25 @@
         text-align: center;
 
         .landing-page-content{
-            flex-direction: column;
-            margin-top: -$marginLarge;
+            flex-direction: column-reverse;
+            top: -15%;
+            position: relative;
+            .mascot-container{
+                // add margin
+                margin-top: $marginMedium;
+            }
 
+            .landing-page-text{
+                .landing-page-header{
+                    margin-bottom: $marginMedium;
+                }
+            }
         }
     }
 
     .nau-wrapper{
         #nau{
-            min-width: $phoneImgMax;
+            min-width: $phoneImgMin;
         }
     }
 }
