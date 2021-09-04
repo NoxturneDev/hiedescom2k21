@@ -102,6 +102,50 @@ html {
   scroll-behavior: smooth;
 }
 
+@-webkit-keyframes rotateDekstop {
+  from {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@keyframes rotateDekstop {
+  from {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes rotatePhone {
+  from {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+}
+
+@keyframes rotatePhone {
+  from {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+}
+
 .sliding {
   -webkit-transition: -webkit-transform 1s ease-in-out;
   transition: -webkit-transform 1s ease-in-out;
@@ -721,7 +765,7 @@ html {
 }
 
 .landing-page {
-  background: url("../assets/image/landing-page-background.png");
+  background: url("../assets/animation/landing-page-background.gif");
   background-size: cover;
   background-position: center;
   max-width: 100%;
@@ -953,7 +997,7 @@ html {
 }
 
 .main-feature-page {
-  background: url("../assets/image/feature-background.svg");
+  background: url("../assets/animation/main-feature-bg.gif");
   background-size: cover;
   background-position: center;
   max-width: 100%;
@@ -1376,50 +1420,6 @@ html {
   .picture-wrapper .image-container {
     -webkit-transform: rotateX(calc(var(--i) * 45deg)) translateZ(400px);
             transform: rotateX(calc(var(--i) * 45deg)) translateZ(400px);
-  }
-}
-
-@-webkit-keyframes rotateDekstop {
-  from {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-  to {
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
-  }
-}
-
-@keyframes rotateDekstop {
-  from {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-  to {
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
-  }
-}
-
-@-webkit-keyframes rotatePhone {
-  from {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-  }
-  to {
-    -webkit-transform: rotateX(360deg);
-            transform: rotateX(360deg);
-  }
-}
-
-@keyframes rotatePhone {
-  from {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-  }
-  to {
-    -webkit-transform: rotateX(360deg);
-            transform: rotateX(360deg);
   }
 }
 
