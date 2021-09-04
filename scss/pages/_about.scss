@@ -75,6 +75,8 @@
             @include centerElement();
             width: 90%;
             flex-direction: column;
+            max-width: $phoneImgMax;
+
         }
     }
 
@@ -82,18 +84,23 @@
         flex-direction: column-reverse;
     }
 
-    .about-img1, .about-img3{
-        margin-right: $marginMedium;
-        text-align: left;
-    }
-
-    .about-img2, .about-img4{
-        margin-left: $marginMedium;
-
-    }
-
     .cards-text{
-        @include smallerfont();
+        width: 80%;
+        text-align: center;
+
+        .cards-header{
+            text-align: center;
+            min-width: 100%;
+
+        }
+
+        p {
+            @include smallerfont();
+            text-align: center;
+            padding: $paddingSmall;
+            min-width: 100%;
+        }
+       
     }
 
     // refactor code above, the margin

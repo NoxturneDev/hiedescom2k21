@@ -989,6 +989,7 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    max-width: 8rem;
   }
   .about-one, .about-three {
     -webkit-box-orient: vertical;
@@ -996,26 +997,30 @@ html {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
-  .about-img1, .about-img3 {
-    margin-right: 2rem;
-    text-align: left;
-  }
-  .about-img2, .about-img4 {
-    margin-left: 2rem;
-  }
   .cards-text {
+    width: 80%;
+    text-align: center;
+  }
+  .cards-text .cards-header {
+    text-align: center;
+    min-width: 100%;
+  }
+  .cards-text p {
     font-size: 12px;
+    text-align: center;
+    padding: 0.5rem;
+    min-width: 100%;
   }
 }
 
 @media screen and (max-width: 768px) and (min-width: 400px) {
-  .cards-text {
+  .cards-text p {
     font-size: calc(12px + 2 * ((100vw - 400px) / 1000));
   }
 }
 
 @media screen and (max-width: 768px) and (min-width: 1400px) {
-  .cards-text {
+  .cards-text p {
     font-size: 14px;
   }
 }
