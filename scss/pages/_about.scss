@@ -70,6 +70,7 @@
         padding: 0;
         flex-direction: column;
         width: 90%;
+        border: $debug;
 
         .card-img {
             @include centerElement();
@@ -88,6 +89,7 @@
         width: 80%;
         text-align: center;
 
+        border: $debug;
         .cards-header{
             text-align: center;
             min-width: 100%;
@@ -99,6 +101,7 @@
             text-align: center;
             padding: $paddingSmall;
             min-width: 100%;
+            margin: 0;
         }
        
     }

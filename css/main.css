@@ -973,6 +973,7 @@ html {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 90%;
+    border: 1px solid red;
   }
   .about .card-img {
     display: -webkit-box;
@@ -1000,6 +1001,7 @@ html {
   .cards-text {
     width: 80%;
     text-align: center;
+    border: 1px solid red;
   }
   .cards-text .cards-header {
     text-align: center;
@@ -1010,6 +1012,7 @@ html {
     text-align: center;
     padding: 0.5rem;
     min-width: 100%;
+    margin: 0;
   }
 }
 
