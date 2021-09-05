@@ -89,6 +89,32 @@ html {
     }
 }
 
+
+ 
+@keyframes popUp{
+    0% {
+        transform: translateX(-10%);
+        opacity: 1;
+    }
+    90%{
+        transform: translateX(-10%);
+        
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(10%);
+        opacity: 0;
+    }
+    
+}
+
+
+@mixin popUp(){
+    animation: popUp 1s ease-in-out;
+    opacity: 0;
+}
+
+
 @mixin fade1(){
     animation: fade1 1s ease-in-out;
     opacity: 1;

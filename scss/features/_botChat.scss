@@ -24,11 +24,19 @@
 }
 
 .close-overlay {
-    width: 2.5rem;
-    height: 2.5rem;
+    padding: $paddingMedium;
+    border: 2px solid $darkColor;
     position: absolute;
     top: 5%;
-    left: 5%;
+    background-color: $secondColor;
+    transition: 0.2s ease-in-out;
+
+
+    &:hover{
+        border: 2px solid white;
+        color: white;
+        background-color: $mainColor;
+    }
 }
 
 .quiz-overlay {
@@ -98,7 +106,24 @@
     padding: $paddingSmall;
     border-bottom-left-radius: $borderRadiusSmall;
     border-bottom-right-radius: $borderRadiusSmall;
+    position: relative;
 
+    .pop-up{
+        @include smallerfont();
+        padding: 0.9em 0.6em;
+        border-radius: 10px;
+        background-color: $mainColor;
+        color: $darkColor;
+        position: absolute;
+        text-align: center;
+        top: -40%;
+        left: 5%;
+        display: none;
+        opacity: 0;
+        transform: translateX(-50%);
+        font-style: italic;
+
+    }
     .user-input {
         @include inputTextArea();
 
@@ -131,8 +156,8 @@
     .msg-bubble {
         max-width: 72%;
         background-color: $mainColor;
-        padding: 0.8em 1em 1em 0.5em;
-        border-radius: 23px;
+        padding: 1em $paddingSmall;
+        border-radius: 20px;
         margin-bottom: 0.2em;
         .msg-text {
             @include smallerfont();
@@ -207,4 +232,11 @@
 
 .emoji-on-chat{
     width: 5rem;
+}
+
+
+@media screen and (max-width: $tabletBreakpoint) {
+    .mascot{
+        display: none;
+    }
 }

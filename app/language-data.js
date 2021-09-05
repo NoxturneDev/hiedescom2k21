@@ -5,19 +5,23 @@ const dialogFlow = {
     userAge: ["salam kenal nggih", "umure panjengenan berapa?"],
     userColor : ["weh sampun gede nggih", "warnae favorit e jenengan apa?"],
     explain1 : ["nah niki panjenengan ada di website Yuk Sinau", "web niki dibuat oleh tim TYPO asal sekolah SMAN dastha"],
+    explain1 : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
 }
 
 const userIntent = {
     respGreetings : ["salam", "salam kenal", "halo"],
     introductionName : ["nama", "name", "saya adalah", "namaku", "nama aku", "nama saya", "nama ku"],
     introductionAge : ["umur", "umur saya", "umurku", "umur ku", "tahun"],
-    introductionColor : ["warna", "color", "favorit"]
-    
+    introductionColor : ["warna", "color", "favorit"],
 }
 
 const emojiIntent = {
     greetingsResp : ["emoji-hello", "emoji-hi"],
-    introResp : ["emoji-ashiap"]
+    introResp : ["emoji-ashiap"],
+    getIt : ["emoji-get-it"],
+    notGetIt : ["emoji-not-get-it"],
+    okay : ["emoji-okay"]
+
 }
 
 const stopWordsID = [

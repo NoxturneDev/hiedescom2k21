@@ -5,6 +5,7 @@ const chatBox = document.querySelector(".chatbox-window")
 const chatHeader = document.querySelector(".chat-name h2")
 const chatContainer = document.querySelector(".chat-innercontainer")
 
+
 const redirectToChatBtn = document.querySelector("#redirectBtnChat")
 
 // SESSION STORAGE TO STROE INFORMATION
@@ -51,11 +52,14 @@ function checkOpenedStatus() {
 }
 
 submitForm.addEventListener("submit", e => {
+    const popUp = document.querySelector(".pop-up")
     e.preventDefault();
     let userReply = userInputText.value;
 
     renderChatBubble(userReply, "user")
     getBotRespond(userReply)
+
+    popUp.style.display = "none"
 })
 
 
@@ -89,7 +93,8 @@ function botBahasaJawa() {
 
 // OBJECT CONTAINING EMOJI'S INTENT CODE
 const emojiIntentCode = {
-    EMO_OKAY: "emoji-yes",
+    EMO_YES: "emoji-yes",
+    EMO_OKAY: "emoji-okay",
     EMO_NO: "emoji-no",
     EMO_GETIT: "emoji-get-it",
     EMO_NOTGETIT: "emoji-not-get-it",
@@ -144,11 +149,9 @@ function createEmojiElement(emojiIntent, emoji2Intent, emojiSrc, emoji2Src) {
     emoji2.setAttribute("src", emoji2Src)
     emoji2.dataset.emojiMeaning = emoji2Intent
 
-    console.log(emojiSrc)
-    console.log(emoji2Src)
+    // datasetnya jangan di image tapi di container
 }
 
-// TEST COMMET ANJENG
 
 // ENABLING EMOJIS CHOICE
 // DISABLING EMOJIS CHOCIE
@@ -163,19 +166,70 @@ function disableEmoji() {
     emojiContainer.style.display = "none"
 }
 
+
 // FUNCTION FOR BOT TO RESPOND THE EMOJI DEPENS ON THE MEANING
 function botRespondEmoji(emojiMeaning) {
     if (emojiIntent.greetingsResp.includes(emojiMeaning)) {
         botIntro()
     } else if (emojiIntent.introResp.includes(emojiMeaning)) {
-        botAskUser()
-        console.log("ashiap")
-    } else if (emojiIntent.introResp.includes(emojiMeaning)) {
+        askNama()
+    } else if (emojiIntent.getIt.includes(emojiMeaning)) {
+        explainPerkenalan()
+    } else if (emojiIntent.notGetIt.includes(emojiMeaning)) {
         botAutomationChat(dialogFlow.userIntro)
+    } else if (emojiIntent.okay.includes(emojiMeaning)) {
+        explainPerkenalan()
     } else {
-        console.log("shit")
+        return 
     }
     // add more emoji
+}
+
+// GET BOT RESPOND FOR EACH INTENT
+function getBotRespond(txt) {
+    const userIntent = getUserIntent(txt)
+
+    console.log(userIntent)
+    if (userIntent == "greet") {
+        botIntro()
+    } else if (userIntent == "respGreet") {
+        botIntro()
+    } else if (userIntent == "nama") { // dialog flow setelah intent nama adalah umur
+        askAge()
+    } else if (userIntent == "umur") {
+        askColor()
+    } else if (userIntent == "warna") {
+        preExplain()
+    } else {
+        botAutomationChat("kulo nda paham maksud e sampean")
+    }
+
+    // !create separate function for separate respond
+}
+
+// GETTING USER REAL INTENT BASED ON THEIR REPLY
+function getUserIntent(userRespond) {
+    const inputFold = caseFolding(userRespond)
+    const words = [...inputFold]
+    let intent // user real intent
+
+    userIntentDefining = words.filter(word => {
+        if (userIntent.introductionName.includes(word)) {
+            intent = "nama"
+            return intent
+        } else if (userIntent.introductionAge.includes(word)) {
+            intent = "umur"
+            return intent
+        } else if (userIntent.introductionColor.includes(word)) {
+            intent = "warna"
+            return intent
+        } else if (userIntent.respGreetings.includes(word)) {
+            intent = "respGreet"
+            return intent
+        }
+
+    })
+    return intent
 }
 
 
@@ -195,10 +249,51 @@ function botIntro() {
     }, automate + 700)
 }
 
-function botAskUser() {
+function askNama() {
     let automate = botAutomationChat(dialogFlow.userName)
+    setTimeout(() => {
+        popUpGuide("Awali dengan Nama saya/aku")
+    }, automate + 500)
+
 }
 
+function askAge(){
+    let automate = botAutomationChat(dialogFlow.userAge)
+    setTimeout(() => {
+        popUpGuide("Cth: 17 Tahun")
+    }, automate + 500)
+}
+function askColor(){
+    let automate = botAutomationChat(dialogFlow.userColor)
+
+    setTimeout(() => {
+        popUpGuide("Cth: warna merah")
+    }, automate + 500)
+}
+
+function preExplain(){
+    renderEmoji(emojiSource.EMO_ASHIAP, "bot")
+
+    let automate = botAutomationChat(dialogFlow.explain1)  
+    setTimeout(() => {
+        emojiPreExplain()
+    }, automate + 700)
+}
+function explainGreetings(){}
+function explainBasicVerbs(){}
+function closing(){}
+
+function popUpGuide(txt){
+    const popUp = document.querySelector(".input-form .pop-up")
+    popUp.innerText = txt;
+
+    popUp.style.display = "block"
+    popUp.style.animation = "popUp 4s linear"
+
+    popUp.addEventListener("animationend", () => {
+        popUp.style.display = "none"
+    })
+}
 
 // EMOJI FOR GREETING FLOW
 function emojiGreeting() {
@@ -219,6 +314,23 @@ function emojiIntro() {
     enableEmoji()
 }
 
+function emojiPreExplain(){
+    const emoji = createEmojiElement(
+        emojiIntentCode.EMO_OKAY,
+        emojiIntentCode.EMO_OKAY,
+        emojiSource.EMO_OKAY,
+        emojiSource.EMO_ASHIAP)
+    enableEmoji()
+}
+
+function emojiExplain1(){
+    const emojiExplain1 = createEmojiElement(
+        emojiIntentCode.EMO_OKAY,
+        emojiIntentCode.EMO_NOTGETIT,
+        emojiSource.EMO_OKAY,
+        emojiSource.EMO_NOTGETIT)
+    enableEmoji()
+}
 // REG PATTERN FOR MATCHING EACH INTENTION
 const regPattern = {
     userNamePattern2: /\w*/g,
@@ -227,52 +339,9 @@ const regPattern = {
 }
 
 
-// GET BOT RESPOND FOR EACH INTENT
-function getBotRespond(txt) {
-    const userIntent = getUserIntent(txt)
-
-    console.log(userIntent)
-    if (userIntent == "greet") {
-        botIntro()
-    } else if (userIntent == "respGreet") {
-        botIntro()
-    } else if (userIntent == "nama") {
-        botAutomationChat(dialogFlow.userAge)
-        user.name = userInputFinal(txt)
-    } else if (userIntent == "umur") {
-        botAutomationChat(dialogFlow.userColor)
-        user.age = userInputFinal(txt)
-    } else {
-        botAutomationChat("kulo nda paham maksud e sampean")
-    }
-    // !create separate function for separate respond
-}
 
 
-// GETTING USER REAL INTENT BASED ON THEIR REPLY
-function getUserIntent(userRespond) {
-    const inputFold = caseFolding(userRespond)
-    const words = [...inputFold]
-    let intent // user real intent
 
-    userIntentDefining = words.filter(word => {
-        if (userIntent.introductionName.includes(word)) {
-            intent = "nama"
-            return intent
-        } else if (userIntent.introductionAge.includes(word)) {
-            intent = "umur"
-            return intent
-        } else if (userIntent.introductionAge.includes(word)) {
-            intent = "warna"
-            return intent
-        } else if (userIntent.respGreetings.includes(word)) {
-            intent = "respGreet"
-            return intent
-        }
-
-    })
-    return intent
-}
 
 
 // FOLDING UNNECESSARY CHARACTER 
