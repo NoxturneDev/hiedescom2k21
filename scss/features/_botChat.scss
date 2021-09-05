@@ -1,12 +1,12 @@
 // FULL SCREEN CHAT OVERLAY
-.chat-overlay{
+.chat-overlay {
     @include centerElement();
     @include overlay(fixed);
 
     z-index: 1;
     transform: translateX(-100%);
 
-    .chat-overlay-wrapper{
+    .chat-overlay-wrapper {
         @include centerElement();
 
         height: 90%;
@@ -17,11 +17,10 @@
             width: 60%;
             height: 60%;
             flex: 1;
-    
-            @include backgroundContain("../assets/nau/nau-stay-still.png")
+
+            @include backgroundContain("../assets/nau/nau-stay-still.png");
         }
     }
-   
 }
 
 .close-overlay {
@@ -32,67 +31,75 @@
     left: 5%;
 }
 
-.quiz-overlay{
+.quiz-overlay {
     transform: translateX(100%);
 }
 
-
-
 // CHAT BOX WINDOW
-.chat-window{
+.chat-window {
     @include chatWindow();
     @include dropShadow2();
+
     background-color: white;
     width: 30vw;
+    height: 70vh;
     max-width: 300px;
     border-radius: $borderRadiusSmall;
     overflow: hidden;
     border: 2px solid $darkColor;
 
-    .chat-header{
+    .chat-header {
         @include leftAlignElement();
 
         width: 100%;
         background-color: $mainColor;
-        margin-bottom: $marginSmall;
         padding: $paddingSmall $paddingMedium;
         border-bottom: 2px solid $darkColor;
 
-        .chat-name{
+        .chat-name {
             @include centerElement();
 
             max-height: 1.5rem;
             flex: 2;
             padding: $paddingSmall;
 
-            h3{
+            h3 {
                 letter-spacing: 1px;
                 font-weight: $semibold;
                 color: $darkColor;
             }
         }
-    
-        #closeChat{
+
+        #closeChat {
             width: 0.8rem;
             height: 0.8rem;
         }
     }
 
-    .chat-text-container{
+    .chat-text-container {
         flex: 2;
         width: 100%;
+        overflow-y: auto;
+        padding-top: $paddingSmall;
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: $darkColor;
+        }
     }
 }
 
-.input-form{
+.input-form {
     display: flex;
     width: 100%;
     background-color: $secondColor;
     padding: $paddingSmall;
     border-bottom-left-radius: $borderRadiusSmall;
-    border-bottom-right-radius:  $borderRadiusSmall;
+    border-bottom-right-radius: $borderRadiusSmall;
 
-    .user-input{
+    .user-input {
         @include inputTextArea();
 
         color: $darkColor;
@@ -103,31 +110,31 @@
     }
 
     #btnSend {
-       @include iconSmallBtn();
+        @include iconSmallBtn();
 
         width: 2rem;
     }
 }
 
-.msg-container{
+.msg-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     padding: 0 $paddingSmall;
-    
+
     // .msg-bubble{
     //     max-width: 76%;
     //     display: flex;
     //     flex-direction: column;
     //     border: $debug;
     // }
-    .msg-bubble{
+    .msg-bubble {
         max-width: 72%;
         background-color: $mainColor;
         padding: 0.8em 1em 1em 0.5em;
         border-radius: 23px;
         margin-bottom: 0.2em;
-        .msg-text{
+        .msg-text {
             @include smallerfont();
         }
     }
@@ -139,24 +146,23 @@
     //     font-weight: $semibold;
     //     padding: 1em $paddingSmall;
     // }
-    
+
     .timestamp {
         color: $darkColor;
         letter-spacing: 1px;
-        margin:0 1em 0.2em 1em;
+        margin: 0 1em 0.2em 1em;
         font-size: 8pt;
     }
 }
 
-
-#botChat.msg-container{
+#botChat.msg-container {
     text-align: right;
     align-items: flex-start;
-    
-    .msg-bubble{
+
+    .msg-bubble {
         border: 1px solid $darkColor;
         background-color: $secondColor;
-        .msg-text{
+        .msg-text {
             border-top-left-radius: 12px;
             border-bottom-left-radius: 12px;
             color: $darkColor;
@@ -164,17 +170,41 @@
     }
 }
 
-#userChat.msg-container{
+#userChat.msg-container {
     text-align: left;
     align-items: flex-end;
 
-    .msg-bubble{
+    .msg-bubble {
         border: 1px solid $darkColor;
-        .msg-text{
+        .msg-text {
             border-top-left-radius: 12px;
             border-bottom-left-radius: 12px;
         }
     }
-
 }
 
+.input-form-emoji {
+    display: none;
+    width: 100%;
+    height: 15vh;
+}
+
+.input-form-emoji .emoji {
+    flex: 1;
+    outline: none;
+    border: none;
+    margin: 1px;
+    height: 80%;
+    width: 80%;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+}
+
+.emoji img {
+    width: 40%;
+}
+
+.emoji-on-chat{
+    width: 5rem;
+}

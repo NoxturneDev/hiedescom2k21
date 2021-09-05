@@ -18,9 +18,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #4c4c6a;
-    border-radius: 2px;
+    background-color: $darkColor;
 }
