@@ -223,6 +223,7 @@ const chatWindowOverlay = document.querySelector(".chat-overlay")
 const quizWindowOverlay = document.querySelector(".quiz-overlay")
 const closeOverlayBtn = document.querySelectorAll(".close-overlay")
 const mascotWrapper = document.querySelector(".feature-wrapper")
+const closeChat = document.querySelector("#closeChat")
 
 btnOverlay.forEach(btn => {
     const cekMediaQuery = () => {
@@ -242,8 +243,6 @@ btnOverlay.forEach(btn => {
                         btn.classList.remove("wipe-up-reverse")
                     }
                 })
-            } else {
-                return
             }
         }
         cekMediaQuery()
@@ -260,6 +259,10 @@ closeOverlayBtn.forEach(btn => {
     btn.addEventListener("click", (e) => {
       closeBtn(btn, e)
     })
+})
+
+closeChat.addEventListener("click", (e) => {
+    closeBtn(e)
 })
 
 function btnOverlayEvent(btn, e){
@@ -292,8 +295,8 @@ function btnOverlayEvent(btn, e){
         document.body.style.overflow = "hidden";
 }
 
-function closeBtn(btn, e){
-    if (e.target.id == "closeChatOverlay") {
+function closeBtn(e){
+    if (e.target.id == "closeChatOverlay" || e.target.id == "closeChat" ) {
         chatWindowOverlay.style.transform = "translateX(-100%)"
         chatWindowOverlay.classList.add("fade-0")
     } else {

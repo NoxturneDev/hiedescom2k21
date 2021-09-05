@@ -39,6 +39,10 @@
     }
 }
 
+#closeChat{
+  display: none;
+}
+
 .quiz-overlay {
     transform: translateX(100%);
 }
@@ -55,6 +59,8 @@
     border-radius: $borderRadiusSmall;
     overflow: hidden;
     border: 2px solid $darkColor;
+    position: relative;
+    bottom: 5%;
 
     .chat-header {
         @include leftAlignElement();
@@ -241,18 +247,17 @@
     }
 
     .close-overlay {
-        padding: $paddingMedium;
-        border: 2px solid $darkColor;
-        position: absolute;
-        top: 5px;
-        background-color: $secondColor;
-        transition: 0.2s ease-in-out;
-        z-index: 1;
-        &:hover{
-            border: 2px solid white;
-            color: white;
-            background-color: $mainColor;
-        }
+        display: none;
     }
 
+    .chat-overlay{
+        .chat-header{
+            min-height: 10%;
+        }
+    }
+    #closeChat{
+        display: block;
+        min-height: 1.7rem;
+        min-width: 1.7rem;
+    }
 }
