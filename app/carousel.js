@@ -121,6 +121,42 @@ function animateTransition(btn) {
     console.log(currentSlide)
 }
 
+
+const imagesInGallery = Array.from(document.querySelectorAll(".image-container"))
+const galleryOverlay = document.querySelector(".gallery-overlay")
+
+
+galleryOverlay.addEventListener("click", (e) => {
+    if(e.target.classList.contains("gallery-overlay")){
+        galleryOverlay.style.display = "none"
+    }
+})
+
+imagesInGallery.forEach((image, index) => {
+    image.addEventListener("click", () => {
+        galleryOverlay.style.display = "flex"
+    })
+})
+
+
+// ROTATION BUTTON MODE
+const rotationWrapper = document.querySelector(".picture-wrapper")
+const changeRotationButton = document.querySelectorAll(".rotation-choice")
+
+changeRotationButton.forEach(btn => {
+    const buttonId = btn.id
+    btn.addEventListener("click", (e) => {
+        if(buttonId == "yAxis"){
+            rotationWrapper.style.animation = "rotateY 30s linear infinite"
+        } else if(buttonId == "xAxis"){
+            rotationWrapper.style.animation = "rotateX 30s linear infinite"
+        } else if(buttonId == "zAxis"){
+            rotationWrapper.style.animation = "rotateDekstop 30s linear infinite"
+        }
+    })
+})
+
+
 // SNAPPING CAROUSEL
 const container = document.querySelector(".slides-wrapper")
 // states

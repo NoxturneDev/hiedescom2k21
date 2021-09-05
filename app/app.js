@@ -262,7 +262,7 @@ closeOverlayBtn.forEach(btn => {
 })
 
 closeChat.addEventListener("click", (e) => {
-    closeBtn(e)
+    closeBtn(e.target)
 })
 
 function btnOverlayEvent(btn, e){
@@ -296,14 +296,16 @@ function btnOverlayEvent(btn, e){
 }
 
 function closeBtn(e){
-    if (e.target.id == "closeChatOverlay" || e.target.id == "closeChat" ) {
+    if (e.id == "closeChatOverlay" || "closeChat") {
         chatWindowOverlay.style.transform = "translateX(-100%)"
         chatWindowOverlay.classList.add("fade-0")
-    } else {
+    } 
+    else {
         quizWindowOverlay.style.transform = "translateX(100%)"
         quizWindowOverlay.classList.add("fade-0")
     }
 
+    console.log(e)
 
 
     chatWindowOverlay.addEventListener("animationend", () => {
@@ -328,3 +330,7 @@ function closeBtn(e){
 
 // TODO : fix animation, make it better
 // TODO : create an efective function for handling animation end or so 
+
+
+// GALLERY IN INFOPAGE
+

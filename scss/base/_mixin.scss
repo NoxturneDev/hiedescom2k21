@@ -53,10 +53,9 @@
 }
 
 // 3D IMAGE ROTATING 
-@mixin imageWrapper($animation){
+@mixin imageWrapper(){
     position: relative;
     transform-style: preserve-3d;
-    animation: $animation;
 }
 
 @mixin imageGallery($translateZ){

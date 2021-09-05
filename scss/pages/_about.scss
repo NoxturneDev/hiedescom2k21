@@ -139,9 +139,10 @@
 
     .preview-gallery {
         @include centerElement();
-        @include imageWrapper(rotateYAndScale 10s ease-in-out infinite);
+        @include imageWrapper();
         width: 100%;
         height: 100%;
+        animation: rotateYAndScale 10s ease-in-out infinite;
 
         .image-preview {
             @include imageGallerySquare(200px);

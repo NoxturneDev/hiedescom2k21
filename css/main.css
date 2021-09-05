@@ -1321,10 +1321,10 @@ html {
   position: relative;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-animation: rotateYAndScale 10s ease-in-out infinite;
-          animation: rotateYAndScale 10s ease-in-out infinite;
   width: 100%;
   height: 100%;
+  -webkit-animation: rotateYAndScale 10s ease-in-out infinite;
+          animation: rotateYAndScale 10s ease-in-out infinite;
 }
 
 .rotating-preview .preview-gallery .image-preview {
@@ -1851,10 +1851,11 @@ html {
   position: relative;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-animation: rotateDekstop 30s linear infinite;
-          animation: rotateDekstop 30s linear infinite;
   width: 100%;
   height: 100%;
+  margin: 12rem 0;
+  -webkit-animation: rotateDekstop 30s linear infinite;
+          animation: rotateDekstop 30s linear infinite;
 }
 
 .image-container {
@@ -1872,6 +1873,195 @@ html {
 
 .image-container:hover {
   background-color: #3DCEFF;
+}
+
+.rotation-mode-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 30vh;
+  margin-top: 6rem;
+  position: relative;
+}
+
+.rotation-mode-container .rotation-choice {
+  padding: 0.8em;
+  background-color: #FCDB00;
+  border: 2px solid #02559E;
+  margin: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.rotation-mode-container .rotation-choice:hover {
+  background-color: white;
+  border: 2px solid #FCDB00;
+  color: #02559E;
+}
+
+.gallery-overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 22, 48, 0.377);
+  z-index: 1;
+  display: none;
+}
+
+.gallery-overlay .gallery-overlay-content {
+  -webkit-filter: drop-shadow(0px 27px 46px rgba(91, 81, 143, 0.09)) drop-shadow(0px 6.0308px 10.2747px rgba(91, 81, 143, 0.0536497)) drop-shadow(0px 1.79553px 3.05905px rgba(91, 81, 143, 0.0363503));
+          filter: drop-shadow(0px 27px 46px rgba(91, 81, 143, 0.09)) drop-shadow(0px 6.0308px 10.2747px rgba(91, 81, 143, 0.0536497)) drop-shadow(0px 1.79553px 3.05905px rgba(91, 81, 143, 0.0363503));
+  width: 65%;
+  height: 80%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 2;
+  overflow-y: hidden;
+}
+
+.gallery-overlay .gallery-overlay-content .gallery-overlay-img {
+  background: url("../assets/image/image-gallery-1.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.gallery-overlay .gallery-overlay-content .gallery-overlay-img img {
+  height: 100%;
+  width: 100%;
+}
+
+.gallery-overlay .gallery-overlay-content .header {
+  font-size: 24px;
+  color: white;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+@media screen and (min-width: 400px) {
+  .gallery-overlay .gallery-overlay-content .header {
+    font-size: calc(24px + 8 * ((100vw - 400px) / 1000));
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .gallery-overlay .gallery-overlay-content .header {
+    font-size: 32px;
+  }
+}
+
+.gallery-overlay .gallery-overlay-content .gallery-overlay-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  inset: 0;
+  padding: 1.5rem;
+}
+
+.gallery-overlay .gallery-overlay-content .gallery-overlay-text .gallery-overlay-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  opacity: 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.gallery-overlay .gallery-overlay-content .gallery-overlay-text .gallery-overlay-icon:hover {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+
+.gallery-overlay .gallery-overlay-content .gallery-overlay-text .gallery-overlay-icon .share {
+  width: 3rem;
+  height: 3rem;
+  background-color: #02559E;
+  margin: 0 1rem;
+  cursor: pointer;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.gallery-overlay .gallery-overlay-content .gallery-overlay-text .gallery-overlay-icon .share:hover {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+#shareTwitter {
+  background: url("../assets/icon/twitter.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#shareInstagram {
+  background: url("../assets/icon/instagram.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#shareWhatsapp {
+  background: url("../assets/icon/whatsapp.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#shareFacebook {
+  background: url("../assets/icon/facebook.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 768px) {
@@ -1924,6 +2114,7 @@ html {
             transform-style: preserve-3d;
     -webkit-transform: rotateX(calc(var(--i) * 45deg)) translateZ(400px);
             transform: rotateX(calc(var(--i) * 45deg)) translateZ(400px);
+    cursor: pointer;
   }
 }
 
