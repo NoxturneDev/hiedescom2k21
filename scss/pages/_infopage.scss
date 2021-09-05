@@ -83,37 +83,163 @@
     margin-top: $marginBig;
 }
 
-.picture-wrapper{
+.picture-wrapper {
     @include centerElement();
-    @include imageWrapper(rotateDekstop 30s linear infinite);
-    
+    @include imageWrapper();
+
     width: 100%;
     height: 100%;
+    margin: $marginSuperLarge 0;
+    animation: rotateDekstop 30s linear infinite;
 }
 
-.image-container{
+.image-container {
     @include imageGallery(400px);
 
     width: 12rem;
     height: 12rem;
     border: 2px solid $darkColor;
 
-    &:hover{
+    &:hover {
         background-color: $mainColor;
     }
 }
 
-@media screen and (max-width : $tabletBreakpoint) {
+
+.rotation-mode-container{
+    @include centerElement();
+
+    width: 100%;
+    height: 30vh;
+    margin-top: $marginLarge;
+    position: relative;
+
+    .rotation-choice{
+        padding: 0.8em;
+        background-color: $secondColor;
+        border: 2px solid $darkColor;
+        margin: $marginSmall;
+        border-radius: $borderRadiusSmall;
+        cursor: pointer;
+        transition: 0.25s ease-in-out;
+
+
+        &:hover{
+            background-color: white;
+            border: 2px solid $secondColor;
+            color: $darkColor;
+        }
+    }
+}
+
+.gallery-overlay {
+    @include centerElement();
+
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 22, 48, 0.377);
+    z-index: 1;
+    display: none;
+
+    .gallery-overlay-content {
+        @include dropShadow();
+
+        width: 65%;
+        height: 80%;
+        flex-direction: column;
+        z-index: 2;
+        overflow-y: hidden;
+
+        .gallery-overlay-img {
+            @include backgroundCover("../assets/image/image-gallery-1.png");
+
+            width: 100%;
+            height: 100%;
+            position: relative;
+            
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .header {
+            @include customfont(24px, 32px);
+
+            color: white;
+            flex: 2;
+        }
+
+        .gallery-overlay-text {
+            @include centerElement();
+
+            flex-direction: column;
+            position: absolute;
+            inset: 0;
+            padding: $paddingMedium;
+            .gallery-overlay-icon {
+                @include centerElement();
+
+                transform: translateY(50%);
+                opacity: 0;
+                flex: 1;
+                transition: 0.4s ease-out;
+                min-height: 100%;
+                min-width: 100%;
+
+                &:hover {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+
+                .share {
+                    width: 3rem;
+                    height: 3rem;
+                    background-color: $darkColor;
+                    margin: 0 $marginSmall;
+                    cursor: pointer;
+                    filter: grayscale(100%);
+
+                    &:hover {
+                        filter: grayscale(0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+#shareTwitter {
+    @include backgroundContain("../assets/icon/twitter.svg");
+}
+
+#shareInstagram {
+    @include backgroundContain("../assets/icon/instagram.svg");
+}
+
+#shareWhatsapp {
+    @include backgroundContain("../assets/icon/whatsapp.svg");
+}
+
+#shareFacebook {
+    @include backgroundContain("../assets/icon/facebook.svg");
+}
+
+
+@media screen and (max-width: $tabletBreakpoint) {
     .slides-wrapper {
         @include centerElement();
-    
+
         width: 85%;
         height: 100%;
         position: relative;
-    
+
         .slides {
             @include centerElement();
-    
+
             width: 95%;
             height: 60%;
             position: absolute;
@@ -128,21 +254,20 @@
         }
     }
 
-    .gallery-page{
+    .gallery-page {
         max-width: 100vw;
     }
 
-    .picture-wrapper{
+    .picture-wrapper {
         animation: rotatePhone 30s linear infinite;
         max-width: 60%;
 
-        .image-container{
+        .image-container {
             @include imageGalleryXAxis(400px);
+            cursor: pointer;
         }
     }
 }
-
-
 
 
 // .picture-wrapper {
@@ -166,8 +291,6 @@
 //         position: relative;
 //         z-index: 1;
 
-       
-
 //         .image-header {
 //             @include leftAlignElement();
 
@@ -177,7 +300,6 @@
 //             flex: 2;
 //             color: $white;
 //             @include smallerfont();
-
 
 //             h3 {
 //                 flex: 2;
