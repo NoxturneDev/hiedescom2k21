@@ -1,71 +1,68 @@
-.about-page{
+.about-page {
     @include centerElement();
     max-width: 100%;
     height: calc(100% + 2rem);
     flex-direction: column;
     overflow-x: hidden;
     margin-top: $marginMedium;
-    .about-one .cards-text, .about-three .cards-text{
+    .about-one .cards-text,
+    .about-three .cards-text {
         text-align: right;
     }
 
-    .about{
+    .about {
         @include leftAlignElement();
-        
+
         height: 40vh;
 
-        .cards-text{
-            .cards-header{
+        .cards-text {
+            .cards-header {
                 width: 80%;
             }
-            p{
+            p {
                 width: 85%;
             }
         }
 
-
-        .about-img1{
+        .about-img1 {
             @include backgroundContain("../assets/image/about1.svg");
-        
+
             height: calc(100% + 1rem);
         }
 
-        .about-img2{
+        .about-img2 {
             @include backgroundContain("../assets/image/about2.svg");
-        
+
             height: 80%;
         }
 
-        .about-img3{
+        .about-img3 {
             @include backgroundContain("../assets/image/about3.svg");
-        
+
             height: 80%;
         }
 
-        .about-img4{
+        .about-img4 {
             @include backgroundContain("../assets/image/about4.svg");
-        
+
             height: 80%;
         }
-
-        
     }
 }
 
-
-.cards-text > *{
+.cards-text > * {
     margin: $marginSmall;
     color: $darkColor;
     line-height: 110%;
 }
 
-.card-img{
+.card-img {
     width: calc(100% - 1rem);
     // text-align: center;
 }
 
-@media screen and (max-width : $tabletBreakpoint){
-    .about{
+@media screen and (max-width: $tabletBreakpoint) {
+    .about {
         margin: $marginMedium 0.2em;
         padding: 0;
         flex-direction: column;
@@ -76,22 +73,21 @@
             width: 90%;
             flex-direction: column;
             max-width: $phoneImgMax;
-
         }
     }
 
-    .about-one, .about-three{
+    .about-one,
+    .about-three {
         flex-direction: column-reverse;
     }
 
-    .cards-text{
+    .cards-text {
         @include centerElement();
         flex-direction: column;
         width: 80%;
         text-align: center;
 
-
-        .cards-header{
+        .cards-header {
             text-align: center;
             min-width: 100%;
         }
@@ -102,10 +98,116 @@
             padding: $paddingSmall;
             min-width: 100%;
             margin: 0;
-
         }
-       
     }
 
     // refactor code above, the margin
+}
+
+// OVERVIEW INFOPAGE
+.preview-infopage {
+    @include centerElement();
+
+    flex-direction: column;
+    max-width: 100%;
+    height: 90vh;
+    background-color: $mainColor;
+    margin: $marginBig 0;
+    padding: $paddingMedium 0;
+
+    .title {
+        margin: $marginSmall;
+        h1 {
+            @include customfont(50px, 60px);
+            color: $darkColor;
+        }
+    }
+}
+
+.preview-content {
+    @include centerElement();
+
+    .text-content {
+        max-width: 40%;
+        flex: 1;
+        margin: 0 $marginSmall;
+        .info-preview {
+            @include dropShadow();
+            background-color: white;
+            padding: $paddingMedium;
+            height: 50vh;
+            max-height: 300px;
+            border-radius: $borderRadiusSmall;
+
+            .quotes {
+                @include biggerfont();
+                font-weight: $bold;
+                font-style: italic;
+                margin-bottom: $marginSmall;
+            }
+            p {
+                width: 80%;
+            }
+
+            .button {
+                background-color: $secondColor;
+                width: 8rem;
+                border: 2px solid $darkColor;
+
+                &:hover {
+                    background-color: white;
+                    color: $darkColor;
+                    transition: background 0.1s ease-in-out;
+                    border: 2px solid $secondColor;
+                }
+            }
+        }
+    }
+}
+
+.rotating-preview {
+    margin: 0 $marginSmall;
+    flex: 2;
+    height: 100%;
+
+    .preview-gallery {
+        @include centerElement();
+        @include imageWrapper(rotateY 25s linear infinite);
+        width: 100%;
+        height: 100%;
+
+        .image-preview {
+            @include imageGallerySquare(200px);
+            width: 20rem;
+            height: 15rem;
+            border: 2px solid $darkColor;
+        }
+    }
+}
+
+@media screen and (max-width: $tabletBreakpoint) {
+    .preview-infopage {
+        max-width: 100%;
+        height: 100vh;
+        overflow-x: hidden;
+    }
+
+    .rotating-preview {
+        max-width: 80%;
+        .preview-gallery {
+            .image-preview {
+                @include imageGallerySquare(80px);
+
+                max-width: 20rem;
+                max-height: 15rem;
+            }
+        }
+    }
+    .preview-content {
+        flex-direction: column;
+
+        .text-content {
+            min-width: 80%;
+        }
+    }
 }
