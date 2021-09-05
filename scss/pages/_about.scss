@@ -115,8 +115,15 @@
     margin: $marginBig 0;
     padding: $paddingMedium 0;
 
+    .preview-content {
+        @include centerElement();
+        
+        flex-direction: column;
+    }
+
     .title {
-        margin: $marginSmall;
+        margin-bottom: $marginLarge;
+     
         h1 {
             @include customfont(50px, 60px);
             color: $darkColor;
@@ -124,47 +131,7 @@
     }
 }
 
-.preview-content {
-    @include centerElement();
-
-    .text-content {
-        max-width: 40%;
-        flex: 1;
-        margin: 0 $marginSmall;
-        .info-preview {
-            @include dropShadow();
-            background-color: white;
-            padding: $paddingMedium;
-            height: 50vh;
-            max-height: 300px;
-            border-radius: $borderRadiusSmall;
-
-            .quotes {
-                @include biggerfont();
-                font-weight: $bold;
-                font-style: italic;
-                margin-bottom: $marginSmall;
-            }
-            p {
-                width: 80%;
-            }
-
-            .button {
-                background-color: $secondColor;
-                width: 8rem;
-                border: 2px solid $darkColor;
-
-                &:hover {
-                    background-color: white;
-                    color: $darkColor;
-                    transition: background 0.1s ease-in-out;
-                    border: 2px solid $secondColor;
-                }
-            }
-        }
-    }
-}
-
+// ROTATING IMAGE
 .rotating-preview {
     margin: 0 $marginSmall;
     flex: 2;
@@ -172,24 +139,73 @@
 
     .preview-gallery {
         @include centerElement();
-        @include imageWrapper(rotateY 25s linear infinite);
+        @include imageWrapper(rotateYAndScale 10s ease-in-out infinite);
         width: 100%;
         height: 100%;
 
         .image-preview {
             @include imageGallerySquare(200px);
-            width: 20rem;
+            width: 25rem;
             height: 15rem;
             border: 2px solid $darkColor;
         }
     }
 }
 
+
+// TEXT CONTENT
+.text-content {
+    max-width: 80%;
+    margin: $marginSmall;
+    max-height: 50%;
+
+
+    .info-preview {
+        @include centerElement();
+        @include dropShadow();
+        padding: $paddingMedium;
+        height: 50vh;
+        max-height: 300px;
+        flex-direction: column;
+
+        .quotes {
+            @include customfont(24px, 28px);
+            font-weight: $bold;
+            color: white;
+            font-style: italic;
+            margin-bottom: $marginSmall;
+        }
+
+        .btn-kepo {
+            background-color: $secondColor;
+            padding: $paddingMedium;
+            border: 2px solid $darkColor;
+
+            &:hover {
+                background-color: $mainColor;
+                color: $white;
+                transition: all 0.25s ease-in-out;
+                border: 2px solid $white;
+            }
+        }
+    }
+}
+
+
+
+
 @media screen and (max-width: $tabletBreakpoint) {
     .preview-infopage {
         max-width: 100%;
-        height: 100vh;
+        height: 100%;
         overflow-x: hidden;
+
+        .title{
+            h1{
+                @include customfont(36px, 40px);
+                text-align: center;
+            }
+        }
     }
 
     .rotating-preview {
@@ -209,5 +225,20 @@
         .text-content {
             min-width: 80%;
         }
+    }
+    .quotes {
+        @include customfont(16px, 28px);
+        font-weight: $bold;
+        color: white;
+        font-style: italic;
+        width: 90%;
+        margin-bottom: $marginSmall;
+    }
+
+    .btn-kepo {
+        background-color: $secondColor;
+        padding: $paddingMedium;
+        max-width: 80%;
+        border: 2px solid $darkColor;
     }
 }
