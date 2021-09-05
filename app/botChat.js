@@ -279,6 +279,15 @@ function preExplain(){
         emojiPreExplain()
     }, automate + 700)
 }
+
+function explainPerkenalan(){
+    let automate = botAutomationChat(dialogFlow.explain1)  
+    setTimeout(() => {
+        emojiExplain1()
+    }, automate + 700)
+}
+
+
 function explainGreetings(){}
 function explainBasicVerbs(){}
 function closing(){}

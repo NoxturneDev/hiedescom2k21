@@ -239,4 +239,20 @@
     .mascot{
         display: none;
     }
+
+    .close-overlay {
+        padding: $paddingMedium;
+        border: 2px solid $darkColor;
+        position: absolute;
+        top: 5px;
+        background-color: $secondColor;
+        transition: 0.2s ease-in-out;
+        z-index: 1;
+        &:hover{
+            border: 2px solid white;
+            color: white;
+            background-color: $mainColor;
+        }
+    }
+
 }

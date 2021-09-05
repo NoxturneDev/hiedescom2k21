@@ -225,26 +225,44 @@ const closeOverlayBtn = document.querySelectorAll(".close-overlay")
 const mascotWrapper = document.querySelector(".feature-wrapper")
 
 btnOverlay.forEach(btn => {
-    btn.addEventListener("mouseenter", e => {
-        btn.classList.add("wipe-up")
-    })
-
-    btn.addEventListener("mouseleave", e => {
-        btn.classList.remove("wipe-up")
-        btn.classList.add("wipe-up-reverse")
-    })
-
-    btn.addEventListener("animationend", () => {
-        if (btn.classList.contains("wipe-up-reverse")) {
-            btn.classList.remove("wipe-up-reverse")
+    const cekMediaQuery = () => {
+        const mediaQuery = window.matchMedia("(min-width: 768px)")
+            if(mediaQuery.matches){
+                btn.addEventListener("mouseenter", e => {
+                    btn.classList.add("wipe-up")
+                })
+            
+                btn.addEventListener("mouseleave", e => {
+                    btn.classList.remove("wipe-up")
+                    btn.classList.add("wipe-up-reverse")
+                })
+            
+                btn.addEventListener("animationend", () => {
+                    if (btn.classList.contains("wipe-up-reverse")) {
+                        btn.classList.remove("wipe-up-reverse")
+                    }
+                })
+            } else {
+                return
+            }
         }
-    })
+        cekMediaQuery()
 })
 
 
 buttonRedirect.forEach(btn => {
     btn.addEventListener("click", (e) => {
-        console.log(btn)
+        btnOverlayEvent(btn, e)
+    })
+})
+
+closeOverlayBtn.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      closeBtn(btn, e)
+    })
+})
+
+function btnOverlayEvent(btn, e){
         if (btn.id == "redirectBtnChat") {
             chatWindowOverlay.style.transform = "translateX(0)"
             mascotWrapper.style.transform = "translateX(100%)"
@@ -272,40 +290,37 @@ buttonRedirect.forEach(btn => {
             mascotWrapper.classList.remove("fade-0")
         })
         document.body.style.overflow = "hidden";
+}
+
+function closeBtn(btn, e){
+    if (e.target.id == "closeChatOverlay") {
+        chatWindowOverlay.style.transform = "translateX(-100%)"
+        chatWindowOverlay.classList.add("fade-0")
+    } else {
+        quizWindowOverlay.style.transform = "translateX(100%)"
+        quizWindowOverlay.classList.add("fade-0")
+    }
+
+
+
+    chatWindowOverlay.addEventListener("animationend", () => {
+        chatWindowOverlay.classList.remove("fade-0")
     })
-})
-
-closeOverlayBtn.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-        if (e.target.id == "closeChatOverlay") {
-            chatWindowOverlay.style.transform = "translateX(-100%)"
-            chatWindowOverlay.classList.add("fade-0")
-        } else {
-            quizWindowOverlay.style.transform = "translateX(100%)"
-            quizWindowOverlay.classList.add("fade-0")
-        }
-
-
-
-        chatWindowOverlay.addEventListener("animationend", () => {
-            chatWindowOverlay.classList.remove("fade-0")
-        })
-        quizWindowOverlay.addEventListener("animationend", () => {
-            quizWindowOverlay.classList.remove("fade-0")
-        })
-
-        mascotWrapper.classList.add("fade-1")
-        mascotWrapper.addEventListener("animationend", () => {
-            mascotWrapper.classList.remove("fade-1")
-        })
-
-        navbar.style.display = ""; //!animate this
-
-        navbar.removeAttribute("data-hidden")
-        mascotWrapper.style.transform = "translateX(0)"
-        document.body.style.overflow = "";
+    quizWindowOverlay.addEventListener("animationend", () => {
+        quizWindowOverlay.classList.remove("fade-0")
     })
-})
+
+    mascotWrapper.classList.add("fade-1")
+    mascotWrapper.addEventListener("animationend", () => {
+        mascotWrapper.classList.remove("fade-1")
+    })
+
+    navbar.style.display = ""; //!animate this
+
+    navbar.removeAttribute("data-hidden")
+    mascotWrapper.style.transform = "translateX(0)"
+    document.body.style.overflow = "";
+}
 // !REFACTOR THOSE SHIT
 
 // TODO : fix animation, make it better
