@@ -106,7 +106,7 @@ const emojiSource = {
     EMO_GETIT: "./assets/emoji/emoji-yes.png",
     EMO_NOTGETIT: "./assets/emoji/emoji-yes.png",
     EMO_HALO: "./assets/emoji/halo.png",
-    EMO_HI: "../assets/emoji/halo.png",
+    EMO_HI: "./assets/emoji/halo.png",
     EMO_ASHIAP: "./assets/emoji/ashiap.png",
     EMO_THANKS: "./assets/emoji/emoji-yes.png"
 }
@@ -143,6 +143,9 @@ function createEmojiElement(emojiIntent, emoji2Intent, emojiSrc, emoji2Src) {
 
     emoji2.setAttribute("src", emoji2Src)
     emoji2.dataset.emojiMeaning = emoji2Intent
+
+    console.log(emojiSrc)
+    console.log(emoji2Src)
 }
 
 
