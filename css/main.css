@@ -48,7 +48,7 @@ html {
 }
 
 h1 {
-  font-size: 2.744rem !important;
+  font-size: 2.744rem;
   font-size: 13px;
 }
 
@@ -121,6 +121,50 @@ html {
   to {
     -webkit-transform: rotateY(360deg) rotateZ(360deg);
             transform: rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@-webkit-keyframes rotateY {
+  from {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@keyframes rotateY {
+  from {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes rotateX {
+  from {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+}
+
+@keyframes rotateX {
+  from {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
   }
 }
 
@@ -421,6 +465,51 @@ html {
   font-weight: 700;
   font-size: 1.2rem;
   text-align: center;
+}
+
+#big-title {
+  margin: 6rem;
+  font-style: italic;
+  color: #02559E;
+}
+
+#big-title h1 {
+  font-size: 56px;
+}
+
+@media screen and (min-width: 400px) {
+  #big-title h1 {
+    font-size: calc(56px + 14 * ((100vw - 400px) / 1000));
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  #big-title h1 {
+    font-size: 70px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #big-title {
+    margin: 1rem;
+    font-style: italic;
+    color: #02559E;
+  }
+  #big-title h1 {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 400px) {
+  #big-title h1 {
+    font-size: calc(36px + 12 * ((100vw - 400px) / 1000));
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 1400px) {
+  #big-title h1 {
+    font-size: 48px;
+  }
 }
 
 .no-scroll {
@@ -897,7 +986,8 @@ html {
   margin-top: 2rem;
 }
 
-.about-page .about-one .cards-text, .about-page .about-three .cards-text {
+.about-page .about-one .cards-text,
+.about-page .about-three .cards-text {
   text-align: right;
 }
 
@@ -991,7 +1081,8 @@ html {
             flex-direction: column;
     max-width: 8rem;
   }
-  .about-one, .about-three {
+  .about-one,
+  .about-three {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -1036,6 +1127,186 @@ html {
 @media screen and (max-width: 768px) and (min-width: 1400px) {
   .cards-text p {
     font-size: 14px;
+  }
+}
+
+.preview-infopage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 100%;
+  height: 90vh;
+  background-color: #3DCEFF;
+  margin: 3.5rem 0;
+  padding: 1.5rem 0;
+}
+
+.preview-infopage .title {
+  margin: 1rem;
+}
+
+.preview-infopage .title h1 {
+  font-size: 50px;
+  color: #02559E;
+}
+
+@media screen and (min-width: 400px) {
+  .preview-infopage .title h1 {
+    font-size: calc(50px + 10 * ((100vw - 400px) / 1000));
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .preview-infopage .title h1 {
+    font-size: 60px;
+  }
+}
+
+.preview-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.preview-content .text-content {
+  max-width: 40%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0 1rem;
+}
+
+.preview-content .text-content .info-preview {
+  -webkit-filter: drop-shadow(0px 27px 46px rgba(91, 81, 143, 0.09)) drop-shadow(0px 6.0308px 10.2747px rgba(91, 81, 143, 0.0536497)) drop-shadow(0px 1.79553px 3.05905px rgba(91, 81, 143, 0.0363503));
+          filter: drop-shadow(0px 27px 46px rgba(91, 81, 143, 0.09)) drop-shadow(0px 6.0308px 10.2747px rgba(91, 81, 143, 0.0536497)) drop-shadow(0px 1.79553px 3.05905px rgba(91, 81, 143, 0.0363503));
+  background-color: white;
+  padding: 1.5rem;
+  height: 50vh;
+  max-height: 300px;
+  border-radius: 12px;
+}
+
+.preview-content .text-content .info-preview .quotes {
+  font-size: 14px;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 400px) {
+  .preview-content .text-content .info-preview .quotes {
+    font-size: calc(14px + 4 * ((100vw - 400px) / 1000));
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .preview-content .text-content .info-preview .quotes {
+    font-size: 18px;
+  }
+}
+
+.preview-content .text-content .info-preview p {
+  width: 80%;
+}
+
+.preview-content .text-content .info-preview .button {
+  background-color: #FCDB00;
+  width: 8rem;
+  border: 2px solid #02559E;
+}
+
+.preview-content .text-content .info-preview .button:hover {
+  background-color: white;
+  color: #02559E;
+  -webkit-transition: background 0.1s ease-in-out;
+  transition: background 0.1s ease-in-out;
+  border: 2px solid #FCDB00;
+}
+
+.rotating-preview {
+  margin: 0 1rem;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  height: 100%;
+}
+
+.rotating-preview .preview-gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: rotateY 25s linear infinite;
+          animation: rotateY 25s linear infinite;
+  width: 100%;
+  height: 100%;
+}
+
+.rotating-preview .preview-gallery .image-preview {
+  position: absolute;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateY(calc(var(--i) * 90deg)) translateZ(200px);
+          transform: rotateY(calc(var(--i) * 90deg)) translateZ(200px);
+  width: 20rem;
+  height: 15rem;
+  border: 2px solid #02559E;
+}
+
+@media screen and (max-width: 768px) {
+  .preview-infopage {
+    max-width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+  .rotating-preview {
+    max-width: 80%;
+  }
+  .rotating-preview .preview-gallery .image-preview {
+    position: absolute;
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform: rotateY(calc(var(--i) * 90deg)) translateZ(80px);
+            transform: rotateY(calc(var(--i) * 90deg)) translateZ(80px);
+    max-width: 20rem;
+    max-height: 15rem;
+  }
+  .preview-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .preview-content .text-content {
+    min-width: 80%;
   }
 }
 
@@ -1390,20 +1661,16 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  height: 100%;
   position: relative;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-animation: rotateDekstop 30s linear infinite;
           animation: rotateDekstop 30s linear infinite;
-  border: 1px solid red;
+  width: 100%;
+  height: 100%;
 }
 
 .image-container {
-  width: 12rem;
-  height: 12rem;
-  border: 2px solid #02559E;
   position: absolute;
   -webkit-transform-origin: center;
           transform-origin: center;
@@ -1411,6 +1678,9 @@ html {
           transform-style: preserve-3d;
   -webkit-transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
           transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+  width: 12rem;
+  height: 12rem;
+  border: 2px solid #02559E;
 }
 
 .image-container:hover {
@@ -1452,7 +1722,6 @@ html {
     max-width: 150px;
   }
   .gallery-page {
-    border: 1px solid red;
     max-width: 100vw;
   }
   .picture-wrapper {
@@ -1461,8 +1730,13 @@ html {
     max-width: 60%;
   }
   .picture-wrapper .image-container {
-    -webkit-transform: rotateX(calc(var(--i) * 45deg)) translateZ(400px);
-            transform: rotateX(calc(var(--i) * 45deg)) translateZ(400px);
+    position: absolute;
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform: rotateX(calc(var(--i) * $rotateDeg)) translateZ(400px);
+            transform: rotateX(calc(var(--i) * $rotateDeg)) translateZ(400px);
   }
 }
 

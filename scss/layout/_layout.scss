@@ -28,6 +28,29 @@
     text-align: center;
 }
 
+#big-title{
+    margin: $marginLarge;
+    font-style: italic;
+    color: $darkColor;
+
+    h1{
+        @include customfont(56px, 70px);
+    }
+}
+
+// on screen title
+@media screen and (max-width: $tabletBreakpoint) {
+    #big-title{
+        margin: $marginSmall;
+        font-style: italic;
+        color: $darkColor;
+    
+        h1{
+            @include customfont(36px, 48px);
+        }
+    }
+}
+
 /// gallery pictures
 
 // OVERLAY

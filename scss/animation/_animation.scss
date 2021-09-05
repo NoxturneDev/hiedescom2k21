@@ -119,6 +119,24 @@ html {
       }
 }
 
+@keyframes rotateY {
+    from {
+        transform:  rotateY(0deg);
+    }
+    to {
+        transform:  rotateY(360deg);
+      }
+}
+
+@keyframes rotateX {
+    from {
+        transform:  rotateX(0deg);
+    }
+    to {
+        transform:  rotateX(360deg);
+      }
+}
+
 
 @keyframes rotatePhone {
     from {
