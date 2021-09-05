@@ -148,6 +148,7 @@ function createEmojiElement(emojiIntent, emoji2Intent, emojiSrc, emoji2Src) {
     console.log(emoji2Src)
 }
 
+// TEST COMMET ANJENG
 
 // ENABLING EMOJIS CHOICE
 // DISABLING EMOJIS CHOCIE
