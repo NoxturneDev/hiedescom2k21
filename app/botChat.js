@@ -101,14 +101,14 @@ const emojiIntentCode = {
 
 // OBJECT CONTAINING EMOJI SOURCE
 const emojiSource = {
-    EMO_OKAY: "./assets/emoji/okay.png",
-    EMO_NO: "./assets/emoji/emoji-no.png",
-    EMO_GETIT: "./assets/emoji/emoji-yes.png",
-    EMO_NOTGETIT: "./assets/emoji/emoji-yes.png",
-    EMO_HALO: "./assets/emoji/halo.png",
-    EMO_HI: "./assets/emoji/halo.png",
-    EMO_ASHIAP: "./assets/emoji/ashiap.png",
-    EMO_THANKS: "./assets/emoji/emoji-yes.png"
+    EMO_OKAY: "assets/emoji/okay.png",
+    EMO_NO: "assets/emoji/emoji-no.png",
+    EMO_GETIT: "assets/emoji/emoji-yes.png",
+    EMO_NOTGETIT: "assets/emoji/emoji-yes.png",
+    EMO_HALO: "assets/emoji/halo.png",
+    EMO_HI: "assets/emoji/halo.png",
+    EMO_ASHIAP: "assets/emoji/ashiap.png",
+    EMO_THANKS: "assets/emoji/emoji-yes.png"
 }
 
 
