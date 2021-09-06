@@ -177,7 +177,7 @@ function initializeShare(){
         } else if(id == "shareWhatsapp"){
             btn.setAttribute(
                 "href",
-                `https://www.facebook.com/sharer.php?u=${url}`
+                `https://wa.me/?text=${title} ${url}`
             )
         } else if(id == "shareTelegram"){
             btn.setAttribute(
