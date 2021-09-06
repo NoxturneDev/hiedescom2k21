@@ -81,6 +81,7 @@
     height: 100vh;
     position: relative;
     margin-top: $marginBig;
+    z-index: -1; 
 }
 
 .picture-wrapper {
@@ -179,16 +180,18 @@
             flex-direction: column;
             position: absolute;
             inset: 0;
-            padding: $paddingMedium;
             .gallery-overlay-icon {
                 @include centerElement();
 
                 transform: translateY(50%);
                 opacity: 0;
                 flex: 1;
+                inset: 0;
                 transition: 0.4s ease-out;
                 min-height: 100%;
                 min-width: 100%;
+                background-color: rgba(26, 26, 26, 0.418);
+                position: absolute;
 
                 &:hover {
                     transform: translateX(0);
@@ -204,9 +207,29 @@
                     filter: grayscale(100%);
 
                     &:hover {
+                        transition: filter 0.25s ease-in-out;
                         filter: grayscale(0);
                     }
                 }
+            }
+        }
+    }
+}
+
+.go-home{
+    margin-bottom: $marginMedium;
+    h1{
+        @include biggerfont();
+        a{
+            background-color: $darkColor;
+            color: $mainColor;
+            border: 2px solid $mainColor;
+            padding: $paddingSmall;
+            transition: color 0.25s ease-in-out, background 0.25s ease-in-out, border 0.25s ease-in-out;
+            &:hover{
+                color: $semiDarkColor;
+                border: 2px solid $semiDarkColor;
+                background-color: white;
             }
         }
     }

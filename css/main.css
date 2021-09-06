@@ -1391,13 +1391,13 @@ html {
   background-color: #FCDB00;
   padding: 1.5rem;
   border: 2px solid #02559E;
+  -webkit-transition: background-color 0.25s ease-in-out, border 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out, border 0.25s ease-in-out;
 }
 
 .text-content .info-preview .btn-kepo:hover {
   background-color: #3DCEFF;
   color: #FFF;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
   border: 2px solid #FFF;
 }
 
@@ -1836,6 +1836,7 @@ html {
   height: 100vh;
   position: relative;
   margin-top: 3.5rem;
+  z-index: -1;
 }
 
 .picture-wrapper {
@@ -1990,7 +1991,6 @@ html {
           flex-direction: column;
   position: absolute;
   inset: 0;
-  padding: 1.5rem;
 }
 
 .gallery-overlay .gallery-overlay-content .gallery-overlay-text .gallery-overlay-icon {
@@ -2009,10 +2009,13 @@ html {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  inset: 0;
   -webkit-transition: 0.4s ease-out;
   transition: 0.4s ease-out;
   min-height: 100%;
   min-width: 100%;
+  background-color: rgba(26, 26, 26, 0.418);
+  position: absolute;
 }
 
 .gallery-overlay .gallery-overlay-content .gallery-overlay-text .gallery-overlay-icon:hover {
@@ -2032,8 +2035,47 @@ html {
 }
 
 .gallery-overlay .gallery-overlay-content .gallery-overlay-text .gallery-overlay-icon .share:hover {
+  -webkit-transition: -webkit-filter 0.25s ease-in-out;
+  transition: -webkit-filter 0.25s ease-in-out;
+  transition: filter 0.25s ease-in-out;
+  transition: filter 0.25s ease-in-out, -webkit-filter 0.25s ease-in-out;
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
+}
+
+.go-home {
+  margin-bottom: 2rem;
+}
+
+.go-home h1 {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 400px) {
+  .go-home h1 {
+    font-size: calc(14px + 4 * ((100vw - 400px) / 1000));
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .go-home h1 {
+    font-size: 18px;
+  }
+}
+
+.go-home h1 a {
+  background-color: #02559E;
+  color: #3DCEFF;
+  border: 2px solid #3DCEFF;
+  padding: 0.5rem;
+  -webkit-transition: color 0.25s ease-in-out, background 0.25s ease-in-out, border 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out, background 0.25s ease-in-out, border 0.25s ease-in-out;
+}
+
+.go-home h1 a:hover {
+  color: #006ece;
+  border: 2px solid #006ece;
+  background-color: white;
 }
 
 #shareTwitter {
