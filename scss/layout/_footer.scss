@@ -1,3 +1,40 @@
+.share-container {
+    @include centerElement();
+    flex-direction: column;
+    width: 100%;
+    min-height: 40vh;
+
+
+    p{
+        @include biggerfont();
+        text-align: center;
+        width: 40%;
+        margin: $marginMedium 0;
+    }
+
+ }
+
+ .share-icon{
+    @include centerElement();
+    width: 60vw;
+    height: 10vh;
+
+    .share {
+        min-width: 4rem;
+        min-height: 4rem;
+        background-color: $darkColor;
+        margin: 0 $marginSmall;
+        cursor: pointer;
+        filter: brightness(25%);
+
+        &:hover {
+            transition: filter 0.25s ease-in-out;
+            filter: brightness(1);
+        }
+    }
+}
+
+
 .footer{
     @include centerElement();
 

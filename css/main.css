@@ -551,6 +551,34 @@ html {
   margin: 1rem;
 }
 
+#shareTwitter {
+  background: url("../assets/icon/twitter.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#shareInstagram {
+  background: url("../assets/icon/instagram.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#shareWhatsapp {
+  background: url("../assets/icon/whatsapp.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#shareFacebook {
+  background: url("../assets/icon/facebook.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .big-container {
   width: 100vw;
   height: 100vh;
@@ -939,6 +967,76 @@ html {
   .nav-list .nav-link a:visited {
     color: #02559E;
   }
+}
+
+.share-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  min-height: 40vh;
+}
+
+.share-container p {
+  font-size: 14px;
+  text-align: center;
+  width: 40%;
+  margin: 2rem 0;
+}
+
+@media screen and (min-width: 400px) {
+  .share-container p {
+    font-size: calc(14px + 4 * ((100vw - 400px) / 1000));
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .share-container p {
+    font-size: 18px;
+  }
+}
+
+.share-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60vw;
+  height: 10vh;
+}
+
+.share-icon .share {
+  min-width: 4rem;
+  min-height: 4rem;
+  background-color: #02559E;
+  margin: 0 1rem;
+  cursor: pointer;
+  -webkit-filter: brightness(25%);
+          filter: brightness(25%);
+}
+
+.share-icon .share:hover {
+  -webkit-transition: -webkit-filter 0.25s ease-in-out;
+  transition: -webkit-filter 0.25s ease-in-out;
+  transition: filter 0.25s ease-in-out;
+  transition: filter 0.25s ease-in-out, -webkit-filter 0.25s ease-in-out;
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
 }
 
 .footer {
@@ -2075,34 +2173,6 @@ html {
   color: #006ece;
   border: 2px solid #006ece;
   background-color: white;
-}
-
-#shareTwitter {
-  background: url("../assets/icon/twitter.svg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-#shareInstagram {
-  background: url("../assets/icon/instagram.svg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-#shareWhatsapp {
-  background: url("../assets/icon/whatsapp.svg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-#shareFacebook {
-  background: url("../assets/icon/facebook.svg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 768px) {

@@ -234,21 +234,6 @@
     }
 }
 
-#shareTwitter {
-    @include backgroundContain("../assets/icon/twitter.svg");
-}
-
-#shareInstagram {
-    @include backgroundContain("../assets/icon/instagram.svg");
-}
-
-#shareWhatsapp {
-    @include backgroundContain("../assets/icon/whatsapp.svg");
-}
-
-#shareFacebook {
-    @include backgroundContain("../assets/icon/facebook.svg");
-}
 
 
 @media screen and (max-width: $tabletBreakpoint) {

@@ -183,20 +183,6 @@ const shareData = {
 
 const shareBtn = document.querySelectorAll(".share")
 
-shareBtn.forEach(btn => {
-    btn.addEventListener("click", () =>{
-
-        if(btn.id == "shareTwitter"){
-            let direct = shareTwitter()
-
-            window.location.replace(direct)
-            console.log(direct)
-        } else {
-            shareMedia()
-        }
-    })
-})
-
 function initializeShare(){
     let url = shareData.url
     let title = shareData.title
@@ -227,93 +213,6 @@ function initializeShare(){
         }
     })
 }
-
-async function shareMedia(){
-    try {
-        await navigator.share(shareData)
-    }
-    catch (error) {
-        console.log(error)
-    }
-}
-
-function shareTwitter() {
-    let text = encodeURI(shareData.text)
-    let url = encodeURI(shareData.url)
-
-    console.log(shareData.url)
-    return `https://twitter.com/share?url=${url}&text=${text}`
-}
-
-function shareFacebook() { 
-    let textString = `teman teman twitter ${shareData.text}`
-    let url = encodeURI(shareData.url)
-
-    shareData.url = url
-    shareData.text = textString
-
-    return shareData
-}
-function shareWhatsapp() { 
-    let textString = `teman teman ${shareData.text}`
-    let url = encodeURI(shareData.url)
-
-    shareData.url = url
-    shareData.text = textString
-
-  
-}
-function shareInstagram() {
-    let textString = `teman teman instagram ${shareData.text}`
-    let url = encodeURI(shareData.url)
-
-    shareData.url = url
-    shareData.text = textString
-
-    return shareData
- }
-
-
-//  WhatsApp:
-//  https://wa.me/?text=[post-title] [post-url]
-//  Facebook:
-//  https://www.facebook.com/sharer.php?u=[post-url]
-//  Twitter:
-//  https://twitter.com/share?url=[post-url]&text=[post-title]
-//  Pinterest:
-//  https://pinterest.com/pin/create/bookmarklet/?media=[post-img]&url=[post-url]&is_video=[is_video]&description=[post-title]
-//  LinkedIn:
-//  https://www.linkedin.com/shareArticle?url=[post-url]&title=[post-title]
-
-
-function init() {
-    const pinterestImg = document.querySelector(".pinterest-img");
-  
-    let postUrl = encodeURI(document.location.href);
-    let postTitle = encodeURI("Hi everyone, please check this out: ");
-    let postImg = encodeURI(pinterestImg.src);
-  
-    facebookBtn.setAttribute(
-      "href",
-      `https://www.facebook.com/sharer.php?u=${postUrl}`
-    );
-  
-    twitterBtn.setAttribute(
-      "href",
-      `https://twitter.com/share?url=${postUrl}&text=${postTitle}`
-    );
-  
-    linkedinBtn.setAttribute(
-      "href",
-      `https://www.linkedin.com/shareArticle?url=${postUrl}&title=${postTitle}`
-    );
-  
-    whatsappBtn.setAttribute(
-      "href",
-      `https://wa.me/?text=${postTitle} ${postUrl}`
-    );
-  }
-  
 
 // SNAPPING CAROUSEL
 const container = document.querySelector(".slides-wrapper")

@@ -143,6 +143,51 @@ function navToggle() {
 }
 
 
+// SHARE FEATURE
+window.addEventListener("load", () => {
+    initializeShare()
+})
+const shareData = {
+    title: "Halo, kamu bisa belajar bahasa jawa menggunakan BOT Chat kami lho",
+    // text : "tertarik untuk belajar bahasa jawa sama BOT? atau pengen tau aja info menarik mengenai kebudayaan jawa tengah? cek kesini",
+    url: window.location.href,
+    text : "Apakah kamu tertarik? kalo kamu tertarik, kamu bisa kunjungi link tersebut"
+}
+
+const shareBtn = document.querySelectorAll(".share-icon .share")
+
+
+function initializeShare(){
+    let url = shareData.url
+    let title = shareData.title
+    let text = shareData.text
+    shareBtn.forEach( btn => {
+        const id = btn.id
+
+        if(id== "shareTwitter"){
+            btn.setAttribute(
+                "href",
+                `https://twitter.com/share?url=${url}&text=${title}`
+            )
+        } else if (id == "shareFacebook"){
+            btn.setAttribute(
+                "href",
+                `https://www.facebook.com/sharer.php?u=${url}`
+            )
+        } else if(id == "shareWhatsapp"){
+            btn.setAttribute(
+                "href",
+                `https://www.facebook.com/sharer.php?u=${url}`
+            )
+        } else if(id == "shareTelegram"){
+            btn.setAttribute(
+                "href",
+                `https://t.me/share/url?url=${url}&text=${text}`
+            )
+        }
+    })
+}
+
 //////////////////////////////////////////////////////////////
 // LOADER 
 //////////////////////////////////////////////////////////////
