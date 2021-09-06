@@ -6,9 +6,11 @@ const prevBtn = document.querySelector("#prevSlide")
 
 
 window.addEventListener("load", () => {
+
     console.log(slides.length)
     nextPrevSlide()
     getSlidePosition()
+    initializeShare()
 })
 
 // DEFINE NEXT AND PREVIOUS SLIDE
@@ -143,6 +145,13 @@ imagesInGallery.forEach((image) => {
         // change the caption depends on which image is clicked
         overlayCaption.innerText = caption
     })
+
+    image.addEventListener("touchstart", () => {
+        galleryOverlay.style.display = "flex"
+
+        // change the caption depends on which image is clicked
+        overlayCaption.innerText = caption
+    })
 })
 
 
@@ -166,18 +175,58 @@ changeRotationButton.forEach(btn => {
 
 // SHARE FEATURE
 const shareData = {
-    title: "Halo, mau belajar bahasa jawa?",
-    text : "tertarik untuk belajar bahasa jawa sama BOT? atau pengen tau aja info menarik mengenai kebudayaan jawa tengah? cek kesini",
-    url: document.location.href
+    title: "Halo, kamu bisa belajar bahasa jawa menggunakan BOT Chat kami lho",
+    // text : "tertarik untuk belajar bahasa jawa sama BOT? atau pengen tau aja info menarik mengenai kebudayaan jawa tengah? cek kesini",
+    url: window.location.href,
+    text : "Apakah kamu tertarik? kalo kamu tertarik, kamu bisa kunjungi link tersebut"
 }
 
 const shareBtn = document.querySelectorAll(".share")
 
 shareBtn.forEach(btn => {
     btn.addEventListener("click", () =>{
-        shareMedia()
+
+        if(btn.id == "shareTwitter"){
+            let direct = shareTwitter()
+
+            window.location.replace(direct)
+            console.log(direct)
+        } else {
+            shareMedia()
+        }
     })
 })
+
+function initializeShare(){
+    let url = shareData.url
+    let title = shareData.title
+    let text = shareData.text
+    shareBtn.forEach( btn => {
+        const id = btn.id
+
+        if(id== "shareTwitter"){
+            btn.setAttribute(
+                "href",
+                `https://twitter.com/share?url=${url}&text=${title}`
+            )
+        } else if (id == "shareFacebook"){
+            btn.setAttribute(
+                "href",
+                `https://www.facebook.com/sharer.php?u=${url}`
+            )
+        } else if(id == "shareWhatsapp"){
+            btn.setAttribute(
+                "href",
+                `https://www.facebook.com/sharer.php?u=${url}`
+            )
+        } else if(id == "shareTelegram"){
+            btn.setAttribute(
+                "href",
+                `https://t.me/share/url?url=${url}&text=${text}`
+            )
+        }
+    })
+}
 
 async function shareMedia(){
     try {
@@ -193,7 +242,7 @@ function shareTwitter() {
     let url = encodeURI(shareData.url)
 
     console.log(shareData.url)
-    return `https://twitter.com/share?url=${url}&text=${text}}`
+    return `https://twitter.com/share?url=${url}&text=${text}`
 }
 
 function shareFacebook() { 
@@ -252,11 +301,6 @@ function init() {
     twitterBtn.setAttribute(
       "href",
       `https://twitter.com/share?url=${postUrl}&text=${postTitle}`
-    );
-  
-    pinterestBtn.setAttribute(
-      "href",
-      `https://pinterest.com/pin/create/bookmarklet/?media=${postImg}&url=${postUrl}&description=${postTitle}`
     );
   
     linkedinBtn.setAttribute(
