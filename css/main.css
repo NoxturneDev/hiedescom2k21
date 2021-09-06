@@ -1835,7 +1835,6 @@ html {
   width: 100vw;
   height: 100vh;
   margin-top: 3.5rem;
-  z-index: -1;
 }
 
 .picture-wrapper {
