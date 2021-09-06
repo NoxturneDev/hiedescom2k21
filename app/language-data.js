@@ -4,8 +4,13 @@ const dialogFlow = {
     userName : ["nggih :D", "namane sampean siapa?"], 
     userAge: ["salam kenal nggih", "umure panjengenan berapa?"],
     userColor : ["weh sampun gede nggih", "warnae favorit e jenengan apa?"],
-    explain1 : ["nah niki panjenengan ada di website Yuk Sinau", "web niki dibuat oleh tim TYPO asal sekolah SMAN dastha"],
+    preExplain : ["nah niki panjenengan ada di website Yuk Sinau", "web niki dibuat oleh tim TYPO asal sekolah SMAN dastha"],
     explain1 : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+    explain2 : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+    explain3 : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+    postExplain : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+    ending : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+    shareInfo : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
 }
 
 const userIntent = {
