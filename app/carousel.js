@@ -175,15 +175,16 @@ const shareBtn = document.querySelectorAll(".share")
 
 shareBtn.forEach(btn => {
     btn.addEventListener("click", () =>{
-        shareMedia(btn)
+        shareMedia()
     })
 })
 
-function shareMedia(e){
-    if(navigator.share){
-        navigator.share(shareData)
-    } else {
-        console.log("njir gabisa")
+async function shareMedia(){
+    try {
+        await navigator.share(shareData)
+    }
+    catch (error) {
+        console.log(error)
     }
 }
 
