@@ -70,11 +70,11 @@ const navbarLink = document.querySelectorAll(".nav-link a")
 function smoothScroll(e) {
     e.preventDefault()
     const targetID = e.currentTarget.getAttribute("href")
-    const margin = 100;
+    const margin = 200;
 
     if (targetID === "#mainFeaturePage") {
         window.scrollTo({
-            top: document.querySelector(targetID).offsetTop + (2 * margin),
+            top: document.querySelector(targetID).offsetTop + (2 * (margin * -1)),
             behavior: "smooth"
         })
     } else {
@@ -83,6 +83,8 @@ function smoothScroll(e) {
             behavior: "smooth"
         })
     }
+
+    console.log(navbarLink)
 }
 
 //////////////////////////////////////////////////////////////

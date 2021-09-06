@@ -122,19 +122,26 @@ function animateTransition(btn) {
 }
 
 
+// IMAGE OVERLAY ON CLICK
 const imagesInGallery = Array.from(document.querySelectorAll(".image-container"))
 const galleryOverlay = document.querySelector(".gallery-overlay")
 
 
 galleryOverlay.addEventListener("click", (e) => {
-    if(e.target.classList.contains("gallery-overlay")){
+    if (e.target.classList.contains("gallery-overlay")) {
         galleryOverlay.style.display = "none"
     }
 })
 
-imagesInGallery.forEach((image, index) => {
+imagesInGallery.forEach((image) => {
+    const overlayCaption = document.querySelector(".gallery-overlay-text .header")
+    const caption = image.dataset.caption
+
     image.addEventListener("click", () => {
         galleryOverlay.style.display = "flex"
+
+        // change the caption depends on which image is clicked
+        overlayCaption.innerText = caption
     })
 })
 
@@ -146,16 +153,122 @@ const changeRotationButton = document.querySelectorAll(".rotation-choice")
 changeRotationButton.forEach(btn => {
     const buttonId = btn.id
     btn.addEventListener("click", (e) => {
-        if(buttonId == "yAxis"){
+        if (buttonId == "yAxis") {
             rotationWrapper.style.animation = "rotateY 30s linear infinite"
-        } else if(buttonId == "xAxis"){
+        } else if (buttonId == "xAxis") {
             rotationWrapper.style.animation = "rotateX 30s linear infinite"
-        } else if(buttonId == "zAxis"){
+        } else if (buttonId == "zAxis") {
             rotationWrapper.style.animation = "rotateDekstop 30s linear infinite"
         }
     })
 })
 
+
+// SHARE FEATURE
+const shareData = {
+    title: "Halo, mau belajar bahasa jawa?",
+    text : "tertarik untuk belajar bahasa jawa sama BOT? atau pengen tau aja info menarik mengenai kebudayaan jawa tengah? cek kesini",
+    url: document.location.href
+}
+
+const shareBtn = document.querySelectorAll(".share")
+
+shareBtn.forEach(btn => {
+    btn.addEventListener("click", () =>{
+        shareMedia(btn)
+    })
+})
+
+function shareMedia(e){
+    if(navigator.share){
+        navigator.share(shareData)
+    } else {
+        console.log("njir gabisa")
+    }
+}
+
+function shareTwitter() {
+    let text = encodeURI(shareData.text)
+    let url = encodeURI(shareData.url)
+
+    console.log(shareData.url)
+    return `https://twitter.com/share?url=${url}&text=${text}}`
+}
+
+function shareFacebook() { 
+    let textString = `teman teman twitter ${shareData.text}`
+    let url = encodeURI(shareData.url)
+
+    shareData.url = url
+    shareData.text = textString
+
+    return shareData
+}
+function shareWhatsapp() { 
+    let textString = `teman teman ${shareData.text}`
+    let url = encodeURI(shareData.url)
+
+    shareData.url = url
+    shareData.text = textString
+
+  
+}
+function shareInstagram() {
+    let textString = `teman teman instagram ${shareData.text}`
+    let url = encodeURI(shareData.url)
+
+    shareData.url = url
+    shareData.text = textString
+
+    return shareData
+ }
+
+
+//  WhatsApp:
+//  https://wa.me/?text=[post-title] [post-url]
+//  Facebook:
+//  https://www.facebook.com/sharer.php?u=[post-url]
+//  Twitter:
+//  https://twitter.com/share?url=[post-url]&text=[post-title]
+//  Pinterest:
+//  https://pinterest.com/pin/create/bookmarklet/?media=[post-img]&url=[post-url]&is_video=[is_video]&description=[post-title]
+//  LinkedIn:
+//  https://www.linkedin.com/shareArticle?url=[post-url]&title=[post-title]
+
+
+function init() {
+    const pinterestImg = document.querySelector(".pinterest-img");
+  
+    let postUrl = encodeURI(document.location.href);
+    let postTitle = encodeURI("Hi everyone, please check this out: ");
+    let postImg = encodeURI(pinterestImg.src);
+  
+    facebookBtn.setAttribute(
+      "href",
+      `https://www.facebook.com/sharer.php?u=${postUrl}`
+    );
+  
+    twitterBtn.setAttribute(
+      "href",
+      `https://twitter.com/share?url=${postUrl}&text=${postTitle}`
+    );
+  
+    pinterestBtn.setAttribute(
+      "href",
+      `https://pinterest.com/pin/create/bookmarklet/?media=${postImg}&url=${postUrl}&description=${postTitle}`
+    );
+  
+    linkedinBtn.setAttribute(
+      "href",
+      `https://www.linkedin.com/shareArticle?url=${postUrl}&title=${postTitle}`
+    );
+  
+    whatsappBtn.setAttribute(
+      "href",
+      `https://wa.me/?text=${postTitle} ${postUrl}`
+    );
+  }
+  
 
 // SNAPPING CAROUSEL
 const container = document.querySelector(".slides-wrapper")

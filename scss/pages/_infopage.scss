@@ -79,7 +79,6 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    position: relative;
     margin-top: $marginBig;
     z-index: -1; 
 }
@@ -172,6 +171,7 @@
 
             color: white;
             flex: 2;
+            margin-top: $marginMedium;
         }
 
         .gallery-overlay-text {

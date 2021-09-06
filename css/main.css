@@ -1834,7 +1834,6 @@ html {
           flex-direction: column;
   width: 100vw;
   height: 100vh;
-  position: relative;
   margin-top: 3.5rem;
   z-index: -1;
 }
@@ -1961,6 +1960,7 @@ html {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
+  margin-top: 2rem;
 }
 
 @media screen and (min-width: 400px) {
