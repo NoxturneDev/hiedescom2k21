@@ -2587,6 +2587,7 @@ html {
   }
   .gallery-page {
     max-width: 100vw;
+    height: 175vh;
   }
   .picture-wrapper {
     -webkit-animation: rotatePhone 50s linear infinite;
