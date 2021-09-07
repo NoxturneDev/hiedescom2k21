@@ -1696,8 +1696,7 @@ html {
 @media screen and (max-width: 768px) {
   .preview-infopage {
     max-width: 100%;
-    height: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
     padding: 0.5rem;
   }
   .preview-infopage .title h1 {
@@ -1740,10 +1739,10 @@ html {
             flex-direction: column;
   }
   .preview-content .text-content {
-    min-width: 80%;
+    min-width: 90%;
   }
   .preview-content .text-content .quotes {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: white;
     text-align: center;
@@ -1754,13 +1753,13 @@ html {
 
 @media screen and (max-width: 768px) and (min-width: 400px) {
   .preview-content .text-content .quotes {
-    font-size: calc(18px + 4 * ((100vw - 400px) / 1000));
+    font-size: calc(16px + 4 * ((100vw - 400px) / 1000));
   }
 }
 
 @media screen and (max-width: 768px) and (min-width: 1400px) {
   .preview-content .text-content .quotes {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
