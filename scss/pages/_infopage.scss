@@ -1,5 +1,6 @@
 .carousel {
     @include centerElement();
+    @include backgroundCover("../assets/image/landing-page-background.png");
 
     height: 95vh;
     max-width: 100vw;
@@ -74,12 +75,66 @@
     }
 }
 
+.gallery-card-page {
+    @include centerElement();
+
+    flex-direction: column;
+    width: 90%;
+    height: calc(100% + 5vh);
+    margin: $marginBig auto;
+
+    .text-content {
+        width: 80%;
+        height: 35%;
+        text-align: center;
+    }
+
+    .cards-container {
+        @include centerElement();
+
+        flex-wrap: wrap;
+        width: 100%;
+
+        .gallery-card {
+            @include centerElement();
+
+            flex-direction: column;
+            margin: $marginMedium;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                width: 130%;
+                height: 130%;
+            }
+
+            .caption {
+                @include centerElement();
+                width: 100%;
+                position: absolute;
+                inset: 0;
+                background-color: #31313170;
+                color: $white;
+                transform: translateX(-50%);
+                opacity: 0;
+                transition: opacity 0.25s ease-in, transform 0.25s ease-out;
+
+                &:hover{
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
 .gallery-page {
     @include centerElement();
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: 150vh;
     margin-top: $marginBig;
+    background-color: $darkColor;
 }
 
 .picture-wrapper {
@@ -94,18 +149,21 @@
 
 .image-container {
     @include imageGallery(400px);
+    
 
-    width: 12rem;
-    height: 12rem;
-    border: 2px solid $darkColor;
+    width: 17rem;
+    height: 17rem;
+    border: 2px solid $mainColor;
+    transition: background 0.4s ease-in, transform 0.8s ease-in-out;
+    
 
     &:hover {
-        background-color: $mainColor;
+        @include backgroundCover("../assets/image/gallery-9.png");
+        transform: scale(1.2);
     }
 }
 
-
-.rotation-mode-container{
+.rotation-mode-container {
     @include centerElement();
 
     width: 100%;
@@ -113,7 +171,7 @@
     margin-top: $marginLarge;
     position: relative;
 
-    .rotation-choice{
+    .rotation-choice {
         padding: 0.8em;
         background-color: $secondColor;
         border: 2px solid $darkColor;
@@ -122,8 +180,7 @@
         cursor: pointer;
         transition: 0.25s ease-in-out;
 
-
-        &:hover{
+        &:hover {
             background-color: white;
             border: 2px solid $secondColor;
             color: $darkColor;
@@ -157,7 +214,6 @@
             width: 100%;
             height: 100%;
             position: relative;
-            
 
             img {
                 height: 100%;
@@ -215,17 +271,17 @@
     }
 }
 
-.go-home{
+.go-home {
     margin-bottom: $marginMedium;
-    h1{
+    h1 {
         @include biggerfont();
-        a{
+        a {
             background-color: $darkColor;
             color: $mainColor;
             border: 2px solid $mainColor;
             padding: $paddingSmall;
             transition: color 0.25s ease-in-out, background 0.25s ease-in-out, border 0.25s ease-in-out;
-            &:hover{
+            &:hover {
                 color: $semiDarkColor;
                 border: 2px solid $semiDarkColor;
                 background-color: white;
@@ -233,8 +289,6 @@
         }
     }
 }
-
-
 
 @media screen and (max-width: $tabletBreakpoint) {
     .slides-wrapper {
@@ -266,80 +320,15 @@
     }
 
     .picture-wrapper {
-        animation: rotatePhone 30s linear infinite;
+        animation: rotatePhone 50s linear infinite;
         max-width: 60%;
 
         .image-container {
             @include imageGalleryXAxis(400px);
             cursor: pointer;
+            width: 16rem;
+            height: 16rem;
         }
     }
 }
 
-
-// .picture-wrapper {
-//     @include centerElement();
-
-//     width: 80vw;
-//     height: auto;
-//     overflow: hidden;
-//     flex-wrap: wrap;
-
-//     .image-container {
-//         @include centerElement();
-//         @include backgroundCover("../assets/image/landing-page-background.png");
-
-//         flex-direction: column;
-//         padding: 0.3em;
-//         flex-basis: 25%;
-//         height: 10rem;
-//         background-color: white;
-//         margin: 0.2em;
-//         position: relative;
-//         z-index: 1;
-
-//         .image-header {
-//             @include leftAlignElement();
-
-//             align-items: flex-start;
-//             width: 100%;
-//             z-index: 1;
-//             flex: 2;
-//             color: $white;
-//             @include smallerfont();
-
-//             h3 {
-//                 flex: 2;
-//             }
-
-//             .share-btn {
-//                 @include backgroundContain("../assets/icon/send-icon.svg");
-
-//                 width: 1.5rem;
-//                 height: 1.5rem;
-//                 cursor: pointer;
-//             }
-//         }
-
-//         .image-caption {
-//             @include smallerfont();
-
-//             width: 100%;
-//             flex: 1;
-//             color: $white;
-//             p {
-//                 vertical-align: text-bottom;
-//             }
-//         }
-//     }
-// }
-
-// .image-container::after {
-//     content: "";
-//     position: absolute;
-//     inset: 0;
-//     background-color: rgba(0, 0, 0, 0.11);
-//     z-index: -2;
-// }
-
-// !create 3d rotating gallery

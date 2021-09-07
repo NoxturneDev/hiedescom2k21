@@ -13,6 +13,10 @@ const dialogFlow = {
     shareInfo : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
 }
 
+const quizFlow = {
+    greetings : ["Kulonuwon", "Selamat datang di Yuk Sinau"],
+}
+
 const userIntent = {
     respGreetings : ["salam", "salam kenal", "halo"],
     introductionName : ["nama", "name", "saya adalah", "namaku", "nama aku", "nama saya", "nama ku"],

@@ -4,7 +4,7 @@
     height: calc(100% + 2rem);
     flex-direction: column;
     overflow-x: hidden;
-    margin-top: $marginMedium;
+    margin: $marginLarge 0;
     .about-one .cards-text,
     .about-three .cards-text {
         text-align: right;
@@ -12,9 +12,11 @@
 
     .about {
         @include leftAlignElement();
+        @include dropShadow2();
 
+        background-color: white;
         height: 40vh;
-
+        padding: $paddingMedium;
         .cards-text {
             .cards-header {
                 width: 80%;
@@ -58,7 +60,6 @@
 
 .card-img {
     width: calc(100% - 1rem);
-    // text-align: center;
 }
 
 @media screen and (max-width: $tabletBreakpoint) {
@@ -67,6 +68,7 @@
         padding: 0;
         flex-direction: column;
         width: 90%;
+        filter: none;
 
         .card-img {
             @include centerElement();
@@ -108,12 +110,16 @@
 .preview-infopage {
     @include centerElement();
 
+
     flex-direction: column;
-    max-width: 100%;
-    height: 90vh;
+    width: 90%;
+    height: 100vh;
     background-color: $mainColor;
-    margin: $marginBig 0;
+    margin: $marginLarge 0;
     padding: $paddingMedium 0;
+    border: 4px solid $darkColor;
+    border-radius: 24px;
+    
 
     .preview-content {
         @include centerElement();
@@ -125,7 +131,7 @@
         margin-bottom: $marginLarge;
      
         h1 {
-            @include customfont(50px, 60px);
+            @include customfont(34px, 38px);
             color: $darkColor;
         }
     }
@@ -142,13 +148,31 @@
         @include imageWrapper();
         width: 100%;
         height: 100%;
-        animation: rotateYAndScale 10s ease-in-out infinite;
+        animation: rotateYAndScale 15s ease-in-out infinite;
 
         .image-preview {
-            @include imageGallerySquare(200px);
-            width: 25rem;
+            @include imageGallerySquare(25rem);
+            @include dropShadow2();
+            width: 15rem;
             height: 15rem;
-            border: 2px solid $darkColor;
+            border: 2px solid $semiDarkColor;
+        }
+
+        .prev1{
+            @include backgroundCover("../assets/image/gallery-10.png");
+        }
+
+        .prev2{
+            @include backgroundCover("../assets/image/gallery-5.png");
+        }
+
+        .prev3{
+            @include backgroundCover("../assets/image/gallery-6.png");
+        }
+
+        .prev4{
+            @include backgroundCover("../assets/image/gallery-9.png");
+
         }
     }
 }
@@ -163,7 +187,6 @@
 
     .info-preview {
         @include centerElement();
-        @include dropShadow();
         padding: $paddingMedium;
         height: 50vh;
         max-height: 300px;
@@ -175,6 +198,8 @@
             color: white;
             font-style: italic;
             margin-bottom: $marginSmall;
+            text-align: center;
+
         }
 
         .btn-kepo {
@@ -200,10 +225,11 @@
         max-width: 100%;
         height: 100%;
         overflow-x: hidden;
+        padding: $paddingSmall;
 
         .title{
             h1{
-                @include customfont(36px, 40px);
+                @include customfont(19px, 23px);
                 text-align: center;
             }
         }
@@ -213,10 +239,10 @@
         max-width: 80%;
         .preview-gallery {
             .image-preview {
-                @include imageGallerySquare(80px);
+                @include imageGallerySquare(15rem);
 
-                max-width: 20rem;
-                max-height: 15rem;
+                max-width: 15rem;
+                max-height: 10rem;
             }
         }
     }
@@ -225,21 +251,24 @@
 
         .text-content {
             min-width: 80%;
+
+            .quotes {
+                @include customfont(18px, 22px);
+                font-weight: $bold;
+                color: white;
+                text-align: center;
+                width: 100%;
+                margin-bottom: $marginSmall;
+               
+            }
         }
     }
-    .quotes {
-        @include customfont(16px, 28px);
-        font-weight: $bold;
-        color: white;
-        font-style: italic;
-        width: 90%;
-        margin-bottom: $marginSmall;
-    }
+  
 
     .btn-kepo {
         background-color: $secondColor;
         padding: $paddingMedium;
-        max-width: 80%;
+        max-width:100%;
         border: 2px solid $darkColor;
     }
 }

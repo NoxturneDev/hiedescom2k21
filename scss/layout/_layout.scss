@@ -30,23 +30,37 @@
 
 #big-title{
     margin: $marginLarge;
-    font-style: italic;
-    color: $darkColor;
+    color: $semiDarkColor;
+    position: relative;
+    max-height: 5vh;
+    margin: auto;
+    text-align: center;
 
     h1{
-        @include customfont(56px, 70px);
+        @include customfont(30px, 34px);
+
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -$paddingSmall;
+            transform: scaleX(0.5);
+            height: 3px;
+            background-color: $semiDarkColor;
+            width: 100%;
+        }
     }
 }
 
 // on screen title
 @media screen and (max-width: $tabletBreakpoint) {
     #big-title{
-        margin: $marginSmall;
+        margin: $marginSmall auto;
         font-style: italic;
         color: $darkColor;
-    
+        
         h1{
-            @include customfont(36px, 48px);
+            @include customfont(18px, 22px);
         }
     }
 }

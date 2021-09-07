@@ -40,10 +40,11 @@
 }
 
 .big-cards{
+    @include dropShadow2();
+
     width: 20rem;
     height: 50vh;
     margin: $marginMedium auto;
-    box-shadow: $lightSmoothShadow;
     padding: $paddingMedium;
     border-radius: 9px;
 }
@@ -97,8 +98,8 @@
     @include backgroundContain("../assets/icon/twitter.svg");
 }
 
-#shareInstagram {
-    @include backgroundContain("../assets/icon/instagram.svg");
+#shareTelegram{
+    @include backgroundContain("../assets/icon/telegram.svg");
 }
 
 #shareWhatsapp {

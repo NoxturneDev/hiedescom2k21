@@ -12,6 +12,7 @@
         height: 60%;
         .landing-page-text{
             @include leftAlignElement();
+            @include smallerfont();
 
             flex-direction: column;
             padding: $paddingSmall $paddingMedium;
@@ -59,7 +60,7 @@
 
     .nau-wrapper{
         #nau{
-            min-width: $phoneImgMin;
+            min-width: $phoneImgMax;
         }
     }
 }

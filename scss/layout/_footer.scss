@@ -3,8 +3,7 @@
     flex-direction: column;
     width: 100%;
     min-height: 40vh;
-
-
+    color: $darkColor;
     p{
         @include biggerfont();
         text-align: center;
@@ -25,11 +24,13 @@
         background-color: $darkColor;
         margin: 0 $marginSmall;
         cursor: pointer;
-        filter: brightness(25%);
+        filter: brightness(0);
+        opacity: 0.6;
 
         &:hover {
-            transition: filter 0.25s ease-in-out;
+            transition: filter 0.25s ease-in-out, opacity 0.25s ease-in;
             filter: brightness(1);
+            opacity: 1;
         }
     }
 }
@@ -44,4 +45,14 @@
     height: 20vh;
     color: $white;
     text-align: center;
+}
+
+
+@media screen and (max-width: $tabletBreakpoint) {
+    .share-container{
+        p {
+            width: 100%;
+            margin-bottom: $marginBig;
+        }
+    }
 }

@@ -155,6 +155,20 @@ imagesInGallery.forEach((image) => {
 })
 
 
+// ROTATING EVENT
+
+const image3DGallery = document.querySelectorAll(".image-container")
+
+image3DGallery.forEach(img => {
+    const cekMediaQuery = () => {
+        const mediaQuery = window.matchMedia("(min-width: 768px)")
+            if(mediaQuery.matches){
+    
+            }
+        }
+    cekMediaQuery()
+})
+
 // ROTATION BUTTON MODE
 const rotationWrapper = document.querySelector(".picture-wrapper")
 const changeRotationButton = document.querySelectorAll(".rotation-choice")
@@ -213,6 +227,8 @@ function initializeShare(){
         }
     })
 }
+
+
 
 // SNAPPING CAROUSEL
 const container = document.querySelector(".slides-wrapper")
