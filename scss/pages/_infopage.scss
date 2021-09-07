@@ -75,6 +75,8 @@
     }
 }
 
+// CARD IMAGE
+
 .gallery-card-page {
     @include centerElement();
 
@@ -128,6 +130,7 @@
     }
 }
 
+// 3D ROTATING GALLERY
 .gallery-page {
     @include centerElement();
     flex-direction: column;
@@ -181,6 +184,7 @@
     }
 }
 
+// OVERLAY ON CLICK
 .gallery-overlay {
     @include centerElement();
 
@@ -264,6 +268,7 @@
     }
 }
 
+// BACK BUTTON
 .go-home {
     margin-bottom: $marginMedium;
     h1 {
@@ -284,9 +289,38 @@
 }
 
 @media screen and (min-width: $dekstop) {
-    .image-container:hover {
-        @include backgroundCover("../assets/image/gallery-9.png");
-        transform: scale(1.2);
+    .image-container {
+        &:hover {
+            transform: scale(1.5) translateZ(100px);
+        }
+
+        &:nth-child(1):hover {
+            @include backgroundCover("../assets/image/gallery-1.png");
+        }
+        &:nth-child(2):hover {
+            @include backgroundCover("../assets/image/gallery-2.png");
+        }
+        &:nth-child(3):hover {
+            @include backgroundCover("../assets/image/gallery-3.png");
+        }
+        &:nth-child(4):hover {
+            @include backgroundCover("../assets/image/gallery-4.png");
+        }
+        &:nth-child(5):hover {
+            @include backgroundCover("../assets/image/gallery-5.png");
+        }
+        &:nth-child(6):hover {
+            @include backgroundCover("../assets/image/gallery-6.png");
+        }
+        &:nth-child(7):hover {
+            @include backgroundCover("../assets/image/gallery-7.png");
+        }
+        &:nth-child(8):hover {
+            @include backgroundCover("../assets/image/gallery-8.png");
+        }
+        &:nth-child(9):hover {
+            @include backgroundCover("../assets/image/gallery-9.png");
+        }
     }
 }
 
@@ -331,6 +365,34 @@
             width: 16rem;
             height: 16rem;
             border: none;
+
+            &:nth-child(1):hover {
+                @include backgroundCover("../assets/image/gallery-1.png");
+            }
+            &:nth-child(2) {
+                @include backgroundCover("../assets/image/gallery-2.png");
+            }
+            &:nth-child(3) {
+                @include backgroundCover("../assets/image/gallery-3.png");
+            }
+            &:nth-child(4) {
+                @include backgroundCover("../assets/image/gallery-4.png");
+            }
+            &:nth-child(5) {
+                @include backgroundCover("../assets/image/gallery-5.png");
+            }
+            &:nth-child(6) {
+                @include backgroundCover("../assets/image/gallery-6.png");
+            }
+            &:nth-child(7) {
+                @include backgroundCover("../assets/image/gallery-7.png");
+            }
+            &:nth-child(8) {
+                @include backgroundCover("../assets/image/gallery-8.png");
+            }
+            &:nth-child(9) {
+                @include backgroundCover("../assets/image/gallery-9.png");
+            }
         }
     }
 }

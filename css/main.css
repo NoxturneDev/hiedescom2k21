@@ -2543,11 +2543,53 @@ html {
 
 @media screen and (min-width: 1200px) {
   .image-container:hover {
+    -webkit-transform: scale(1.5) translateZ(100px);
+            transform: scale(1.5) translateZ(100px);
+  }
+  .image-container:nth-child(1):hover {
+    background: url("../assets/image/gallery-1.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .image-container:nth-child(2):hover {
+    background: url("../assets/image/gallery-2.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .image-container:nth-child(3):hover {
+    background: url("../assets/image/gallery-3.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .image-container:nth-child(4):hover {
+    background: url("../assets/image/gallery-4.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .image-container:nth-child(5):hover {
+    background: url("../assets/image/gallery-5.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .image-container:nth-child(6):hover {
+    background: url("../assets/image/gallery-6.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .image-container:nth-child(7):hover {
+    background: url("../assets/image/gallery-7.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .image-container:nth-child(8):hover {
+    background: url("../assets/image/gallery-8.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .image-container:nth-child(9):hover {
     background: url("../assets/image/gallery-9.png");
     background-size: cover;
     background-position: center;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
   }
 }
 
@@ -2609,6 +2651,51 @@ html {
     width: 16rem;
     height: 16rem;
     border: none;
+  }
+  .picture-wrapper .image-container:nth-child(1):hover {
+    background: url("../assets/image/gallery-1.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .picture-wrapper .image-container:nth-child(2) {
+    background: url("../assets/image/gallery-2.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .picture-wrapper .image-container:nth-child(3) {
+    background: url("../assets/image/gallery-3.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .picture-wrapper .image-container:nth-child(4) {
+    background: url("../assets/image/gallery-4.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .picture-wrapper .image-container:nth-child(5) {
+    background: url("../assets/image/gallery-5.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .picture-wrapper .image-container:nth-child(6) {
+    background: url("../assets/image/gallery-6.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .picture-wrapper .image-container:nth-child(7) {
+    background: url("../assets/image/gallery-7.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .picture-wrapper .image-container:nth-child(8) {
+    background: url("../assets/image/gallery-8.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .picture-wrapper .image-container:nth-child(9) {
+    background: url("../assets/image/gallery-9.png");
+    background-size: cover;
+    background-position: center;
   }
 }
 
