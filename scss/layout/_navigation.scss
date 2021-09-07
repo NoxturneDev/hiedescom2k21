@@ -202,6 +202,7 @@
             transform: translateX(-150%);
             flex-direction: column;
 
+
             ul {
                 // change the flex so it is upside down
                 flex-direction: column;
@@ -235,11 +236,16 @@
     }
 
     .btn-list {
-        background-color: white !important;
-        border: none !important;
-
+        @include centerElement();
+        margin: $marginMedium 0;
+        
         .btn-redirect-feature {
-            background-color: white;
+            background-color: $secondColor;
+            padding:$paddingMedium $paddingBig;
+
+            a {
+                @include biggerfont();
+            }
         }
     }
 
@@ -259,11 +265,20 @@
         }
 
         .icon-link {
-            @include backgroundContain("../assets/icon/home-fill.svg");
-
             width: 2rem;
             min-height: 2rem;
             display: block;
+        }
+
+        .home-icon{
+            @include backgroundContain("../assets/icon/home-fill.svg");
+        }
+
+        .info-icon {
+            @include backgroundContain("../assets/icon/info-line.svg");
+        }
+        .about-icon{
+            @include backgroundContain("../assets/icon/about-line.svg");
         }
 
         .nav-link {
@@ -276,6 +291,7 @@
                 color: $darkColor;
                 display: block;
                 padding: $paddingMedium 0;
+
                 &:visited {
                     color: $darkColor;
                 }
@@ -283,5 +299,4 @@
         }
     }
 
-    // ON CLICK CHANGE EVENT
 }

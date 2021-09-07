@@ -988,12 +988,39 @@ html {
     display: block;
   }
   .btn-list {
-    background-color: white !important;
-    border: none !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 2rem 0;
   }
   .btn-list .btn-redirect-feature {
-    background-color: white;
+    background-color: #FCDB00;
+    padding: 1.5rem 3.5rem;
   }
+  .btn-list .btn-redirect-feature a {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 400px) {
+  .btn-list .btn-redirect-feature a {
+    font-size: calc(14px + 4 * ((100vw - 400px) / 1000));
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 1400px) {
+  .btn-list .btn-redirect-feature a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .nav-list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1016,13 +1043,27 @@ html {
     border: 2px solid #02559E;
   }
   .nav-list .icon-link {
+    width: 2rem;
+    min-height: 2rem;
+    display: block;
+  }
+  .nav-list .home-icon {
     background: url("../assets/icon/home-fill.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    width: 2rem;
-    min-height: 2rem;
-    display: block;
+  }
+  .nav-list .info-icon {
+    background: url("../assets/icon/info-line.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .nav-list .about-icon {
+    background: url("../assets/icon/about-line.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .nav-list .nav-link {
     width: 70%;
