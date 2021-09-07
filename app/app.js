@@ -1,67 +1,3 @@
-// ALL VARIABLES
-// const submitForm = document.querySelector("form")
-// const userInputText = document.querySelector(".user-input")
-// const botsChoice = document.querySelectorAll(".bots")
-// const chatWindow = document.querySelector(".chatbox-window")
-// const chatHeader = document.querySelector(".chat-name h2")
-// const botWrapper = document.querySelector(".choose-bot-wrapper")
-// const botsContainer = document.querySelector(".bots-container")
-// const yukSinauBtn = document.querySelector(".btn-belajar")
-// const closeBtn = document.querySelector(".close-btn")
-// const closeChatBtn = document.querySelector(".close-chat")
-// const botChoiceContainerHeader = document.querySelector(".bots-container .header")
-// const loader = document.querySelector(".loader-container")
-// const body = document.querySelector("body")
-
-// window.addEventListener("load", () => {
-//     body.classList.add("no-scroll")
-//     window.scrollTo(0, 0)
-
-//     setTimeout(() => {
-//         loader.classList.add("wipe-left")
-//         body.classList.remove("no-scroll")
-//     }, 4000)
-// })
-
-// window.addEventListener("scroll", () => {
-//     const aboutHeader = document.querySelector("#aboutPage")
-
-//     const rect = aboutHeader.getBoundingClientRect().top;
-//     console.log(rect + window.scrollY)
-// })
-
-// botsChoice.forEach(bot => {
-//     bot.addEventListener("click", () => {
-//         if (chatWindow.dataset.hidden == "true") {
-//             chatWindow.dataset.hidden = "false"
-//         }
-
-//         if (bot.dataset.language == "BHS_JAWA") {
-//             botBahasaJawa()
-//         } else if (bot.dataset.language == "BHS_SUNDA") {
-//             botBahasaSunda()
-//         }
-//     })
-// })
-
-
-
-// yukSinauBtn.addEventListener("click", () => {
-//     botsContainer.removeAttribute("data-hidden")
-
-//     if (chatWindow.dataset.isActive == "true") {
-//         window.scroll
-//     }
-// })
-
-// closeBtn.addEventListener("click", () => {
-//     botsContainer.dataset.hidden = "true";
-// })
-
-// closeChatBtn.addEventListener("click", () => {
-//     chatWindow.dataset.hidden = "true"
-// })
-
 //////////////////////////////////////////////////////////////
 // SMOOTH SCROLL EFFECT
 //////////////////////////////////////////////////////////////
@@ -100,7 +36,6 @@ navbarLink.forEach(link => {
 
     link.addEventListener("click", () => {
         const mediaQuery = window.matchMedia("(max-width: 768px)")
-        // ! refactor above so u don't repeat the same funtcion at animateONscrollJS
         mediaQuery.addListener(navViewport)
         navViewport(mediaQuery, link)
     })
@@ -115,7 +50,6 @@ function navViewport(e, link) {
         // if window is in dekstop, reset to default desktop style
         navbarContainer.style.transform = "translateX(0)"
         navbarContainer.style.transition = "none"
-
     }
 }
 
@@ -149,37 +83,36 @@ window.addEventListener("load", () => {
 })
 const shareData = {
     title: "Halo, kamu bisa belajar bahasa jawa menggunakan BOT Chat kami lho",
-    // text : "tertarik untuk belajar bahasa jawa sama BOT? atau pengen tau aja info menarik mengenai kebudayaan jawa tengah? cek kesini",
     url: window.location.href,
-    text : "Apakah kamu tertarik? kalo kamu tertarik, kamu bisa kunjungi link tersebut"
+    text: "Apakah kamu tertarik? kalo kamu tertarik, kamu bisa kunjungi link tersebut"
 }
 
 const shareBtn = document.querySelectorAll(".share-icon .share")
 
-
-function initializeShare(){
+// adding link to the share button
+function initializeShare() {
     let url = shareData.url
     let title = shareData.title
     let text = shareData.text
-    shareBtn.forEach( btn => {
+    shareBtn.forEach(btn => {
         const id = btn.id
 
-        if(id== "shareTwitter"){
+        if (id == "shareTwitter") {
             btn.setAttribute(
                 "href",
                 `https://twitter.com/share?url=${url}&text=${title}`
             )
-        } else if (id == "shareFacebook"){
+        } else if (id == "shareFacebook") {
             btn.setAttribute(
                 "href",
                 `https://www.facebook.com/sharer.php?u=${url}`
             )
-        } else if(id == "shareWhatsapp"){
+        } else if (id == "shareWhatsapp") {
             btn.setAttribute(
                 "href",
                 `https://wa.me/?text=${title} ${url}`
             )
-        } else if(id == "shareTelegram"){
+        } else if (id == "shareTelegram") {
             btn.setAttribute(
                 "href",
                 `https://t.me/share/url?url=${url}&text=${text}`
@@ -192,7 +125,7 @@ function initializeShare(){
 // LOADER 
 //////////////////////////////////////////////////////////////
 
-// const loader = document.querySelector(".loader-container")
+const loader = document.querySelector(".loader-container")
 
 // window.addEventListener("load", ()=> {
 //     // disable scroll
@@ -251,115 +184,87 @@ function btnRotate(btn) {
         dimensionWrapper.dataset.animation = "rotate"
     }
 
-    dimensionWrapper.addEventListener("transitionend", ()=> {
+    dimensionWrapper.addEventListener("transitionend", () => {
         dimensionWrapper.dataset.animation = "none"
     })
 }
-// !browser alwasy chache the image so it's okay to use src changing
-// !FIX ABOVE
+
 
 
 //////////////////////////////////////////////////////////////
-// OVERLAY PAGES EVENT
+// OVERLAY MAIN FEATURE PAGES EVENT
 //////////////////////////////////////////////////////////////
 
-
-const btnOverlay = document.querySelectorAll(".button-overlay")
-const buttonRedirect = document.querySelectorAll(".button-redirect")
+const btnOverlay = document.querySelector(".button-overlay")
+const buttonRedirect = document.querySelector(".button-redirect")
 const chatWindowOverlay = document.querySelector(".chat-overlay")
-const quizWindowOverlay = document.querySelector(".quiz-overlay")
 const closeOverlayBtn = document.querySelectorAll(".close-overlay")
 const mascotWrapper = document.querySelector(".feature-wrapper")
-const closeChat = document.querySelector("#closeChat")
+const closeChat = document.querySelector("#closeChatOverlay")
 
-btnOverlay.forEach(btn => {
-    const cekMediaQuery = () => {
-        const mediaQuery = window.matchMedia("(min-width: 768px)")
-            if(mediaQuery.matches){
-                btn.addEventListener("mouseenter", e => {
-                    btn.classList.add("wipe-up")
-                })
-            
-                btn.addEventListener("mouseleave", e => {
-                    btn.classList.remove("wipe-up")
-                    btn.classList.add("wipe-up-reverse")
-                })
-            
-                btn.addEventListener("animationend", () => {
-                    if (btn.classList.contains("wipe-up-reverse")) {
-                        btn.classList.remove("wipe-up-reverse")
-                    }
-                })
+
+const cekMediaQuery = () => {
+    const mediaQuery = window.matchMedia("(min-width: 768px)")
+    if (mediaQuery.matches) {
+        btnOverlay.addEventListener("mouseenter", e => {
+            btnOverlay.classList.add("wipe-up")
+        })
+
+        btnOverlay.addEventListener("mouseleave", e => {
+            btnOverlay.classList.remove("wipe-up")
+            btnOverlay.classList.add("wipe-up-reverse")
+        })
+
+        btnOverlay.addEventListener("animationend", () => {
+            if (btnOverlay.classList.contains("wipe-up-reverse")) {
+                btnOverlay.classList.remove("wipe-up-reverse")
             }
-        }
-        cekMediaQuery()
-})
+        })
+    }
+}
 
+cekMediaQuery()
 
-buttonRedirect.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-        btnOverlayEvent(btn, e)
-    })
-})
-
-closeOverlayBtn.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      closeBtn(btn, e)
-    })
+// EVENT LISTENER
+buttonRedirect.addEventListener("click", ()=> {
+    btnOverlayEvent(buttonRedirect)
 })
 
 closeChat.addEventListener("click", (e) => {
     closeBtn(e.target)
 })
 
-function btnOverlayEvent(btn, e){
-        if (btn.id == "redirectBtnChat") {
-            chatWindowOverlay.style.transform = "translateX(0)"
-            mascotWrapper.style.transform = "translateX(100%)"
-            chatWindowOverlay.classList.add("fade-1")
-        } else if (btn.id == "redirectBtnQuiz") {
-            quizWindowOverlay.style.transform = "translateX(0)"
-            mascotWrapper.style.transform = "translateX(-100%)"
-            quizWindowOverlay.classList.add("fade-1")
-        }
+function btnOverlayEvent(btn) {
+    if (btn.id == "redirectBtnChat") {
+        chatWindowOverlay.style.transform = "translateX(0)"
+        mascotWrapper.style.transform = "translateX(100%)"
+        chatWindowOverlay.classList.add("fade-1")
+    } 
 
+    navbar.style.display = "none"; 
 
-        chatWindowOverlay.addEventListener("animationend", () => {
-            chatWindowOverlay.classList.remove("fade-1")
-        })
-        quizWindowOverlay.addEventListener("animationend", () => {
-            quizWindowOverlay.classList.remove("fade-1")
-        })
+    mascotWrapper.classList.add("fade-0")
 
+    // WHEN ANIMATION END
+    mascotWrapper.addEventListener("animationend", () => {
+        mascotWrapper.classList.remove("fade-0")
+    })
 
-        navbar.style.display = "none"; //!animate this
-        mascotWrapper.classList.add("fade-0")
+    chatWindowOverlay.addEventListener("animationend", () => {
+        chatWindowOverlay.classList.remove("fade-1")
+    })
 
-
-        mascotWrapper.addEventListener("animationend", () => {
-            mascotWrapper.classList.remove("fade-0")
-        })
-        document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
 }
 
-function closeBtn(e){
+function closeBtn(e) {
     if (e.id == "closeChatOverlay" || "closeChat") {
         chatWindowOverlay.style.transform = "translateX(-100%)"
         chatWindowOverlay.classList.add("fade-0")
-    } 
-    else {
-        quizWindowOverlay.style.transform = "translateX(100%)"
-        quizWindowOverlay.classList.add("fade-0")
     }
-
-    console.log(e)
-
 
     chatWindowOverlay.addEventListener("animationend", () => {
         chatWindowOverlay.classList.remove("fade-0")
-    })
-    quizWindowOverlay.addEventListener("animationend", () => {
-        quizWindowOverlay.classList.remove("fade-0")
     })
 
     mascotWrapper.classList.add("fade-1")
@@ -373,11 +278,6 @@ function closeBtn(e){
     mascotWrapper.style.transform = "translateX(0)"
     document.body.style.overflow = "";
 }
-// !REFACTOR THOSE SHIT
 
 // TODO : fix animation, make it better
 // TODO : create an efective function for handling animation end or so 
-
-
-// GALLERY IN INFOPAGE
-

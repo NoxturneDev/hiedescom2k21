@@ -66,15 +66,6 @@
     }
 }
 
-// #redirectBtnQuiz {
-//     background-color: $secondColor;
-//     border: 2px solid $darkColor;
-// }
-
-// #redirectBtnChat {
-//     background-color: $secondColor;
-//     color: $semiDarkColor;
-// }
 
 @media screen and (max-width: $tabletBreakpoint) {
     .main-feature-page {
@@ -108,63 +99,3 @@
 
 }
 
-// .feature-page{
-//     @include backgroundCover("../assets/image/feature-background.png");
-
-//     width: 100vw;
-//     height: 150vh;
-//     overflow: hidden;
-
-//     .dimension-wrapper{
-//         @include wrapper3DSquare();
-
-//         width: 100%;
-//         height: 100%;
-//         // animation: rotateY 20s linear infinite;
-
-//         .container-dimension{
-//             @include centerElement();
-//             // @include dimension3DSquare(calc(100vw + 200px));
-//             position: absolute;
-//             transform-origin: center;
-//             transform-style: preserve-3d;
-//             background-color: white;
-
-//             height: 100%;
-//             width:100%;
-
-//             #big-title{
-//                 color: red;
-//             }
-
-//         }
-//     }
-// }
-
-// .feature-content{
-//     @include centerElement();
-//     width: 80%;
-//     height: 100%;
-
-//     .feature-img{
-//        @include centerElement();
-//     }
-// }
-
-// // CHAT WRAPPER CONTAINER
-// .feature-chat{
-//     .chat-wrapper-content{
-//         .feature-img{
-//             img{
-//                 width: 30%;
-//             }
-//         }
-//     }
-// }
-
-// .btn-rotate{
-//     width: 10rem;
-//     height: 5rem;
-//     background-color: $secondColor;
-//     cursor: pointer;
-// }
