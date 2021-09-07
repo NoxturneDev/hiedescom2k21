@@ -17,10 +17,11 @@
     @include centerElement();
     width: 60vw;
     height: 10vh;
+    margin-top: $marginBig;
 
     .share {
-        min-width: 4rem;
-        min-height: 4rem;
+        min-width: 3rem;
+        min-height: 3rem;
         background-color: $darkColor;
         margin: 0 $marginSmall;
         cursor: pointer;

@@ -138,36 +138,31 @@ galleryOverlay.addEventListener("click", (e) => {
 imagesInGallery.forEach((image) => {
     const overlayCaption = document.querySelector(".gallery-overlay-text .header")
     const caption = image.dataset.caption
+    const mediaQuery = window.matchMedia("(min-width: 768px)")
 
-    image.addEventListener("click", () => {
-        galleryOverlay.style.display = "flex"
+    const onDekstopClick = () => {
+        if (mediaQuery.matches) {
+            image.addEventListener("click", () => {
+                galleryOverlay.style.display = "flex"
 
-        // change the caption depends on which image is clicked
-        overlayCaption.innerText = caption
-    })
+                // change the caption depends on which image is clicked
+                overlayCaption.innerText = caption
+            })
 
-    image.addEventListener("touchstart", () => {
-        galleryOverlay.style.display = "flex"
+            image.addEventListener("touchstart", () => {
+                galleryOverlay.style.display = "flex"
 
-        // change the caption depends on which image is clicked
-        overlayCaption.innerText = caption
-    })
+                // change the caption depends on which image is clicked
+                overlayCaption.innerText = caption
+            })
+        }
+
+    }
+    onDekstopClick()
 })
 
 
 // ROTATING EVENT
-
-const image3DGallery = document.querySelectorAll(".image-container")
-
-image3DGallery.forEach(img => {
-    const cekMediaQuery = () => {
-        const mediaQuery = window.matchMedia("(min-width: 768px)")
-            if(mediaQuery.matches){
-    
-            }
-        }
-    cekMediaQuery()
-})
 
 // ROTATION BUTTON MODE
 const rotationWrapper = document.querySelector(".picture-wrapper")
@@ -192,34 +187,34 @@ const shareData = {
     title: "Halo, kamu bisa belajar bahasa jawa menggunakan BOT Chat kami lho",
     // text : "tertarik untuk belajar bahasa jawa sama BOT? atau pengen tau aja info menarik mengenai kebudayaan jawa tengah? cek kesini",
     url: window.location.href,
-    text : "Apakah kamu tertarik? kalo kamu tertarik, kamu bisa kunjungi link tersebut"
+    text: "Apakah kamu tertarik? kalo kamu tertarik, kamu bisa kunjungi link tersebut"
 }
 
 const shareBtn = document.querySelectorAll(".share")
 
-function initializeShare(){
+function initializeShare() {
     let url = shareData.url
     let title = shareData.title
     let text = shareData.text
-    shareBtn.forEach( btn => {
+    shareBtn.forEach(btn => {
         const id = btn.id
 
-        if(id== "shareTwitter"){
+        if (id == "shareTwitter") {
             btn.setAttribute(
                 "href",
                 `https://twitter.com/share?url=${url}&text=${title}`
             )
-        } else if (id == "shareFacebook"){
+        } else if (id == "shareFacebook") {
             btn.setAttribute(
                 "href",
                 `https://www.facebook.com/sharer.php?u=${url}`
             )
-        } else if(id == "shareWhatsapp"){
+        } else if (id == "shareWhatsapp") {
             btn.setAttribute(
                 "href",
-                `https://www.facebook.com/sharer.php?u=${url}`
+                `https://wa.me/?text=${title} ${url}`
             )
-        } else if(id == "shareTelegram"){
+        } else if (id == "shareTelegram") {
             btn.setAttribute(
                 "href",
                 `https://t.me/share/url?url=${url}&text=${text}`
