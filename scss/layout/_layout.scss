@@ -28,7 +28,7 @@
     text-align: center;
 }
 
-#big-title{
+.big-title{
     margin: $marginLarge;
     color: $semiDarkColor;
     position: relative;
@@ -54,13 +54,13 @@
 
 // on screen title
 @media screen and (max-width: $tabletBreakpoint) {
-    #big-title{
+    .big-title{
         margin: $marginSmall auto;
         font-style: italic;
         color: $darkColor;
         
         h1{
-            @include customfont(18px, 22px);
+            @include customfont(20px, 24px);
         }
     }
 }
