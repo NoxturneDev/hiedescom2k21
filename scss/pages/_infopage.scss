@@ -2,17 +2,25 @@
     @include centerElement();
     @include backgroundCover("../assets/image/landing-page-background.png");
 
-    height: 95vh;
+    height: 120vh;
     max-width: 100vw;
     position: relative;
     overflow-x: hidden;
+    flex-direction: column;
+
+    .carousel-header {
+        h1 {
+            @include customfont(35px, 40px);
+            color: white;
+        }
+    }
 }
 
 .slides-wrapper {
     @include centerElement();
 
     width: 85%;
-    height: 100%;
+    height: 80%;
     position: relative;
 
     .slides {
@@ -33,7 +41,10 @@
     width: 90%;
     height: 90%;
     padding: $paddingSmall;
+    background-color: white;
+    border-radius: $borderRadiusSmall;
 
+    // slide-text
     article {
         text-align: center;
         margin: $marginSmall 0;
@@ -41,12 +52,20 @@
 
         .slide-header {
             margin: $marginSmall 0;
+            color: $darkColor;
+            @include biggerfont();
+        }
+        .slide-text {
+            color: $darkColor;
         }
     }
 
     .slide-img {
+        @include centerElement();
+        width: 50%;
+
         img {
-            width: 7rem;
+            width: 60%;
         }
     }
 }
@@ -72,6 +91,30 @@
     #prevSlide {
         @include backgroundContain("../assets/icon/left-arrow.svg");
         float: left;
+    }
+}
+
+.slide2 {
+    .slide-content {
+        @include leftAlignElement();
+
+        flex-direction: row;
+        line-height: 110%;
+        .slide-text{
+
+            @include centerElement();
+
+            flex-direction: column;
+            text-align: left;
+
+            p{
+                margin: $marginSmall;
+            }
+
+            &:nth-child(1){
+                font-style: italic;
+            }
+        }
     }
 }
 

@@ -8,6 +8,10 @@
     .about-one .cards-text,
     .about-three .cards-text {
         text-align: right;
+
+        p{
+            text-align: right;
+        }
     }
 
     .about {
@@ -18,11 +22,14 @@
         height: 40vh;
         padding: $paddingMedium;
         .cards-text {
+            width: 60%;
+
             .cards-header {
-                width: 80%;
+              width: 100%;
+              margin: $marginSmall 0;
             }
             p {
-                width: 85%;
+                width: 100%;
             }
         }
 
@@ -53,13 +60,14 @@
 }
 
 .cards-text > * {
-    margin: $marginSmall;
     color: $darkColor;
     line-height: 110%;
+
 }
 
 .card-img {
-    width: calc(100% - 1rem);
+    width: calc(60% - 1rem);
+
 }
 
 @media screen and (max-width: $tabletBreakpoint) {
@@ -72,7 +80,7 @@
 
         .card-img {
             @include centerElement();
-            width: 90%;
+            width: 80%;
             flex-direction: column;
             max-width: $phoneImgMax;
         }
@@ -110,7 +118,7 @@
 .preview-infopage {
     @include centerElement();
     @include dropShadow2();
-
+    @include insetShadow();
 
     flex-direction: column;
     width: 90%;
@@ -119,7 +127,7 @@
     margin: $marginLarge 0;
     padding: $paddingMedium 0;
     border-radius: 24px;
-    box-shadow: -7px 1px 66px -45px rgba(91,81,143,0.75) inset;
+    
     
 
     .preview-content {
@@ -152,7 +160,7 @@
         animation: rotateYAndScale 15s ease-in-out infinite;
 
         .image-preview {
-            @include imageGallerySquare(25rem);
+            @include imageGallerySquare(20rem);
             @include dropShadow2();
             width: 15rem;
             height: 15rem;
@@ -160,19 +168,19 @@
         }
 
         .prev1{
-            @include backgroundCover("../assets/image/gallery-10.png");
+            @include backgroundCover("../assets/image/gallery-3.png");
         }
 
         .prev2{
-            @include backgroundCover("../assets/image/gallery-5.png");
+            @include backgroundCover("../assets/image/gallery-1.png");
         }
 
         .prev3{
-            @include backgroundCover("../assets/image/gallery-6.png");
+            @include backgroundCover("../assets/image/gallery-2.png");
         }
 
         .prev4{
-            @include backgroundCover("../assets/image/gallery-9.png");
+            @include backgroundCover("../assets/image/gallery-10.png");
 
         }
     }

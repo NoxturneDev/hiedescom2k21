@@ -1,27 +1,64 @@
-const dialogFlow = {
+
+// /////////////////////////////////////////////
+// DIALOG FLOW
+// /////////////////////////////////////////////
+
+const introduction = {
     greetings : ["Kulonuwon", "Selamat datang di Yuk Sinau"],
     botIntro : ["salam kenal", "kulo Paijo"],  
     userName : ["nggih :D", "namane sampean siapa?"], 
     userAge: ["salam kenal nggih", "umure panjengenan berapa?"],
     userColor : ["weh sampun gede nggih", "warnae favorit e jenengan apa?"],
-    preExplain : ["nah niki panjenengan ada di website Yuk Sinau", "web niki dibuat oleh tim TYPO asal sekolah SMAN dastha"],
-    explain1 : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
-    explain2 : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
-    explain3 : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
-    postExplain : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
-    ending : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
-    shareInfo : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+    next : ["weh sampun gede nggih", "warnae favorit e jenengan apa?"],
 }
 
-const quizFlow = {
-    greetings : ["Kulonuwon", "Selamat datang di Yuk Sinau"],
+const explainIntroduction = {
+    PRE : ["nah niki panjenengan ada di website Yuk Sinau", "web niki dibuat oleh tim TYPO asal sekolah SMAN dastha"],
+    EXP_0 : ["sekarang kita mulai ke materi pertama", "pertama-tama kita belajar caranya perkenalan dalam bahasa jawa"],
+    EXP_1 : ["dalam bahasa jawa, memperkenalkan nama diawali dengan 'Jeneng Kulo'", "lalu dilanjutkan dengan nama anda", "gimana? paham ngga?"],
+    EXP_2 : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+    EXP_3 : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+    POST : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+    EXERCISE : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
 }
 
+const explainVerbs = {
+    PRE : ["nah niki panjenengan ada di website Yuk Sinau", "web niki dibuat oleh tim TYPO asal sekolah SMAN dastha"],
+    EXP_0 : ["sekarang kita mulai ke materi pertama", "pertama-tama kita belajar caranya perkenalan dalam bahasa jawa"],
+    EXP_1 : ["dalam bahasa jawa, memperkenalkan nama diawali dengan 'Jeneng Kulo'", "lalu dilanjutkan dengan nama anda", "gimana? paham ngga?"],
+    EXP_2 : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+    EXP_3 : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+    POST : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+    EXERCISE : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+}
+
+const explainColor = {
+    PRE : ["nah niki panjenengan ada di website Yuk Sinau", "web niki dibuat oleh tim TYPO asal sekolah SMAN dastha"],
+    EXP_0 : ["sekarang kita mulai ke materi pertama", "pertama-tama kita belajar caranya perkenalan dalam bahasa jawa"],
+    EXP_1 : ["dalam bahasa jawa, memperkenalkan nama diawali dengan 'Jeneng Kulo'", "lalu dilanjutkan dengan nama anda", "gimana? paham ngga?"],
+    EXP_2 : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+    EXP_3 : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+    POST : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+    EXERCISE : ["nah niki panjenengan ada di website Yuk Sinau", "sekarang kita belajar caranya perkenalan dalam bahasa jawa"],
+}
+
+const closingChat = {
+    thanks : ["Kulonuwon", "Selamat datang di Yuk Sinau"],
+    share : ["salam kenal", "kulo Paijo"],  
+    goodbye : ["nggih :D", "namane sampean siapa?"],
+}
+
+
+// /////////////////////////////////////////////
+// INTENTION
+// /////////////////////////////////////////////
 const userIntent = {
     respGreetings : ["salam", "salam kenal", "halo"],
     introductionName : ["nama", "name", "saya adalah", "namaku", "nama aku", "nama saya", "nama ku"],
     introductionAge : ["umur", "umur saya", "umurku", "umur ku", "tahun"],
     introductionColor : ["warna", "color", "favorit"],
+    getIt : ["paham", "kok", "iya paham", "iya"],
+    notGetIt : ["ngga paham", "ngga", "tidak", "ngga nih", "no", "tidak"]
 }
 
 const emojiIntent = {
@@ -30,8 +67,26 @@ const emojiIntent = {
     getIt : ["emoji-get-it"],
     notGetIt : ["emoji-not-get-it"],
     okay : ["emoji-okay"]
-
 }
+
+const emjIntentPerkenalan = {
+    true : emojiIntent.getIt,
+    false : emojiIntent.notGetIt,
+}
+
+const userIntentPerkenalan2 = {
+    true : userIntent.getIt,
+    false : userIntent.notGetIt
+}
+
+const userIntentPerkenalan3 = {
+    true : userIntent.getIt,
+    false : userIntent.notGetIt
+}
+
+// /////////////////////////////////////////////
+// STOP WORD BAHASA
+// /////////////////////////////////////////////
 
 const stopWordsID = [
     "ada",

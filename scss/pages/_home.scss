@@ -1,4 +1,4 @@
-.landing-page{
+.landing-page {
     @include backgroundCover("../assets/animation/Landing-page-background.gif");
 
     max-width: 100%;
@@ -6,34 +6,46 @@
     color: $white;
     margin-top: -0.5em;
 
-    .landing-page-content{
+    .landing-page-content {
         @include centerElement();
-        
+
+
         height: 60%;
-        .landing-page-text{
-            @include leftAlignElement();
-            @include smallerfont();
+
+        .mascot-container{
+            width: 40%;
+        }
+        .landing-page-text {
+            @include centerElement();
+
 
             flex-direction: column;
             padding: $paddingSmall $paddingMedium;
-            max-width: 67%;
-            .landing-page-header{
+            width: 50%;
+
+            .landing-page-header {
+                @include customfont(32px, 36px);
                 margin-bottom: $marginSmall;
                 width: 100%;
+    
+            }
+
+            p {
+                @include customfont(18px, 20px);
             }
         }
     }
 }
 
-.nau-wrapper{
+.nau-wrapper {
     @include centerElement();
 
-    #nau{
+
+    #nau {
         min-width: $deskImgMax;
         width: 25%;
     }
-} 
-
+}
 
 @media screen and (max-width: $tabletBreakpoint) {
     .landing-page {
@@ -41,25 +53,32 @@
         height: 100vh;
         text-align: center;
 
-        .landing-page-content{
+        .landing-page-content {
             flex-direction: column-reverse;
             top: -15%;
             position: relative;
-            .mascot-container{
+            .mascot-container {
                 // add margin
                 margin-top: $marginMedium;
             }
 
-            .landing-page-text{
-                .landing-page-header{
+            .landing-page-text {
+                width: 100%;
+                .landing-page-header {
                     margin-bottom: $marginMedium;
+                    @include customfont(18px, 20px);
+                }
+
+                p {
+                    @include smallerfont();
+                    width: 75%;
                 }
             }
         }
     }
 
-    .nau-wrapper{
-        #nau{
+    .nau-wrapper {
+        #nau {
             min-width: $phoneImgMax;
         }
     }
