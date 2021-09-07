@@ -2,22 +2,27 @@
     @include centerElement();
     flex-direction: column;
     width: 100%;
-    min-height: 40vh;
+    min-height: 100vh;
     color: $darkColor;
+
+    .big-title{
+        margin: $marginMedium;
+    }
+
     p{
         @include biggerfont();
         text-align: center;
         width: 40%;
-        margin: $marginMedium 0;
+        margin: 0;
+        margin: $marginBig;
     }
-
  }
 
  .share-icon{
     @include centerElement();
     width: 60vw;
     height: 10vh;
-    margin-top: $marginBig;
+    margin-top: $marginMedium;
 
     .share {
         min-width: 3rem;

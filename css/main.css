@@ -607,7 +607,7 @@ html {
   text-align: center;
 }
 
-#big-title {
+.big-title {
   margin: 6rem;
   color: #006ece;
   position: relative;
@@ -616,23 +616,23 @@ html {
   text-align: center;
 }
 
-#big-title h1 {
+.big-title h1 {
   font-size: 30px;
 }
 
 @media screen and (min-width: 400px) {
-  #big-title h1 {
+  .big-title h1 {
     font-size: calc(30px + 4 * ((100vw - 400px) / 1000));
   }
 }
 
 @media screen and (min-width: 1400px) {
-  #big-title h1 {
+  .big-title h1 {
     font-size: 34px;
   }
 }
 
-#big-title h1::after {
+.big-title h1::after {
   content: "";
   position: absolute;
   left: 0;
@@ -645,25 +645,25 @@ html {
 }
 
 @media screen and (max-width: 768px) {
-  #big-title {
+  .big-title {
     margin: 1rem auto;
     font-style: italic;
     color: #02559E;
   }
-  #big-title h1 {
-    font-size: 18px;
+  .big-title h1 {
+    font-size: 20px;
   }
 }
 
 @media screen and (max-width: 768px) and (min-width: 400px) {
-  #big-title h1 {
-    font-size: calc(18px + 4 * ((100vw - 400px) / 1000));
+  .big-title h1 {
+    font-size: calc(20px + 4 * ((100vw - 400px) / 1000));
   }
 }
 
 @media screen and (max-width: 768px) and (min-width: 1400px) {
-  #big-title h1 {
-    font-size: 22px;
+  .big-title h1 {
+    font-size: 24px;
   }
 }
 
@@ -1113,15 +1113,20 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  min-height: 40vh;
+  min-height: 100vh;
   color: #02559E;
+}
+
+.share-container .big-title {
+  margin: 2rem;
 }
 
 .share-container p {
   font-size: 14px;
   text-align: center;
   width: 40%;
-  margin: 2rem 0;
+  margin: 0;
+  margin: 3.5rem;
 }
 
 @media screen and (min-width: 400px) {
@@ -1148,7 +1153,7 @@ html {
           align-items: center;
   width: 60vw;
   height: 10vh;
-  margin-top: 3.5rem;
+  margin-top: 2rem;
 }
 
 .share-icon .share {
@@ -1933,9 +1938,18 @@ html {
           align-items: center;
   background-color: white;
   max-width: 100%;
-  max-height: 120vh;
+  height: 150vh;
   margin: 6rem;
   padding: 1.5rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.developer-page .big-title {
+  margin: 2rem 0;
+  width: 13rem;
 }
 
 .developer-page .cards-wrapper {
@@ -1974,26 +1988,87 @@ html {
 }
 
 .developer-page .cards-wrapper .dev-card .dev-img {
-  width: 50%;
-  height: 50%;
+  width: 10rem;
+  height: 10rem;
   border-radius: 100%;
-  background-color: #3DCEFF;
+  border: 4px solid #3DCEFF;
+}
+
+.developer-page .cards-wrapper .dev-card .img-clayzz {
+  background: url("../assets/image/galih.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.developer-page .cards-wrapper .dev-card .img-macaron {
+  background: url("../assets/image/ayu.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .developer-page .cards-wrapper .dev-card .dev-desc {
   text-align: justify;
 }
 
-.developer-page-title {
+.developer-page .dev-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
   width: 50%;
+  text-align: center;
+  margin-top: 3.5rem;
+  color: #006ece;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 400px) {
+  .developer-page .dev-text {
+    font-size: calc(14px + 4 * ((100vw - 400px) / 1000));
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .developer-page .dev-text {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 450px) {
+  .developer-page {
+    max-height: 100%;
+  }
   .cards-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .dev-text {
+    min-width: 100vw;
+  }
+  .dev-text p {
+    font-size: 16px;
+    max-height: 40vh;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) and (min-width: 400px) {
+  .dev-text p {
+    font-size: calc(16px + 4 * ((100vw - 400px) / 1000));
+  }
+}
+
+@media screen and (max-width: 450px) and (min-width: 1400px) {
+  .dev-text p {
+    font-size: 20px;
   }
 }
 
