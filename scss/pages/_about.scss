@@ -34,7 +34,7 @@
         }
 
         .about-img1 {
-            @include backgroundContain("../assets/image/about1.svg");
+            @include backgroundContain("../assets/animation/about-1.gif");
 
             height: calc(100% + 1rem);
         }
