@@ -2500,11 +2500,6 @@ html {
           transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
   width: 17rem;
   height: 17rem;
-  border: 2px solid #3DCEFF;
-  -webkit-transition: background 0.4s ease-in, -webkit-transform 0.8s ease-in-out;
-  transition: background 0.4s ease-in, -webkit-transform 0.8s ease-in-out;
-  transition: background 0.4s ease-in, transform 0.8s ease-in-out;
-  transition: background 0.4s ease-in, transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
 }
 
 .rotation-mode-container {
@@ -2711,51 +2706,61 @@ html {
 }
 
 @media screen and (min-width: 1200px) {
-  .image-container:hover {
-    -webkit-transform: scale(1.5) translateZ(100px);
-            transform: scale(1.5) translateZ(100px);
+  .image-container:hover > .image {
+    -webkit-transform: scale(1.2) translateZ(100px);
+            transform: scale(1.2) translateZ(100px);
   }
-  .image-container:nth-child(1):hover {
+  .image-container .image {
+    -webkit-box-shadow: 0 7.2px 27.3px -22px rgba(91, 81, 143, 0.5), 0 7.6px 33.1px -22px rgba(91, 81, 143, 0.159), 0 12px 53px -22px rgba(91, 81, 143, 0.129);
+            box-shadow: 0 7.2px 27.3px -22px rgba(91, 81, 143, 0.5), 0 7.6px 33.1px -22px rgba(91, 81, 143, 0.159), 0 12px 53px -22px rgba(91, 81, 143, 0.129);
+    -webkit-transition: -webkit-transform 0.25s ease-in-out;
+    transition: -webkit-transform 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+    inset: 0;
+    position: absolute;
+  }
+  .image-container:nth-child(1) .image {
     background: url("../assets/image/gallery-1.png");
     background-size: cover;
     background-position: center;
   }
-  .image-container:nth-child(2):hover {
+  .image-container:nth-child(2) .image {
     background: url("../assets/image/gallery-2.png");
     background-size: cover;
     background-position: center;
   }
-  .image-container:nth-child(3):hover {
+  .image-container:nth-child(3) .image {
     background: url("../assets/image/gallery-3.png");
     background-size: cover;
     background-position: center;
   }
-  .image-container:nth-child(4):hover {
+  .image-container:nth-child(4) .image {
     background: url("../assets/image/gallery-4.png");
     background-size: cover;
     background-position: center;
   }
-  .image-container:nth-child(5):hover {
+  .image-container:nth-child(5) .image {
     background: url("../assets/image/gallery-5.png");
     background-size: cover;
     background-position: center;
   }
-  .image-container:nth-child(6):hover {
+  .image-container:nth-child(6) .image {
     background: url("../assets/image/gallery-6.png");
     background-size: cover;
     background-position: center;
   }
-  .image-container:nth-child(7):hover {
+  .image-container:nth-child(7) .image {
     background: url("../assets/image/gallery-7.png");
     background-size: cover;
     background-position: center;
   }
-  .image-container:nth-child(8):hover {
+  .image-container:nth-child(8) .image {
     background: url("../assets/image/gallery-8.png");
     background-size: cover;
     background-position: center;
   }
-  .image-container:nth-child(9):hover {
+  .image-container:nth-child(9) .image {
     background: url("../assets/image/gallery-9.png");
     background-size: cover;
     background-position: center;

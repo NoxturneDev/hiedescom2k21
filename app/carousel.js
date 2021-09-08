@@ -124,6 +124,7 @@ function animateTransition(btn) {
 }
 
 
+
 // IMAGE OVERLAY ON CLICK
 const imagesInGallery = Array.from(document.querySelectorAll(".image-container"))
 const galleryOverlay = document.querySelector(".gallery-overlay")
@@ -160,6 +161,7 @@ imagesInGallery.forEach((image) => {
     }
     onDekstopClick()
 })
+
 
 
 // ROTATING EVENT

@@ -198,8 +198,6 @@
 
     width: 17rem;
     height: 17rem;
-    border: 2px solid $mainColor;
-    transition: background 0.4s ease-in, transform 0.8s ease-in-out;
 }
 
 .rotation-mode-container {
@@ -333,35 +331,47 @@
 
 @media screen and (min-width: $dekstop) {
     .image-container {
-        &:hover {
-            transform: scale(1.5) translateZ(100px);
+
+        &:hover > .image {
+            transform: scale(1.2) translateZ(100px);
         }
 
-        &:nth-child(1):hover {
-            @include backgroundCover("../assets/image/gallery-1.png");
+        .image{
+            @include dropShadow2();
+            transition: transform 0.25s ease-in-out;
+            inset: 0;
+            position: absolute;
         }
-        &:nth-child(2):hover {
+      
+
+        &:nth-child(1) .image {
+            @include backgroundCover("../assets/image/gallery-1.png");
+        
+        }
+
+
+        &:nth-child(2) .image{
             @include backgroundCover("../assets/image/gallery-2.png");
         }
-        &:nth-child(3):hover {
+        &:nth-child(3) .image{
             @include backgroundCover("../assets/image/gallery-3.png");
         }
-        &:nth-child(4):hover {
+        &:nth-child(4) .image{
             @include backgroundCover("../assets/image/gallery-4.png");
         }
-        &:nth-child(5):hover {
+        &:nth-child(5) .image {
             @include backgroundCover("../assets/image/gallery-5.png");
         }
-        &:nth-child(6):hover {
+        &:nth-child(6) .image{
             @include backgroundCover("../assets/image/gallery-6.png");
         }
-        &:nth-child(7):hover {
+        &:nth-child(7) .image {
             @include backgroundCover("../assets/image/gallery-7.png");
         }
-        &:nth-child(8):hover {
+        &:nth-child(8) .image {
             @include backgroundCover("../assets/image/gallery-8.png");
         }
-        &:nth-child(9):hover {
+        &:nth-child(9) .image {
             @include backgroundCover("../assets/image/gallery-9.png");
         }
     }
