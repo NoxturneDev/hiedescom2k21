@@ -5,14 +5,14 @@
 
 const introduction = {
     greetings : ["Selamat datang di Yuk Sinau", "Website untuk belajar berbahasa jawa"],
-    botIntro : ["perkenalkan nama ku Nau"],  
-    userName : ["perkenalan dulu dong", "nama kamu siapa?"], 
-    userAge: ["salam kenal ya", "umur kamu?"],
-    userColor : ["oiya", "warna favorit kamu apa?"],
-    preview : ["salam kenal ya", "selanjutnya kita akan belajar berkenalan dalam bahasa jawa"],
+    botIntro : ["Perkenalkan nama ku Nau"],  
+    userName : ["Perkenalan dulu dong", "Nama kamu siapa?"], 
+    userAge: ["Salam kenal ya", "Umur kamu?"],
+    userColor : ["Oiya", "Warna favorit kamu apa?"],
+    preview : ["Salam kenal ya", "Selanjutnya kita akan belajar berkenalan dalam bahasa jawa"],
 }
 
-const exception = ["aduh aku ga paham nih kamu ngomong apa", "bisa diulangin ga?"]
+const exception = ["Aduh aku ga paham nih kamu ngomong apa", "Bisa diulangin ga?"]
 
 // FOR NEXT UPDATE
 const explainIntroduction = {
@@ -43,7 +43,7 @@ const explainColor = {
 const userIntent = {
     respGreetings : ["salam", "salam kenal", "halo"],
     introductionName : ["nama", "name", "saya adalah", "namaku", "nama aku", "nama saya", "nama ku"],
-    introductionAge : ["umur", "umur saya", "umurku", "umur ku", "tahun"],
+    introductionAge : ["umur", "umur saya", "umurku", "umur ku", "tahun", "taun", "thun", "thn"],
     introductionColor : ["warna", "color", "favorit"],
     getIt : ["paham", "kok", "iya paham", "iya"],
     notGetIt : ["ngga paham", "ngga", "tidak", "ngga nih", "no", "tidak"]
@@ -58,6 +58,7 @@ const emojiIntent = {
     preview : ["emoji-preview"],
     postPreview : ["emoji-post-preview"]
 }
+
 
 // const emjIntentPerkenalan = {
 //     true : emojiIntent.getIt,

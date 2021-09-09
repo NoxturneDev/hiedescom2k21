@@ -161,7 +161,7 @@ const emojiSource = {
     EMO_GETIT: "assets/emoji/paham.png",
     EMO_NOTGETIT: "assets/emoji/gapaham.png",
     EMO_HALO: "assets/emoji/halo.png",
-    EMO_HI: "assets/emoji/halo.png",
+    EMO_HI: "assets/emoji/hai.png",
     EMO_ASHIAP: "assets/emoji/ashiap.png",
     EMO_THANKS: "assets/emoji/emoji-yes.png"
 }
@@ -394,7 +394,7 @@ function introInJavanese(){
     let age = userData.age[0]
     let color = userData.favColor[0]
 
-    let introInJavanese = [`kita akan mencoba berkenalan menggunakan bahasa jawa ngoko ya`, `Jeneng ku ${name}`, `Umurku saiki ${age}`, `werno seng tak senengi ${color}`]
+    let introInJavanese = [`kita akan mencoba berkenalan menggunakan bahasa jawa ngoko ya`, `Jeneng ku ${name}`, `Umurku saiki ${age}`, `werno seng tak senengi ki werno${color} (blm ditranslate ya)`]
 
     let automate = botAutomationChat(introInJavanese)
 

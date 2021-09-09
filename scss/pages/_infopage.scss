@@ -70,6 +70,13 @@
     }
 }
 
+.slide4 {
+    width: 40%;
+    img {
+        width: 40%!important;
+    }
+}
+
 .slides-arrow {
     width: 100%;
     position: absolute;
@@ -93,7 +100,6 @@
         float: left;
     }
 }
-
 
 // CARD IMAGE
 
@@ -125,7 +131,6 @@
             margin: $marginMedium;
             position: relative;
             overflow: hidden;
-
 
             img {
                 width: 130%;
@@ -162,9 +167,9 @@
     margin-top: $marginBig;
     background-color: $darkColor;
 
-    .big-title{
+    .big-title {
         color: $mainColor;
-        margin: $marginSmall
+        margin: $marginSmall;
     }
 }
 
@@ -193,9 +198,8 @@
     margin-top: $marginLarge;
     position: absolute;
     flex-direction: column;
- 
 
-    .wrapper{
+    .wrapper {
         position: absolute;
         width: 20%;
         left: 0;
@@ -216,7 +220,7 @@
             }
         }
 
-        #goHome{
+        #goHome {
             @include backgroundContain("../assets/icon/home-fill.svg");
             background-color: $mainColor;
 
@@ -225,12 +229,10 @@
             display: block;
             &:hover {
                 @include backgroundContain("../assets/icon/home-line.svg");
-            background-color: $mainColor;
-
+                background-color: $mainColor;
             }
         }
     }
- 
 }
 
 // OVERLAY ON CLICK
@@ -317,41 +319,36 @@
     }
 }
 
-
 @media screen and (min-width: $dekstop) {
     .image-container {
-        
         &:hover > .image {
             transform: scale(1.2) translateZ(100px);
         }
 
-        .image{
+        .image {
             @include dropShadow2();
             transition: transform 0.25s ease-in-out;
             inset: 0;
             position: absolute;
         }
-      
 
         &:nth-child(1) .image {
             @include backgroundCover("../assets/image/gallery-1.png");
-        
         }
 
-
-        &:nth-child(2) .image{
+        &:nth-child(2) .image {
             @include backgroundCover("../assets/image/gallery-2.png");
         }
-        &:nth-child(3) .image{
+        &:nth-child(3) .image {
             @include backgroundCover("../assets/image/gallery-3.png");
         }
-        &:nth-child(4) .image{
+        &:nth-child(4) .image {
             @include backgroundCover("../assets/image/gallery-4.png");
         }
         &:nth-child(5) .image {
             @include backgroundCover("../assets/image/gallery-5.png");
         }
-        &:nth-child(6) .image{
+        &:nth-child(6) .image {
             @include backgroundCover("../assets/image/gallery-6.png");
         }
         &:nth-child(7) .image {

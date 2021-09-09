@@ -1757,6 +1757,7 @@ html {
   background-color: #FCDB00;
   padding: 1.5rem;
   border: 2px solid #02559E;
+  border-radius: 12px;
   -webkit-transition: background-color 0.25s ease-in-out, border 0.25s ease-in-out;
   transition: background-color 0.25s ease-in-out, border 0.25s ease-in-out;
 }
@@ -2287,6 +2288,14 @@ html {
 
 .slide-content .slide-img img {
   width: 60%;
+}
+
+.slide4 {
+  width: 40%;
+}
+
+.slide4 img {
+  width: 40% !important;
 }
 
 .slides-arrow {
