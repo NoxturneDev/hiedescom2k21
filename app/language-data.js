@@ -9,8 +9,10 @@ const introduction = {
     userName : ["perkenalan dulu dong", "nama kamu siapa?"], 
     userAge: ["salam kenal ya", "umur kamu?"],
     userColor : ["oiya", "warna favorit kamu apa?"],
-    preview : ["Terima kasih sudah berkenalan dengan saya", "selanjutnya kita akan belajar beberapa kosa kata dasar bahasa jawa"],
+    preview : ["salam kenal ya", "selanjutnya kita akan belajar berkenalan dalam bahasa jawa"],
 }
+
+const exception = ["aduh aku ga paham nih kamu ngomong apa", "bisa diulangin ga?"]
 
 // FOR NEXT UPDATE
 const explainIntroduction = {
@@ -53,23 +55,24 @@ const emojiIntent = {
     getIt : ["emoji-get-it"],
     notGetIt : ["emoji-not-get-it"],
     okay : ["emoji-okay"],
-    preview : ["emoji-preview"]
+    preview : ["emoji-preview"],
+    postPreview : ["emoji-post-preview"]
 }
 
-const emjIntentPerkenalan = {
-    true : emojiIntent.getIt,
-    false : emojiIntent.notGetIt,
-}
+// const emjIntentPerkenalan = {
+//     true : emojiIntent.getIt,
+//     false : emojiIntent.notGetIt,
+// }
 
-const userIntentPerkenalan2 = {
-    true : userIntent.getIt,
-    false : userIntent.notGetIt
-}
+// const userIntentPerkenalan2 = {
+//     true : userIntent.getIt,
+//     false : userIntent.notGetIt
+// }
 
-const userIntentPerkenalan3 = {
-    true : userIntent.getIt,
-    false : userIntent.notGetIt
-}
+// const userIntentPerkenalan3 = {
+//     true : userIntent.getIt,
+//     false : userIntent.notGetIt
+// }
 
 // /////////////////////////////////////////////
 // STOP WORD BAHASA
