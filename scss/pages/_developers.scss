@@ -52,6 +52,10 @@
             }
             .dev-desc{
                 text-align: justify;
+
+                .dev-name{
+                    text-align: center;
+                }
             }
         }      
     }
@@ -71,7 +75,7 @@
 
 @media screen and (max-width : $phoneBreakpoint) {
     .developer-page{
-        max-height: 100%;
+        height: 100%;
     }
     .cards-wrapper{
         flex-direction: column;

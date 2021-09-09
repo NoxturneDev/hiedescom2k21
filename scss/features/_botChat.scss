@@ -31,7 +31,6 @@
     background-color: $secondColor;
     transition: 0.2s ease-in-out;
 
-
     &:hover{
         border: 2px solid white;
         color: white;
@@ -39,13 +38,6 @@
     }
 }
 
-#closeChat{
-  display: none;
-}
-
-.quiz-overlay {
-    transform: translateX(100%);
-}
 
 // CHAT BOX WINDOW
 .chat-window {
@@ -153,12 +145,7 @@
     flex-direction: column;
     padding: 0 $paddingSmall;
 
-    // .msg-bubble{
-    //     max-width: 76%;
-    //     display: flex;
-    //     flex-direction: column;
-    //     border: $debug;
-    // }
+
     .msg-bubble {
         max-width: 72%;
         background-color: $mainColor;
@@ -169,14 +156,7 @@
             @include smallerfont();
         }
     }
-    // .msg-text{
-    //     width: 100%;
-    //     background-color: $secondColor;
-    //     color: $darkColor;
-    //     margin-bottom: 0.2em;
-    //     font-weight: $semibold;
-    //     padding: 1em $paddingSmall;
-    // }
+
 
     .timestamp {
         color: $darkColor;
@@ -246,11 +226,16 @@
         display: none;
     }
 
-    .close-overlay {
-        display: none;
+    .close-overlay{
+        position: absolute;
+        top: 0.5rem;
+        padding: $paddingSmall;
     }
 
     .chat-overlay{
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
         .chat-header{
             min-height: 10%;
         }
