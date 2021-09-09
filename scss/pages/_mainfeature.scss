@@ -13,27 +13,29 @@
         @include sliding();
 
         height: 100%;
+        width: 100%;
         transform: translateX(0);
         opacity: 1;
         margin-top: -$marginLarge;
 
         .features {
             @include centerElement();
-            flex-basis: 50%;
-            height: 60%;
+            width: 50%;
+            height: 100%;
             padding: $paddingMedium;
+
             .feature-redirect-img {
                 @include centerElement();
-                width: 80%;
+                width: 50%;
+                height: 100%;
                 height: $deskImgMax;
                 cursor: pointer;
             }
 
-            .chat-redirect {
-                @include backgroundContain("../assets/nau/nau-stay-still.png");
-            }
-            .quiz-redirect {
-                @include backgroundContain("../assets/nau/nau-stay-still.png");
+            .chat-redirect { 
+                width: 80%;
+                height: 80%;
+                @include backgroundContain("../assets/image/click-me-chat.png");
             }
         }
     }
@@ -75,14 +77,14 @@
         height: 150vh;
 
         .feature-wrapper {
-            width: 100%;
+            min-width: 100%;
             height: 70%;
             flex-direction: column;
         }
     }
 
     .feature-redirect-img {
-        min-width: 15rem;
+        min-width: 16rem;
     }
 
     .features{
@@ -93,7 +95,7 @@
         opacity: 1;
         transform: translateY(50%);
         .button-redirect {
-            min-width: 50%;
+            min-width: 100%;
         }
     }
 

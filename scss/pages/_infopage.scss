@@ -132,6 +132,7 @@
         width: 80%;
         height: 35%;
         text-align: center;
+        color: $darkColor;
     }
 
     .cards-container {
@@ -147,6 +148,7 @@
             margin: $marginMedium;
             position: relative;
             overflow: hidden;
+
 
             img {
                 width: 130%;
@@ -178,9 +180,14 @@
     @include centerElement();
     flex-direction: column;
     width: 100vw;
-    height: 150vh;
+    height: 170vh;
     margin-top: $marginBig;
     background-color: $darkColor;
+
+    .big-title{
+        color: $mainColor;
+        margin: $marginSmall
+    }
 }
 
 .picture-wrapper {
