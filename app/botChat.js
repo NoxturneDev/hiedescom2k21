@@ -10,14 +10,7 @@ const redirectToChatBtn = document.querySelector("#redirectBtnChat")
 
 // SESSION STORAGE TO STROE INFORMATION
 const CHAT_OPENED_STATUS_KEY = "openedStatus"
-const USER_IDENTITY_KEY = "userIdentity" //this is an object
-const TOPIC_KEY = "topic"
 
-let user = {
-    name: "string",
-    age: 10,
-    favColor: "red",
-}
 
 window.addEventListener("load", () => {
     // clear session storage
@@ -59,6 +52,7 @@ submitForm.addEventListener("submit", e => {
 
     renderChatBubble(userReply, "user")
     getBotRespondIntroduction(userReply)
+    getUserData(userReply)
 
     popUp.style.display = "none"
 })
@@ -70,6 +64,59 @@ let bot = {
     lang: "string",
     botStatus: true,
     botColor: "green"
+}
+
+
+
+const USER_IDENTITY_KEY = "userIdentity" //this is an object
+let user = {
+    name: undefined,
+    age: undefined,
+    favColor: undefined
+}
+
+function setUserIdentity(identity, value) {
+    if (identity == "name") {
+        user.name = value
+    } else if (identity == "age") {
+        user.age = value
+    } else if (identity == "favColor") {
+        user.favColor = value
+    }
+
+    return user
+}
+
+
+function getUserData(txt) {
+    const intentCheck = getUserIntent(txt)
+    const value = userInputFinal(txt)
+    if (intentCheck == "nama") {
+        setUserIdentity("name", value)
+    } else if (intentCheck == "umur") {
+        setUserIdentity("age", value)
+    } else if (intentCheck == "warna") {
+        setUserIdentity("favColor", value)
+    }
+
+    console.log(intentCheck)
+}
+
+
+// SET TO USER SESSION STORAGE
+function sessionStorageUser() {
+    const data = JSON.stringify(user)
+    if (checkForStorage()) {
+        sessionStorage.setItem(USER_IDENTITY_KEY, data)
+    }
+}
+
+function checkForStorage() /* boolean */ {
+    if (typeof (Storage) === undefined) {
+        alert("Browser kamu tidak mendukung session storage");
+        return false
+    }
+    return true;
 }
 
 
@@ -85,12 +132,12 @@ function createBot(name, code, lang, status, color) {
 }
 
 // BOT BAHASA JAWA CREATION
-function botBahasaJawa() {
-    const OBJ_BOT_BHS_JAWA = createBot("Paijo", "BHS_JAWA", "jawa", true, "blue")
+// function botBahasaJawa() {
+//     const OBJ_BOT_BHS_JAWA = createBot("Paijo", "BHS_JAWA", "jawa", true, "blue")
 
-    // UBAH NAMA BOT SESUAI
-    chatHeader.innerText = OBJ_BOT_BHS_JAWA.name;
-}
+//     // UBAH NAMA BOT SESUAI
+//     chatHeader.innerText = OBJ_BOT_BHS_JAWA.name;
+// }
 
 // OBJECT CONTAINING EMOJI'S INTENT CODE
 const emojiIntentCode = {
@@ -162,10 +209,10 @@ function enableEmoji() {
     chatContainer.scrollTop = chatContainer.scrollHeight;
 };
 
-
 function disableEmoji() {
     emojiContainer.style.display = "none"
 }
+
 
 
 // FUNCTION FOR BOT TO RESPOND THE EMOJI DEPENS ON THE MEANING
@@ -176,12 +223,10 @@ function botRespondEmoji(emojiMeaning) {
         askNama()
     } else if (emojiIntent.getIt.includes(emojiMeaning)) {
         explainPerkenalan()
-    } else if (emojiIntent.notGetIt.includes(emojiMeaning)) {
-        botAutomationChat(dialogFlow.userIntro)
-    } else if (emojiIntent.okay.includes(emojiMeaning)) {
-        explainPerkenalan()
+    } else if (emojiIntent.preview.includes(emojiMeaning)) {
+        botClosing()
     } else {
-        return 
+        return
     }
 }
 
@@ -198,23 +243,13 @@ function getBotRespondIntroduction(txt) {
     } else if (userIntent == "umur") {
         askColor()
     } else if (userIntent == "warna") {
-        preExplain()
-        getBotRespondExplainIntro(txt)
+        preview()
     } else {
         botAutomationChat("kulo nda paham maksud e sampean")
     }
 }
 
-function getBotRespondExplainIntro(txt) {
-    const userIntent = getUserIntent(txt)
 
-    botAutomationChat(explainIntroduction.PRE)
-    if (userIntent == "paham") {
-        botIntro()
-    } else if (userIntent == "ngga") {
-        botIntro()
-    }
-}
 
 // GETTING USER REAL INTENT BASED ON THEIR REPLY
 function getUserIntent(userRespond) {
@@ -236,80 +271,106 @@ function getUserIntent(userRespond) {
             intent = "respGreet"
             return intent
         }
-
     })
     return intent
 }
 
 
+
 // BOT DIALOG FLOW FUNCTION (AUTOMATION)
 function botGreetings() {
-    let automate = botAutomationChat(introduction.greetings)
     setTimeout(() => {
-        emojiGreeting()
+        renderEmoji(emojiSource.EMO_HI, "botChat")
+        let automate = botAutomationChat(introduction.greetings)
+        setTimeout(() => {
+            emojiGreeting()
+    
+        }, automate + 1500)
+    }, 600)
 
-    }, automate + 700)
 }
 
 function botIntro() {
-    let automate = botAutomationChat(introduction.botIntro)
     setTimeout(() => {
-        emojiIntro()
-    }, automate + 700)
+        let automate = botAutomationChat(introduction.botIntro)
+        setTimeout(() => {
+            emojiIntro()
+        }, automate + 1200)
+    }, 600)
+
 }
 
 function askNama() {
-    let automate = botAutomationChat(introduction.userName)
     setTimeout(() => {
-        popUpGuide("Awali dengan Nama saya/aku")
-    }, automate + 500)
+        renderEmoji(emojiSource.EMO_HALO, "botChat")
+        let automate = botAutomationChat(introduction.userName)
+        setTimeout(() => {
+            popUpGuide("Awali dengan Nama saya/aku")
+        }, automate + 1200)
+    }, 600)
 
 }
 
-function askAge(){
-    let automate = botAutomationChat(introduction.userAge)
+function askAge() {
     setTimeout(() => {
-        popUpGuide("Cth: 17 Tahun")
-    }, automate + 500)
+        let automate = botAutomationChat(introduction.userAge)
+        setTimeout(() => {
+            popUpGuide("Cth: 17 Tahun")
+        }, automate + 1200)
+    }, 500)
+
 }
-function askColor(){
-    let automate = botAutomationChat(introduction.userColor)
+function askColor() {
+    const sessionStorageData = sessionStorage.getItem(USER_IDENTITY_KEY)
+    const userData = JSON.parse(sessionStorageData)
+    const umur = userData.age[0]
 
     setTimeout(() => {
-        popUpGuide("Cth: warna merah")
-    }, automate + 500)
+        renderEmoji(emojiSource.EMO_ASHIAP, "botCha")
+
+        botAutomationChat(`oh umur kamu ${umur} tahun ya`)
+        let automate = botAutomationChat(introduction.userColor)
+
+        setTimeout(() => {
+            popUpGuide("Cth: warna merah")
+        }, automate + 1200)
+    }, 500)
+
 }
 
-function preExplain(){
-    renderEmoji(emojiSource.EMO_ASHIAP, "bot")
-
-    let automate = botAutomationChat(introduction.next)  
+function preview() {
     setTimeout(() => {
-        emojiPreExplain()
+        renderEmoji(emojiSource.EMO_HALO, "bot")
+
+        let automate = botAutomationChat(introduction.preview)
+
+        setTimeout(() => {
+            emojiPreview()
+        }, automate + 1200)
+    }, 500)
+
+    // PASS THE DATA TO SESSION STORAGE
+    sessionStorageUser()
+}
+
+function botClosing() {
+    const sessionStorageData = sessionStorage.getItem(USER_IDENTITY_KEY)
+    const userData = JSON.parse(sessionStorageData)
+    const name = userData.name[0]
+
+    const closing = ["nah seperti itu preview chat Bot kami"]
+    const thanks = [`Terima kasih ${name} sudah mencoba prototype kami :D`,]
+
+    let automate = botAutomationChat(closing)
+    setTimeout(() => {
+        botAutomationChat(thanks)
+        userInputText.readOnly = true;
     }, automate + 700)
 }
 
 
-
-function explainPerkenalan(){
-    let automate = botAutomationChat(dialogFlow.explain1)  
-    setTimeout(() => {
-        emojiGetItStatus()
-    }, automate + 700)
-}
-
-
-function explainGreetings(){
-    let automate = botAutomationChat(dialogFlow.perkenalan1)  
-    setTimeout(() => {
-        emojiExplain1()
-    }, automate + 700)
-}
-
-function explainBasicVerbs(){}
-function closing(){}
-
-function popUpGuide(txt){
+// USER GUIDE WITH POP UP
+function popUpGuide(txt) {
     const popUp = document.querySelector(".input-form .pop-up")
     popUp.innerText = txt;
 
@@ -320,6 +381,8 @@ function popUpGuide(txt){
         popUp.style.display = "none"
     })
 }
+
+
 
 // EMOJI FOR GREETING FLOW
 function emojiGreeting() {
@@ -340,7 +403,7 @@ function emojiIntro() {
     enableEmoji()
 }
 
-function emojiPreExplain(){
+function emojiPreExplain() {
     const emoji = createEmojiElement(
         emojiIntentCode.EMO_OKAY,
         emojiIntentCode.EMO_OKAY,
@@ -349,12 +412,12 @@ function emojiPreExplain(){
     enableEmoji()
 }
 
-function emojiGetItStatus(){
-    const emojiExplain1 = createEmojiElement(
-        emojiIntentCode.EMO_OKAY,
-        emojiIntentCode.EMO_NOTGETIT,
-        emojiSource.EMO_GETIT,
-        emojiSource.EMO_NOTGETIT)
+function emojiPreview() {
+    const emojiPreview = createEmojiElement(
+        "emoji-preview",
+        "emoji-preview",
+        emojiSource.EMO_ASHIAP,
+        emojiSource.EMO_GETIT)
     enableEmoji()
 }
 
@@ -397,7 +460,6 @@ function userInputFinal(value) {
     // value that already filtered and trimmed 
     let userRealValue = filteringInput(value)
 
-    console.log(userRealValue)
     return userRealValue;
 }
 
@@ -462,7 +524,7 @@ function renderEmoji(sourceImage, sender) {
     if (sender == "user") {
         msgContainer.id = "userChat"
     } else {
-        msgContainer.id = "userBot"
+        msgContainer.id = "botChat"
     }
 
     const timestampWrapper = document.createElement("article")
@@ -491,7 +553,7 @@ function getTimeStamp() {
 
 // AUTOMATICALLY RENDER CHAT FOR BOTS RESPOND
 function botAutomationChat(text) {
-    let duration = 850
+    let duration = 2000
     let totalDuration = 0;
     let index = 0;
 
