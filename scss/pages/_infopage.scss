@@ -94,29 +94,6 @@
     }
 }
 
-.slide2 {
-    .slide-content {
-        @include leftAlignElement();
-
-        flex-direction: row;
-        line-height: 110%;
-        .slide-text{
-
-            @include centerElement();
-
-            flex-direction: column;
-            text-align: center;
-
-            p{
-                margin: $marginSmall;
-            }
-
-            &:nth-child(1){
-                font-style: italic;
-            }
-        }
-    }
-}
 
 // CARD IMAGE
 
