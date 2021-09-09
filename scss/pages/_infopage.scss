@@ -105,7 +105,7 @@
             @include centerElement();
 
             flex-direction: column;
-            text-align: left;
+            text-align: center;
 
             p{
                 margin: $marginSmall;
@@ -158,6 +158,7 @@
             .caption {
                 @include centerElement();
                 width: 100%;
+                height: 100%;
                 position: absolute;
                 inset: 0;
                 background-color: #31313170;
@@ -180,7 +181,7 @@
     @include centerElement();
     flex-direction: column;
     width: 100vw;
-    height: 170vh;
+    height: 200vh;
     margin-top: $marginBig;
     background-color: $darkColor;
 
@@ -213,23 +214,46 @@
     width: 100%;
     height: 30vh;
     margin-top: $marginLarge;
-    position: relative;
+    position: absolute;
+    flex-direction: column;
+ 
 
-    .rotation-choice {
-        padding: 0.8em;
-        background-color: $secondColor;
-        border: 2px solid $darkColor;
-        margin: $marginSmall;
-        border-radius: $borderRadiusSmall;
-        cursor: pointer;
-        transition: 0.25s ease-in-out;
-
-        &:hover {
-            background-color: white;
-            border: 2px solid $secondColor;
+    .wrapper{
+        position: absolute;
+        width: 20%;
+        left: 0;
+        .square-btn {
+            padding: 0.8em;
+            background-color: $mainColor;
+            border: 2px solid $darkColor;
+            margin: $marginSmall;
+            border-radius: $borderRadiusSmall;
+            cursor: pointer;
+            transition: 0.25s ease-in-out;
+            width: 3rem;
             color: $darkColor;
+            &:hover {
+                background-color: $darkColor;
+                border: 2px solid $mainColor;
+                color: $mainColor;
+            }
+        }
+
+        #goHome{
+            @include backgroundContain("../assets/icon/home-fill.svg");
+            background-color: $mainColor;
+
+            width: 3rem;
+            height: 3rem;
+            display: block;
+            &:hover {
+                @include backgroundContain("../assets/icon/home-line.svg");
+            background-color: $mainColor;
+
+            }
         }
     }
+ 
 }
 
 // OVERLAY ON CLICK
@@ -316,25 +340,6 @@
     }
 }
 
-// BACK BUTTON
-.go-home {
-    margin-bottom: $marginMedium;
-    h1 {
-        @include biggerfont();
-        a {
-            background-color: $darkColor;
-            color: $mainColor;
-            border: 2px solid $mainColor;
-            padding: $paddingSmall;
-            transition: color 0.25s ease-in-out, background 0.25s ease-in-out, border 0.25s ease-in-out;
-            &:hover {
-                color: $semiDarkColor;
-                border: 2px solid $semiDarkColor;
-                background-color: white;
-            }
-        }
-    }
-}
 
 @media screen and (min-width: $dekstop) {
     .image-container {

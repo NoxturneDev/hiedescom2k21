@@ -1319,8 +1319,8 @@ html {
 }
 
 .nau-wrapper #nau {
-  min-width: 14.5rem;
-  width: 25%;
+  min-width: 80%;
+  width: 55%;
 }
 
 @media screen and (max-width: 768px) {
@@ -1347,6 +1347,7 @@ html {
   }
   .landing-page .landing-page-content .mascot-container {
     margin-top: 2rem;
+    width: 100%;
   }
   .landing-page .landing-page-content .landing-page-text {
     width: 100%;
@@ -1389,8 +1390,12 @@ html {
 }
 
 @media screen and (max-width: 768px) {
+  .nau-wrapper {
+    min-width: 100%;
+    height: 100%;
+  }
   .nau-wrapper #nau {
-    min-width: 8rem;
+    min-width: 80%;
   }
 }
 
@@ -1455,11 +1460,11 @@ html {
 }
 
 .about-page .about .about-img1 {
-  background: url("../assets/animation/about-1.gif");
+  background: url("../assets/image/about1.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  height: calc(100% + 1rem);
+  height: 80%;
 }
 
 .about-page .about .about-img2 {
@@ -2341,7 +2346,7 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: left;
+  text-align: center;
 }
 
 .slide2 .slide-content .slide-text p {
@@ -2428,6 +2433,7 @@ html {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  height: 100%;
   position: absolute;
   inset: 0;
   background-color: #31313170;
@@ -2462,7 +2468,7 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100vw;
-  height: 170vh;
+  height: 200vh;
   margin-top: 3.5rem;
   background-color: #02559E;
 }
@@ -2517,24 +2523,55 @@ html {
   width: 100%;
   height: 30vh;
   margin-top: 6rem;
-  position: relative;
+  position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.rotation-mode-container .rotation-choice {
+.rotation-mode-container .wrapper {
+  position: absolute;
+  width: 20%;
+  left: 0;
+}
+
+.rotation-mode-container .wrapper .square-btn {
   padding: 0.8em;
-  background-color: #FCDB00;
+  background-color: #3DCEFF;
   border: 2px solid #02559E;
   margin: 1rem;
   border-radius: 12px;
   cursor: pointer;
   -webkit-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
+  width: 3rem;
+  color: #02559E;
 }
 
-.rotation-mode-container .rotation-choice:hover {
-  background-color: white;
-  border: 2px solid #FCDB00;
-  color: #02559E;
+.rotation-mode-container .wrapper .square-btn:hover {
+  background-color: #02559E;
+  border: 2px solid #3DCEFF;
+  color: #3DCEFF;
+}
+
+.rotation-mode-container .wrapper #goHome {
+  background: url("../assets/icon/home-fill.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #3DCEFF;
+  width: 3rem;
+  height: 3rem;
+  display: block;
+}
+
+.rotation-mode-container .wrapper #goHome:hover {
+  background: url("../assets/icon/home-line.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #3DCEFF;
 }
 
 .gallery-overlay {
@@ -2670,41 +2707,6 @@ html {
   transition: filter 0.25s ease-in-out, -webkit-filter 0.25s ease-in-out;
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
-}
-
-.go-home {
-  margin-bottom: 2rem;
-}
-
-.go-home h1 {
-  font-size: 14px;
-}
-
-@media screen and (min-width: 400px) {
-  .go-home h1 {
-    font-size: calc(14px + 4 * ((100vw - 400px) / 1000));
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .go-home h1 {
-    font-size: 18px;
-  }
-}
-
-.go-home h1 a {
-  background-color: #02559E;
-  color: #3DCEFF;
-  border: 2px solid #3DCEFF;
-  padding: 0.5rem;
-  -webkit-transition: color 0.25s ease-in-out, background 0.25s ease-in-out, border 0.25s ease-in-out;
-  transition: color 0.25s ease-in-out, background 0.25s ease-in-out, border 0.25s ease-in-out;
-}
-
-.go-home h1 a:hover {
-  color: #006ece;
-  border: 2px solid #006ece;
-  background-color: white;
 }
 
 @media screen and (min-width: 1200px) {

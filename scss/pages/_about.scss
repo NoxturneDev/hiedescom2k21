@@ -34,9 +34,9 @@
         }
 
         .about-img1 {
-            @include backgroundContain("../assets/animation/about-1.gif");
+            @include backgroundContain("../assets/image/about1.png");
 
-            height: calc(100% + 1rem);
+            height: 80%;
         }
 
         .about-img2 {
@@ -67,7 +67,6 @@
 
 .card-img {
     width: calc(60% - 1rem);
-
 }
 
 @media screen and (max-width: $tabletBreakpoint) {
