@@ -88,6 +88,10 @@
     .about-one,
     .about-three {
         flex-direction: column-reverse;
+
+        p{
+            text-align: center!important;
+        }
     }
 
     .cards-text {

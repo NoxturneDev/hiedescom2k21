@@ -8,15 +8,15 @@
 }
 
 .close-btn{
-    @include backgroundCover("../../assets/icon/close-btn-line.svg");
+    @include backgroundCover("../assets/icon/close-btn-line.svg");
 } 
 
 .close-btn--fill{
-    @include backgroundContain("../../assets/icon/close-btn-fill.svg");
+    @include backgroundContain("../assets/icon/close-btn-fill.svg");
 }
 
 .send-btn{
-    @include backgroundContain("../../assets/icon/send-icon.svg");
+    @include backgroundContain("../assets/icon/send-icon.svg");
 }
 
 @mixin iconSmallBtn(){
@@ -65,7 +65,38 @@
     margin: $marginSmall;
 }
 
+// ICON CONTACT
+.icon-ig{
+    @include backgroundContain("../assets/icon/instagram.svg");
 
+    min-width: 3rem;
+    min-height: 3rem;
+}
+.icon-wa{
+    @include backgroundContain("../assets/icon/whatsapp.svg");
+
+    min-width: 3rem;
+    min-height: 3rem;
+}
+.icon-github{
+    @include backgroundContain("../assets/icon/github.svg");
+
+    min-width: 3rem;
+    min-height: 3rem;
+}
+.icon-gmail{
+    @include backgroundContain("../assets/icon/gmail.svg");
+
+    min-width: 3rem;
+    min-height: 3rem;
+}
+
+.icon-linkedn{
+    @include backgroundContain("../assets/icon/linkedin.svg");
+
+    min-width: 3rem;
+    min-height: 3rem;
+}
 // SPESIFIC COMPONENT FOR THIS WEBSITE
 @mixin chatWindow(){
     @include centerElement();

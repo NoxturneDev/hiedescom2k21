@@ -10,7 +10,7 @@ function smoothScroll(e) {
 
     if (targetID === "#mainFeaturePage") {
         window.scrollTo({
-            top: document.querySelector(targetID).offsetTop + (2 * (margin * -1)),
+            top: document.querySelector(targetID).offsetTop,
             behavior: "smooth"
         })
     } else {
@@ -21,6 +21,8 @@ function smoothScroll(e) {
     }
 
     console.log(navbarLink)
+    console.log(targetID)
+    console.log(document.querySelector(targetID).offsetTop)
 }
 
 //////////////////////////////////////////////////////////////

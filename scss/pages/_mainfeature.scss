@@ -6,7 +6,7 @@
     color: $white;
     padding-top: 25%;
     background-position: top;
-    position: relative;
+
 
     .feature-wrapper {
         @include centerElement();
@@ -74,7 +74,7 @@
         @include centerElement();
         overflow-x: hidden;
         width: 100%;
-        height: 150vh;
+        height: 200vh;
         overflow: hidden;
 
         .feature-wrapper {

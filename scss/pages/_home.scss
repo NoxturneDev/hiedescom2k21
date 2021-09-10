@@ -1,7 +1,7 @@
 .landing-page {
     @include backgroundCover("../assets/animation/Landing-page-background.gif");
 
-    max-width: 100%;
+    min-width: 100%;
     height: 130vh;
     color: $white;
     margin-top: -0.5em;
@@ -42,7 +42,7 @@
 
 
     #nau {
-        min-width: 80%;
+        min-width: 30rem;
         width: 55%;
     }
 }
@@ -82,7 +82,8 @@
         min-width: 100%;
         height: 100%;
         #nau {
-            min-width: 80%;
+            width: 80%;
+            max-width: 12rem;
         }
     }
 }

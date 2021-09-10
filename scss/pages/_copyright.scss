@@ -1,0 +1,111 @@
+.copyright-page-header {
+    padding: $paddingSmall;
+    background-color: $mainColor;
+    text-align: center;
+    color: $darkColor;
+    h1 {
+        @include customfont(32px, 36px);
+    }
+}
+
+.copyright {
+    @include centerElement();
+    @include backgroundCover("../assets/image/landing-page-background.png");
+    height: 110vh;
+    width: 100%;
+    padding: $paddingMedium;
+    align-items: flex-start;
+    flex-direction: column;
+
+    a {
+        color: $semiDarkColor;
+        line-height: 120%;
+        font-weight: $semibold;
+
+        &:visited {
+            color: $semiDarkColor;
+        }
+    }
+}
+
+.header {
+    color: white;
+    position: relative;
+    margin: $marginSmall;
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -$paddingSmall;
+        transform: scaleX(0.5);
+        height: 3px;
+        background-color: $semiDarkColor;
+        width: 100%;
+    }
+}
+
+.link-wrapper {
+    @include centerElement();
+
+    align-items: baseline;
+    max-width: 100vw;
+   
+    text-align: center;
+    .freepik {
+        @include centerElement();
+        flex-direction: column;
+        margin: $marginSmall;
+        padding: $paddingSmall;
+        width: 50%;
+    }
+
+    .vecteezy {
+        @include centerElement();
+        width: 50%;
+
+        flex-direction: column;
+        margin: $marginSmall;
+        padding: $paddingSmall;
+    }
+
+    .flaticon {
+        @include centerElement();
+        width: 50%;
+
+        flex-direction: column;
+        margin: $marginSmall;
+        padding: $paddingSmall;
+    }
+}
+
+.nau-thanks {
+    width: 60%;
+    height: 60%;
+    .img {
+        width: 100%;
+        height: 100%;
+        @include backgroundContain("../assets/emoji/thanks.png");
+    }
+}
+
+
+@media screen and (max-width: $tabletBreakpoint){
+
+    .copyright{
+        height: 100%
+    }
+    .nau-thanks{
+        @include centerElement();
+        width: 100%;
+
+        .img{
+            min-height: 15rem;
+        }
+
+        
+    }
+
+    .link-wrapper{
+        flex-wrap: wrap;
+    }
+}

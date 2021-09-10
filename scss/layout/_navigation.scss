@@ -21,39 +21,6 @@
     }
 }
 
-// navbar list container
-.nav-list-container {
-    ul {
-        @include centerElement();
-        width: 100%;
-        height: 100%;
-        // nav list item
-        .nav-list {
-            @include centerElement();
-            width: 20%;
-            height: 100%;
-
-            .icon-link {
-                display: none;
-            }
-            .nav-link {
-                a {
-                    @include smallerfont();
-
-                    font-weight: $semibold;
-                    background-color: none;
-                    letter-spacing: 1px;
-                    color: white;
-
-                    &:visited {
-                        color: white;
-                    }
-                }
-            }
-        }
-    }
-}
-
 .logo-web {
     flex-basis: 25%;
     flex: 2;
@@ -184,6 +151,39 @@
             }
         }
     }
+
+    // navbar list container desktop
+    .nav-list-container {
+        ul {
+            @include centerElement();
+            width: 100%;
+            height: 100%;
+            // nav list item
+            .nav-list {
+                @include centerElement();
+                width: 20%;
+                height: 100%;
+
+                .icon-link {
+                    display: none;
+                }
+                .nav-link {
+                    a {
+                        @include smallerfont();
+
+                        font-weight: $semibold;
+                        background-color: none;
+                        letter-spacing: 1px;
+                        color: white;
+
+                        &:visited {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: $tabletBreakpoint) {
@@ -200,7 +200,7 @@
             top: 0;
             left: 0;
             background-color: white;
-            min-height: 100vh;
+            max-height: 100vh;
             width: 80vw;
             transform: translateX(-150%);
             flex-direction: column;

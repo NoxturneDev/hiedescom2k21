@@ -122,6 +122,8 @@
         font-style: italic;
 
     }
+
+    // TEXT AREA FOR USER INPUT
     .user-input {
         @include inputTextArea();
 
@@ -130,6 +132,12 @@
         background: $white;
         border-radius: 8px;
         margin-right: $marginSmall;
+    
+        &::placeholder{
+            color: $darkColor;
+            font-style: italic;
+            opacity: 0.7;
+        }
     }
 
     #btnSend {
@@ -169,10 +177,12 @@
 #botChat.msg-container {
     text-align: right;
     align-items: flex-start;
+    width: 90%;
 
     .msg-bubble {
         border: 1px solid $darkColor;
         background-color: $secondColor;
+        padding-right: 1em;
         .msg-text {
             border-top-left-radius: 12px;
             border-bottom-left-radius: 12px;

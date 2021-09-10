@@ -163,7 +163,9 @@ const emojiSource = {
     EMO_HALO: "assets/emoji/halo.png",
     EMO_HI: "assets/emoji/hai.png",
     EMO_ASHIAP: "assets/emoji/ashiap.png",
-    EMO_THANKS: "assets/emoji/emoji-yes.png"
+    EMO_ASIK: "assets/emoji/ashiap.png",
+    EMO_MANTAP: "assets/emoji/mantap.png",
+    EMO_THANKS: "assets/emoji/thanks.png"
 }
 
 
@@ -179,9 +181,11 @@ emoji.forEach(emoji => {
     emoji.addEventListener("click", (e) => {
         const emojiSource = emojiImage.getAttribute('src')
         const emojiMeaning = e.target.dataset.emojiMeaning
+        userInputText.placeholder = '';
 
         // depends on the meaning of the emoji, the bot will respond it 
         botRespondEmoji(emojiMeaning)
+   
         // render it on innerchat container
         renderEmoji(emojiSource, "user")
         disableEmoji()
@@ -282,18 +286,18 @@ function getUserIntent(userRespond) {
 function botGreetings() {
     // USER CANT RESPONSE WHEN BOT TALKING
     userInputText.readOnly = true
+    userInputText.placeholder = '';
 
     setTimeout(() => {
-        renderEmoji(emojiSource.EMO_HI, "botChat")
 
         // automate bot chat from language data
         let automate = botAutomationChat(introduction.greetings)
+        renderEmoji(emojiSource.EMO_HALO, "botChat")
 
         // delay for showing emoji
         setTimeout(() => {
-            emojiGreeting()
-            userInputText.readOnly = false
 
+            emojiGreeting()
         }, automate + 1500)
 
     }, 600)
@@ -301,6 +305,7 @@ function botGreetings() {
 
 function botIntro() {
     userInputText.readOnly = true
+    userInputText.placeholder = '';
 
     setTimeout(() => {
 
@@ -317,16 +322,16 @@ function botIntro() {
 
 function askNama() {
     userInputText.readOnly = true
+    userInputText.placeholder = '';
 
     setTimeout(() => {
-
-        renderEmoji(emojiSource.EMO_HALO, "botChat")
 
         let automate = botAutomationChat(introduction.userName)
 
         setTimeout(() => {
             popUpGuide("Awali dengan Nama saya/aku")
             userInputText.readOnly = false
+            userInputText.placeholder = 'nama...';
 
         }, automate + 1200)
     }, 600)
@@ -334,32 +339,44 @@ function askNama() {
 
 function askAge() {
     userInputText.readOnly = true
+    userInputText.placeholder = '';
 
     setTimeout(() => {
+        renderEmoji(emojiSource.EMO_HI, "botChat")
+
         let automate = botAutomationChat(introduction.userAge)
 
         setTimeout(() => {
             popUpGuide("Cth: 17 Tahun")
             userInputText.readOnly = false
+         userInputText.placeholder = '...tahun';
+
         }, automate + 1200)
     }, 500)
 }
 
 
 function askColor() {
+    userInputText.readOnly = true
+    userInputText.placeholder = '';
     setTimeout(() => {
         renderEmoji(emojiSource.EMO_ASHIAP, "botChat")
+
 
         let automate = botAutomationChat(introduction.userColor)
 
         setTimeout(() => {
             popUpGuide("Cth: warna merah")
             userInputText.readOnly = false
+         userInputText.placeholder = 'warna...';
+
         }, automate + 1200)
     }, 500)
 }
 
 function afterColor(){
+    userInputText.readOnly = true
+    userInputText.placeholder = '';
     setTimeout(() => {
         renderEmoji(emojiSource.EMO_ASHIAP, "botChat")
 
@@ -373,6 +390,8 @@ function afterColor(){
 
 
 function preview() {
+    userInputText.readOnly = true
+    userInputText.placeholder = '';
     setTimeout(() => {
         renderEmoji(emojiSource.EMO_HALO, "bot")
 
@@ -380,13 +399,14 @@ function preview() {
 
         setTimeout(() => {
             emojiPreview()
-            userInputText.readOnly = false
         }, automate + 1200)
 
     }, 500)
 }
 
 function introInJavanese(){
+    userInputText.readOnly = true
+    userInputText.placeholder = '';
     const sessionStorageData = sessionStorage.getItem(USER_IDENTITY_KEY)
     const userData = JSON.parse(sessionStorageData)
 
@@ -394,7 +414,7 @@ function introInJavanese(){
     let age = userData.age[0]
     let color = userData.favColor[0]
 
-    let introInJavanese = [`kita akan mencoba berkenalan menggunakan bahasa jawa ngoko ya`, `Jeneng ku ${name}`, `Umurku saiki ${age}`, `werno seng tak senengi ki werno${color} (blm ditranslate ya)`]
+    let introInJavanese = [`kita akan mencoba berkenalan menggunakan bahasa jawa ngoko ya`, `Jeneng ku ${name}`, `Umurku saiki ${age} taun`, `werno seng tak senengi ki werno ${color} (warna ini belum ditranslate ya :D)`]
 
     let automate = botAutomationChat(introInJavanese)
 
@@ -415,6 +435,7 @@ function botClosing() {
     let automate = botAutomationChat(closing)
     setTimeout(() => {
         botAutomationChat(thanks)
+        renderEmoji(emojiSource.EMO_THANKS, "botChat")
         userInputText.readOnly = true;
     }, automate + 700)
 }
@@ -437,6 +458,8 @@ function popUpGuide(txt) {
 
 // EMOJI FOR GREETING FLOW
 function emojiGreeting() {
+    // GUIDE FOR USER TO CLICK EMOJI
+    userInputText.placeholder = '"Klik emojinya ya"';
     const emojiGreets = createEmojiElement(
         emojiIntentCode.EMO_HALO,
         emojiIntentCode.EMO_HI,
@@ -446,38 +469,46 @@ function emojiGreeting() {
 }
 
 function emojiIntro() {
+    userInputText.placeholder = '"Klik emojinya ya"';
+
     const emojiIntro = createEmojiElement(
         emojiIntentCode.EMO_ASHIAP,
         emojiIntentCode.EMO_ASHIAP,
-        emojiSource.EMO_ASHIAP,
-        emojiSource.EMO_OKAY)
+        emojiSource.EMO_HALO,
+        emojiSource.EMO_HI)
     enableEmoji()
 }
 
 function emojiPreExplain() {
+    userInputText.placeholder = '"Klik emojinya ya"';
+
     const emoji = createEmojiElement(
         emojiIntentCode.EMO_OKAY,
         emojiIntentCode.EMO_OKAY,
         emojiSource.EMO_OKAY,
-        emojiSource.EMO_ASHIAP)
+        emojiSource.EMO_ASIK)
     enableEmoji()
 }
 
 function emojiPreview() {
+    userInputText.placeholder = '"Klik emojinya ya"';
+
     const emojiPreview = createEmojiElement(
         "emoji-preview",
         "emoji-preview",
         emojiSource.EMO_ASHIAP,
-        emojiSource.EMO_GETIT)
+        emojiSource.EMO_ASIK)
     enableEmoji()
 }
 
 function emojiPreview2(){
+    userInputText.placeholder = '"Klik emojinya ya"';
+
     const emojiPreview = createEmojiElement(
         "emoji-post-preview",
         "emoji-post-preview",
-        emojiSource.EMO_ASHIAP,
-        emojiSource.EMO_GETIT)
+        emojiSource.EMO_THANKS,
+        emojiSource.EMO_MANTAP)
     enableEmoji()
 }
 

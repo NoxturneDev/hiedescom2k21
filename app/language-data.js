@@ -4,8 +4,8 @@
 // /////////////////////////////////////////////
 
 const introduction = {
-    greetings : ["Selamat datang di Yuk Sinau", "Website untuk belajar berbahasa jawa"],
-    botIntro : ["Perkenalkan nama ku Nau"],  
+    greetings : ['"respon bot ini masih dalam tahap pengembangan"',"Selamat datang di Yuk Sinau", "Website untuk belajar berbahasa jawa", ],
+    botIntro : ["Perkenalkan nama ku Nau", "aku bakal ngajarin kamu Bahasa jawa nih"],  
     userName : ["Perkenalan dulu dong", "Nama kamu siapa?"], 
     userAge: ["Salam kenal ya", "Umur kamu?"],
     userColor : ["Oiya", "Warna favorit kamu apa?"],
