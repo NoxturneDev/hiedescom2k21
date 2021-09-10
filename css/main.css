@@ -2907,10 +2907,29 @@ html {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    font-size: 12px;
     width: 95%;
     height: 60%;
     position: absolute;
     padding: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 400px) {
+  .slides-wrapper .slides {
+    font-size: calc(12px + 2 * ((100vw - 400px) / 1000));
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 1400px) {
+  .slides-wrapper .slides {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slides-wrapper .slides .slide-content {
+    overflow-y: scroll;
   }
   .slide-img img {
     width: 5rem;

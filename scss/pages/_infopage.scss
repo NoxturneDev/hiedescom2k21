@@ -404,11 +404,17 @@
 
         .slides {
             @include centerElement();
+            @include smallerfont();
 
             width: 95%;
             height: 60%;
             position: absolute;
             padding: $paddingSmall;
+            
+            
+            .slide-content{
+                overflow-y: scroll;
+            }
         }
     }
 
