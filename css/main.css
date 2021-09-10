@@ -1331,29 +1331,6 @@ html {
   }
 }
 
-.loader-container {
-  background-color: #02559E;
-  margin: 0;
-  position: fixed;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-  top: 0;
-  z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.loader-container .loader-gif {
-  width: 30rem;
-}
-
 .landing-page {
   background: url("../assets/animation/Landing-page-background.gif");
   background-size: cover;

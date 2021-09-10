@@ -123,28 +123,6 @@ function initializeShare() {
     })
 }
 
-//////////////////////////////////////////////////////////////
-// LOADER 
-//////////////////////////////////////////////////////////////
-
-const loader = document.querySelector(".loader-container")
-
-// window.addEventListener("load", ()=> {
-//     // disable scroll
-//     document.body.style.overflow = "hidden";
-
-//     setTimeout(()=> {
-//         loader.classList.add("sliding")
-//         loader.style.transform = "translateX(-100%)"
-//         document.body.style.overflow = "";
-//     }, 3000)
-
-//     // loader.addEventListener("animationend", ()=> {
-//     //     loader.classList.remove("wipe-right")
-//     // })
-//     // DEFAULT SCROLL SO USER ALWAYS ON TOP
-// })
-
 
 //////////////////////////////////////////////////////////////
 // FEATURE 3D DIMENSION 
@@ -281,5 +259,3 @@ function closeBtn(e) {
     document.body.style.overflow = "";
 }
 
-// TODO : fix animation, make it better
-// TODO : create an efective function for handling animation end or so 

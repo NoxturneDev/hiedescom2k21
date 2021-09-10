@@ -60,20 +60,21 @@ const emojiIntent = {
 }
 
 
-// const emjIntentPerkenalan = {
-//     true : emojiIntent.getIt,
-//     false : emojiIntent.notGetIt,
-// }
+// FOR NEXT UPDATE
+const emjIntentPerkenalan = {
+    true : emojiIntent.getIt,
+    false : emojiIntent.notGetIt,
+}
 
-// const userIntentPerkenalan2 = {
-//     true : userIntent.getIt,
-//     false : userIntent.notGetIt
-// }
+const userIntentPerkenalan2 = {
+    true : userIntent.getIt,
+    false : userIntent.notGetIt
+}
 
-// const userIntentPerkenalan3 = {
-//     true : userIntent.getIt,
-//     false : userIntent.notGetIt
-// }
+const userIntentPerkenalan3 = {
+    true : userIntent.getIt,
+    false : userIntent.notGetIt
+}
 
 // /////////////////////////////////////////////
 // STOP WORD BAHASA
