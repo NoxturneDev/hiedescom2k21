@@ -124,46 +124,6 @@ function animateTransition(btn) {
 }
 
 
-
-// IMAGE OVERLAY ON CLICK
-const imagesInGallery = Array.from(document.querySelectorAll(".image-container"))
-const galleryOverlay = document.querySelector(".gallery-overlay")
-
-
-galleryOverlay.addEventListener("click", (e) => {
-    if (e.target.classList.contains("gallery-overlay")) {
-        galleryOverlay.style.display = "none"
-    }
-})
-
-imagesInGallery.forEach((image) => {
-    const overlayCaption = document.querySelector(".gallery-overlay-text .header")
-    const caption = image.dataset.caption
-    const mediaQuery = window.matchMedia("(min-width: 768px)")
-
-    const onDekstopClick = () => {
-        if (mediaQuery.matches) {
-            image.addEventListener("click", () => {
-                galleryOverlay.style.display = "flex"
-
-                // change the caption depends on which image is clicked
-                overlayCaption.innerText = caption
-            })
-
-            image.addEventListener("touchstart", () => {
-                galleryOverlay.style.display = "flex"
-
-                // change the caption depends on which image is clicked
-                overlayCaption.innerText = caption
-            })
-        }
-
-    }
-    onDekstopClick()
-})
-
-
-
 // ROTATING EVENT
 
 // ROTATION BUTTON MODE
