@@ -42,8 +42,7 @@
 }
 
 .footer {
-    @include centerElement();
-    @include smallerfont();
+    @include leftAlignElement();
 
     margin-top: $marginSuperLarge;
     background-color: $darkColor;
@@ -75,6 +74,8 @@
 .contact-us {
     @include centerElement();
     flex-basis: 30%;
+    max-width: 100%;
+
     margin: $marginSmall;
     .icon-wrapper {
         margin: $marginSmall;
@@ -82,8 +83,8 @@
         a {
             filter: brightness(10%);
             opacity: 0.8;
-            min-width: 2.3rem;
-            min-height: 2.4rem;
+            min-width: 2rem;
+            min-height: 2rem;
             display: block;
             transition: opacity 0.25s ease-in-out, filter 0.25s ease-in-out;
             &:hover {
@@ -94,11 +95,23 @@
     }
 }
 
+.redirect-link{
+    text-align: center;
+
+    max-width: 50%;
+    height: 100%;
+    flex: 2;
+}
+
 @media screen and (max-width: $tabletBreakpoint) {
     .share-container {
         p {
             width: 100%;
             margin-bottom: $marginBig;
         }
+    }
+
+    .footer{
+        flex-direction: column;
     }
 }
