@@ -2489,6 +2489,10 @@ html {
   color: #02559E;
 }
 
+.gallery-card-page .text-content .gallery-header {
+  color: #02559E;
+}
+
 .gallery-card-page .cards-container {
   display: -webkit-box;
   display: -ms-flexbox;

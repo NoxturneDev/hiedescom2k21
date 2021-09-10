@@ -20,9 +20,6 @@ function smoothScroll(e) {
         })
     }
 
-    console.log(navbarLink)
-    console.log(targetID)
-    console.log(document.querySelector(targetID).offsetTop)
 }
 
 //////////////////////////////////////////////////////////////
@@ -120,52 +117,6 @@ function initializeShare() {
                 `https://t.me/share/url?url=${url}&text=${text}`
             )
         }
-    })
-}
-
-
-//////////////////////////////////////////////////////////////
-// FEATURE 3D DIMENSION 
-//////////////////////////////////////////////////////////////
-const dimensionWrapper = document.querySelector(".dimension-wrapper")
-const featureOn3D = Array.from(document.querySelectorAll(".container-dimension"))
-const btnRedirect = document.querySelectorAll(".container-dimension .btn-rotate")
-
-featureOn3D.forEach((feature, index) => {
-    feature.style.transform = `rotateY(${index * 90}deg) translateZ(${window.innerWidth + 200}px)`
-})
-
-
-console.log(featureOn3D)
-
-btnRedirect.forEach(btn => {
-    btn.addEventListener("click", () => {
-        btnRotate(btn)
-    })
-})
-
-function btnRotate(btn) {
-    const btnId = btn.id
-    if (btnId == "toChat") {
-        console.log("ke kuis")
-        dimensionWrapper.style.transform = "rotateY(90deg)"
-        dimensionWrapper.dataset.animation = "rotate"
-
-    } else if (btnId == "toQuizWrapper") {
-        console.log("ke kuis")
-        dimensionWrapper.style.transform = "rotateY(-90deg)"
-        dimensionWrapper.dataset.animation = "rotate"
-    } else if (btnId == "toQuiz") {
-        dimensionWrapper.style.transform = "rotateY(-180deg)"
-        dimensionWrapper.dataset.animation = "rotate"
-    } else if (btnId == "toChatWrapper") {
-        console.log("ke kuis")
-        dimensionWrapper.style.transform = "rotateY(0)"
-        dimensionWrapper.dataset.animation = "rotate"
-    }
-
-    dimensionWrapper.addEventListener("transitionend", () => {
-        dimensionWrapper.dataset.animation = "none"
     })
 }
 

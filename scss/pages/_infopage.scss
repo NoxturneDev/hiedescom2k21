@@ -141,6 +141,10 @@
         height: 35%;
         text-align: center;
         color: $darkColor;
+
+        .gallery-header{
+            color: $darkColor;
+        }
     }
 
     .cards-container {

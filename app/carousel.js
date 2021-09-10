@@ -7,7 +7,7 @@ const prevBtn = document.querySelector("#prevSlide")
 
 window.addEventListener("load", () => {
 
-    console.log(slides.length)
+    
     nextPrevSlide()
     getSlidePosition()
     initializeShare()
@@ -71,7 +71,7 @@ nextBtn.addEventListener("click", () => {
 
     setTimeout(() => {
         nextBtn.disabled = false;
-        console.log("enabled")
+    
     }, delayBtn)
 
     animateTransition("next")
@@ -93,7 +93,6 @@ prevBtn.addEventListener("click", () => {
 
     setTimeout(() => {
         prevBtn.disabled = false;
-        console.log("enabled")
     }, delayBtn)
 
     animateTransition("prev")
@@ -120,7 +119,6 @@ function animateTransition(btn) {
         })
     }
 
-    console.log(currentSlide)
 }
 
 
