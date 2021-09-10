@@ -88,8 +88,8 @@
             display: block;
             transition: opacity 0.25s ease-in-out, filter 0.25s ease-in-out;
             &:hover {
-                opacity: 0.5;
-                filter: brightness(15%);
+                opacity: 0.85;
+                filter: brightness(1);
             }
         }
     }

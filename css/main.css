@@ -1307,9 +1307,9 @@ html {
 }
 
 .contact-us .icon-wrapper a:hover {
-  opacity: 0.5;
-  -webkit-filter: brightness(15%);
-          filter: brightness(15%);
+  opacity: 0.85;
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
 }
 
 .redirect-link {
